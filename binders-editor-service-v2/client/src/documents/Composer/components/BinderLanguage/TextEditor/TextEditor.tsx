@@ -90,6 +90,7 @@ export const TextEditor: React.FC<{
     const { t } = useTranslation();
     const [editor, setEditor] = React.useState<Editor>(null);
     const [selectionBump, setSelectionBump] = React.useState(0);
+    const isComposingRef = useRef(false);
 
     const onTab = useRef<(options: { isShift: boolean }) => void>(() => { });
     useEffect(() => {
@@ -162,10 +163,23 @@ export const TextEditor: React.FC<{
             editorProps={{
                 handleDOMEvents: {
                     focus: (_view, event) => onFocus(event),
+                    compositionstart: () => {
+                        isComposingRef.current = true;
+                        return false;
+                    },
+                    compositionend: () => {
+                        isComposingRef.current = false;
+                        return false;
+                    },
                 },
             }}
             onUpdate={({ editor, transaction }) => {
                 if (!wasTriggeredDuringInitialization(transaction)) {
+                    // During composition (iOS autocorrect/predictive text), defer the change
+                    // to prevent character duplication issues
+                    if (isComposingRef.current) {
+                        return;
+                    }
                     const json = editor.getJSON();
                     const html = editor.getHTML();
                     onChange(JSON.stringify(json), html);
