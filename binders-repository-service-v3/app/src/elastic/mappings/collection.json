@@ -1,0 +1,46 @@
+{
+    "properties": {
+        "accountId": {"type": "keyword"},
+        "ancestorIds": { "type": "keyword" },
+        "domainCollectionId": {"type": "keyword"},
+        "bindersVersion": {"type": "keyword"},
+        "isRootCollection": {"type": "boolean"},
+        "thumbnail": { "enabled": false },
+        "elements": {
+            "type": "nested",
+            "properties": {
+                "kind": { "type": "keyword"},
+                "key": { "type": "keyword"}
+            }
+        },
+        "deletedElements": {
+            "type": "nested",
+            "properties": {
+                "kind": { "type": "keyword"},
+                "key": { "type": "keyword"}
+            }
+        },
+        "titles": {
+            "type": "nested",
+            "include_in_root": true,
+            "properties": {
+                "title": {"type": "text"},
+                "languageCode": {"type": "keyword"}
+            }
+        },
+        "ownership": {
+            "type": "nested",
+            "properties": {
+                "type": { "type":  "text" },
+                "ids": { "type": "keyword" }
+            }
+        },
+        "created": {"type": "date"},
+        "lastModified": {"type": "date"},
+        "hasPublications": {"type": "boolean"},
+        "deletionTime": {"type": "date"},
+        "deletedById": {"type": "keyword"},
+        "deletedGroupCollectionId": {"type": "keyword"},
+        "deletedGroupCount": {"type": "integer"}
+    }
+}

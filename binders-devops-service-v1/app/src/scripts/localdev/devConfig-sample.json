@@ -1,0 +1,14 @@
+{
+    "devTypeScriptCompiler": "tsc",
+    "dockerBridgeDeviceName": "docker0",
+    "dockerBridgeIpPrefix": "10.",
+    "elasticPathPrefix": "/data/elastic7",
+    "environmentVariables": {
+        "LOCAL_IMAGESERVICE_TUNNEL": "https://fbce013fefd6.ngrok.io/image/v1"
+    },
+    "hostPathFolder": "/mnt/c/Users/Toms/local-dev",
+    "includeAPM": false,
+    "kubeContext": "docker-for-desktop",
+    "localBuildDir": "/tmp/local-build",
+    "webAppBundler": "webpack"
+}

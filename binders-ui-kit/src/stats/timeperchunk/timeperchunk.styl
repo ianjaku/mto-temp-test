@@ -1,0 +1,48 @@
+@import "../../vars.styl";
+
+.timeperchunk-stat
+    &-header
+        &-ranges
+            align-items: initial
+            label
+                line-height: 40px
+                vertical-align: top
+            .dropdown
+                margin-left: 10px
+                min-width: 220px
+                background: transparent
+                display: inline-block
+                vertical-align: top
+                .dropdown-elements
+                    border: none
+                    width: auto
+                    position: initial
+                    display: block
+                    border: 1px solid borderGrayColor
+                .dropdown-field-label
+                    width: 100%
+                    justify-content: flex-end
+                .dropdown-arrow
+                    margin-left: 12px;
+                .dropdown-field-label-group
+                    display: flex
+                    align-items: center
+                    width: 100%
+                    .dropdown-field-label-group-text
+                        white-space: nowrap
+    .stats-header
+        align-items: flex-start
+    &-legend
+        font-size: 13px
+        display: flex
+        align-items: center
+        flex-grow: 1
+        justify-content: flex-start
+        height: 40px
+        &-item
+            display: flex
+            align-items: center
+            &:not(:last-of-type)
+                margin-right: 15px
+                .material-icons
+                    padding: 0 3px

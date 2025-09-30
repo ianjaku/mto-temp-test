@@ -1,0 +1,88 @@
+@require "../../vars.styl";
+
+.dot-elastic-container
+    --dot-size: 4px
+    --dot-half-size: calc(var(--dot-size) / 2)
+    --color: grey500
+    --padding: 6px
+
+    &.accent
+        --color: accentColor
+
+    &:hover
+        --color: grey600
+
+    padding: var(--padding)
+    width: calc(2 * var(--padding) + 3 * var(--dot-size) + 2 * var(--dot-half-size))
+
+    .dot-elastic
+        position: relative
+        width: var(--dot-size)
+        height: var(--dot-size)
+        border-radius: var(--dot-half-size)
+        background-color: var(--color)
+        color: var(--color)
+        transition: background-color 150ms ease-in
+        margin-left: calc(var(--dot-size) + var(--dot-half-size))
+
+    .dot-elastic::before, .dot-elastic::after
+        content: ""
+        display: inline-block
+        position: absolute
+        top: 0
+        width: var(--dot-size)
+        height: var(--dot-size)
+        border-radius: var(--dot-half-size)
+        background-color: var(--color)
+        color: var(--color)
+        transition: background-color 150ms ease-in
+
+    .dot-elastic::before
+        left: calc( -1 * (var(--dot-size) + var(--dot-half-size)) )
+
+    .dot-elastic::after
+        left: calc(var(--dot-size) + var(--dot-half-size))
+
+    &.animated
+        .dot-elastic
+            animation: dot-elastic 1s infinite linear
+        .dot-elastic::before
+            animation: dot-elastic-before 1s infinite linear
+        .dot-elastic::after
+            animation: dot-elastic-after 1s infinite linear
+
+    @keyframes dot-elastic-before
+        0%
+            transform: scale(1, 1)
+        25%
+            transform: scale(1, 1.5)
+        50%
+            transform: scale(1, 0.67)
+        75%
+            transform: scale(1, 1)
+        100%
+            transform: scale(1, 1)
+
+    @keyframes dot-elastic
+        0%
+            transform: scale(1, 1)
+        25%
+            transform: scale(1, 1)
+        50%
+            transform: scale(1, 1.5)
+        75%
+            transform: scale(1, 1)
+        100%
+            transform: scale(1, 1)
+
+    @keyframes dot-elastic-after
+        0%
+            transform: scale(1, 1)
+        25%
+            transform: scale(1, 1)
+        50%
+            transform: scale(1, 0.67)
+        75%
+            transform: scale(1, 1.5)
+        100%
+            transform: scale(1, 1)

@@ -1,0 +1,61 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.chunk-read-confirmation
+    display: flex
+    flex-direction: column
+    gap: 10px
+    position: relative
+    @media rwd.tabletAndAbove
+        gap: 30px
+    h1
+        margin: 0
+        font-size: 25px
+    .button
+        width: fit-content
+    &-checkIcon
+        --iconWidth: 44px
+        position: absolute
+        top: -70px
+        @media rwd.tabletAndAbove
+            --iconWidth: 66px
+            top: -115px
+        width: var(--iconWidth)
+        height: var(--iconWidth)
+        display: flex
+        justify-content: center
+        align-items: center
+        color: white
+        background-color: green1
+        border-radius: 50%
+        animation: appear .1s ease-in-out
+        &--hasCenterPosition
+            position: static
+            top: initial
+            margin-left: 25px
+            --iconWidth: 84px
+            border: 10px solid white
+        @media rwd.tabletAndAbove
+            border: none
+        .material-icons
+            font-size: calc(var(--iconWidth) / 2.27)
+        &-curtain
+            position: absolute
+            top: calc(var(--iconWidth) / 3.8)
+            right: calc(var(--iconWidth) / 4)
+            width: calc(var(--iconWidth) / 1.9)
+            height: calc(var(--iconWidth) / 2.1)
+            background-color: green1
+            animation: curtainOpen .25s ease-in-out
+            animation-fill-mode: forwards
+            animation-delay: .1s
+
+        @keyframes appear
+            from
+                transform: scale(0)
+            to
+                transform: scale(1)
+        @keyframes curtainOpen
+            from
+                width: calc(var(--iconWidth) / 1.9)
+            to
+                width: 0

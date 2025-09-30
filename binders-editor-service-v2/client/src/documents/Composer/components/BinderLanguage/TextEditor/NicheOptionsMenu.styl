@@ -1,0 +1,47 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.nicheoptions
+    background-color: white
+    border: 1px solid grey300
+    border-radius: 8px
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1)
+    padding: 9px
+    display: flex
+    flex-direction: column
+    position: absolute
+    top: "calc(%s + 15px)" % textEditorToolbarButtonSize
+    left: calc(100% - 46px)
+    font-family: Rubik
+    min-width: 200px
+    &-title
+        color: grey600
+        font-weight: 600
+        padding: 8px 12px 4px 12px
+    &-buttons
+        display: flex
+        flex-direction: column
+        gap: 6px
+    &-button
+        padding: 0px 12px
+        margin: 0
+        height: textEditorToolbarButtonSize
+        border-radius: 2px
+        border: none
+        background: none
+        cursor: pointer
+        transition: background-color 150ms ease-in,
+                    color 150ms ease-in
+        display: flex
+        align-items: center
+        gap: 12px
+        color: grey900
+        font-weight: 400
+        width: 100%
+        &:hover
+            background-color: grey200
+        &--isActive
+            font-weight: 600
+        .material-icons
+            color: grey800
+
+

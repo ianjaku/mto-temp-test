@@ -1,0 +1,103 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.collectionForm
+	&-control
+		min-width: 100px
+		width: 100%
+		.rte-button-bar
+			position: fixed
+			.rte-button-group
+				width: fit-content
+				align-items: stretch
+	&-header
+		p
+			font-family: Roboto, sans-serif
+			font-size: 9px
+			padding-bottom: 1em
+			text-transform: uppercase
+			font-weight: bold
+			color: baseColor
+			border-bottom: 1px solid middleGreyColor
+			margin-bottom: 1em
+	&-modal
+		.modal-body
+			width: 400px
+			@media rwd.mobile
+				padding: 10px
+				width: 96vw
+			.tree-navigator-rows
+				max-height: 300px
+				@media rwd.mobile
+					max-height: 20vh
+		&--edit
+			.modal-body
+				width: 700px
+				min-height: 500px
+			.tabs-nav
+				height: auto
+				&-list
+					min-width: 100%
+					padding-left: 0
+			.tabs-content
+				padding-left: 0
+				min-width: 100%
+				background-color: inherit
+			.collectionForm-table tr
+				width: 100%
+				td, th
+					&:first-child
+						width: 25%
+					&:last-child
+						width: 5%
+						text-align: center
+						.button--delete
+							opacity: 1
+						.button--disabled
+							opacity: 0.2
+							span
+								color: disabled !important
+						span
+							color: #000
+
+		.collectionForm-table
+			width: 100%
+			th td
+				text-align: left
+			td
+				vertical-align: middle
+				border-bottom: 0
+				&:first-child
+					width: 40%
+				&:last-child
+					width: 60%
+				padding: 12px 0 0 0
+				&:not(:last-child)
+					padding-right: 12px
+				input
+					width: 100%
+	&-languages
+		margin: 20px 0 15px
+	&-languageLabel
+		margin: 0
+		font-size: 13px
+		font-weight: 500
+		color: middleBlackColor
+	&-newLanguage
+		cursor: pointer
+		color: accentColor
+		font-family: Rubik
+		font-size: 14px
+		font-weight: bold
+		font-style: normal
+		font-stretch: normal
+		line-height: normal
+		letter-spacing: normal
+		text-align: center
+		&:hover
+			color: accentHoverColor
+	&-submit
+		margin: 10px 0
+	&-modal-tip
+		margin: 5px 0
+		&--warning
+			color: colorErrorLight

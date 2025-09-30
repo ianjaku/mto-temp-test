@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Color picker (snapshot) 1`] = `
+<div
+  className="rc-color-picker-wrap "
+>
+  <div
+    className="colorpicker"
+    onBlur={undefined}
+    onClick={[Function]}
+    onFocus={undefined}
+    onMouseDown={[Function]}
+    onMouseEnter={undefined}
+    onMouseLeave={undefined}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "backgroundColor": "rgba(186,218,85,1)",
+      }
+    }
+    unselectable="unselectable"
+  >
+    <div>
+      <label
+        className="colorpicker-label"
+      >
+        #BADA55
+      </label>
+    </div>
+    <div
+      className="colorpicker-swatch react-custom-trigger"
+      style={
+        Object {
+          "backgroundColor": "#BADA55",
+        }
+      }
+    />
+  </div>
+</div>
+`;

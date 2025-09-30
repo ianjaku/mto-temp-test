@@ -1,0 +1,42 @@
+{
+    "account": {
+        "name": "Selenium Playground",
+        "domain": "seleniumplayground.manual.to",
+        "features": [
+            "device_user_impersonation",
+            "public_content"
+        ],
+        "members": [
+            {
+                "name": "Device User",
+                "firstName": "Device",
+                "lastName": "User",
+                "login": "device@outsidemanual.to",
+                "password": "i_is_device1",
+                "isAdmin": true
+            },
+            {
+                "name": "Device Target User",
+                "firstName": "Device Target",
+                "lastName": "User",
+                "login": "devicetarget@outsidemanual.to",
+                "password": "i_is_device_target1"
+            },
+            {
+                "name": "Device Target 2 User",
+                "firstName": "Device Target 2",
+                "lastName": "User",
+                "login": "devicetarget2@outsidemanual.to",
+                "password": "i_is_device_target2"
+            }
+        ],
+        "usergroups": [
+            {
+                "name": "testgroup",
+                "memberLogins": [
+                    "devicetarget2@outsidemanual.to"
+                ]
+            }
+        ]
+    }
+}

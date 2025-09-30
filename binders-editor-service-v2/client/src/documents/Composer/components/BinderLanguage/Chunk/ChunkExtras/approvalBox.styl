@@ -1,0 +1,25 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.approval-box
+    &+.tooltip
+        padding-top: 5px
+        padding-bottom: 5px
+        span
+            line-height: 1
+    .side-chunk-button
+        &--disabled
+            cursor: default
+            background-color: disabledBackgroundColor
+.approval-checked
+    span
+        color: accentColor
+    &:hover
+        color: whiteColor
+
+.approval-status
+    background-color: transparent
+    box-shadow: none
+    img
+        width: auto
+        height: 22px
+        cursor: default

@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Table (snapshot) 1`] = `
+<div>
+  <div
+    className="table-wrapper"
+  >
+    <table
+      className="table"
+    >
+      <thead>
+        <tr>
+          <th
+            onClick={[Function]}
+          >
+            Name
+          </th>
+          <th
+            onClick={[Function]}
+          >
+            E-mail
+          </th>
+          <th
+            onClick={[Function]}
+          >
+            ID
+          </th>
+          <th
+            onClick={[Function]}
+          >
+            actions
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            John Doe1
+          </td>
+          <td>
+            johndoe1@manual.to
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            <button>
+              Test
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            John Doe2
+          </td>
+          <td>
+            johndoe2@manual.to
+          </td>
+          <td>
+            2
+          </td>
+          <td>
+            <button>
+              Test
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            John Doe3
+          </td>
+          <td>
+            johndoe3@manual.to
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            <button>
+              Test
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            John Doe4
+          </td>
+          <td>
+            johndoe4@manual.to
+          </td>
+          <td>
+            4
+          </td>
+          <td>
+            <button>
+              Test
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            John Doe5
+          </td>
+          <td>
+            johndoe5@manual.to
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            <button>
+              Test
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    className="table-footer"
+  >
+    <ul
+      className="pagination"
+    >
+      <span>
+        Page
+      </span>
+      <li
+        className="disabled"
+        onClick={undefined}
+      >
+        <span
+          className="material-icons pagination-icon"
+          color=""
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          keyboard_arrow_left
+        </span>
+        <span
+          className="material-icons pagination-icon"
+          color=""
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          keyboard_arrow_left
+        </span>
+        First
+      </li>
+      <li
+        className="disabled"
+        onClick={undefined}
+      >
+        <span
+          className="material-icons pagination-icon"
+          color=""
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          keyboard_arrow_left
+        </span>
+        Previous
+      </li>
+      <li
+        className="active"
+        onClick={[Function]}
+      >
+        1
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        2
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        3
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        4
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        5
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        Next 
+        <span
+          className="material-icons pagination-icon"
+          color=""
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          keyboard_arrow_right
+        </span>
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        Last
+        <span
+          className="material-icons pagination-icon"
+          color=""
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          keyboard_arrow_right
+        </span>
+        <span
+          className="material-icons pagination-icon"
+          color=""
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          keyboard_arrow_right
+        </span>
+      </li>
+    </ul>
+    <div
+      className="dropdown borders"
+      style={
+        Object {
+          "width": "100px",
+        }
+      }
+    >
+      <ul
+        className="dropdown-field"
+        onBlur={[Function]}
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        <li
+          className="dropdown-field-label"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="dropdown-field-label-group"
+          >
+            <span
+              className="dropdown-field-label-group-text"
+            >
+              10
+            </span>
+          </div>
+          <span
+            className="material-icons dropup-arrow"
+            color=""
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fontSize": 24,
+                "muiPrepared": true,
+                "position": "relative",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+              }
+            }
+          >
+            arrow_drop_up
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

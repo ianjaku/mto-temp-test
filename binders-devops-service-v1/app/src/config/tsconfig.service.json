@@ -1,0 +1,20 @@
+{
+    "extends": "../../../../tsconfig.service.json",
+    "compilerOptions": {
+        "outDir": "dist",
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "*",
+                "/usr/local/lib/node_modules/*",
+                "/usr/lib/node_modules/*"
+            ]
+        },
+        "typeRoots": [
+            "./node_modules/@types",
+            "/usr/local/lib/node_modules/@types",
+            "/usr/lib/node_modules/@types"
+        ]
+    },
+    "exclude": ["node_modules", "dist"]
+}

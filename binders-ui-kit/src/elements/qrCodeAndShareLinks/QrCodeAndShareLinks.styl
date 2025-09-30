@@ -1,0 +1,54 @@
+@require "../../vars.styl"
+
+.qrCodeAndShareLinks
+	display: block
+	width: 100%
+	padding: 16px
+	box-sizing: border-box
+
+	.button
+		width: 100%
+		margin: 0 0 5px
+		border-width: 1px
+		box-sizing: border-box
+
+	.dropdown
+		width: 100% !important
+		margin: 5px 0 15px
+		box-sizing: border-box
+
+	&-linkWrapper
+		position: relative
+		display: block
+		margin: 15px 0
+		padding: 5px 10px
+		box-sizing: border-box
+		border: 1px solid borderGrayColor
+
+	&-link
+		display: inline-block
+		position: relative
+		max-width: calc(100% - 30px)
+		box-sizing: border-box
+		vertical-align: middle
+		color: darkGrayColor
+		font-size: 13px
+		line-height 20px
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+
+	&-clipboard
+		display: inline-block
+
+	&-icon
+		display: inline-block
+		position: relative
+		bottom: 0
+		right: -10px
+		cursor: pointer
+		vertical-align: middle
+
+		&:hover
+			opacity: .75
+

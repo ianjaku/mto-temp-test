@@ -1,0 +1,20 @@
+{
+    "children": [
+        {
+            "name": "single doc",
+            "type": "document",
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "isPrimary": true,
+                    "chunks": [
+                        {
+                            "text": "single doc"
+                        }
+                    ],
+                    "title": "single doc"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Crop landscape thumbnail (snapshot) 1`] = `
+<div
+  className="thumbnail-outer-wrapper"
+  style={
+    Object {
+      "backgroundColor": "##eeeeee",
+      "height": undefined,
+      "width": undefined,
+    }
+  }
+>
+  <div
+    className="thumbnail-wrapper crop landscape"
+    onClick={undefined}
+    onDoubleClick={undefined}
+    onMouseDownCapture={undefined}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "backgroundColor": "##eeeeee",
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      className="thumbnail crop landscape"
+      onLoad={[Function]}
+      src="https://dummyimage.com/600x800"
+      style={
+        Object {
+          "height": undefined,
+          "left": "50%",
+          "position": "absolute",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "auto",
+        }
+      }
+      title="https://dummyimage.com/600x800"
+    />
+  </div>
+</div>
+`;
+
+exports[`Crop portrait thumbnail (snapshot) 1`] = `
+<div
+  className="thumbnail-outer-wrapper"
+  style={
+    Object {
+      "backgroundColor": "##eeeeee",
+      "height": undefined,
+      "width": undefined,
+    }
+  }
+>
+  <div
+    className="thumbnail-wrapper crop landscape"
+    onClick={undefined}
+    onDoubleClick={undefined}
+    onMouseDownCapture={undefined}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "backgroundColor": "##eeeeee",
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      className="thumbnail crop landscape"
+      onLoad={[Function]}
+      src="https://dummyimage.com/600x800"
+      style={
+        Object {
+          "height": undefined,
+          "left": "50%",
+          "position": "absolute",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "auto",
+        }
+      }
+      title="https://dummyimage.com/600x800"
+    />
+  </div>
+</div>
+`;
+
+exports[`Fit landscape thumbnail (snapshot) 1`] = `
+<div
+  className="thumbnail-outer-wrapper"
+  style={
+    Object {
+      "backgroundColor": "##eeeeee",
+      "height": undefined,
+      "width": undefined,
+    }
+  }
+>
+  <div
+    className="thumbnail-wrapper fit landscape"
+    onClick={undefined}
+    onDoubleClick={undefined}
+    onMouseDownCapture={undefined}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "backgroundColor": "##eeeeee",
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      className="thumbnail fit landscape"
+      onLoad={[Function]}
+      src="https://dummyimage.com/800x600"
+      style={
+        Object {
+          "height": "auto",
+          "width": undefined,
+        }
+      }
+      title="https://dummyimage.com/800x600"
+    />
+  </div>
+</div>
+`;
+
+exports[`Fit portrait thumbnail (snapshot) 1`] = `
+<div
+  className="thumbnail-outer-wrapper"
+  style={
+    Object {
+      "backgroundColor": "##eeeeee",
+      "height": undefined,
+      "width": undefined,
+    }
+  }
+>
+  <div
+    className="thumbnail-wrapper fit landscape"
+    onClick={undefined}
+    onDoubleClick={undefined}
+    onMouseDownCapture={undefined}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "backgroundColor": "##eeeeee",
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      className="thumbnail fit landscape"
+      onLoad={[Function]}
+      src="https://dummyimage.com/800x600"
+      style={
+        Object {
+          "height": "auto",
+          "width": undefined,
+        }
+      }
+      title="https://dummyimage.com/800x600"
+    />
+  </div>
+</div>
+`;

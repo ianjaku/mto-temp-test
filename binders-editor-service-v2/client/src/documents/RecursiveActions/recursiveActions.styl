@@ -1,0 +1,91 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.recursiveA
+    &-modal
+        &.isOverflow
+            .modal-body
+                overflow: visible
+        .modal
+            min-width: 380px
+        &-content
+            overflow: visible
+            position: relative
+            &-actionType
+                height: 30px
+                z-index: 1401
+                width: 100%
+                .dropdown-field
+                    height: 100%
+                    width: 100%
+            &-langs
+                transition: max-height 2s
+                max-height: 50px
+                overflow: visible
+                &.loaded
+                    max-height: 100vh
+                &.overflowHidden
+                    overflow: hidden
+            &-languageSelector
+                padding-top: 10px
+                width: 100%
+                &-checkBox
+                    display:block
+                &-label
+                    &-links
+                        color: baseColor
+                    &-link
+                        cursor: pointer
+                        user-select: none
+                        text-decoration: underline
+                        &:hover
+                            color: accentColor
+                &-newLanguageRadioButton
+                    display: flex
+                    align-items: center
+                    position: relative
+                    .filterable-dropdown
+                        margin-left: -17px
+                        width: 100%
+                        .input
+                            height: 30px
+                            padding: 5px
+                        &-arrow
+                            line-height: 45px
+                &-columns
+                    display: flex
+                    flex-direction: column
+                    flex-wrap: wrap
+                    max-height: 370px
+            &-info
+                height: 100%
+                padding-top: 10px
+                display: flex
+                align-items: center
+                justify-content: center
+                text-align: center
+                &-content
+                    text-align: center
+            &-stackedInfo
+                height: 100%
+                padding-top: 10px
+                ul
+                    list-style-type disc
+                    padding-top: 10px
+                    padding-left: 20px
+                    padding-bottom: 10px;
+            &-errors
+                &-link
+                    margin-right: 10px
+                    a
+                        color: #db9c09
+                        &:visited
+                            color: #a67605
+
+
+
+
+
+@keyframes overflowAnim
+    to
+       overflow: visible
+

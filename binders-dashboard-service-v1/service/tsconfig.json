@@ -1,0 +1,30 @@
+{
+    "extends": "../../tsconfig.service.json",
+    "compilerOptions": {
+        "outDir": "dist",
+        "rootDir": ".",
+        "esModuleInterop": true,
+        "paths": {
+            // needed for Error: Your application tried to access elastic-apm-node, but it isn't declared in your dependencies
+            "@binders/binders-service-common/lib/*": [
+                "@binders/binders-service-common/lib/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
+    "include": [
+        "src/**/*",
+        "tests/**/*"
+    ],
+    "references": [
+        {
+            "path": "../../binders-client-v1/tsconfig.json"
+        },
+        {
+            "path": "../../binders-service-common-v1/tsconfig.json"
+        }
+    ]
+}

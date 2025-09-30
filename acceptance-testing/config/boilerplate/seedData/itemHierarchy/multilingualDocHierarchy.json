@@ -1,0 +1,49 @@
+{
+    "children": [
+        {
+            "name": "ML TEST DOCUMENT",
+            "type": "document",
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "isPublished": true,
+                    "isPrimary": true,
+                    "chunks": [
+                        {
+                            "text": "Chunk 1 txt"
+                        },
+                        {
+                            "text": "Chunk 2 txt"
+                        }
+                    ]
+                },
+                {
+                    "languageCode": "fr",
+                    "isPublished": true,
+                    "chunks": [
+                        {
+                            "text": "Le Chunk 1 txt"
+                        },
+                        {
+                            "text": "Le Chunk 2 txt"
+                        }
+                    ],
+                    "title": "le ML TEST DOCUMENT"
+                },
+                {
+                    "languageCode": "nl",
+                    "isPublished": true,
+                    "chunks": [
+                        {
+                            "text": "De Chunk 1 txt"
+                        },
+                        {
+                            "text": "De Chunk 2 txt"
+                        }
+                    ],
+                    "title": "de ML TEST DOCUMENT"
+                }
+            ]
+        }
+    ]
+}

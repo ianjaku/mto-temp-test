@@ -1,0 +1,72 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.composer-share-modal
+    display: flex
+    flex-direction: column
+    gap: 16px
+    &-header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-weight: 600
+        font-size: 18px
+        &-title
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+            max-width: 530px
+            @media rwd.mobile
+                max-width: 90%
+    &-body
+        display: flex
+        flex-direction: column
+        gap: 28px
+        @media rwd.mobile
+            gap: 16px
+    &-row
+        display: flex
+        gap: 16px
+        &--vAlignTop
+            align-items: flex-start
+        @media rwd.mobile
+            gap: 8px
+        &-label
+            font-weight: 500
+            width: 140px
+            @media rwd.mobile
+                width: 75px
+            display: flex
+            align-items: center
+        .dropdown .dropdown-field
+            padding: 10px 8px
+        .material-icons
+            font-size: 18px
+            cursor: pointer
+        &-copyLink
+            display: flex
+            align-items: center
+    &-qrCode
+        display: flex
+        gap: 28px
+        @media rwd.mobile
+            flex-direction: column
+            gap: 16px
+        &-actions
+            display: flex
+            flex-direction: column
+            @media rwd.mobile
+                flex-direction: row
+                gap: 8px
+                justify-content: flex-end
+            .button
+                padding: 6px auto
+                width: 100px
+                justify-content: center
+    &-footer
+        display: flex
+        justify-content: flex-end
+    &-disabled-share
+        display: flex
+        align-items: center
+        gap: 8px
+        padding: 8px

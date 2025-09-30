@@ -1,0 +1,12 @@
+{
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "moduleDirectories": ["node_modules", "src", "/usr/local/lib/node_modules", "/usr/lib/node_modules"],
+    "testMatch": [ "**/tests/component/**/*.[jt]s?(x)" ],
+    "testResultsProcessor": "jest-junit",
+    "reporters": [
+        "default",
+        [ "jest-junit", { "outputDirectory": "test-reports" } ]
+    ],
+    "testTimeout": 60000
+}

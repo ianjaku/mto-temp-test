@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QRCode Base tabs (snapshot) 1`] = `
+<div
+  className="qrcode-content"
+>
+  <img
+    alt="QR Code download"
+    className="qrcode-dataImage"
+    src={undefined}
+  />
+  <div
+    className="qrcode-linkWrapper"
+  >
+    <span
+      className="qrcode-link"
+    >
+      http://manual.to/
+    </span>
+    <div
+      className="qrcode-icon"
+      onClick={[Function]}
+    >
+      <img
+        src=""
+      />
+    </div>
+  </div>
+  <div
+    className="button button--secondary"
+    onBlur={undefined}
+    onClick={[Function]}
+    tabIndex={undefined}
+  >
+    Download .png
+    
+    <a
+      className="button-link"
+      download="qrcode.png"
+      href="image/png"
+    />
+  </div>
+</div>
+`;

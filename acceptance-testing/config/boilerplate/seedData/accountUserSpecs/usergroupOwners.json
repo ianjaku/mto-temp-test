@@ -1,0 +1,55 @@
+{
+    "account": {
+        "name": "Selenium Playground",
+        "domain": "seleniumplayground.manual.to",
+        "features": [
+            "public_content",
+            "analytics",
+            "export_publications_as_pdf",
+            "contributor_role",
+            "checklists",
+            "translator_role",
+            "recursive_actions",
+            "group_owners"
+        ],
+        "members": [
+            {
+                "name": "Selenium Droid",
+                "firstName": "Selenium",
+                "lastName": "Droid",
+                "login": "seleniumdroid@manual.to",
+                "password": "discolemonade",
+                "isAdmin": true
+            },
+            {
+                "name": "John Editor",
+                "firstName": "John",
+                "lastName": "Editor",
+                "login": "johneditor@manual.to",
+                "password": "password"
+            },
+            {
+                "name": "Jane Reader",
+                "firstName": "Jane",
+                "lastName": "Reader",
+                "login": "janereader@manual.to",
+                "password": "password"
+            },
+            {
+                "name": "Mary Editor",
+                "firstName": "Mary",
+                "lastName": "Editor",
+                "login": "maryeditor@manual.to",
+                "password": "password"
+            }
+        ],
+        "usergroups": [
+            {
+                "name": "testgroup",
+                "memberLogins": [
+                    "seleniumdroid@manual.to"
+                ]
+            }
+        ]
+    }
+}

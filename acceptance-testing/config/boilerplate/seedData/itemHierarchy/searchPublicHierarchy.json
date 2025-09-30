@@ -1,0 +1,81 @@
+{
+    "children": [
+        {
+            "name": "searchPublicCase",
+            "type": "collection",
+            "children": [
+                {
+                    "name": "pubadvcol",
+                    "type": "collection",
+                    "children": [
+                        {
+                            "name": "doc in pubadvcol",
+                            "type": "document",
+                            "isPublished": true,
+                            "languages": [
+                                {
+                                    "languageCode": "en",
+                                    "isPublished": true,
+                                    "isPrimary": true,
+                                    "chunks": [
+                                        {
+                                            "text": "zebra"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "pubadvdoc",
+                    "type": "document",
+                    "languages": [
+                        {
+                            "languageCode": "en",
+                            "isPublished": true,
+                            "isPrimary": true,
+                            "chunks": [
+                                {
+                                    "text": "doors"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "pubdoc",
+                    "type": "document",
+                    "languages": [
+                        {
+                            "languageCode": "en",
+                            "isPublished": true,
+                            "isPrimary": true,
+                            "chunks": [
+                                {
+                                    "text": "piano"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "privatedoc",
+                    "type": "document",
+                    "languages": [
+                        {
+                            "languageCode": "en",
+                            "isPublished": true,
+                            "isPrimary": true,
+                            "chunks": [
+                                {
+                                    "text": "mypasswords"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

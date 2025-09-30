@@ -1,0 +1,8 @@
+cloudprovider:
+  storage:
+    className: managed-premium-delete
+    diskSize: 128Gi
+
+mongo:
+    version: "8.0"
+    maxMemory: "256Mi"

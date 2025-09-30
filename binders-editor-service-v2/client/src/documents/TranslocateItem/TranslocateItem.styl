@@ -1,0 +1,14 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+
+.move-item-modal
+    &-errormessage
+        color: colorError
+        font-size: 0.9em
+        text-align: center
+        margin-bottom: 15px
+    .modal-body
+        @media rwd.notmobile
+            width: 500px
+            height: 50vh
+        @media rwd.mobile
+            height: 70vh

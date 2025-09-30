@@ -1,0 +1,53 @@
+@require "../../vars.styl";
+
+.pagination
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: defaultFontName
+    color: baseColor;
+    font-size: 13px;
+    align-items: center;
+    @media rwd.mobile
+        width: 100%
+        justify-content: space-between
+
+    & > span
+        margin-right: 6px;
+
+    li
+        list-style: none;
+        padding: 4px 8px;       
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        transition: 100ms background-color ease-in;
+
+        &:hover
+            cursor: pointer;
+            background-color: accentHoverColor;
+
+        ^[0]-icon
+            display: inline-flex !important
+            justify-content: left
+            font-size: 18px !important
+            &+&
+                margin-left: -12px
+
+        &+li
+            margin-left: 4px;
+
+        &.active            
+            background-color: accentColor;
+
+        &.disabled
+            color: thumbBackgroundColor;
+            cursor: default;
+
+            .material-icons
+                color: thumbBackgroundColor !important;
+
+            &:hover
+                background: none;

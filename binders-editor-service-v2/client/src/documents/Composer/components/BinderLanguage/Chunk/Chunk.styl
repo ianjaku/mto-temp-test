@@ -1,0 +1,212 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.composer //to do - delete this when we can delete old composer.styl reference with all the styles inside ( at least for chunks )
+    .chunks-area
+        @media rwd.tablet
+            max-width: 100%
+    .chunkNEW
+        display: flex
+        position: relative
+        border: 1px solid borderGrayColor
+        border-bottom: none
+        &--lastOfType
+            border-bottom: 1px solid borderGrayColor
+        &--emptyChunk
+            border-bottom: 1px solid borderGrayColor
+            border-right: 2px solid borderGrayColor
+            border-top: none
+            &>.empty-chunk
+                width: 100%
+                &:focus
+                    outline: none
+                &.isDisabled
+                    .uploadbutton
+                        cursor: auto
+        &:not(.binderlanguage-title)
+            height: 100%
+        .textarea-wrapper
+            height: auto
+        &-visuals
+            min-width: 96px
+            position: relative
+            box-sizing: content-box
+            border: none
+            border-right: 1px solid borderGrayColor
+            .chunk-images-thumbnail
+                border: none
+            .uploadbutton
+                display: block
+                height: 100%
+                background-color: grey200
+                color: middleGreyColor
+                cursor: pointer
+                border: none
+                &:hover
+                    color: grey500
+                img
+                    min-width: 96px
+                    width: 100%
+                    height: 100%
+                    display: block
+        .comment-group .comment-area .comment-thread  .comment-body-deletebtn
+            top: 0px
+        .checklistStatusButton
+            border-radius: 20px
+            width: 110px
+            justify-content: center
+            cursor: default
+            background-color: middleGreyColor
+            border: none
+            padding: 6px 0px 6px 12px
+            left: 20px
+            bottom: 10px
+            font-size: 1.1em
+            margin-top: 0px
+            >span
+                position: absolute
+                left: 6px
+                font-size: 1.25rem
+                font-weight: bolder
+            &:hover
+                background-color: middleGreyColor
+                border: none
+            &.button--disabled
+                opacity: 1
+        &-text
+            background-color: whiteColor
+            border: none
+            width: 100%
+            display: flex
+            flex-direction: column
+            min-height: 96px
+            // fix for veeery long word inside draft - which was breaking the flex view
+            min-width: 1px
+            position: relative
+            .textchunk
+                height: 100%
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                position: relative;
+                .public-DraftEditor-content
+                    transition: color 200ms ease-in;
+                &.loading .public-DraftEditor-content
+                    animation: pulsateGreyColor 2s infinite;
+            textarea
+                background: transparent
+            .rte-container
+                padding-bottom: 3px
+                padding-top: 3px
+                // fix for mobile view where the toolbar doesn't fit the width
+                @media screen and (max-width: 510px)
+                    .rte-button-bar
+                        width: 90vw !important
+                        left: 0 !important
+                        .rte-button-group
+                            flex-wrap: wrap
+            &.isActive
+                box-shadow: inset 0px 0px 0px 3px accentColor
+        &-disabled
+            pointer-events: none
+            .uploadbutton
+                cursor: default
+            .chunkNEW-text
+                background-color: lightGreyColor
+         &-translateMode
+            .chunkNEW-visuals
+                pointer-events: none
+        @media rwd.mobile
+            margin-bottom: var(--gap-lg)
+        .drag-button
+            position: absolute
+            right: -22px
+            top: 0
+            z-index: 4
+            cursor: move
+            width: 24px
+            text-align: center
+            height: 100%
+            span
+                color: middleGreyColor
+            @media rwd.mobile
+                top: 100px
+            &.--is-inactive, &.--is-dragging
+                visibility: hidden
+            &:hover
+                span
+                    color: accentColor !important
+        .chunk-controls
+            position: absolute
+            display: flex
+            justify-content: center
+            z-index: 3
+            width: 100%
+            pointer-events: none
+            &-top
+                top: -11px
+            &-bottom
+                bottom: -11px
+            .chunk-button
+                z-index: 3
+                margin: 0 4px
+                pointer-events: auto
+                span
+                    line-height: 1em
+                    padding: 0px
+                &.button-comment
+                    .MuiIcon-root
+                        font-size: 15px !important
+        .selectable.is-active
+            box-shadow: initial
+        .chunk-side-button-area
+            position: absolute
+            top: calc(50% - 12px)
+            right: -12px
+            z-index: 1
+            &--secondary
+                right: initial
+                left: -12px
+            .button-translate-chunk
+                &--is-translating
+                    cursor: default
+                    .squiggly
+                        animation: blinker 1s linear infinite
+                &.side-chunk-button--disabled
+                    cursor: default
+                    background-color: disabledBackgroundColor
+        &-footerNumber
+            position: absolute
+            bottom: 0
+            right: 7px
+            opacity: 0.4
+            z-index: 3
+            font-size: 0.7rem
+            width: 16px
+            height: 16px
+            display: flex
+            justify-content: flex-end
+            align-items: center
+    &--horizontalvisuals
+        .chunkNEW
+            flex-direction: column
+            border: none
+            &-visuals
+                border-right: none
+                border-left: 1px solid borderGrayColor
+                .chunk-images-thumbnail
+                    border-top: 1px solid borderGrayColor
+                .uploadbutton
+                    border: 1px solid borderGrayColor
+                    border-bottom: none
+            &-text
+                border: 1px solid borderGrayColor
+            &>.empty-chunk
+                border: none
+                .chunktext-wrapper
+                    border: 1px solid borderGrayColor
+
+@keyframes pulsateGreyColor
+    0%, 100%
+        color: grey200
+    50%
+        color: grey400

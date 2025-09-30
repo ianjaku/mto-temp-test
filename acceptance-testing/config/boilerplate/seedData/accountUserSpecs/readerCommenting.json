@@ -1,0 +1,26 @@
+{
+    "account": {
+        "name": "Selenium Playground",
+        "domain": "seleniumplayground.manual.to",
+        "features": [
+            "reader_commenting"
+        ],
+        "members": [
+            {
+                "name": "Reader name",
+                "firstName": "Reader first",
+                "lastName": "Reader last",
+                "login": "reader@manual.to",
+                "password": "mrReader"
+            },
+            {
+                "name": "Selenium Droid",
+                "firstName": "Selenium",
+                "lastName": "Droid",
+                "login": "seleniumdroid@manual.to",
+                "password": "discolemonade",
+                "isAdmin": true
+            }
+        ]
+    }
+}

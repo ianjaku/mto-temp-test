@@ -1,0 +1,41 @@
+@require "../../vars.styl";
+
+.infoSite
+    box-sizing: border-box
+    margin-top: 30px
+    margin-bottom: 30px
+    font-size: 0
+    background-color: lightGreyColor
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2)
+    border-radius: 5px
+    font-family: defaultFontName
+    width: 400px
+    & *
+        box-sizing: border-box
+    @media rwd.tablet
+        width: 80%
+    @media rwd.mobile
+        width: 90%
+    &-info
+        text-align: center
+        font-family: logoFontName
+        padding: 45px 20px 10px 20px
+        font-size: 18px
+        vertical-align: middle
+        &-title
+            font-weight: bold
+            margin-bottom: 15px
+        &-description
+            font-size: 14px
+            font-family: defaultFontName
+            margin-bottom: 40px
+            line-height: 17px
+    &-content
+        font-size: 14px
+        vertical-align: top
+        padding: 20px
+    &-confirm
+        margin: 0 auto 10px auto
+        text-align: center
+        .button
+            min-width: 220px

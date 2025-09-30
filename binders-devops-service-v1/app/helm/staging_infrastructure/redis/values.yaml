@@ -1,0 +1,3 @@
+redis:
+    maxMemory: "128Mi"
+    version: "7.4.4"

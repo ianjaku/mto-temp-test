@@ -1,0 +1,2347 @@
+pipelines:
+  branches:
+    rel-*:
+      - step:
+          name: Create the build plan
+          max-time: 35
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/makeBuildPlan.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+          artifacts:
+            - binders-devops-service-v1/app/buildplan.json
+      - parallel:
+          - step:
+              name: Run unit tests
+              max-time: 35
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/unitTests.ts -m -t 2
+          - step:
+              name: account-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-account-service-v1
+          - step:
+              name: authorization-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-authorization-service-v1
+          - step:
+              name: credential-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-credential-service-v1
+          - step:
+              name: editor-v2
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-editor-service-v2
+          - step:
+              name: image-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-image-service-v1
+          - step:
+              name: manage-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-manage-service-v1
+          - step:
+              name: notification-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-notification-service-v1
+          - step:
+              name: binders-v3
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-repository-service-v3
+          - step:
+              name: tracking-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-tracking-service-v1
+          - step:
+              name: user-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-user-service-v1
+          - step:
+              name: manualto-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  manualto-service-v1
+          - step:
+              name: dashboard-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-dashboard-service-v1
+          - step:
+              name: devops-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-devops-service-v1
+          - step:
+              name: public-api-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-public-api-service-v1
+          - step:
+              name: partners-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-partners-service-v1
+          - step:
+              name: screenshot-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-screenshot-service-v1
+      - step:
+          max-time: 45
+          size: 4x
+          image:
+            name: binders.azurecr.io/bitbucket-after-build:node22
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          name: Post-build (tag, deploy to staging)
+          script:
+            - git remote set-url origin ${BITBUCKET_GIT_HTTP_ORIGIN}
+            - yarn install
+            - git config user.email "devops@manual.to"
+            - git config user.name "Buildbot@BitBucket"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/addTag.ts --branch ${BITBUCKET_BRANCH}
+              --commit ${BITBUCKET_COMMIT}
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/aks/prepareDeploy.ts staging
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bindersenv/deploy.ts --branch ${BITBUCKET_BRANCH}
+              --commit ${BITBUCKET_COMMIT} --use-admin --cluster
+              binder-stg-cluster --mock-services aicontent,mailer
+      - parallel:
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 0)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 0
+              after-script:
+                - >-
+                  TEST_SLOT=0 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 1)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 1
+              after-script:
+                - >-
+                  TEST_SLOT=1 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 2)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 2
+              after-script:
+                - >-
+                  TEST_SLOT=2 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 3)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 3
+              after-script:
+                - >-
+                  TEST_SLOT=3 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 4)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 4
+              after-script:
+                - >-
+                  TEST_SLOT=4 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 5)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=5
+                  --test-type=INTEGRATION
+              after-script:
+                - >-
+                  TEST_SLOT=5 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 6)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=6
+                  --test-type=INTEGRATION
+              after-script:
+                - >-
+                  TEST_SLOT=6 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 7)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=7
+                  --test-type=INTEGRATION
+              after-script:
+                - >-
+                  TEST_SLOT=7 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 8)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=8
+                  --test-type=INTEGRATION
+              after-script:
+                - >-
+                  TEST_SLOT=8 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+      - step:
+          max-time: 10
+          image:
+            name: binders.azurecr.io/bitbucket-after-build:node22
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          name: Language files
+          script:
+            - yarn install
+            - >-
+              yarn workspace @binders/client tsx
+              scripts/ensureLanguageFilesVerified.ts
+      - step:
+          trigger: manual
+          max-time: 20
+          image:
+            name: binders.azurecr.io/bitbucket-after-build:node22
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          name: Deploy to production
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/aks/prepareDeploy.ts production
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bindersenv/deploy.ts --branch ${BITBUCKET_BRANCH}
+              --bitbucket-access-token ${BITBUCKET_ACCESS_TOKEN} --commit
+              ${BITBUCKET_COMMIT} --use-admin --cluster binder-prod-cluster
+    develop:
+      - step:
+          name: Create the build plan
+          max-time: 35
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/makeBuildPlan.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+          artifacts:
+            - binders-devops-service-v1/app/buildplan.json
+      - parallel:
+          - step:
+              name: Run unit tests
+              max-time: 35
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/unitTests.ts -m -t 2
+          - step:
+              name: account-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-account-service-v1
+          - step:
+              name: authorization-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-authorization-service-v1
+          - step:
+              name: credential-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-credential-service-v1
+          - step:
+              name: editor-v2
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-editor-service-v2
+          - step:
+              name: image-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-image-service-v1
+          - step:
+              name: manage-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-manage-service-v1
+          - step:
+              name: notification-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-notification-service-v1
+          - step:
+              name: binders-v3
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-repository-service-v3
+          - step:
+              name: tracking-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-tracking-service-v1
+          - step:
+              name: user-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-user-service-v1
+          - step:
+              name: manualto-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  manualto-service-v1
+          - step:
+              name: dashboard-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-dashboard-service-v1
+          - step:
+              name: devops-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-devops-service-v1
+          - step:
+              name: public-api-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-public-api-service-v1
+          - step:
+              name: partners-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-partners-service-v1
+          - step:
+              name: screenshot-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-screenshot-service-v1
+      - step:
+          max-time: 45
+          size: 4x
+          image:
+            name: binders.azurecr.io/bitbucket-after-build:node22
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          name: Post-build (tag, refresh develop, deploy to staging)
+          script:
+            - git remote set-url origin ${BITBUCKET_GIT_HTTP_ORIGIN}
+            - yarn install
+            - git config user.email "devops@manual.to"
+            - git config user.name "Buildbot@BitBucket"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/addTag.ts --branch ${BITBUCKET_BRANCH}
+              --commit ${BITBUCKET_COMMIT}
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/aks/prepareDeploy.ts staging
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bindersenv/refreshDeployments.ts develop
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bindersenv/deploy.ts --branch ${BITBUCKET_BRANCH}
+              --commit ${BITBUCKET_COMMIT} --use-admin --cluster
+              binder-stg-cluster --mock-services aicontent,mailer
+      - parallel:
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 0)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 0
+              after-script:
+                - >-
+                  TEST_SLOT=0 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 1)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 1
+              after-script:
+                - >-
+                  TEST_SLOT=1 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 2)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 2
+              after-script:
+                - >-
+                  TEST_SLOT=2 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 3)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 3
+              after-script:
+                - >-
+                  TEST_SLOT=3 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 4)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 4
+              after-script:
+                - >-
+                  TEST_SLOT=4 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 5)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=5
+                  --test-type=INTEGRATION
+              after-script:
+                - >-
+                  TEST_SLOT=5 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 6)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=6
+                  --test-type=INTEGRATION
+              after-script:
+                - >-
+                  TEST_SLOT=6 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 7)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=7
+                  --test-type=INTEGRATION
+              after-script:
+                - >-
+                  TEST_SLOT=7 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 8)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=8
+                  --test-type=INTEGRATION
+              after-script:
+                - >-
+                  TEST_SLOT=8 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+      - step:
+          max-time: 40
+          image:
+            name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          size: 2x
+          name: AT Playwright (run on develop namespace)
+          script:
+            - yarn install
+            - >-
+              yarn workspace @binders/devops-v1 ts-node
+              src/scripts/aks/prepareDeploy.ts staging
+            - >-
+              yarn workspace @binders/devops-v1 ts-node
+              src/scripts/bindersenv/runTestsOnStaging.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+              --test-type=PLAYWRIGHT --namespace develop --pattern uploadSvg
+          after-script:
+            - >-
+              yarn workspace @binders/devops-v1 ts-node
+              src/scripts/aks/maybeCleanNamespace.ts
+          artifacts:
+            - acceptance-testing/test-results/**
+  pull-requests:
+    '**':
+      - step:
+          name: Create the build plan
+          max-time: 35
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/makeBuildPlan.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+          artifacts:
+            - binders-devops-service-v1/app/buildplan.json
+      - parallel:
+          - step:
+              name: Run unit tests
+              max-time: 35
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/unitTests.ts -m -t 2
+                  --skipUnchangedWorkspaces
+          - step:
+              name: account-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-account-service-v1
+          - step:
+              name: authorization-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-authorization-service-v1
+          - step:
+              name: credential-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-credential-service-v1
+          - step:
+              name: editor-v2
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-editor-service-v2
+          - step:
+              name: image-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-image-service-v1
+          - step:
+              name: manage-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-manage-service-v1
+          - step:
+              name: notification-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-notification-service-v1
+          - step:
+              name: binders-v3
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-repository-service-v3
+          - step:
+              name: tracking-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-tracking-service-v1
+          - step:
+              name: user-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-user-service-v1
+          - step:
+              name: manualto-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  manualto-service-v1
+          - step:
+              name: dashboard-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-dashboard-service-v1
+          - step:
+              name: devops-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-devops-service-v1
+          - step:
+              name: public-api-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-public-api-service-v1
+          - step:
+              name: partners-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-partners-service-v1
+          - step:
+              name: screenshot-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-screenshot-service-v1
+      - step:
+          max-time: 45
+          size: 4x
+          image:
+            name: binders.azurecr.io/bitbucket-after-build:node22
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          name: Post-build (tag, deploy to staging)
+          script:
+            - git remote set-url origin ${BITBUCKET_GIT_HTTP_ORIGIN}
+            - yarn install
+            - git config user.email "devops@manual.to"
+            - git config user.name "Buildbot@BitBucket"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/addTag.ts --branch ${BITBUCKET_BRANCH}
+              --commit ${BITBUCKET_COMMIT}
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/aks/prepareDeploy.ts staging
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bindersenv/deploy.ts --branch ${BITBUCKET_BRANCH}
+              --commit ${BITBUCKET_COMMIT} --use-admin --cluster
+              binder-stg-cluster --mock-services aicontent,mailer
+      - parallel:
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 0)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 0
+              after-script:
+                - >-
+                  TEST_SLOT=0 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 1)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 1
+              after-script:
+                - >-
+                  TEST_SLOT=1 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 2)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 2
+              after-script:
+                - >-
+                  TEST_SLOT=2 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 3)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 3
+              after-script:
+                - >-
+                  TEST_SLOT=3 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 4)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 4
+              after-script:
+                - >-
+                  TEST_SLOT=4 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 5)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=5
+                  --test-type=INTEGRATION --skipUnchangedWorkspaces
+              after-script:
+                - >-
+                  TEST_SLOT=5 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 6)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=6
+                  --test-type=INTEGRATION --skipUnchangedWorkspaces
+              after-script:
+                - >-
+                  TEST_SLOT=6 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 7)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=7
+                  --test-type=INTEGRATION --skipUnchangedWorkspaces
+              after-script:
+                - >-
+                  TEST_SLOT=7 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 8)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=8
+                  --test-type=INTEGRATION --skipUnchangedWorkspaces
+              after-script:
+                - >-
+                  TEST_SLOT=8 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+  custom:
+    tests-only:
+      - step:
+          name: Create the build plan
+          max-time: 35
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/makeBuildPlan.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+          artifacts:
+            - binders-devops-service-v1/app/buildplan.json
+      - step:
+          max-time: 30
+          size: 4x
+          image:
+            name: binders.azurecr.io/bitbucket-after-build:node22
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          name: Deploy to staging (with mocked services)
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/aks/prepareDeploy.ts staging
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bindersenv/deploy.ts --branch ${BITBUCKET_BRANCH}
+              --commit ${BITBUCKET_COMMIT} --use-admin --cluster
+              binder-stg-cluster --mock-services aicontent,mailer
+              --use-custom-namespace-prefix
+      - parallel:
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 0)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 0 --use-custom-namespace-prefix
+              after-script:
+                - >-
+                  TEST_SLOT=0 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 1)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 1 --use-custom-namespace-prefix
+              after-script:
+                - >-
+                  TEST_SLOT=1 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 2)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 2 --use-custom-namespace-prefix
+              after-script:
+                - >-
+                  TEST_SLOT=2 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 3)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 3 --use-custom-namespace-prefix
+              after-script:
+                - >-
+                  TEST_SLOT=3 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 4)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 4 --use-custom-namespace-prefix
+              after-script:
+                - >-
+                  TEST_SLOT=4 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 5)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=5
+                  --test-type=INTEGRATION --use-custom-namespace-prefix
+              after-script:
+                - >-
+                  TEST_SLOT=5 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 6)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=6
+                  --test-type=INTEGRATION --use-custom-namespace-prefix
+              after-script:
+                - >-
+                  TEST_SLOT=6 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 7)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=7
+                  --test-type=INTEGRATION --use-custom-namespace-prefix
+              after-script:
+                - >-
+                  TEST_SLOT=7 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/bitbucket-after-build:node22
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: Integration tests (slot 8)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT} --slot=8
+                  --test-type=INTEGRATION --use-custom-namespace-prefix
+              after-script:
+                - >-
+                  TEST_SLOT=8 yarn workspace @binders/devops-v1 tsx
+                  src/scripts/aks/maybeCleanNamespace.ts
+    single-playwright-test:
+      - variables:
+          - name: testPattern
+            description: >-
+              The filename pattern that will be used to identify test cases to
+              run
+          - name: doCleanup
+            default: 'true'
+            allowed-values:
+              - 'true'
+              - 'false'
+            description: >-
+              Should the kubernetes namespace be deleted when the test cases
+              complete?
+      - step:
+          name: Create the build plan
+          max-time: 35
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/makeBuildPlan.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+          artifacts:
+            - binders-devops-service-v1/app/buildplan.json
+      - step:
+          max-time: 30
+          size: 4x
+          image:
+            name: binders.azurecr.io/bitbucket-after-build:node22
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          name: Deploy to staging (with mocked services)
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/aks/prepareDeploy.ts staging
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bindersenv/deploy.ts --branch ${BITBUCKET_BRANCH}
+              --commit ${BITBUCKET_COMMIT} --use-admin --cluster
+              binder-stg-cluster --mock-services aicontent,mailer
+              --use-custom-namespace-prefix
+      - step:
+          max-time: 40
+          image:
+            name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          size: 2x
+          name: AT Playwright
+          script:
+            - yarn install
+            - >-
+              yarn workspace @binders/devops-v1 ts-node
+              src/scripts/aks/prepareDeploy.ts staging
+            - >-
+              yarn workspace @binders/devops-v1 ts-node
+              src/scripts/bindersenv/runTestsOnStaging.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+              --test-type=PLAYWRIGHT --use-custom-namespace-prefix --pattern
+              ${testPattern}
+          after-script:
+            - >-
+              yarn workspace @binders/devops-v1 ts-node
+              src/scripts/aks/maybeCleanNamespace.ts --doCleanup ${doCleanup}
+          artifacts:
+            - acceptance-testing/test-results/**
+    preprod:
+      - step:
+          max-time: 30
+          size: 2x
+          image:
+            name: binders.azurecr.io/bitbucket-after-build:node22
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          name: Deploy to preprod
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/aks/prepareDeploy.ts production
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bindersenv/deployToPreprod.ts --branch
+              ${BITBUCKET_BRANCH}
+    develop-test:
+      - step:
+          name: Create the build plan
+          max-time: 35
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/makeBuildPlan.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+          artifacts:
+            - binders-devops-service-v1/app/buildplan.json
+      - step:
+          max-time: 40
+          image:
+            name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+            username: binders
+            password: $ACR_ADMIN_PASSWORD
+          size: 2x
+          name: AT Playwright (run on develop namespace)
+          script:
+            - yarn install
+            - >-
+              yarn workspace @binders/devops-v1 ts-node
+              src/scripts/aks/prepareDeploy.ts staging
+            - >-
+              yarn workspace @binders/devops-v1 ts-node
+              src/scripts/bindersenv/runTestsOnStaging.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+              --test-type=PLAYWRIGHT --namespace develop --pattern uploadSvg
+          after-script:
+            - >-
+              yarn workspace @binders/devops-v1 ts-node
+              src/scripts/aks/maybeCleanNamespace.ts
+          artifacts:
+            - acceptance-testing/test-results/**
+    tag-only:
+      - step:
+          name: Create the build plan
+          max-time: 35
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/makeBuildPlan.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+          artifacts:
+            - binders-devops-service-v1/app/buildplan.json
+      - parallel:
+          - step:
+              name: account-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-account-service-v1
+          - step:
+              name: authorization-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-authorization-service-v1
+          - step:
+              name: credential-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-credential-service-v1
+          - step:
+              name: editor-v2
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-editor-service-v2
+          - step:
+              name: image-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-image-service-v1
+          - step:
+              name: manage-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-manage-service-v1
+          - step:
+              name: notification-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-notification-service-v1
+          - step:
+              name: binders-v3
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-repository-service-v3
+          - step:
+              name: tracking-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-tracking-service-v1
+          - step:
+              name: user-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-user-service-v1
+          - step:
+              name: manualto-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  manualto-service-v1
+          - step:
+              name: dashboard-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-dashboard-service-v1
+          - step:
+              name: devops-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-devops-service-v1
+          - step:
+              name: public-api-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-public-api-service-v1
+          - step:
+              name: partners-v1
+              max-time: 50
+              services:
+                - docker
+              size: 4x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-partners-service-v1
+          - step:
+              name: screenshot-v1
+              max-time: 50
+              services:
+                - docker
+              size: 2x
+              script:
+                - yarn install
+                - >-
+                  echo $ACR_PASSWORD | docker login binders.azurecr.io -u
+                  ${ACR_APP_ID} --password-stdin
+                - >-
+                  yarn workspace @binders/devops-v1 tsx
+                  src/scripts/bitbucket/serviceBuild.ts --service
+                  binders-screenshot-service-v1
+      - step:
+          name: Tag the build
+          script:
+            - git remote set-url origin ${BITBUCKET_GIT_HTTP_ORIGIN}
+            - yarn install
+            - git config user.email "devops@manual.to"
+            - git config user.name "Buildbot@BitBucket"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/addTag.ts --branch ${BITBUCKET_BRANCH}
+              --commit ${BITBUCKET_COMMIT}
+    pw-tests-on-existsing-env:
+      - variables:
+          - name: namespace
+            description: Namespace on which tests will be run
+      - step:
+          name: Create the build plan
+          max-time: 35
+          script:
+            - yarn install
+            - git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+            - git fetch origin "refs/tags/*:refs/tags/*"
+            - >-
+              yarn workspace @binders/devops-v1 tsx
+              src/scripts/bitbucket/makeBuildPlan.ts --branch
+              ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+          artifacts:
+            - binders-devops-service-v1/app/buildplan.json
+      - parallel:
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 0)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 0 --namespace ${namespace}
+              after-script:
+                - >-
+                  TEST_SLOT=0 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 1)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 1 --namespace ${namespace}
+              after-script:
+                - >-
+                  TEST_SLOT=1 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 2)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 2 --namespace ${namespace}
+              after-script:
+                - >-
+                  TEST_SLOT=2 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 3)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 3 --namespace ${namespace}
+              after-script:
+                - >-
+                  TEST_SLOT=3 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+          - step:
+              max-time: 40
+              image:
+                name: binders.azurecr.io/playwright-az:1.53.1-jammy-multi-browser
+                username: binders
+                password: $ACR_ADMIN_PASSWORD
+              size: 2x
+              name: AT Playwright (slot 4)
+              script:
+                - yarn install
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/prepareDeploy.ts staging
+                - >-
+                  yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/bindersenv/runTestsOnStaging.ts --branch
+                  ${BITBUCKET_BRANCH} --commit ${BITBUCKET_COMMIT}
+                  --test-type=PLAYWRIGHT --slot 4 --namespace ${namespace}
+              after-script:
+                - >-
+                  TEST_SLOT=4 yarn workspace @binders/devops-v1 ts-node
+                  src/scripts/aks/maybeCleanNamespace.ts
+              artifacts:
+                - acceptance-testing/test-results/**
+image:
+  name: binders.azurecr.io/bitbucket-alpine:node22
+  username: binders
+  password: $ACR_ADMIN_PASSWORD
+definitions:
+  services:
+    docker:
+      memory: 7128

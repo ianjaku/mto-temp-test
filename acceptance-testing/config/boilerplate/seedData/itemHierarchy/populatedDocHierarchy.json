@@ -1,0 +1,18 @@
+{
+    "children": [{
+        "name": "TEST DOCUMENT",
+        "type": "document",
+        "languages": [{
+            "languageCode": "en",
+            "isPublished": true,
+            "isPrimary": true,
+            "chunks": [{
+                    "text": "Chunk 1 txt"
+                },
+                {
+                    "text": "Chunk 2 txt"
+                }
+            ]
+        }]
+    }]
+}

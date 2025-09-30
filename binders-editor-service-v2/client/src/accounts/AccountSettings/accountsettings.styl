@@ -1,0 +1,269 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.account-settings
+    --clr-neutral-300: borderGrayColor;
+    --clr-neutral-800: #484744;
+    --clr-white-a6: rgba(255, 255, 255, 0.6);
+    --clr-text: var(--clr-neutral-800);
+    --font-size-sm: 11px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --radius-md: 6px;
+    --size-md: 32px;
+    --size-xl: 150px;
+    --space-xxs: 2px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 16px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 72px;
+    --mobile-logo-header-px: 50px
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--clr-text);
+
+    height: 100vh
+    @supports (height: 100dvh)
+        height: 90dvh
+    @media rwd.mobile
+        height: calc(100dvh - var(--mobile-logo-header-px))
+
+    .gap-sm
+        gap: var(--space-sm);
+    .gap-md
+        gap: var(--space-md);
+    .gap-lg
+        gap: var(--space-lg);
+
+    .tabs
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    .tabs-nav
+        height: unset;
+        align-self: center;
+        padding-top: var(--space-xl);
+    .tabs-nav-list
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-xl);
+        padding: 0;
+        min-width: unset;
+        max-width: unset;
+        width: unset;
+        margin: unset;
+
+        .tabs-item
+            width: unset;
+            padding: 0;
+            border-radius: var(--radius-md);
+            transition: background 150ms ease-in;
+
+            &:hover
+                background: var(--clr-white-a6);
+            .tabs-title
+                padding: var(--space-md);
+                @media rwd.mobile
+                    font-size: 12px
+
+    .tabs, .tabs-nav, .tabs-content
+        height: inherit
+        min-width: 895px;
+        @media screen and (max-width: 1150px)
+            min-width: 760px;
+            .media-settings-paper-section-row
+                flex-direction: column;
+                align-items: stretch;
+        @media screen and (max-width: 1000px)
+            min-width: 700px;
+        @media screen and (max-width: 930px)
+            min-width: unset;
+            width: 95%;
+        @media screen and (max-width: 600px)
+            width: 95%;
+            .tabs-nav-list
+                gap: 0;
+                justify-content: space-between;
+        @media screen and (max-width: 540px)
+            .tabs-nav-list
+                overflow-x: scroll;
+        @media screen and (max-width: 500px)
+            .settings-pane-section
+                flex-direction: column;
+
+    .tabs-nav
+        height: 82px
+
+    .settings-pane
+        padding-top: var(--space-2xl)
+
+        --gap: var(--space-3xl);
+        @media rwd.mobile
+            --gap: var(--space-2xl)
+
+        --section-gap: var(--space-2xl)
+        @media rwd.mobile
+            --section-gap: var(--space-md)
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+
+        &-section
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: var(--section-gap);
+            &:after
+                content: '';
+                position: absolute;
+                bottom: calc(-1 * var(--gap) / 2);
+                height: 1px;
+                width: 100%;
+                background-color: var(--clr-neutral-300);
+            &:last-child
+                &:after
+                    display: none;
+            &>:first-child
+                width: var(--size-xl);
+                flex: none;
+
+    .toggle-button
+        display: inline-block
+        vertical-align: middle
+        margin-right: var(--space-sm);
+
+    .tabs-content
+        padding: 0;
+
+       .media-settings
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+            flex: 1;
+            &-paper
+                border: 1px solid var(--clr-neutral-300);
+                animation: fadeIn 0.2s
+                &-section
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--space-sm);
+                    flex: 1;
+                    &-title
+                        font-size: var(--font-size-md)
+                    &-inputLabel
+                        display: inline-block
+                        margin-right: var(--space-sm)
+                        width: 180px
+                    &-inputValidation
+                        display: block
+                        margin-left: 185px
+                        font-size: var(--font-size-sm);
+                        color: colorErrorDark
+                        padding: var(--space-sm) 0 var(--space-sm) var(--space-lg)
+                        position: relative
+                        animation: fadeIn 0.3s
+                        &:before
+                            content: "×"
+                            font-size: var(--font-size-md)
+                            position: absolute
+                            left: 0
+                            bottom: var(--space-sm)
+                    &-row
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: var(--space-sm);
+                        &.bordered
+                            padding-bottom: var(--space-sm)
+                        .file-input .files
+                            margin-left: var(--space-lg)
+
+            &-setting
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                gap: var(--space-md);
+                &-as-row
+                    flex-direction: row;
+                    align-items: center;
+                &-label
+                    font-size: var(--font-size-md);
+                    display: block
+                &-select
+                    width: 200px
+                    .dropdown-field
+                        height: 42px;
+                &-clear
+                    display: inline-block
+                    font-size: var(--font-size-sm);
+                    border-radius: 5px
+                    cursor: pointer
+                    margin-top: var(--space-sm);
+                    &:hover
+                        text-decoration: underline
+                &-subtitle
+                    display: inline-block
+                &-radios
+                    display: flex
+                    flex-direction: row;
+                    gap: var(--space-md);
+                    .radio
+                        div
+                            display: flex !important
+                            align-items: center !important
+                    .MuiFormControlLabel-root
+                        margin-left: 0;
+                &-icon
+                    cursor: pointer
+                .rc-color-picker-wrap
+                    display: block
+                    .colorpicker
+                        margin: 0;
+    input
+        flex: 1;
+        width: unset;
+
+    .settings-wrapper
+        .MuiFormControlLabel-root
+            margin: 0;
+        .MuiButtonBase-root
+            padding: 0;
+            padding-right: var(--space-sm);
+
+    .settings-info
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding-top: var(--space-md);
+        gap: var(--space-xs);
+        &-item
+            &-title
+                display: inline-block
+                padding-right: var(--space-sm)
+
+.sso-settings
+    .toggle-button
+        margin: var(--space-md) 0px
+
+    &-certificate
+        display: flex;
+        align-items: center;
+
+        &-expiry
+            margin-left: var(--space-md)
+
+        &-expired
+            color: colorErrorDark
+
+
+@keyframes fadeIn
+    from
+        opacity: 0
+    to
+        opacity: 1
+

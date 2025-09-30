@@ -1,0 +1,14 @@
+{
+    "pullrequest": {
+        "destination": {
+            "branch": {
+                "name": "dev"
+            }
+        },
+        "source": {
+            "branch": {
+                "name": "MT-2661-better-secrets-managment"
+            }
+        }
+    }
+}

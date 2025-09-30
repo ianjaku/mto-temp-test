@@ -1,0 +1,37 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.account-information
+    &-title
+        font-weight: bold
+        font-size: 1.125rem
+
+    &-list
+        margin-top: 10px
+        list-style: square
+        list-style-type: disc
+
+        &-item
+            display: list-item
+            margin-left: 1em
+            list-style: square
+            list-style-type: disc
+            align-items: center
+            padding: 3px 0
+
+        &-label
+            padding-right: 15px
+            display: inline-block
+            font-weight: 500
+            min-width: 120px
+    &-buttons
+        display: flex
+        flex-flow: column nowrap
+        margin-top: 20px
+        @media rwd.tabletAndAbove
+            flex-direction: row
+            margin-top: 30px
+    &-button
+        margin-bottom: 5px
+        @media rwd.tabletAndAbove
+            margin-bottom: 0
+            margin-right: 10px

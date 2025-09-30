@@ -1,0 +1,14 @@
+{
+    "dependencies": {
+        "body-parser": "registry:npm/body-parser#1.15.2+20161116154925",
+        "chai": "registry:npm/chai#3.5.0+20160723033700",
+        "express": "registry:npm/express#4.14.0+20160925001530",
+        "redis": "registry:npm/redis#2.6.0+20160901110043",
+        "validator": "registry:npm/validator#5.7.0+20160912014851"
+    },
+    "globalDependencies": {
+        "http-status-codes": "registry:dt/http-status-codes#1.0.5+20160122033621",
+        "mocha": "registry:dt/mocha#2.2.5+20161028141524",
+        "node": "registry:dt/node#6.0.0+20161110151007"
+    }
+}

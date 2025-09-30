@@ -1,0 +1,18 @@
+@require "../../vars.styl";
+
+.radio
+    display:none;
+    color: baseColor !important
+    svg
+        fill: baseColor !important
+    &--inverted
+        color: whiteColor !important
+        svg, label
+            color: whiteColor !important
+            fill: whiteColor !important
+            font-size: 16px
+    &--ie11
+        display: block !important
+.MuiFormControlLabel-label.radio--inverted
+    font-size: 12px
+    line-height: 24px

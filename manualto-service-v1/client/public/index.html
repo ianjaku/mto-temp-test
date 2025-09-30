@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<% var domain = JSON.parse(config).domain %>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Manual.to</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <% if (accountDefaultLanguageCode) {%>
+    <meta http-equiv="content-language" content="<%= accountDefaultLanguageCode %>">
+    <% } %>
+  <!-- fonts --><% for(var i=0; i < fontLinks.length; i++) { %>
+  <link href="<%- fontLinks[i] %>" rel="stylesheet" type="text/css" data-font-preload="true"><% } %>
+  <link rel="apple-touch-icon" sizes="57x57" href="<%- proxyPath -%>/assets/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="<%- proxyPath -%>/assets/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="<%- proxyPath -%>/assets/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="<%- proxyPath -%>/assets/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="<%- proxyPath -%>/assets/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="<%- proxyPath -%>/assets/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="<%- proxyPath -%>/assets/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="<%- proxyPath -%>/assets/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<%- proxyPath -%>/assets/apple-touch-icon-180x180.png">
+  <% if (faviconUrl != null) { %>
+    <link rel="icon" type="image/png" href="<%- faviconUrl -%>">
+  <% } else { %>
+    <link rel="icon" type="image/png" href="<%- proxyPath -%>/assets/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="<%- proxyPath -%>/assets/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="<%- proxyPath -%>/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="<%- proxyPath -%>/assets/favicon-16x16.png" sizes="16x16">
+  <% } %>
+  <link rel="manifest" href="<%- proxyPath -%>/assets/manifest.json">
+  <link rel="mask-icon" href="<%- proxyPath -%>/assets/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="<%- proxyPath -%>/assets/mstile-144x144.png">
+  <% if (brandingColor) {%>
+    <meta name="theme-color" content="<%= brandingColor %>" />
+  <% } else { %>
+    <meta name="theme-color" content="#fcc150">
+  <% } %>
+  <script defer src="<%- proxyPath -%>/assets/fontawesome-5.7.1-svg.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+  <% if (htmlHeadContent) {%>
+    <%- htmlHeadContent %>
+  <% } else { %>
+    <!-- Google tag (gtag.js) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      function initGtag() {
+        const script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-89RMCHRDRW";
+        document.getElementsByTagName("head")[0].appendChild(script);
+        gtag("consent", "default", {
+          "ad_storage": "denied",
+          "analytics_storage": "granted",
+          "personalization_storage": "denied"
+        });
+        gtag("js", new Date());
+        gtag("config", 'G-89RMCHRDRW');
+      }
+      const cookieApproval = localStorage.getItem("google-tag-consent");
+      if (cookieApproval === "granted") {
+        initGtag();
+      }
+    </script>
+  <% } %>
+
+</head>
+
+<body>
+  <% if (domain === "thercon.manual.to") {%>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVDKKLP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  <% } %>
+  <div id="reader-main"></div>
+  <script type="text/javascript">
+    window.bindersConfig = <%- config %>;
+    window.bindersBranding = <%- branding -%>;
+    window.impersonation = <%- impersonation %>;
+    window.buildInfo = <%- buildInfo %>;
+  </script>
+
+</body>
+
+</html>

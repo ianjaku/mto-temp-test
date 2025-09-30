@@ -1,0 +1,11 @@
+{
+
+    "testPathIgnorePatterns": [
+        "/dist/",
+        "/tests/component/config.ts",
+        ".*/cases.ts"
+    ],
+    "testEnvironment": "node",
+    "testMatch": [ "**/tests/component/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ],
+    "preset": "ts-jest"
+}

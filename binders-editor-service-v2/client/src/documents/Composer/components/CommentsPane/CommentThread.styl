@@ -1,0 +1,114 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+@import "./vars.styl"
+
+.comment-thread
+    createCssVariables()
+    --gap-sm: .75rem
+    --gap-md: 1.5rem
+
+    --_size-chevron: 8px
+    --_size-icon: 18px
+    --_size-check: 14px
+
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: var(--gap-sm)
+    padding: var(--gap-sm)
+    padding-left: var(--gap-md)
+
+    .comment-chevron
+        position: absolute
+        top: 14px
+        left: 8px
+        font-size: var(--_size-chevron)
+
+    &.resolved
+        .comment-chevron
+            top: 16px
+
+    .comment-thread-comment
+        display: flex
+        flex-direction: column
+        gap: 2px
+
+    .comment-body
+        white-space: pre-line
+
+    .comment-row-author-date
+        display: flex
+        flex-direction: row
+        align-items: baseline
+        gap: var(--gap-sm)
+        .comment-author
+            font-weight: var(--font-weight-bold)
+        .comment-date
+            color: var(--clr-neutral-300)
+            font-size: .75em
+        .comment-context-menu
+            position: relative
+            max-height: 1rem
+            cursor: pointer
+            align-self: center
+            visibility: hidden
+            &__visible
+                visibility: visible
+            .MuiIcon-root
+                margin-top: -5px
+                margin-right: 3px
+            &:hover
+                &:before
+                    content: ''
+                    position: absolute
+                    top: -7px
+                    right: 1px
+                    width: 26px
+                    height: 26px
+                    background: rgba(255, 255, 255, 0.2)
+                    border-radius: 4px
+
+    .comment-row-attachments
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        gap: var(--gap-sm)
+
+    .comment-deleted
+        color: var(--clr-neutral-200)
+        font-style: italic
+
+    .comment-new-comments
+        display: flex
+        color: var(--clr-primary)
+        font-weight: var(--font-weight-bold)
+
+
+    &.resolved
+        background-color: var(--clr-neutral-700)
+        .comment-resolved-icon
+            display: flex
+            align-items: center
+            justify-content: center
+            background-color: var(--clr-green)
+            color: var(--clr-neutral-700)
+            border-radius: 100vw
+            width: var(--_size-icon)
+            height: var(--_size-icon)
+            font-size: var(--_size-check)
+        .resolved-hint
+            color: var(--clr-green)
+            font-weight: var(--font-weight-bold)
+
+    .resolve-btn
+        background: none
+        border: none
+        padding: 0
+        margin: 0
+        color: var(--clr-primary)
+        font-family: var(--font-body)
+        font-weight: var(--font-weight-bold)
+        cursor: pointer
+        align-self: flex-start
+        &:hover
+            text-decoration: underline
+

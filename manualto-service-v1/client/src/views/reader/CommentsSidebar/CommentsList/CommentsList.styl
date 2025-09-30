@@ -1,0 +1,28 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@import "../../../../vars.styl";
+
+.commentsList
+    @media rwd.mobile
+        box-shadow: unset
+        overflow: unset
+
+    &-summary
+        display: flex
+        justify-content: center
+        padding-bottom: 8px
+
+        &-button
+            background: none
+            border: none
+            padding 8px
+            text-decoration: underline
+            color grey600
+
+    &-outside
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        flex-direction: column
+        justify-content: center

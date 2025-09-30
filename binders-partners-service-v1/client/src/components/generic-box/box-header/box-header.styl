@@ -1,0 +1,26 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.box-header 
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: center
+    padding-bottom: 20px
+
+    @media rwd.tabletAndAbove
+        padding-bottom: 0
+
+    &-title
+        font-weight: bold
+            
+    &-logo
+        background-image: url('/assets/logo.svg')
+        background-position: center
+        background-size: contain
+        background-repeat: no-repeat
+        width: 50px
+        height: 50px
+
+        @media rwd.tabletAndAbove
+            width: 80px
+            height: 80px

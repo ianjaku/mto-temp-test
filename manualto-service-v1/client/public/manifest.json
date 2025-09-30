@@ -1,0 +1,41 @@
+{
+	"name": "Manual.to",
+	"icons": [
+		{
+			"src": "\/android-chrome-57x57.png",
+			"sizes": "57x57",
+			"type": "image\/png",
+			"density": 0.75
+		},
+		{
+			"src": "\/android-chrome-60x60.png",
+			"sizes": "60x60",
+			"type": "image\/png",
+			"density": 1
+		},
+		{
+			"src": "\/android-chrome-72x72.png",
+			"sizes": "72x72",
+			"type": "image\/png",
+			"density": 1.5
+		},
+		{
+			"src": "\/android-chrome-76x76.png",
+			"sizes": "76x76",
+			"type": "image\/png",
+			"density": 2
+		},
+		{
+			"src": "\/android-chrome-144x144.png",
+			"sizes": "144x144",
+			"type": "image\/png",
+			"density": 3
+		},
+		{
+			"src": "\/android-chrome-152x152.png",
+			"sizes": "152x152",
+			"type": "image\/png",
+			"density": 4
+		}
+	]
+}

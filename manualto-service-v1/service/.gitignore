@@ -1,0 +1,12 @@
+.idea
+lib
+node_modules
+typings
+*.log
+index.ts
+*.css.d.ts
+app/src/test.ts
+app-bundle.js
+invite-bundle.js
+vendor-bundle.js
+public/

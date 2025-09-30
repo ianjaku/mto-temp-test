@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle Default toggle (snapshot) 1`] = `
+<div
+  className="toggle-button"
+  onClick={[Function]}
+>
+  <div
+    className="toggle-caret"
+  />
+</div>
+`;
+
+exports[`Toggle Toggled toggle (snapshot) 1`] = `
+<div
+  className="toggle-button is-toggled"
+  onClick={[Function]}
+>
+  <div
+    className="toggle-caret"
+  />
+</div>
+`;

@@ -1,0 +1,29 @@
+name: $(BuildID)
+
+trigger:
+  branches:
+    include:
+    - develop
+    - MT-*
+    - rel-*
+    - noissue/update-af-image
+  paths:
+    include:
+    - azure-functions/screenshots/*
+
+pool:
+  vmImage: 'ubuntu-22.04'
+
+variables:
+- name: working-dir
+  value: azure-functions/screenshots
+
+
+jobs:
+- job: jobFunCodeCI
+  displayName: Install dependencies and build
+  steps:
+  - template: ../pipelines/steps/function-ci.yaml
+    parameters:
+      workingDirectory: $(working-dir)
+      fetchFfmpeg: false

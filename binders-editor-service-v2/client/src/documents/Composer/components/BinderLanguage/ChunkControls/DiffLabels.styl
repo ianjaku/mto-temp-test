@@ -1,0 +1,24 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.chunk-controls-diff-labels
+    display: flex
+    flex-direction: row
+    gap: 1rem
+    padding: 20px 0 0 20px
+
+.diff-label
+    cursor: default
+    border: 1px solid currentColor
+    padding: 2px 12px
+    border-radius: 100vh
+    &__normal
+        color: grey700
+        &__solid
+            background-color: grey700
+            color: white
+    &__accent
+        color: accentColor
+        &__solid
+            background-color: accentColor
+            color: white
+

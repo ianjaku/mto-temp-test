@@ -1,0 +1,324 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@require "../../../vars.styl";
+
+.toolbar
+    --toolbar-margin: toolbarMargin
+    --toolbar-gap: toolbarGap
+    --toolbar-font-weight: 500
+    --toolbar-font-size: 14px
+    --dropdown-radius: 18px
+    --dropdown-option-gap: 12px
+    --dropdown-padding-y: 18px
+    --dropdown-padding-x: 12px
+    --dropdown-option-padding-y: 9px
+    --dropdown-option-padding-x: 12px
+    --toolbar-spacer-width: 13px
+
+    @media rwd.tabletAndAbove
+        --toolbar-margin: toolbarMarginMd
+        --toolbar-gap: toolbarGapMd
+
+    position: fixed
+    z-index: 13
+    top: var(--toolbar-margin)
+    right: var(--toolbar-margin)
+    display: flex
+    align-items: center
+
+    &--collapsed
+        .toolbar-interface
+            right: -300px
+            opacity: 0
+            pointer-events: none
+            *
+                pointer-events: none
+        .toolbar-trigger
+            opacity: 100
+
+    &-trigger
+        height: "%spx" % toolbarHeight
+        padding: "0 %spx" % iconGap
+        border-radius: toolbarRadius
+        background-color: backgroundColor
+        cursor: pointer
+        opacity: 0
+        position: absolute
+        right: 0
+        transition: opacity 300ms ease-in
+        display: flex
+        align-items: center
+        &:hover
+            background-color: borderGrayColor
+
+    &-closebutton
+        height: "%spx" % toolbarHeight
+        border-radius: toolbarRadius
+        background-color: backgroundColor
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 0
+        transition: width 150ms ease-in
+        overflow: hidden
+        z-index: 10
+        &--visible
+            width: "%spx" % toolbarHeight
+            margin-left: var(--toolbar-gap)
+        &:hover
+            background-color: borderGrayColor
+
+    &-interface
+        display: flex
+        align-items: center
+        font-size: var(--toolbar-font-size)
+        font-weight: var(--toolbar-font-weight)
+        font-family: Rubik
+        position: relative
+        right: 0
+        transition: right 300ms ease-in, opacity 300ms ease-in
+
+        .toolbarPill
+            height: "%spx" % toolbarHeight
+            display: flex
+            align-items: center
+            border-radius: toolbarRadius
+            transition: left 300ms ease-in 100ms, transform 300ms ease-in, opacity 300ms ease-in
+            opacity: 1
+            &--hidden
+                position: absolute
+                left: 100%
+                opacity: 0
+            &--neutral
+                color: baseColor
+                background-color: backgroundColor
+
+        .toolbarEditButton
+            --clr-bg: $$headerBgColor
+            font-family: defaultFontName
+            font-weight: 600
+            padding: 0 var(--toolbar-gap)
+            cursor: pointer
+            gap: 10px
+            border: none
+            margin-left: var(--toolbar-gap)
+            transition: background-color 150ms ease-in
+            color: $$headerFontColor
+            background: $$headerBgColor
+            &:hover
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px
+            &--minimal
+                padding: 0
+                aspect-ratio: 1
+                display: flex
+                justify-content: center
+
+        .toolbarNavigation, .toolbarActions, .toolbarLanguage
+            color: baseColor
+            background-color: backgroundColor
+
+        .toolbarNavigation, .toolbarActions
+            position: relative
+            display: flex
+            transition: width 150ms ease-in
+            overflow: hidden /* prevents content of these toolbars to leak outside during collapse/expand animation on mobile */
+            @media rwd.tabletAndAbove
+                overflow: visible /* ensures tooltips are visible on desktop */
+            .toolbarButtons
+                display: flex
+                align-self: stretch
+                width: 100%
+                &-button
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    width: toolbarButtonWidth
+                    cursor: pointer
+                    transition: color 150ms ease-in, opacity 50ms ease-in
+                    z-index: 2 /* ensures it's rendered *above* highlight */
+                    *
+                        cursor: pointer
+            .toolbarSpacer
+                width: var(--toolbar-spacer-width)
+
+        .toolbarNavigation
+            &--invisible
+                .toolbarButtons-button
+                    opacity: 0
+            &-highlight
+                background-color: borderGrayColor
+                position: absolute
+                height: "%spx" % toolbarHeight
+                width: "%spx" % toolbarHeight
+                border-radius: toolbarRadius
+
+
+        .toolbarActions
+            &--invisible
+                .toolbarButtons-button
+                    opacity: 0
+            &-highlight
+                background-color: borderGrayColor
+                position: absolute
+                height: "%spx" % toolbarHeight
+                width: "%spx" % toolbarHeight
+                border-radius: toolbarRadius
+            &-ownerInfo
+                position: absolute
+                top: 47px
+                right: 0
+                display: flex
+                flex-direction: column
+                background-color: baseColor
+                color: white
+                z-index: 10
+                font-size: 10px
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05)
+                border-radius: 4px
+                padding: 8px
+                &-title
+                    font-weight 600
+                    margin-bottom 10px
+                &-owner
+                    label
+                        display block
+                    &:not(:last-child)
+                        margin-bottom 8px
+                    &-name
+                        font-weight 600
+
+        .toolbarLanguage
+            position relative
+            cursor: pointer
+            transition: width 150ms ease-in
+            &--invisible
+                opacity: 0
+                .toolbarButtons-button
+                    opacity: 0
+            &--collapsed
+                .toolbarLanguage-globeAndCode:hover
+                    background-color: grey200
+            *
+                cursor: pointer
+            &-globeAndCode
+                flex-grow: 1
+                display: flex
+                align-items: center
+                gap: "%spx" % iconGap
+                text-transform: uppercase
+                padding: "0 %spx" % iconGap
+                border-radius: toolbarRadius
+                height: 100%
+            &-minimal
+                height: 100%
+                display: flex
+                align-items: center
+                &-highlight
+                    background-color: borderGrayColor
+                    position: absolute
+                    height: 100%
+                    border-radius: toolbarRadius
+                &-selectedLanguage
+                    padding: "0 %spx" % iconGap
+                    border-radius: toolbarRadius
+                    display: block
+                    z-index: 2
+                    &--hidden
+                        display: none
+                &-languageCodes
+                    height: 100%
+                    display: flex
+                    align-items: center
+                    text-transform: uppercase
+                    color: grey60
+                    z-index: 2
+                    &-button
+                        padding: "0 %spx" % iconGap
+                        border-radius: toolbarRadius
+                        text-align: center
+                        &--containsLanguageCode
+                            width: "%spx" % toolbarIconSize /* ensure roundness of button */
+            &-full
+                height: 100%
+                display: flex
+                align-items: center
+                position: relative
+                &-selectedLanguage
+                    padding: "0 %spx" % iconGap
+                    display: flex
+                    align-items: center
+                    gap: "%spx" % iconGap
+                    height: 100%
+                    border-top-left-radius: toolbarRadius
+                    border-bottom-left-radius: toolbarRadius
+                    transition: background-color 150ms ease-in
+                    &--ddOpen
+                        background-color: borderGrayColor
+                &-dropdown
+                    position: absolute
+                    top: calc(100% + var(--toolbar-gap) / 2)
+                    left: 0
+                    background-color: backgroundColor
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05)
+                    border-radius: var(--dropdown-radius)
+                    z-index: 10
+                    flex-direction: column
+                    padding: var(--dropdown-padding-y) 0
+                    &-option
+                        padding: var(--dropdown-option-padding-y) var(--dropdown-option-padding-x)
+                        white-space: nowrap
+                        &:hover
+                            background-color: borderGrayColor
+                &-separator
+                    width: 1px
+                    height: 70%
+                    border-right: 1px solid grey500
+            &-separator
+                    width: 1px
+                    height: 70%
+                    border-right: 1px solid grey500
+            &-button
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: "0 %spx" % iconGap
+                border-radius: toolbarRadius
+                color: grey60
+                height: 100%
+                width: "%spx" % toolbarIconSize
+                &:hover
+                    background-color: grey200
+                .material-icons
+                    font-size: 19px
+
+    .material-icons
+        display: block /* ensure w = h */
+        font-size: "%spx" % toolbarIconSize
+        width: "%spx" % toolbarIconSize
+        height: "%spx" % toolbarIconSize
+
+    .toolbarTooltip
+        position: absolute
+        top: s("calc(%spx + %s / 2)", toolbarHeight, var(--toolbar-gap))
+        background-color: baseColor
+        color: whiteColor
+        left: 0
+        padding: 0px 8px
+        font-family: defaultFontName
+        font-size: 11px
+        font-weight: 500
+        line-height: 2.5
+        border-radius: 5px
+        z-index: 10
+        white-space: nowrap
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2)
+        text-transform: none
+        &--rightAnchor
+            left: auto
+            right: 0
+
+    &-svgIcon
+        width: "%spx" % toolbarIconSize
+        height: "%spx" % toolbarIconSize
+        color: baseColor
+        fill: baseColor

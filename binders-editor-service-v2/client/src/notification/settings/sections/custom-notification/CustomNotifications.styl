@@ -1,0 +1,45 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.custom-notifications
+    &-buttons
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-top: 15px
+        flex-flow: row wrap
+
+        @media rwd.tabletAndAbove
+            flex-flow: row nowrap
+
+    &-button
+        cursor: pointer
+        background-color: backgroundColor
+        border-radius: 0
+        border: none
+        outline: none
+        padding: 23px 50px
+        line-height: 1
+        color: rgba(darkGrayColor, 0.7)
+        font-size: 14px
+        margin-bottom: 10px;
+        @media rwd.tabletAndAbove
+            margin-bottom: 0
+        &:hover
+            color: darkGrayColor
+            outline: 1px solid darkGrayColor
+        &:active
+            color: accentColor
+    &-title
+        font-size: 1.3125rem
+        font-weight: 500
+        margin-bottom: 10px
+        margin-top: 20px
+        color: baseColor
+    &-empty
+        height: 70px
+        width: 100%
+        display: flex;
+        align-items: center
+        justify-content: center
+        color: rgba(baseColor, 0.6)
+

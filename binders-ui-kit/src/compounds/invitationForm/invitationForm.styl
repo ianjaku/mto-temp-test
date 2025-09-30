@@ -1,0 +1,82 @@
+@require "../../vars.styl";
+
+.editForm
+    box-sizing: border-box
+    margin-top: 30px
+    margin-bottom: 30px
+    max-width: 500px
+    font-size: 0
+    background-color: lightGreyColor
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2)
+    border-radius: 5px
+    font-family: defaultFontName
+    & *
+        box-sizing: border-box
+    @media rwd.tablet
+        width: 80%
+    @media rwd.mobile
+        width: 90%
+    &-info
+        text-align: center
+        font-family: logoFontName
+        padding: 30px 20px
+        font-size: 20px
+        vertical-align: middle
+
+        &-title
+            font-weight: bold
+            margin-bottom: 15px
+            .domain-suffix
+                word-break: break-word
+        &-description
+            font-size: 14px
+            font-family: defaultFontName
+    &-content
+        font-size: 14px
+        vertical-align: top
+        padding: 20px
+    &-confirm
+        margin: 30px auto 10px auto
+        text-align: center
+
+    &-input
+        font-size: 0
+        margin: 8px 0
+        .input-wrapper
+            max-width: 300px
+            width: 100%
+            margin: 0 auto;
+        &-field
+            display: inline-block
+            max-width: 300px
+            width: 100%
+    &-dropdown
+        max-width: 300px
+        width: 100%
+        margin: 0 auto
+        .dropdown-field-label
+            margin: 7px 0
+    &-validation
+        max-width: 300px
+        width: 100%
+        margin: 0 auto
+        &-errors
+            list-style: none
+            padding-left: 0
+            &-item
+                color: colorErrorDark
+                padding: 8px 0 8px 20px
+                position: relative
+                animation: fadeIn 0.3s
+                &:before
+                    content: "×"
+                    font-size: 20px
+                    position: absolute
+                    left: 0
+                    bottom: 8px
+
+@keyframes fadeIn
+    from
+        opacity: 0
+    to
+        opacity: 1

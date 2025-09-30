@@ -1,0 +1,10 @@
+{
+    "children": [
+        {
+            "name": "TEST COLLECTION",
+            "type": "collection",
+            "children": [
+            ]
+        }
+    ]
+}

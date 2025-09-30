@@ -1,0 +1,38 @@
+json('./variables/vars.json');
+
+/* MIXINS */
+
+clearLinkStyles()
+    &:link, &:visited, &:hover, &:active
+        text-decoration: none
+        color: inherit
+
+maxMd = lg - 1px;
+maxSm = md - 1px;
+maxXs = sm - 1px;
+maxMaterialSm = materialSm - 1px;
+
+rwd = {
+    largedesktop: s("screen and (min-width: %s)", xl),
+    desktop: s("screen and (min-width: %s)",lg),
+    laptop: s("screen and (min-width: %s) and (max-width: %s)", md, maxMd),
+    tablet: s("screen and (min-width: %s) and (max-width: %s)",sm, maxSm),
+    tabletAndAbove: s("screen and (min-width: %s)", sm),
+    laptopAndAbove: s("screen and (min-width: %s)", md),
+    mobileLandscapeAndAbove: s("screen and (min-width: %s)", mobileLandscape),
+    mobilePortrait: s("screen and (max-width: %s)", mobileLandscape - 1px),
+    mobile: s("screen and (max-width: %s)",maxXs),
+    notmobile: s("screen and (min-width: %s)", sm),
+    notDesktop: s("screen and (max-width: %s)", lg + 2),
+    materialMobile: s("screen and (max-width: %s)",maxMaterialSm),
+    phoneAndAbove: s("screen and (min-width: %s)", xs),
+}
+
+transform-translate(x, y) {
+	-webkit-transform: translate(x, y)
+	-moz-transform: translate(x, y)
+	-ms-transform: translate(x, y)
+	-o-transform: translate(x, y)
+	transform: translate(x, y)
+}
+

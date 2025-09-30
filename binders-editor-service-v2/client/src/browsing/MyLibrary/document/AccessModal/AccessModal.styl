@@ -1,0 +1,102 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.user-access-toggles-container
+    display: flex
+    flex-direction: column
+    padding: 16px 24px
+    .max-public-count-stats
+        color: grey60
+        &.warning
+            color: colorError
+.user-access-toggles
+    min-width: 500px
+    display: flex
+    flex-direction: row
+    .toggles-list
+        display: flex
+        align-items: center
+        @media rwd.mobile
+            flex-direction: column
+            align-items: unset
+    .toggle-option
+        display: flex
+        justify-content: space-between
+        align-items: center
+        height: 2rem
+        padding: 16px 0
+        &.is-disabled
+            color: lighten(baseColor, 50%)
+    .toggles-loading
+        display: flex
+        align-items: center
+        @media rwd.mobile
+            align-items: unset
+            padding: 4px
+        span
+            color: grey500
+            animation: spinProgress 2s infinite
+
+.max-public-count-warning
+    max-width: 460px
+    span
+        font-size: small
+        color: colorError
+
+.user-access-modal
+    .modal-body
+        overflow: visible
+    .modal-footer
+        border: 0
+
+    .accessBoxSection-newAcls
+        --preferred-row-height: 36px
+        --languages-dropdown-width: 30ch
+        .userInputTypeSwitcher
+            height: var(--preferred-row-height)
+            align-items: center
+            margin: 0
+        .autocomplete-pane
+            display: flex
+            align-items: center
+            min-height: var(--preferred-row-height)
+        .autocomplete-textarea
+            max-height: var(--preferred-row-height)
+        .autocomplete-chipWrapper
+            margin: 0
+        .accessBoxSection-newAcls-roleInput
+            display: flex
+            align-items: center
+            flex-direction: column
+            @media rwd.tabletAndAbove
+                flex-direction: row
+                max-height: var(--preferred-row-height)
+            .roleInput-selection
+                @media rwd.tabletAndAbove
+                    margin: 0
+        .accessBoxSection-newAcls-body
+            button.MuiButtonBase-root
+                height: calc(var(--preferred-row-height) + 1rem) !important
+                align-self: baseline
+        .table--lastColAlignRight tr td:last-child
+            display: table-cell
+        .filterable-dropdown
+            .dropdown
+                .dropdown-elements
+                    position: fixed
+                    max-width: var(--languages-dropdown-width)
+
+@keyframes spinProgress
+    0%
+        transform: rotate(0deg)
+    25%
+        transform: rotate(90deg)
+        animation-timing-function: cubic-bezier(0.5, 0.1, 0.8, 0.3)
+    50%
+        transform: rotate(180deg)
+        animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335)
+    75%
+        transform: rotate(270deg)
+        animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1)
+    100%
+        transform: rotate(360deg)
+        animation-timing-function: ease-out

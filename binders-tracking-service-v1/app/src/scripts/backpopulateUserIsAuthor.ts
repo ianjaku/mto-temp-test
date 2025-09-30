@@ -1,0 +1,125 @@
+/* eslint-disable no-console */
+import {
+    BackendAccountServiceClient,
+    BackendRepoServiceClient
+} from  "@binders/binders-service-common/lib/apiclient/backendclient";
+import {
+    BinderRepositoryServiceClient
+} from  "@binders/client/lib/clients/repositoryservice/v3/client";
+import { BindersConfig } from "@binders/binders-service-common/lib/bindersconfig/binders";
+import {
+    ElasticUserActionsRepository
+} from  "../trackingservice/repositories/userActionsRepository";
+import { LoggerBuilder } from "@binders/binders-service-common/lib/util/logging";
+import { Publication } from "@binders/client/lib/clients/repositoryservice/v3/contract";
+import { UserActionType } from "@binders/client/lib/clients/trackingservice/v1/contract";
+import { uniq } from "ramda";
+
+const config = BindersConfig.get();
+const logger = LoggerBuilder.fromConfig(config);
+
+const getOptions = () => {
+    if (process.argv.length < 3) {
+        console.log(`Running for all accounts, single account usage: node ${__filename} <ACCOUNT_ID>`);
+        return { accountId: undefined };
+    }
+    const accountId = process.argv[2];
+    console.log(`Running for single accountId with id ${accountId}`);
+    return {
+        accountId,
+    };
+};
+
+const scriptName = "backpopulateUserIsAuthor";
+const BATCH_SIZE = 1000;
+let userActionsToUpdate = [];
+
+async function updateAll(repo: ElasticUserActionsRepository) {
+    if (!userActionsToUpdate.length) {
+        console.log("No DOCUMENT_READ user actions found.")
+        return;
+    }
+    console.log(`updating ${userActionsToUpdate.length} DOCUMENT_READ user actions, eg ${JSON.stringify(userActionsToUpdate[0], null, 2)}`);
+    if (userActionsToUpdate.length > 0) {
+        await repo.multiUpdateUserAction(userActionsToUpdate);
+    }
+    userActionsToUpdate = [];
+}
+
+async function processBatch(
+    hits,
+    repoClient: BinderRepositoryServiceClient
+) {
+    const readActions = hits.map(hit => ({ ...hit._source, id: hit._id, index: hit._index }));
+
+    const publicationIds = readActions.map(readAction => readAction.data?.publicationId).filter(id => !!id);
+    const publications = (await repoClient.findPublicationsBackend({ ids: uniq(publicationIds) }, { maxResults: BATCH_SIZE })) as Publication[];
+
+    for (const readAction of readActions) {
+        const userId = readAction.userId;
+        const publicationId = readAction.data?.publicationId;
+        if (!userId || !publicationId) {
+            continue;
+        }
+        const publication = publications.find(b => b.id === publicationId);
+        const authorIds = publication?.authorIds;
+        if (authorIds && authorIds.includes(userId)) {
+            if (!readAction?.data?.userIsAuthor) {
+                readAction.data.userIsAuthor = true;
+                userActionsToUpdate.push(readAction);
+            }
+        }
+    }
+}
+
+async function getServices() {
+    return {
+        accountService: await BackendAccountServiceClient.fromConfig(config, scriptName),
+        repositoryService: await BackendRepoServiceClient.fromConfig(config, scriptName),
+    };
+}
+
+function buildQueries(accountId: string) {
+    return {
+        userActionsQuery: {
+            index: "useractions",
+            body: {
+                query: {
+                    bool: {
+                        must: [
+                            { term: { userActionType: UserActionType.DOCUMENT_READ } },
+                            { term: { accountId: accountId } },
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
+
+const doIt = async () => {
+    const { accountId } = getOptions();
+    const repo = new ElasticUserActionsRepository(config, logger);
+    const { accountService, repositoryService } = await getServices();
+    const accountIds = accountId ? [accountId] : (await accountService.listAccounts()).map(a => a.id);
+
+    const scrollAge = 3600;
+
+
+    for await (const accountId of accountIds) {
+        console.log(`====================== Processing ${accountId} ===================`);
+        const { userActionsQuery } = buildQueries(accountId);
+        await repo.runScroll(userActionsQuery, scrollAge, BATCH_SIZE, hits => processBatch(hits, repositoryService));
+        await updateAll(repo);
+    }
+};
+
+doIt()
+    .then(() => {
+        console.log("All done!");
+        process.exit(0);
+    }, error => {
+        console.log("!!! Something went wrong.");
+        console.error(error);
+        process.exit(1);
+    });

@@ -1,0 +1,16 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.composer-authors
+    height: 1rem
+    line-height: 1rem
+    span,div
+        &.isGreyedOut
+            color: disabledColor
+        &.isVertical
+            display: block
+    &-triggerBtn
+        display: flex
+        cursor: pointer
+    &-modal
+        min-height: 300px
+        min-width: 400px

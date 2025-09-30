@@ -1,0 +1,129 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+
+.publish-confirmation-modal
+    --modal-width: 504px
+    .button
+        margin: 0
+    .MuiCheckbox-root
+        padding-top: 0
+        padding-bottom: 0
+    .modal
+        display: flex
+        flex-direction: column
+        justify-content: center
+        &-body
+            display: flex
+            flex-direction: column
+            flex-grow: 1
+        @media rwd.tabletAndAbove
+            width: var(--modal-width)
+            min-height: 230px /* ensure single-line states (eg "publishing...") don't shrink modal */
+
+.publish-confirmation
+    flex-grow: 1
+    .modal-body
+        padding: 25px
+
+.publish-confirmation-checking
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 12px
+    padding: 24px
+.publish-confirmation-confirm
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    gap: 30px
+    padding: 20px 0
+    @media rwd.tabletAndAbove
+        padding: 10px
+    &-title
+        font-size: 18px
+        font-weight: 600
+    &-subtitle
+        font-size: 15px
+        font-weight: 500
+        width: 165px
+    &-inforows
+        --inforow-padding: 20px 0
+        li + li
+            border-top: 1px solid grey200
+        &:empty
+            display: none
+        &-notification
+            display: flex
+            align-items: flex-start
+            padding: var(--inforow-padding)
+            &-targets
+                display flex
+        &-instance
+            display: flex
+            align-items: flex-start
+            padding: var(--inforow-padding)
+            &-locations
+                display: flex
+                flex-direction: column
+                color: grey600
+    &-buttons
+        display: flex
+        justify-content: flex-end
+        gap: 12px
+.publish-confirmation-complete
+    display: flex
+    flex-direction: column
+    gap: 20px
+    padding: 12px 0
+    @media rwd.tabletAndAbove
+        padding: 10px
+    @media rwd.tabletAndAbove
+        gap: 50px
+    &-title
+        font-size: 18px
+        font-weight: 600
+        text-align: center
+        @media rwd.tabletAndAbove
+            text-align: unset
+    &-body
+        text-align: center
+        font-size: 16px
+        display: flex
+        flex-direction: column
+        gap: 12px
+        color: grey600
+    &-nextsteps
+        display: flex
+        flex-direction: column
+        gap: 12px
+        &-title
+            font-weight: 600
+            color: grey600
+            text-align: center
+            @media rwd.tabletAndAbove
+                text-align: unset
+        &-steps
+            display: flex
+            flex-direction: column
+            gap: 12px
+            &-step
+                display: flex
+                align-items: center
+                padding: 12px 0
+                border: 1px solid grey200
+                cursor: pointer
+                transition: background-color 0.2s ease-in-out
+                &:hover
+                    background-color: accentColor
+                .material-icons
+                    font-size: 25px
+                    color: black
+                    margin: 0 18px
+                &-body
+                    display: flex
+                    flex-direction: column
+                    gap: 4px
+                    flex-grow: 1
+                    &-title
+                        font-size: 16px
+                        font-weight: 600

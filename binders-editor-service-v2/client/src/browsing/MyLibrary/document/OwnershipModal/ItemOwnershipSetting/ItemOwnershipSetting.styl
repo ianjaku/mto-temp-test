@@ -1,0 +1,23 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+@require "../../../../../shared/InheritedSettingsNavigator/vars.styl";
+
+.itemOwnershipSetting
+    display: flex
+    flex-direction: column
+    row-gap: 8px
+
+    &-overview
+        overflow-y: auto
+        max-height: 250px
+
+    &-new
+        margin-left: inheritedSettingSectionLeftPadding * -1
+        margin-right: inheritedSettingSectionRightPadding * -1
+        padding-right: inheritedSettingSectionRightPadding
+        padding-top 20px
+        padding-left 18px
+        border-top 1px solid grey200
+        display flex
+        align-items center
+        .userInput
+            flex-grow 1

@@ -1,0 +1,3 @@
+name: "bindersProductionMongoManagement"
+version: "0.0.1"
+description: "The mongo management tools used by binders (production)"

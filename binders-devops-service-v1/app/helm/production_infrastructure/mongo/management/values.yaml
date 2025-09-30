@@ -1,0 +1,4 @@
+authSecret: "dev-users-basic-auth"
+fqdns: "mongo.binders.media"
+tls:
+  secret: "tls-production-secret"

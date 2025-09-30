@@ -1,0 +1,4 @@
+echo "Looking for lint errors"
+yarn run lint-staged
+echo "Validating APM imports and native packages"
+yarn workspace @binders/devops-v1 tsx src/scripts/localdev/preCommit.ts

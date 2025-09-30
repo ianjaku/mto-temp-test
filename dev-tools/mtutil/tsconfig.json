@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "es2020",
+        "sourceMap": true,
+        "lib": ["es2022", "webworker"],
+        "experimentalDecorators": true,
+        "preserveConstEnums": true,
+        "emitDecoratorMetadata": false,
+        "esModuleInterop": true,
+        "noImplicitReturns": true,
+        "moduleResolution": "node",
+        "outDir": "dist",
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true
+    },
+    "exclude": ["node_modules", "dist"],
+    "include": ["src/**/*"]
+}

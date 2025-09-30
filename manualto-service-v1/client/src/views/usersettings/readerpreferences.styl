@@ -1,0 +1,73 @@
+@import "../../vars.styl";
+.preferences
+    //border-collapse: collapse
+    font-size: 16px
+    &-heading
+        font-weight: bold
+        text-align: left
+        margin-left: 70px
+    &-language
+        background: lightBackground
+        margin-bottom: 5px
+        margin-top: 5px
+        padding:12px 15px
+        & *
+          display: inline-block
+        &-dnd
+          width: 25px
+        &-order
+          width: 30px
+        &-name
+          width: calc(100% - 100px)
+          vertical-align: bottom
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis;
+        &-remove
+          float: right
+    &-languagePicker
+        margin: 10px 0 0
+        width: 100%
+    &-setting
+      &-clear
+        cursor: pointer
+        line-height: 30px
+        text-decoration: underline
+        text-transform: uppercase
+        font-size: 12px
+
+
+.u-active
+    color: $$bgDark
+    cursor: pointer
+
+.Select
+  height: 40px
+  text-align: left
+  font-size: 0.8em
+
+  .Select-control
+    height: 40px
+    border: 0
+    background-color: white
+    cursor: pointer
+    border-radius: 0
+    position: relative
+    padding-top: 5px
+    &:after
+      content: "\f078"
+      color: mediumGrayColor
+      font-family: FontAwesome
+      position: absolute
+      right: 15px
+      top: 15px
+    .Select-placeholder
+      color: mediumGrayColor
+      line-height: 40px
+      font-size: 14px
+      text-align: left
+      &:hover
+        color: grayColor
+
+      .Select-input
+        height: 40px

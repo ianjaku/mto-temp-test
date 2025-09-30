@@ -1,0 +1,57 @@
+@require "../../vars.styl";
+@require "../../style/global.styl";
+
+.input
+    padding: 12px;
+    background-color: whiteColor;
+    --borderColor: middleGreyColor
+    border: 1px solid var(--borderColor);
+    font-size: 13px;
+    color: baseColor;
+    border-radius 4px
+    &.is-invalid
+        border-color: colorErrorDark
+    &-wrapper
+        position: relative;
+        &--inverted
+            .input-icon
+                color: whiteColor
+                .material-icons
+                    color: inherit !important
+
+        .input
+            padding: 12px 12px 12px 36px;
+
+        &-search
+            .input
+                border-radius: 26px
+    &-icon
+        position: absolute;
+        top: 10px
+        left: 10px
+        color: inherit
+        display: inline-block
+        opacity: 0.8
+        &--center
+            top: 50%
+            transform: translateY(-50%)
+            display: flex
+
+    &:focus
+        outline: none;
+        border-color: var(--borderColor-focus);
+        background-color: whiteColor;
+        color: baseColor;
+
+    &:disabled
+        background-color: backgroundColor;
+        cursor: default;
+
+    &--inverted
+        border: 1px solid middleGreyColor;
+        background: none;
+        color: middleGreyColor;
+
+        &:focus
+            background: none;
+            color: whiteColor;

@@ -1,0 +1,14 @@
+{
+    "moduleFileExtensions": ["ts", "tsx", "js"],
+    "setupFiles": ["./tests/setup.ts"],
+    "testPathIgnorePatterns": ["/dist/", "__snapshots__", "setup.ts", "InitialContent.ts"],
+    "testResultsProcessor": "./node_modules/jest-junit",
+    "transform": {
+        ".(ts|tsx)": "./node_modules/ts-jest/preprocessor.js"
+    },
+    "moduleNameMapper": {
+        "^.+\\.styl$": "<rootDir>/tests/styleMock.js",
+        "^.+\\.svg$": "<rootDir>/tests/styleMock.js"
+    },
+    "testRegex": "/tests/elements/.*\\.ts"
+}

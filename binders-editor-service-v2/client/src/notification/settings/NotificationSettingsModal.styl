@@ -1,0 +1,22 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.notification-settings
+    &-wrapper
+        margin-top: 10px
+        min-height: 50vh
+        width: 90vw
+        max-width: 90vw
+
+        @media rwd.tabletAndAbove
+            max-width: 650px
+            min-width: 650px
+            width: 650px
+    
+        &--loading
+            display: flex
+            justify-content: center
+            align-items: center
+    &-content
+        margin-top: 30px
+        padding: 0 10px 10px
+        

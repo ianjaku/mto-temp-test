@@ -1,0 +1,66 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@import "../../vars.styl"
+
+.readerComments-sidebarToggle
+	transition: opacity .3s ease-in, visibility .3s
+	opacity: 1
+
+@media only screen and (orientation: landscape)
+	.reader-navigation-bar
+		left: 100vh
+
+@media only screen and (orientation: portrait)
+	.reader-navigation-bar
+		left: 10px
+
+.reader-layout
+	display: flex;
+	min-height: 100vh;
+	position: relative;
+	justify-content: center;
+	flex-direction: column;
+	background: white;
+	overflow: hidden;
+
+.translation-modal
+	header
+		width: initial
+		height: initial
+	.modal-body
+		overflow: visible
+	&-body
+		.filterable-dropdown-input
+			width: 85%
+		.filterable-dropdown-arrow
+			top: 0px
+
+		.machinetranslation
+			&-input
+				display: flex
+				align-items: center
+				.add-languages-dropdown
+					margin-left: 8px
+			&-disclaimer
+				display: block
+				margin-top: 16px
+				max-width: 40ch
+	.modal-footer
+		justify-content: center
+		ul > li
+			margin-left: initial
+.ribbon--info
+	background-color: $$headerBgColor
+	color: $$headerFontColor
+	font-size: 0.9em
+	.ribbon-closebtn
+		.material-icons
+			color: $$headerFontColor !important
+@media only screen and (orientation: landscape) {
+	.reader-layout {
+		flex-direction: row;
+	}
+}
+
+
+
+	

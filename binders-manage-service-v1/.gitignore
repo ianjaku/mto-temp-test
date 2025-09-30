@@ -1,0 +1,11 @@
+.idea
+lib
+node_modules
+typings
+*.log
+index.ts
+*.css.d.ts
+app-bundle.js
+vendor-bundle.js
+service/src/test.ts
+service/public

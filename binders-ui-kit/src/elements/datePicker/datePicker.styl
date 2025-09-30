@@ -1,0 +1,27 @@
+.datePicker
+    position: relative
+    display: inline-block
+
+// this is a terrible fix for alignment of month name
+// I do not have any classNames, all styles are inline so it's the "easiest" way to do it
+div[style*="z-index: 2000"] div[style*="place-content: space-between"] div[direction=up][style*="position: absolute"]
+  display: flex
+  align-items: center
+  justify-content: center
+  &>div
+    padding-top: 0 !important
+    height: auto !important
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.MuiPickersBasePicker-pickerView
+  p
+    padding-top: initial
+    padding-bottom: initial

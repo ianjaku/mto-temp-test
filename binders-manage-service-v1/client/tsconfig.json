@@ -1,0 +1,14 @@
+{
+    "extends": "../../tsconfig.client.json",
+    "compilerOptions": {
+        "sourceMap": true,
+        "outDir": "dist",
+        "esModuleInterop": true,
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "tailwind.config.ts",
+        "vite.config.mts"
+    ]
+}

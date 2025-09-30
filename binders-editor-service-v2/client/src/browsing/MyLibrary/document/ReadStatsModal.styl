@@ -1,0 +1,49 @@
+.readStatsModal
+    &-loader
+        margin: 20px auto
+        &.MuiCircularProgress-root
+            display: block
+    .modal-body
+        min-height: 200px
+        min-width: 500px
+    .link
+        color: #db9c09;
+    .link:visited
+        color: #db9c09;
+
+    &-since
+        display: flex
+        flex-flow: row nowrap
+        align-items: center
+        margin-right: 20px
+        position: relative
+
+        &-dropdown
+            display: inline-block
+            width: 80px
+            margin-right: 0px
+
+            &--thin
+                width: 50px
+            &--long
+                width: 160px
+
+            &:last-child .dropdown-field
+                border-left: none
+                border-top-left-radius: 0
+                border-bottom-left-radius: 0
+                border-top-right-radius: 20px
+                border-bottom-right-radius: 20px
+
+            .dropdown-field
+                background-color: #fff !important
+                border-top-left-radius: 20px
+                border-bottom-left-radius: 20px
+                border-top-right-radius: 0
+                border-bottom-right-radius: 0
+                &-label
+                    height: 37px
+
+            &.dropdown--is-open .dropdown-field
+                border-bottom-left-radius: 0
+                border-bottom-right-radius: 0

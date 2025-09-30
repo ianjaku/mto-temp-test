@@ -1,0 +1,187 @@
+@import '../../../../queries.styl';
+@import '../../../../vars.styl';
+
+/* default: portrait mode = mobile first*/
+#font-size-preview{
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	text-align: center;
+	background: rgba(255,255,255,0.75);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.text-module{
+	font-family: $$userFont
+	box-sizing:border-box;
+	position:relative;
+	overflow-x: hidden;
+	background-color: #fff;
+	height: 100%;
+	padding: 0 4vh 0 10vw;
+	min-height: 30vh; /* minimum of 30% of the screen */
+	transition: transform 350ms ease-in
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $$titleFont
+	}
+	img.emoji {
+		height: 1em;
+        width: 1em;
+        margin: 0 .05em 0 .1em;
+        vertical-align: -0.1em;
+	}
+}
+
+.newer-publication
+	height: 3.6em;
+	line-height: 3.6em;
+	font-family: $$titleFont;
+	label
+		color: #000
+	a
+		color: #FFF;
+		text-decoration: none;
+
+.text-module-wrapper
+	/*
+		flex: 1 = flex: 1 1 auto;
+		flex-grow:1;
+		flex-shrink: 1;
+		flex-basis: auto;
+		ability to grow on an equal basis
+	 */
+	flex: 1;
+	position:relative;
+	word-wrap: break-word;
+	// height: calc(100vw - 4vh);
+
+	@media landscapeQ
+		width: calc(100% - 100vh)
+
+//special selector which will survive stylus compilation and minification
+// will be replaced with custom tag styles
+#customStyles{-customStyles: true;}
+
+.comment-button
+	display: block
+	position: absolute
+	width: 20px
+	height: 20px
+	bottom: 16px
+	left: 16px
+	cursor: pointer
+	padding: circlePadding px
+	width: circleDimension px
+	height: circleDimension px
+	border-radius: 100%
+	border: 1px solid #646666
+	background-color: white
+	color: #646666
+	opacity: 1
+	transition: opacity 0.2s linear
+	i.icon-edit
+		background-image: url("~assets/icon-edit.svg")
+		width: 16px
+		height: 16px
+		margin-left: 6px
+		margin-top: 4px
+
+.text-selection-options-box
+	position: absolute
+	background-color: rgba(34, 34, 34, 0.75)
+	padding: 4px 8px
+	border-radius: 6px
+	span
+		color: white
+		font-size: small
+		&.copy-option
+			cursor: pointer
+			text-decoration: underline
+.comment-box
+	position: absolute
+	width: 320px
+	height: 200px
+	padding: 0px
+	background-color: white
+	border: 1px solid #CCC
+	border-radius: 4px
+	overflow: hidden
+	padding-bottom: 20px
+	.comment-box-wrapper
+		height: 100%
+		overflow: auto
+		margin-bottom: 1em
+	.title-area
+		position: relative
+		background-color: bindersMediaYellow
+		padding: 8px 0px
+		h3
+			font-family: $$titleFont;
+			margin: 0px
+			color: white
+			text-align: center
+		button
+			position: absolute
+			top: 18px
+			right: -6px
+			border: none
+			background: none
+			color: white
+			font-weight: bold
+	textarea
+		width: calc(100% - 32px)
+		height: 100px
+		margin: 16px
+		background-color: #F7F7F7
+		resize: none
+		border: 1px solid #DDD
+	button
+		background-color: bindersMediaYellow
+		float: right
+		color: white
+		border: none
+		margin-right: 16px
+		margin-top: -16px
+		border-radius: 4px;
+		padding: 8px;
+		&:hover
+			background-color: #444
+		&.secondary
+			background-color: #444
+			&:hover
+				background-color: bindersMediaYellow
+	.comment-area
+		.comment-action
+			button
+				border: none
+				background-color: transparent
+				color: #222
+				cursor: pointer
+				&:hover
+					text-decoration: underline
+		p
+			font-size: small
+		.comment-reply
+			margin-left: 24px
+
+.commented-word
+	border-bottom: 1px dotted #000
+	text-decoration: none
+	cursor: pointer
+
+@media only screen and (orientation: landscape) {
+	.text-module {
+		padding: 0 defaultTextModuleXPaddingLandscape 0
+		min-height: 100vh
+	}
+
+	#font-size-preview {
+		height: 100vh
+	}
+}

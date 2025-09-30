@@ -1,0 +1,29 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@import "../../../../vars.styl";
+
+.commentsGroup
+    position: relative
+    padding: 16px
+    border-left: 5px solid transparent
+    border-bottom: 1px solid grayBorder
+    &--selected
+        border-left-color: bindersMediaYellow
+        .commentsGroup-chunk-index
+            color: accentColor
+            font-weight: 500
+            background: #FFF6D4
+    &-chunk-index
+        position: absolute
+        bottom: 32px
+        right: 38px
+        display: flex
+        text-align: center
+        align-items: center
+        justify-content: center
+        border-radius: 100%
+        color: grey500
+        font-size: 11px
+        font-family: defaultFontName
+        font-weight: 400
+        height: 16px
+        width: 16px

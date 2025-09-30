@@ -1,0 +1,53 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@require "./reset.css";
+@require "~@binders/ui-kit/lib/style/global.styl";
+@require "./tailwind.bridge.css";
+
+html
+    // need to overwrite reset.css prop
+    overflow: visible !important
+    font-size: 14px
+body
+    background: backgroundColor !important
+    color: baseColor
+    font-family: defaultFontName
+.container
+    @media rwd.mobile
+        margin-left: 0
+    &-inner
+        width: 75%
+        margin: 0 auto
+        @media rwd.mobile
+            width: 93%
+            padding-right: 0
+        &--wide
+            width: 90%
+.info
+    margin: 32px auto
+    font-size: 18px
+    text-align: center;
+    color: baseColor
+    font-weight: 500
+    &-text
+        margin-top: 20vh
+    &--error
+        color: colorErrorDark
+    &--warning
+        color: colorError
+strong
+    font-weight: bold
+.intercom-launcher-frame
+    z-index: 1001 !important
+.header-navbar
+    .MuiPaper-elevation8
+        box-shadow: none
+    @media rwd.mobile
+        .MuiPaper-root
+            z-index: 1300
+
+.text-sm
+    font-size: fontSizeSm
+.text-base
+    font-size: fontSizeBase
+.text-2xl
+    font-size: fontSize2xl

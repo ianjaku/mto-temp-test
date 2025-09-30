@@ -1,0 +1,39 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.readerfeedbackSettings
+    --gap-sm: 4px
+    --gap-md: 8px
+    --gap-lg: 12px
+
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    &-loader
+        padding: 80px 0
+    .inheritedSettingsNavigator
+        width: 100%
+    .MuiCheckbox-root
+        padding: 0
+    .readerfeedbackSetting
+        display: flex
+        flex-direction: column
+        gap: var(--gap-md)
+        &-checkboxwrapper
+            display: flex
+            flex-direction: column
+            gap: var(--gap-md)
+            &-parentItems
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                gap: var(--gap-lg)
+                padding: var(--gap-sm) 0
+            .checkboxControlLabel
+                display: flex
+                flex-direction: row
+                gap: var(--gap-md)
+                margin: 0
+            &--disabled
+                .Mui-disabled
+                    color: grey60

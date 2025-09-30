@@ -1,0 +1,102 @@
+@import "../../../../../vars.styl";
+
+.video-wrapper
+    &.playButtonVisible
+        .vjs-big-play-button
+            display: block !important
+    &:not(.playButtonVisible)
+        .vjs-big-play-button
+            display: none !important
+    .vjs-big-play-button
+        background-color: white !important
+        color: darkGrayColor
+        opacity: .8 !important
+        transform: var(--_play-btn-rotation);
+        top: calc(50% - 2em) !important
+        left: calc(50% - 2em) !important
+        height: 4em !important
+        border-radius: 4em !important
+        line-height: 4em !important
+        width: 4em !important
+        margin: 0;
+        .vjs-icon-placeholder
+            font-size: 2.5em
+
+.video-wrapper
+    &:not(.video-wrapper--error)&:not(.cant-autoplay)&:not(.audio-enabled)&:not(.allow-pointer-events)
+        pointer-events: none
+    &--error
+        width: 100%
+        height: 100%
+    .vjs-errors
+        &-content-container
+            display: flex
+            align-items: center
+            justify-content: center
+        &-headline
+            padding: 0
+            font-size: 24px
+        &-code
+            display: none
+        &-details
+            display: none
+
+.media-fallback
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &-bg
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: black
+        opacity: 0.6
+        z-index: 5
+    &-box
+        cursor: pointer
+        background-color: darkGrayColor
+        color: #fff
+        padding: 20px 40px
+        position: relative
+        z-index: 6
+    &-title
+        line-height: 120%
+        font-size: 24px
+        color: #fff
+    &-text
+        opacity: 0.6
+
+
+
+.video-errormodal
+    cursor: pointer
+    opacity: 0.9
+    position: absolute
+    left: 0
+    top: 45%
+    z-index: 5
+    display: flex
+    justify-content: center
+    width: 100%
+    >div
+        background-color: darkGrayColor
+        color: #fff
+        padding: 10px 40px
+
+.vjs-toggleMute-button
+    position: absolute
+    color: darkGrayColor
+    background: lightBackground
+    border: 1px solid lightBackground
+    opacity: 0.6
+    cursor: pointer
+    border-radius: 50%
+    width: 38px
+    height: 38px
+    right: 15px
+    bottom: 20px
+    outline: none
+    padding: 0

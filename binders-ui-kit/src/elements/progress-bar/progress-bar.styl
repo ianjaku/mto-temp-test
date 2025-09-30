@@ -1,0 +1,26 @@
+@require "../../vars.styl";
+
+.progress-bar
+    display: flex
+    align-items: center
+    position: absolute
+    top: 5px
+    flex-wrap: wrap
+    @media rwd.mobile
+        flex-wrap: wrap
+    .MuiSlider-root
+        margin-right: 1em
+        padding: 0
+    .value
+        font-size: small
+        color: disabledColor
+        text-align: left
+        @media rwd.mobile
+            display: none
+    &-lastUpdated
+        font-size: 12px
+        color: middleGreyColor
+        margin-left: 5px
+        align-self: flex-end
+        @media rwd.mobile
+            display: none

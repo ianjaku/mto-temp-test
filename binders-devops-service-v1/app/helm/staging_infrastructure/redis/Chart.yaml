@@ -1,0 +1,3 @@
+name: "bindersStagingRedisService"
+version: "0.0.1"
+description: "The infrastructure components used on staging"

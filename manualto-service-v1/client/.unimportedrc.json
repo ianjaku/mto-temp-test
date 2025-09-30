@@ -1,0 +1,25 @@
+{
+    "ignoreUnresolved": [
+        "style-loader!video.js/dist/video-js.min.css"
+    ],
+    "ignoreUnimported": [
+        "src/api/readerService.js",
+        "src/binders/parser.js",
+        "src/stores/actions/userinvite.jsx",
+        "src/invite.jsx",
+        "src/resetPassword.jsx",
+        "src/classnames.d.ts",
+	    "src/window.d.ts"
+    ],
+    "ignoreUnused": [
+        "awesome-typescript-loader",
+        "yamlparser",
+        "path-browserify",
+        "regenerator-runtime",
+        "vm-browserify"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "kv_owner_identities": [
+        all identieties ids that should own keyvault
+    ],
+    "video_storage_account_name": "Default storage account name",
+    "video_storage_access_key": "Default storage access key",
+    "slack_webhook_url": "url of slack channel for sending error notifications",
+    "video_new_storage_account_name":"Storage account name (used when useNewStorage flag is passed in body)",
+    "video_new_storage_access_key":"Storage account access key (used when useNewStorage flag is passed in body)",
+
+}

@@ -1,0 +1,78 @@
+{
+    "children": [
+        {
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "title": "TEST COLLECTION",
+                    "semanticLinks": [ "test/collection"]
+                }
+            ],
+            "type": "collection",
+            "children": [
+                {
+                    "name": "TEST DOCUMENT",
+                    "type": "document"
+                },
+                {
+                    "name": "TEST DOCUMENT2",
+                    "type": "document"
+                },
+                {
+                    "name": "TEST DOCUMENT3",
+                    "type": "document"
+                },
+                {
+                    "languages": [
+                        {
+                            "languageCode": "en",
+                            "title": "TEST COLLECTION INNER",
+                            "semanticLinks": [ "test-collection-inner"]
+                        }
+                    ],
+                    "type": "collection",
+                    "children": [
+                        {
+                            "name": "TEST DOCUMENT INNER",
+                            "type": "document",
+                            "languages": [
+                                {
+                                    "languageCode": "en",
+                                    "isPublished": true,
+                                    "isPrimary": true
+                                }
+                            ],
+                            "aclsToAssign": [
+                                {
+                                    "login": "readonly@manual.to",
+                                    "roleId": "rol-ecd30910-7fd5-477d-a202-773419513210"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "PUBLISHED DOC",
+                            "type": "document",
+                            "languages": [
+                                {
+                                    "languageCode": "en",
+                                    "isPublished": true,
+                                    "isPrimary": true
+                                }
+                            ],
+                            "aclsToAssign": [
+                                {
+                                    "login": "readonly@manual.to",
+                                    "roleId": "rol-ecd30910-7fd5-477d-a202-773419513210"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "TEST DOCUMENT",
+            "type": "document"
+        }
+    ]
+}

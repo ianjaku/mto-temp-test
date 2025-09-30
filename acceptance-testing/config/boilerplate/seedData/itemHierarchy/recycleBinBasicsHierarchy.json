@@ -1,0 +1,46 @@
+{
+    "children": [
+        {
+            "name": "doc to delete",
+            "type": "document",
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "isPublished": false,
+                    "isPrimary": true,
+                    "chunks": [
+                        {
+                            "text": "Chunk 1 txt"
+                        },
+                        {
+                            "text": "Chunk 2 txt"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "doc to delete and restore",
+            "type": "document",
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "isPublished": false,
+                    "isPrimary": true,
+                    "chunks": [
+                        {
+                            "text": "Chunk 1 txt"
+                        },
+                        {
+                            "text": "Chunk 2 txt"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "col to delete",
+            "type": "collection"
+        }
+    ]
+}

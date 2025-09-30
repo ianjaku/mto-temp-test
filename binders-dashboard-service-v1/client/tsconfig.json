@@ -1,0 +1,20 @@
+{
+    "extends": "../../tsconfig.client.json",
+    "compilerOptions": {
+        "sourceMap": true,
+        "outDir": "dist",
+        "esModuleInterop": true
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
+    "references": [
+        {
+            "path": "../../binders-client-v1/tsconfig.json"
+        },
+        {
+            "path": "../../binders-ui-kit/tsconfig.json"
+        }
+    ]
+}

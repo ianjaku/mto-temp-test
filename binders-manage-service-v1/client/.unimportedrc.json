@@ -1,0 +1,16 @@
+{
+    "ignoreUnresolved": [],
+    "ignoreUnimported": [
+        "src/classnames.d.ts"
+    ],
+    "ignoreUnused": [
+        "react-select",
+        "@binders/binders-$service-common",
+        "@binders/ui-kit",
+        "regenerator-runtime"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**"
+    ]
+}

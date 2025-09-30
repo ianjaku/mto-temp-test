@@ -1,0 +1,338 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  monitor
+
+Globals:
+  Function:
+    Timeout: 3
+
+Parameters:
+  AlertManagerHealthEndpointUrl:
+    Type: String
+    Default: "https://newalerts.binders.media/-/ready"
+  PrometheusHealthEndpointUrl:
+    Type: String
+    Default: "https://newprometheus.binders.media/-/ready"
+  PagerDutyEndpoint:
+    Type: String
+    Default: "https://events.pagerduty.com/integration/a226fc697e204406d017724b0a73cc15/enqueue"
+  PrometheusMetricName:
+    Type: String
+    Default: PrometheusDown
+  AlertManagerMetricName:
+    Type: String
+    Default: AlertManagerDown
+  AzureMetricName:
+    Type: String
+    Default: AzureDown
+  EditorMetricName:
+    Type: String
+    Default: EditorDown
+  ReaderMetricName:
+    Type: String
+    Default: ReaderDown
+  Namespace:
+    Type: String
+    Default: Monitoring
+
+Resources:
+  ClientId:
+    Type: "AWS::SecretsManager::Secret"
+    Properties:
+      Name: /monitoring/AzureServicePrincipalClientId
+  ClientSecret:
+    Type: "AWS::SecretsManager::Secret"
+    Properties:
+      Name: /monitoring/AzureServicePrincipalClientSecret
+  E2EUserPassword:
+    Type: "AWS::SecretsManager::Secret"
+    Properties:
+      Name: /monitoring/E2EUserPassword
+  SubscriptionId:
+    Type: "AWS::SecretsManager::Secret"
+    Properties:
+      Name: /monitoring/AzureSubscriptionId
+  TennantId:
+    Type: "AWS::SecretsManager::Secret"
+    Properties:
+      Name: /monitoring/AzureTennantId
+  PrometheusUsernameSecret:
+    Type: "AWS::SecretsManager::Secret"
+    Properties:
+      Name: /monitoring/PrometheusUserName
+  PrometheusPasswordSecret:
+    Type: "AWS::SecretsManager::Secret"
+    Properties:
+      Name: /monitoring/PrometheusPasswordSecret
+
+
+  ChromiumLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: Chromium-Layer
+      Description: Layer that contains shared code needed in this stack (secrets, cloudwatch etc.)
+      ContentUri: ./chromium-layer
+      CompatibleRuntimes:
+        - nodejs20.x
+
+  MonitoringLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: Monitoring-Layer
+      Description: Layer that contains shared code needed in this stack (secrets, cloudwatch etc.)
+      ContentUri: ./monitoring-layer
+      CompatibleRuntimes:
+        - nodejs20.x
+
+  PrometheusMonitorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: prometheus-monitor/
+      Handler: app.lambdaHandler
+      Runtime: nodejs20.x
+      Environment:
+        Variables:
+          PrometheusMetricName: !Ref PrometheusMetricName
+          AlertManagerMetricName: !Ref AlertManagerMetricName
+          Namespace: !Ref Namespace
+          AlertManagerHealthEndpointUrl: !Ref AlertManagerHealthEndpointUrl
+          PrometheusHealthEndpointUrl: !Ref PrometheusHealthEndpointUrl
+          PrometheusUsernameSecretId: !Ref PrometheusUsernameSecret
+          PrometheusPasswordSecretId: !Ref PrometheusPasswordSecret
+      Events:
+        ScheduledEvent:
+          Name: Every5min
+          Type: Schedule
+          Properties:
+            Schedule: rate(5 minutes)
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - cloudwatch:PutMetricData
+              Resource: "*"
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+                - secretsmanager:DescribeSecret
+              Resource:
+                - !Ref PrometheusUsernameSecret
+                - !Ref PrometheusPasswordSecret
+
+  AzureMonitorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: azure-monitor/
+      Handler: app.lambdaHandler
+      Runtime: nodejs20.x
+      Environment:
+        Variables:
+          MetricName: !Ref AzureMetricName
+          Namespace: !Ref Namespace
+          ClientIdSecretId: !Ref ClientId
+          ClientSecretSecretId: !Ref ClientSecret
+          SubscriptionIdSecretId: !Ref SubscriptionId
+          TennantIdSecretId: !Ref TennantId
+      Events:
+        ScheduledEvent:
+          Name: Every5min
+          Type: Schedule
+          Properties:
+            Schedule: rate(5 minutes)
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - cloudwatch:PutMetricData
+              Resource: "*"
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+                - secretsmanager:DescribeSecret
+              Resource:
+                - !Ref ClientId
+                - !Ref ClientSecret
+                - !Ref SubscriptionId
+                - !Ref TennantId
+
+  EditorMonitorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: editor-monitor/
+      Handler: app.lambdaHandler
+      Runtime: nodejs20.x
+      MemorySize: 1024
+      Timeout: 45
+      Layers:
+        - !Ref ChromiumLayer
+        - !Ref MonitoringLayer
+      Environment:
+        Variables:
+          MetricName: !Ref EditorMetricName
+          Namespace: !Ref Namespace
+          E2EUserPassword: !Ref E2EUserPassword
+      Events:
+        ScheduledEvent:
+          Name: Every5min
+          Type: Schedule
+          Properties:
+            Schedule: rate(5 minutes)
+      EphemeralStorage:
+        Size: 2048 
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - cloudwatch:PutMetricData
+              Resource: "*"
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+                - secretsmanager:DescribeSecret
+              Resource:
+                - !Ref ClientId
+                - !Ref ClientSecret
+                - !Ref SubscriptionId
+                - !Ref TennantId
+                - !Ref E2EUserPassword
+
+  ReaderMonitorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: reader-monitor/
+      Handler: app.lambdaHandler
+      Runtime: nodejs20.x
+      MemorySize: 1024
+      Timeout: 20
+      Layers:
+        - !Ref ChromiumLayer
+        - !Ref MonitoringLayer
+      Environment:
+        Variables:
+          MetricName: !Ref ReaderMetricName
+          Namespace: !Ref Namespace
+      Events:
+        ScheduledEvent:
+          Name: Every5min
+          Type: Schedule
+          Properties:
+            Schedule: rate(5 minutes)
+      EphemeralStorage:
+        Size: 2048 
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - cloudwatch:PutMetricData
+              Resource: "*"
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+                - secretsmanager:DescribeSecret
+              Resource:
+                - !Ref ClientId
+                - !Ref ClientSecret
+                - !Ref SubscriptionId
+                - !Ref TennantId
+
+
+  AlarmSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: AlarmTopic
+      Subscription:
+        - Protocol: HTTPS
+          Endpoint: !Ref PagerDutyEndpoint
+
+  AlertManagerDownAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: AlertManagerDownAlarm
+      AlarmActions:
+        - !Ref AlarmSNSTopic
+      ComparisonOperator: "GreaterThanOrEqualToThreshold"
+      DatapointsToAlarm: 1
+      EvaluationPeriods: 1
+      MetricName: "AlertManagerDown"
+      Namespace: "Monitoring"
+      Period: 300
+      Statistic: "Maximum"
+      Threshold: 1
+      Unit: "None"
+
+  PrometheusDownAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: PrometheusDownAlarm
+      AlarmActions:
+        - !Ref AlarmSNSTopic
+      ComparisonOperator: "GreaterThanOrEqualToThreshold"
+      DatapointsToAlarm: 1
+      EvaluationPeriods: 1
+      MetricName: "PrometheusDown"
+      Namespace: "Monitoring"
+      Period: 300
+      Statistic: "Maximum"
+      Threshold: 1
+      Unit: "None"
+
+  AzureDownAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: AzureDownAlarm
+      AlarmActions:
+        - !Ref AlarmSNSTopic
+      ComparisonOperator: "GreaterThanOrEqualToThreshold"
+      DatapointsToAlarm: 1
+      EvaluationPeriods: 1
+      MetricName: "AzureDown"
+      Namespace: "Monitoring"
+      Period: 300
+      Statistic: "Maximum"
+      Threshold: 1
+      Unit: "None"
+
+  EditoreDownAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: EditorDownAlarm
+      AlarmActions:
+        - !Ref AlarmSNSTopic
+      ComparisonOperator: "GreaterThanOrEqualToThreshold"
+      DatapointsToAlarm: 1
+      EvaluationPeriods: 1
+      MetricName: "EditorDown"
+      Namespace: "Monitoring"
+      Period: 300
+      Statistic: "Maximum"
+      Threshold: 1
+      Unit: "None"
+
+  ReaderDownAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: ReaderDownAlarm
+      AlarmActions:
+        - !Ref AlarmSNSTopic
+      ComparisonOperator: "GreaterThanOrEqualToThreshold"
+      DatapointsToAlarm: 1
+      EvaluationPeriods: 1
+      MetricName: "ReaderDown"
+      Namespace: "Monitoring"
+      Period: 300
+      Statistic: "Maximum"
+      Threshold: 1
+      Unit: "None"

@@ -1,0 +1,25 @@
+image:
+  tag: 0.40.0
+
+existingSecret:
+  name: mongo-exporter-uri-0 
+  key: mongodb-uri
+
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/port:   "9216"
+  prometheus.io/path:   "/metrics"
+
+service:
+  port: 9216
+  targetPort: 9216
+
+serviceMonitor:
+  enabled: false              
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 120Mi
+  limits:
+    memory: 200Mi

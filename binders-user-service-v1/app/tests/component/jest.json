@@ -1,0 +1,17 @@
+{
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js"
+    ],
+    "testPathIgnorePatterns": [
+        "/dist/",
+        "/tests/component/config.ts"
+    ],
+    "testEnvironment": "node",
+    "testResultsProcessor": "./node_modules/jest-junit",
+    "transform": {
+        ".(ts|tsx)": "./node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/tests/component/.*\\.ts"
+}

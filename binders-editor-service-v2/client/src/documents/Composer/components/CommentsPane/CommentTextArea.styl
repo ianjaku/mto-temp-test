@@ -1,0 +1,50 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+@import "./vars.styl"
+
+.comment-textarea-container
+    createCssVariables()
+
+    --_send-icon-size: 20px
+    --_textarea-height: calc(2 * var(--gap-md) + var(--_send-icon-size))
+
+    display: flex
+    flex-direction: column
+    flex: 1
+    align-self: stretch
+
+    .comment-textarea
+        display: flex
+        position: relative
+
+        .btn-send
+            position: absolute
+            cursor: pointer
+            top: var(--gap-md)
+            right: var(--gap-md)
+            color: var(--clr-neutral-500)
+            width: var(--_send-icon-size)
+            height: var(--_send-icon-size)
+            transition: opacity 150ms ease-in
+            &:hover
+                color: var(--clr-neutral-700)
+            &.visible
+                opacity: 1
+            &.invisible
+                opacity: 0
+
+        textarea
+            border: none
+            padding: var(--gap-md)
+            min-height: var(--_textarea-height)
+            height: var(--_textarea-height)
+            border-radius: var(--radius-sm)
+            font-family: var(--font-body)
+            line-height: 1.5
+            resize: vertical
+            min-width: fill-available
+            max-width: fill-available
+
+    .comment-error
+        padding: var(--gap-md)
+        background-color: var(--clr-neutral-700)
+        color: var(--clr-red-200)

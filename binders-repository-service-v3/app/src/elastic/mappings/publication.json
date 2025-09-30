@@ -1,0 +1,54 @@
+{
+    "properties": {
+        "bindersVersion": { "type": "keyword" },
+        "binderId": { "type": "keyword" },
+        "domainCollectionId": { "type": "keyword" },
+        "accountId": { "type": "keyword" },
+        "ancestorIds": { "type": "keyword" },
+        "thumbnail": { "enabled": false },
+        "authorIds": {"type": "keyword"},
+        "language": {
+            "type": "nested",
+            "include_in_root": true,
+            "properties": {
+                "storyTitle": { "type": "text" },
+                "storyTitleRaw": { "type": "keyword" },
+                "iso639_1": { "type": "keyword" },
+                "modules": { "type": "text", "index": false }
+            }
+        },
+        "modules": {
+            "properties": {
+                "meta": { "enabled": false },
+                "text": {
+                    "properties": {
+                        "chunked": {
+                            "type": "nested",
+                            "properties": {
+                                "key": { "type": "text", "index": false },
+                                "chunks": {
+                                    "type": "text",
+                                    "fields": {
+                                        "textContent": {
+                                          "type": "text",
+                                          "analyzer": "chunk_content_analyzer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "images": {
+                    "properties": {
+                        "chunked": { "enabled": false }
+                    }
+                }
+            }
+        },
+        "links": { "enabled": false },
+        "lastModfied": { "type": "date" },
+        "lastPublished": { "type": "date" },
+        "isActive": { "type": "boolean" }
+    }
+}

@@ -1,0 +1,35 @@
+# Trigger a build daily at midnight (UTC)
+schedules:
+  - cron: "0 0 * * *"
+    displayName: Daily Build
+    branches:
+      include:
+      - develop
+      - MT-4937-implement-continues-build-for-st
+    always: true
+
+trigger: none
+pr: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  ACR_NAME: 'binders'
+  TAG: 'latest'
+
+steps:
+  - task: Docker@2
+    displayName: 'Login to Azure Container Registry'
+    inputs:
+      containerRegistry: container-registry
+      command: 'login'
+
+  - task: Docker@2
+    displayName: 'Build and push Nginx unprivileged image'
+    inputs:
+      containerRegistry: container-registry
+      repository: 'binders-static-pages-service-v1'
+      command: 'buildAndPush'
+      Dockerfile: '$(System.DefaultWorkingDirectory)/binders-static-pages-service-v1/Dockerfile'
+      tags: '$(TAG)'

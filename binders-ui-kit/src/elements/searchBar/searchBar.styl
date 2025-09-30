@@ -1,0 +1,14 @@
+@require("../../vars.styl")
+
+.searchBar
+    @media rwd.mobile
+        margin: 0
+    &-input
+        width: 100%
+        height: 36px
+        background: grey100
+        transition: background 150ms ease-in
+        &::placeholder
+            color: grey800
+    .input-wrapper-search
+        width: 280px

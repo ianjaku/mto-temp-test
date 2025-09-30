@@ -1,0 +1,7 @@
+#absolutePositioningTarget
+    position fixed
+    z-index 5000
+    height: 100vh /* makes sure that positioning using bottom: works. Don't add width: 100vw because that prevents mouse events */
+    >*
+        // Make sure the FlashMessages are rendered over the modal backdrop (https://bindersmedia.atlassian.net/browse/MT-3940)
+        z-index: 140000

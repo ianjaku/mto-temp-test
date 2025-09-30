@@ -1,0 +1,123 @@
+
+alias startmini="sudo -E CHANGE_MINIKUBE_NONE_USER=true minikube start --vm-driver=none --extra-config=kubelet.resolv-conf=/run/systemd/resolve/resolv.conf"
+alias stopmini="sudo -E CHANGE_MINIKUBE_NONE_USER=true minikube stop"
+alias k="kubectl"
+alias kn="kubectl -n"
+alias kss="kubectl config use-context binders-aks-staging-admin"
+alias ksp="kubectl config use-context binders-aks-production-admin"
+alias ksl="kubectl config use-context minikube"
+alias kcc="kubectl config current-context"
+
+function ken () {
+	export CURRENT_K8S_NAMESPACE=$1
+    echo "Current namespace set to: '$CURRENT_K8S_NAMESPACE'"
+}
+
+function kens () {
+    echo "Current namespace '$CURRENT_K8S_NAMESPACE'"
+}
+
+function kne () {
+    kubectl -n $CURRENT_K8S_NAMESPACE $@
+}
+
+# Get k8s pods sorted by creation time
+function knep () {
+	kne get pods --sort-by=.metadata.creationTimestamp
+}
+
+# Docker logs matching container
+function dl () {
+    output=$(docker ps | grep $1)
+    containerId=( $output )
+    id=${containerId[0]}
+    docker logs $id
+}
+
+# Docker logs and follow matching container
+function dlf () {
+    output=$(docker ps | grep $1)
+    containerId=( $output )
+    id=${containerId[0]}
+    docker logs -f $id
+}
+
+# Docker restart matching container
+function dr () {
+    output=$(docker ps | grep $1)
+    containerId=( $output )
+    id=${containerId[0]}
+    docker restart $id
+}
+
+# Docker restart matching container (even if stopped)
+function dra () {
+    output=$(docker ps -a | grep $1)
+    containerId=( $output )
+    id=${containerId[0]}
+    docker restart $id
+}
+
+# Docker exec matching container as root
+function dexec () {
+    output=$(docker ps | grep $1)
+    containerId=( $output )
+    id=${containerId[0]}
+    docker exec -tiu root $id /bin/bash
+}
+
+# Rebuild local dev images
+function dtnbuild () {
+    yarn workspace @binders/devops-v1 ts-node src/scripts/localdev/build.ts
+}
+
+# Bring up local dev
+function dtnup () {
+    yarn workspace @binders/devops-v1 ts-node src/scripts/localdev/up.ts $@
+}
+
+# Bring down local dev
+function dtndown () {
+    yarn workspace @binders/devops-v1 ts-node src/scripts/localdev/down.ts
+}
+
+# Restart local dev containers that crashed
+function dtnrestart () {
+    yarn workspace @binders/devops-v1 ts-node src/scripts/localdev/restartAll.ts
+}
+
+# Ts-node into the devops workspace
+function dtn () {
+    yarn workspace @binders/devops-v1 ts-node $@
+}
+
+# Run E2E tests
+function e2e () {
+   yarn workspace @binders/acceptance test -- $@
+}
+
+# grep all local dev container logs
+function gdl () {
+   docker ps -qf  "name=_local-dev_develop" | xargs -L 1 docker logs 2> /dev/null | grep $@
+}
+
+# Clean all minikube data
+function cleanmini () {
+    sudo rm -rf /home/tom/.minikube
+    sudo rm -rf /root/.minikube
+    sudo rm -rf /etc/kubernetes
+    sudo rm -rf /var/lib/minikube
+    sudo rm -rf /tmp/juju*
+}
+
+# Print out production binders config (k8s context should be production)
+function getBindersConfig {
+    kne get secret -o json binders-config | jq -r '.data."production.json"' | base64 -d | python -m json.tool
+}
+
+# Print out elastic password
+function getElasticPassword {
+    kne get secret binders-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo
+}
+
+if [ -f /home/tom/Projects/binders-service/binders-devops-service-v1/app/scripts/dtn-completion.bash ] ; then source /home/tom/Projects/binders-service/binders-devops-service-v1/app/scripts/dtn-completion.bash ; fi

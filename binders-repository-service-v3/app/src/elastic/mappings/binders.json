@@ -1,0 +1,75 @@
+{
+    "properties": {
+        "bindersVersion": { "type": "keyword" },
+        "accountId": { "type": "keyword" },
+        "ancestorIds": { "type": "keyword" },
+        "thumbnail": { "enabled": false },
+        "authors": {
+            "type": "nested",
+            "include_in_parent": true,
+            "properties": {
+                "title": { "type": "keyword" },
+                "name": { "type": "text" },
+                "nameRaw": { "type": "keyword" }
+            }
+        },
+        "authorIds": {"type": "keyword"},
+        "languages": {
+            "type": "nested",
+            "include_in_root": true,
+            "properties": {
+                "storyTitle": { "type": "text" },
+                "storyTitleRaw": { "type": "keyword" },
+                "iso639_1": { "type": "keyword" },
+                "modules": { "type": "text", "index": false }
+            }
+        },
+        "modules": {
+            "properties": {
+                "meta": { "enabled": false },
+                "text": {
+                    "properties": {
+                        "chunked": {
+                            "type": "nested",
+                            "properties": {
+                                "key": { "type": "keyword", "index": false },
+                                "chunks": {
+                                    "type": "text",
+                                    "fields": {
+                                        "textContent": {
+                                          "type": "text",
+                                          "analyzer": "chunk_content_analyzer"
+                                        }
+                                    }
+                                },
+                                "json": { "type": "text" },
+                                "editorStates": { "type": "keyword", "index": false, "doc_values": false },
+                                "iso639_1": {
+                                    "type": "keyword"
+                                }
+                            }
+                        }
+                    }
+                },
+                "images": {
+                    "properties": {
+                        "chunked": { "enabled": false }
+                    }
+                }
+            }
+        },
+        "ownership": {
+            "type": "nested",
+            "properties": {
+                "type": { "type":  "text" },
+                "ids": { "type": "keyword" }
+            }
+        },
+        "links": { "enabled": false },
+        "lastModfied": { "type": "date" },
+        "created": {"type": "date"},
+        "deletionTime": {"type": "date"},
+        "deletedById": {"type": "keyword"},
+        "deletedGroupCollectionId": {"type": "keyword"}
+    }
+}

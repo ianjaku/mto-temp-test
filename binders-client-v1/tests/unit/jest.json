@@ -1,0 +1,9 @@
+{
+  "moduleFileExtensions": ["ts", "tsx", "js"],
+  "testPathIgnorePatterns": ["/dist/"],
+  "testResultsProcessor": "jest-junit",
+  "transform": {
+    ".(ts|tsx)": ["ts-jest", { "isolatedModules": true }]
+  },
+  "testRegex": "/tests/unit/.*\\.ts"
+}

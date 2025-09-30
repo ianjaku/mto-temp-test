@@ -1,0 +1,40 @@
+{
+    "children": [
+        {
+            "name": "A public advertised doc",
+            "type": "document",
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "isPublished": true,
+                    "isPrimary": true,
+                    "chunks": [
+                        {
+                            "text": "This is chunk 1"
+                        }
+                    ],
+                    "title": "A public advertised doc"
+                }
+            ],
+            "isPublic": true,
+            "isAdvertised": true
+        },
+        {
+            "name": "A doc",
+            "type": "document",
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "isPublished": true,
+                    "isPrimary": true,
+                    "chunks": [
+                        {
+                            "text": "This is chunk 1"
+                        }
+                    ],
+                    "title": "A doc"
+                }
+            ]
+        }
+    ]
+}

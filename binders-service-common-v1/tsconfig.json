@@ -1,0 +1,15 @@
+{
+    "extends": "../tsconfig.service.json",
+    "compilerOptions": {
+        "composite": true,
+        "outDir": "lib",
+        "rootDir": "./src",
+    },
+    "exclude": ["node_modules", "lib"],
+    "include": ["src/**/*"],
+    "references": [
+        {
+            "path": "../binders-client-v1/tsconfig.json"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+
+landscapeQ = "screen and (orientation: landscape)"
+portraitQ = "screen and (orientation: portrait)"
+
+
+desktop= s("screen and (min-width: %s)", lg)
+laptop= s("screen and (min-width: %s) and (max-width: %s)", md, maxMd)
+tablet= s("screen and (min-width: %s) and (max-width: %s)", sm, maxSm)
+mobile = s("screen and (max-width: %s)", maxXs)
+mobileLandscape = s("screen and (max-width: %s) and (orientation:landscape)", maxXs)
+largedesktop = s("screen and (min-width: %s)", xl)
+
+tablet-plus = s("screen and (min-width: %s)", sm)
+laptop-plus = s("screen and (min-width: %s)", md)
+
+tablet-less = s("screen and (max-width: %s)", maxSm)
+laptop-less = s("screen and (max-width: %s)", maxMd)

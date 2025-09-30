@@ -1,0 +1,5 @@
+app/src/test.ts
+app/typings
+.idea
+*.js
+*.d.ts

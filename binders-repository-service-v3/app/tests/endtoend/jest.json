@@ -1,0 +1,13 @@
+{
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js"
+    ],
+    "testPathIgnorePatterns": [
+        "/dist/"
+    ],
+    "testEnvironment": "node",
+    "preset": "ts-jest",
+    "testRegex": "/tests/endtoend/.*\\.ts"
+}

@@ -1,0 +1,22 @@
+{
+    "testEnvironment": "jsdom",
+    "moduleDirectories": ["node_modules", "src", "/usr/local/lib/node_modules", "/usr/lib/node_modules"],
+    "testMatch": [
+        "**/tests/unit/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
+    "setupFilesAfterEnv": ["../setupTests.ts"],
+    "extensionsToTreatAsEsm": [".styl", ".ts", ".tsx"],
+    "transform": {
+        "^.+\\.ts(x)?$": ["ts-jest", {
+            "ts-jest": {
+                "isolatedModules": true,
+                "useESM": true
+            }
+        }]
+    },
+    "moduleNameMapper": {
+        "\\.(svg)$": "<rootDir>/../__mocks__/svgMock.tsx",
+        "\\.(styl)$": "<rootDir>/../__mocks__/stylMock.styl"
+    }
+}

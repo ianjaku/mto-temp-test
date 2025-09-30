@@ -1,0 +1,49 @@
+@import "../../../vars.styl";
+
+.rte-link-creator
+    padding: 0px 10px
+    text-align: left
+    margin: 10px auto
+    color: whiteColor
+    font-family: defaultFontName
+    &-warning
+        display: block
+        font-size: 11px
+        color: colorError
+        animation: fadeIn 1s
+        padding-left: 50px !important
+    .rte-form-group
+        padding: 5px 5px 5px 0
+        justify-content: space-between
+        display: flex
+        align-items: center
+        label
+            display: inline-block
+            color: whiteColor
+        input[type="text"]
+            flex-grow: 1
+            border: 1px solid #444
+            height: 28px
+            padding: 5px
+        .button
+            margin-left: 4px
+            border-radius: 0px
+            padding: 5.5px 40px
+            align-self: flex-end
+        &.target-input
+            align-items: flex-start
+            &-checkbox
+                &>div:nth-child(1)
+                    max-width: 57%
+                    min-width: 57%
+                    /* Workaround for iPhone */
+    .link-creator-label
+        min-width: 30px
+    .MuiCheckbox-root
+        .MuiIconButton-label
+            width: 34px
+            color: borderGrayColor
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

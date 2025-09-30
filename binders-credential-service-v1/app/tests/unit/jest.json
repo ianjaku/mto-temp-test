@@ -1,0 +1,9 @@
+{
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "moduleDirectories": ["node_modules", "src", "/usr/local/lib/node_modules", "/usr/lib/node_modules"],
+    "testMatch": [ "**/tests/unit/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ],
+    "transform": {
+        ".ts": ["ts-jest", { "isolatedModules": true }]
+    }
+}

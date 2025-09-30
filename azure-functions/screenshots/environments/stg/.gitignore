@@ -1,0 +1,4 @@
+azure.conf
+tfvars.json
+.terraform
+outputs.json

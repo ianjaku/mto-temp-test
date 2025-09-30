@@ -1,0 +1,95 @@
+
+
+.flashmessages-wrapper
+    position: fixed
+    font-size: 16px
+    top: 0
+    left: 50%;
+    transform: translateX(-50%);
+    // so its above usersettings in header - mobile case
+    z-index: 2001
+    @media screen and (max-width:767px)
+        width: 90%
+
+.flashmessage-container
+    margin-top: 14px
+    position: relative
+    width: 100%
+
+.flashmessage
+    position: relative
+    border: 1px solid white
+    border-radius: 10px
+    clear: both
+    box-shadow: 0 9px 13px 0 rgba(0,0,0,0.25)
+    padding: 10px 20px;
+    overflow: auto;
+    box-sizing: border-box;
+    animation: slide-up 1s ease-in both
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+    display: flex
+    align-items: center
+
+    &.flashmessage-severity-success
+        background: rgb(76, 175, 80);
+        color: white;
+
+.flashmessage-icon
+    margin-right: 10px
+    align-self: start;
+    margin-top 5px
+    align-items:center
+    font-size: 24px
+    // so it does not depend on fontsizes in different container
+    width: 20px !important
+    height: 20px !important
+    box-sizing: content-box
+
+.flashmessage-content
+    padding: 5px 0
+    display: flex
+    flex-direction: column
+.flashmessage-close
+    padding: 5px
+    margin-left: 5px
+    transition: 150ms all ease-in-out;
+    align-self: start;
+
+    &:hover
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.2);        
+        border-radius: 10px;
+.flashmessage-button
+    cursor: pointer
+    color: white
+    display: block
+    margin: 12px auto
+    padding: 8px
+    border: 1px solid white
+    border-radius: 4px
+    &:hover
+        background-color: lightgray
+
+.flashmessage-severity-info
+    background-color: rgb(64, 145, 215)
+    color: #fff
+
+.flashmessage-severity-warning
+    color: #ffffff
+    background-color: rgb(250, 159, 71);
+
+.flashmessage-severity-error
+    color: #ffffff
+    background-color: rgb(244, 67, 54);
+
+
+@keyframes slide-up {
+ 0% { 
+    transform: translateY(-100px) scalex(1);
+    animation-timing-function: cubic-bezier(.66,.0,1,.72);
+  }
+ 50%  { transform: scale(1.05,.95) translateY(0); }
+        57%  { transform: scale(1,1) translateY(-7px); }
+        64%  { transform: scale(1,1) translateY(0); }
+        100% { transform: scale(1,1) translateY(0); }
+}

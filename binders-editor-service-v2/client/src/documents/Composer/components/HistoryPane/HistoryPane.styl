@@ -1,0 +1,59 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.historyPane
+    &-not-successful
+        display: flex
+        margin: 16px 0
+        font-size: 14px
+    &-container
+        display: flex
+        flex-direction: column
+    &-options
+        margin: 8px 0 16px 0
+    &-table
+        display: flex
+        flex-direction: column
+        border-top: 1px solid #dcdbd9
+        &-row
+            padding-bottom: 4px
+            padding-top: 8px
+            font-size: 0.9rem
+            border-bottom: 1px solid #dcdbd9
+            min-height: 65px
+            &-title
+                display: flex
+                cursor: pointer
+                &-text
+                    display: flex
+                    align-items: center
+                    flex-wrap: wrap
+                    line-height: 1.5
+                    &:hover
+                        text-decoration: underline
+                        color: whiteColor
+                &-lang
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    background: whiteColor
+                    width: 24px
+                    min-width: 24px
+                    height: 24px
+                    color: baseColor
+                    border-radius: 50%
+                    margin-right: 8px
+                    font-size: 9px
+                    text-transform: uppercase
+                    &--render-disabled
+                        background: disabledColor
+            &-info
+                display: flex
+                align-items: center
+                padding-left: 32px
+                margin-top: 8px
+                color: disabledColor
+                font-size: 0.8em
+            &--inactive
+                color: disabledColor
+                .historyPane-table-row-cell-title-lang
+                    background: disabledColor

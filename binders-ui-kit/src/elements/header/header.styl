@@ -1,0 +1,44 @@
+@require "../../vars.styl"
+
+.header
+    height: mobileNavbarHeight
+    &-toolbar
+        display: flex
+        justify-content: space-between
+        &-logo
+            display: block
+            margin: 0 auto
+            position: absolute
+            left: 0
+            right: 0
+            top: 8px
+            width: 30px
+            height: 30px
+            div
+                height: 30px
+            img
+                max-height: 30px
+                width: auto
+                height: 100%
+        &-tailElement
+            position: relative
+            left: 6px
+    &-navbar
+        & > div
+            @media rwd.materialMobile
+                top: mobileNavbarHeight !important
+        .account-switcher
+            font-size: 12px
+            &.dropdown
+                width: 100%
+                padding: 8px 0px
+            .dropup-arrow
+                position: absolute
+                right: 4px
+                top: 50%
+                transform: translateY(-50%)
+    .drawer-overlay
+        display: none
+        @media rwd.mobile
+            display: block
+            top: mobileNavbarHeight !important

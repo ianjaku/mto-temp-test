@@ -1,0 +1,20 @@
+{
+    "children": [
+        {
+            "name": "SUBCOL1",
+            "type": "collection",
+            "children": [
+                {
+                    "name": "SUBCOL2",
+                    "type": "collection",
+                    "children": [
+                        {
+                            "name": "SUBDOC1",
+                            "type": "document"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

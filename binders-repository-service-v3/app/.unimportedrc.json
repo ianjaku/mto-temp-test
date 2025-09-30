@@ -1,0 +1,14 @@
+{
+    "entry": [
+        "src/main.ts",
+        "src/scripts/**"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/migrations/**"
+    ],
+    "ignoreUnused": [
+        "@binders/ui-kit",
+        "prom-client"
+    ]
+}

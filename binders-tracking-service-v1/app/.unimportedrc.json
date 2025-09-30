@@ -1,0 +1,18 @@
+{
+    "entry": [
+        "src/main.ts",
+        "src/scripts/**"
+    ],
+    "ignoreUnresolved": [],
+    "ignoreUnused": [
+        "@binders/ui-kit",
+        "elasticsearch"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**"
+    ],
+    "ignoreUnimported": [
+        "src/trackingservice/userActionsAggregators/collectionViews.ts"
+    ]
+}

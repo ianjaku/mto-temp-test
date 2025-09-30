@@ -1,0 +1,31 @@
+{
+    "name": "@binders/acceptance",
+    "version": "1.0.6",
+    "author": "Tom De Coninck",
+    "license": "UNLICENSED",
+    "scripts": {
+        "cleanup": "rm -rf dist playwright-report test-results test-reports junit.xml",
+        "setup": "npm install && npm dedupe",
+        "transpile": "tsc",
+        "pw": "yarn playwright test",
+        "pwc": "yarn playwright codegen",
+        "pwr": "yarn playwright show-report",
+        "pwt": "yarn playwright show-trace",
+        "unimported": "yarn exec yarn dlx unimported"
+    },
+    "dependencies": {
+        "@binders/binders-service-common": "workspace:*",
+        "@binders/client": "workspace:*",
+        "@playwright/test": "1.53.1",
+        "@types/node": "^22.15.3",
+        "ts-node": "^10.9.1",
+        "tsx": "^4.20.3",
+        "typescript": "5.4.5",
+        "uuid": "^9.0.0"
+    },
+    "publishConfig": {
+        "registry": "https://npm.dev.binders.media",
+        "access": "restricted",
+        "always-auth": true
+    }
+}

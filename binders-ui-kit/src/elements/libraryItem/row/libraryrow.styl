@@ -1,0 +1,206 @@
+@require "../../../vars.styl"
+
+.library-row
+    box-sizing: border-box
+    border-top: 1px solid borderGrayColor
+    border-left: 1px solid borderGrayColor
+    border-right: 1px solid borderGrayColor
+    margin-top: -1px
+    display: flex
+    font-family: defaultFontName
+    position: relative
+    z-index: 1
+    background: whiteColor
+    height: 88px
+    &.is-draggingAttention
+        animation: orb 1.8s linear 1s 1
+    &-isReadonly
+        color: borderGrayColor
+        &.isDocument
+            cursor: auto !important
+    .statistics
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+        justify-content: center
+        color: rgba(29, 29, 29, 0.5)
+        float: left
+        min-width: 32px
+        min-height: 45px
+        @media rwd.notmobile
+            width: 80px
+        margin-left: auto
+        .amount
+            font-size: 20px
+            @media rwd.mobile
+                font-size: 14px
+        h4
+            margin: 0
+            font-size: 12px
+            font-weight: 100
+    &:after
+        content: "";
+        height: 1px
+        width: 100%
+        background-color: borderGrayColor
+        display: block
+        position: absolute
+        bottom: 0
+        left: 0
+    &.is-active:hover
+        z-index: 2
+        border-color accentColor
+    &.is-active:after,:hover:after
+        background-color: accentColor
+    &:not(.is-locked)
+        cursor: pointer
+    &-image
+        border-right: 1px solid borderGrayColor
+    &-content
+        word-break: break-word
+        width: 100%
+        display: flex
+        align-items: center
+        overflow: hidden
+        position: relative
+        &-title
+            margin-left: 15px
+            max-width: 77%
+            @media rwd.mobile
+                margin-left: 5px
+            &-wrapper
+                display: flex
+                align-items: center
+                gap: 8px
+                @media rwd.mobile
+                    margin-left: 12px
+            &-label
+                align-self: baseline
+                font-size: 16px
+                word-wrap: break-word
+                pointer-events: none
+                .search-hit
+                    background-color: accentColor
+                    padding: 2px 4px
+            &-info
+                color: disabledColor
+                font-size: 12px
+                margin-top: 5px
+                padding-bottom: 5px
+                display: block
+                position: absolute
+                bottom: 0px
+                height: (1px * additionalInfoHeightDesktop)
+                visibility: visible
+                background: white
+                width: 125% // Force additional info into one row: 100% + (100% - row-title max-width)
+                @media rwd.mobile
+                    display: none
+                &--mobile
+                    display: none
+                    @media rwd.mobile
+                        display: block
+                    &:before
+                        content: ''
+                        display: block
+                        position: absolute
+                        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); 
+                        bottom: 100%
+                        width: 100%
+                        left: 0
+                        height: 15px
+            &-icon
+                @media rwd.mobile
+                    margin-left: 5px
+        &-clickLoader
+            margin-left: 15px
+        .locked-by
+            margin-left: 8px
+            display: flex
+            &-usericon
+                margin-right: 6px
+                img
+                    width: 15px
+            &-dots
+                display: flex
+                align-items: center
+                &-dot
+                    display:inline-block
+                    width:4px
+                    height:4px
+                    border-radius:50%
+                    margin-right:3px
+                    background:middleGreyColor
+                    animation: wave 1.3s linear infinite
+                    &:nth-child(2)
+                        animation-delay: -1.1s
+                    &:nth-child(3)
+                        animation-delay: -0.9s
+        &-right
+            margin-left: auto
+            display: flex
+            align-items: center
+        &-icon
+            color: darkGreyColor !important
+            width: 12px
+            &-baseline
+                align-self: center
+                &.MuiIcon-root
+                    font-size: 14px
+        .context-menu
+            &.is-document
+                margin-left: initial
+    &--is-pending
+        opacity: 0.7
+        animation-duration: 1s
+        animation-fill-mode: forwards
+        animation-iteration-count: infinite
+        animation-name: placeHolderShimmer
+        animation-timing-function: linear
+        background: whiteColor
+        background: linear-gradient(to right, whiteColor 10%, lighterGreyColor 28%, whiteColor 43%)
+        background-size: 800px 104px
+        .library-row
+            &-image
+                width: 87px
+                flex-grow: 0
+                flex-shrink: 0
+                background-color: lightGreyColor
+        &.is-active, &:hover
+            border-color: borderGrayColor
+        &.is-active:after, &:hover:after
+            background-color: borderGrayColor
+
+// MT-2275 Vertical misalignment of title - iPhone
+@media rwd.mobile
+    .library-row-content-title
+        margin-top: 0px
+        max-height: 100%
+    .library-row--has-progress-bar
+        .library-row-content-title
+            margin-top: 17px
+
+@keyframes wave
+	0%, 60%, 100%
+		transform: initial
+	30%
+		transform: translateY(-10px)
+
+
+@keyframes placeHolderShimmer
+    0%
+        background-position: -468px 0
+    100%
+        background-position: 468px 0
+
+@keyframes orb
+    0%
+        box-shadow: 0 0 10px -10px accentColor
+        z-index: 2
+    50%
+        box-shadow: 0 0 10px 5px accentColor
+        z-index: 2
+    100%
+        box-shadow: 0 0 10px -10px accentColor
+        z-index: 1

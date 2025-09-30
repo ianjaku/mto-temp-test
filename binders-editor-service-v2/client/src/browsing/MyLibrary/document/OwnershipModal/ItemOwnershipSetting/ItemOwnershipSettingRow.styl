@@ -1,0 +1,27 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.itemOwnershipSetting-overview-row
+    display flex
+    align-items: center
+    justify-content: space-between
+    &-head
+        display: flex
+        flex-direction: column
+        padding: 4px 0
+        row-gap: 4px
+        &-property
+            display: flex
+            align-items: center
+            &-icon
+                display: flex
+                width: 30px
+            &--disabled
+                color: grey60
+
+        .inheritedSettingsNavigator-radiobuttonWrapper
+            padding-left: 24px
+            justify-content: flex-start
+            column-gap: 8px
+    &-tail
+        &-delete
+            cursor: pointer

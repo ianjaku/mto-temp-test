@@ -1,0 +1,174 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@require "./vars.styl";
+
+anchorWidth=16px
+actionWidth=65px
+
+.settingsPane
+    &-container
+        display: flex
+        flex-direction: column
+        min-height: 350px /* to make room for the languages dropdown (to fix) */
+    &-publishInfo
+        font-size: 13px
+        color: accentColor
+        &-list
+            list-style: initial
+            margin-left: 25px
+
+        &-header
+            display: flex
+            padding-bottom: 8px
+            align-items: center
+
+            &-icon
+                padding-right: 4px
+
+    &-header
+        display: flex
+        justify-content: flex-end
+        margin-top: 12px
+        margin-right: anchorWidth
+        &-action
+            padding: 8px 0px 8px 0px
+            font-size: 0.7rem
+            width: actionWidth
+            display: flex
+            justify-content: center
+    &-langMenuAnchor
+        position: relative
+        .relabel-language-menu
+            .add-languages-dropdown
+                position: absolute
+                left: 5px
+    &-table
+        display: flex
+        flex-direction: column
+        &-rows
+            display: flex
+            flex-direction: column
+            overflow: hidden
+            width: 100%
+
+        &-row
+            display: flex
+            justify-content: center
+            padding-bottom: 4px
+            padding-top: 8px
+
+            &-container
+                display: flex
+                align-items: center
+                border-top: 1px solid borderGrayColor
+                border-bottom: 1px solid middleGreyColor
+                transition: 0.2s all ease-in-outmiddleGreyColor
+                background-color: baseColor
+                padding-left: 4px
+                min-height: "%spx" % settingsTableRowHeight
+
+                &:hover
+                    box-shadow: inset 0px 0px 0px 2px accentHoverColor
+                    border-color: baseColor
+
+
+            &-title
+                display:flex
+                align-items: center
+                flex-grow: 1
+                &-text
+                    font-size: 13px
+                    display: flex
+                    flex-wrap: wrap
+                    line-height: 1.5
+                    color: whiteColor
+                    word-break: break-word
+                .languageCodeSelector
+                    min-width: 35px
+                    .languagecode-circle, .languagecode-circle-text
+                        cursor: pointer
+                    .languagecode-circle:hover
+                        background-color: accentColor
+                        color: whiteColor
+            &-actions
+                display: flex
+
+            &-action
+                width: actionWidth
+                min-width: actionWidth
+                display: flex
+                align-items: center
+                justify-content: center
+                a
+                    text-decoration: none
+
+            &-anchor
+                width: anchorWidth
+                min-width: anchorWidth
+                display: flex
+                align-items: center
+                justify-content: center
+
+            &-draft-text
+                flex-grow: 1
+                display: flex
+                align-items: center
+                padding-left: 32px
+                color: accentColor
+                font-size: 12px
+                font-weight: 500
+                cursor: pointer
+                &--disabled
+                    color: disabledColor
+    &-modal
+        p
+            margin: 12px 0
+.relabel-language-menu-popOverRoot
+    pointer-events: none // disallow default behaviour of PopOverRoot which catches outside clicks. We handle this ourselves because two floating elements need to be able to receive clicks (contextmenu + dropdown)
+    .MuiPopover-paper
+        pointer-events: all
+
+.export-publication-pdf-modal
+    .modal
+        .modal-body
+            display: flex
+            flex-direction: row
+            @media rwd.tablet
+                flex-direction: column
+        .modal-footer
+            justify-content: center
+        .export-publication-fonts-preview
+            padding: 0px 18px
+            @media rwd.tablet
+                padding: 18px 0px
+    .export-pdf-modal-body
+        width: 450px
+        .export-pdf-modal-row
+            display: flex
+            width: 100%
+            height: 3em
+            justify-content: space-between
+            align-items: center
+            span
+                line-height: 3em
+        &-footer
+            display: flex
+            flex-direction: row
+            align-items: center
+            &.reset-footer
+                height: 3em
+                a
+                    text-align: left
+                    color: baseColor
+                    width: initial
+        .export-pdf-save-settings-link
+            width: 100%
+            text-align: right
+            text-decoration: none
+            color: accentColor
+            font-weight: bold
+        .slider
+            width: 450px
+.export-pdf-previewModal
+    .modal
+        max-width: 1275px
+        width: 100%

@@ -1,0 +1,51 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@require "../../styles/mixins.styl";
+
+.fallback
+    position: absolute
+    top: 40%
+    right: 0
+    left: 0
+    bottom: 0
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    background-color: backgroundColor
+    transform-translate(0%, -50%)
+    &-notFound, &-error, &-expired
+        &Image
+            display: block
+            margin: 0 auto
+        &Message, &notFoundMessage, &MessageTitle
+            margin-top: 30px
+            padding: 10px 0
+            font-family: Rubik
+            font-size: 18px
+            letter-spacing: normal
+            text-align: center
+        &Message, &notFoundMessage
+            font-weight: 500
+            &Exception
+                display: block
+                padding: 10px 0 0
+                max-width: 320px
+                font-size: 14px
+                font-weight: 400
+                line-height: 1.25
+             &Info
+                display: block
+                padding: 5px 0 0
+                max-width: 600px
+                font-size: 12px
+                font-weight: 400
+                line-height: 1.25
+                color: darkGrayColor
+        &MessageDescription
+            margin-top: 10px
+            text-align: center
+    &-goback
+        margin-top: 30px
+    &-error
+        &Image
+            margin-left: 60px

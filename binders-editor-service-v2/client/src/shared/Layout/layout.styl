@@ -1,0 +1,68 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.my-library-breadcrumbs
+    .breadcrumbs-viewer
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+.breadcrumbs-viewer
+    background-color: backgroundColor
+    position: relative
+    width: 100%
+    overflow: hidden
+    .breadcrumbs-wrapper
+        min-height: 28px
+        flex: 1
+        width: 100%
+        display: flex
+        .breadcrumbs-set
+            flex: 1
+            width: 100%
+.layout-body
+    @media rwd.mobile
+        padding-bottom: 100px
+.myLibrary-topBar
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    padding: 16px 0px
+    max-width: calc(100vw - 220px)
+    @media screen and (max-width: 600px)
+        max-width: unset
+    @media rwd.mobile
+        flex-direction: column
+        align-items: start
+        gap: 25px
+        padding-bottom: 25px
+    .myLibrary-actions
+        display: flex
+        flex-direction: row
+        gap: 20px
+        @media rwd.mobile
+            flex-direction: column
+            align-items: stretch
+            align-self: center
+            gap: 10px
+    .myLibrary-button
+        padding: 8px 16px
+        gap: 8px
+        margin: 0
+        @media rwd.mobile
+            width: 60vw
+    .breadcrumbs-item
+        color: grey600
+        font-size: 13px
+    .myLibrary-button-create
+        color: grey900
+    h2
+        font-size: 24px
+        font-weight: 500
+        color: grey900
+    .browse-share-button
+        color: grey800
+        transition: color 150ms ease-in
+        &:hover
+            color: grey900
+

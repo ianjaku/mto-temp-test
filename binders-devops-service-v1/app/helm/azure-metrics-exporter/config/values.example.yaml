@@ -1,0 +1,5 @@
+secret:
+  clientId: "<azure app id>"
+  clientSecret: "<azure app client secret>"
+  subscriptionId: "<subscription id>"
+  tennantId: "<tennant id>"

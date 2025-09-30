@@ -1,0 +1,24 @@
+
+echo "initContainer arguments: $*"
+
+if ! grep -q '"sharp": ' binders-image-service-v1/app/package.json; then
+cat <<EOF
+
+    WARNING: Missing sharp from binders-image-service-v1/app/package.json
+
+      - If the missing sharp package is an unstaged change, simply revert the package.json and re-run yarn
+        git checkout -- binders-image-service-v1/app/package.json
+        sudo rm -rf .yarn/unplugged
+        yarn
+
+      - Otherwise
+        - Check if you have accidentally committed image-service package.json without sharp package
+        - Add package $1
+        - Check latest develop branch
+
+EOF
+    sleep 60
+fi
+
+yarn workspace @binders/image-v1 remove sharp
+yarn workspace @binders/image-v1 add $1

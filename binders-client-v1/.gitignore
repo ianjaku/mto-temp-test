@@ -1,0 +1,17 @@
+.idea
+lib
+node_modules
+typings
+*.log
+*.css.d.ts
+app/src/test.ts
+*.js
+*.d.ts
+
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

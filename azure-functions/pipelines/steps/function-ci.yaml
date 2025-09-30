@@ -1,0 +1,31 @@
+parameters:
+  workingDirectory: ''
+  fetchFfmpeg: false
+
+steps:
+- bash: ls -la $(Build.SourcesDirectory)
+  displayName: 'List Directory Contents'
+- bash: ls -la $(workingDirectory)
+  displayName: 'List Working Directory Contents'
+
+- bash: npm install
+  displayName: Npm install
+  workingDirectory: ${{ parameters.workingDirectory }}
+
+- bash: |
+    echo "Fetching FFmpeg binary..."
+    node fetch-ffmpeg.js
+  displayName: Fetch FFmpeg Binary
+  workingDirectory: ${{ parameters.workingDirectory }}
+  condition: eq('${{ parameters.fetchFfmpeg }}', 'true')
+
+- bash: npm run build
+  displayName: Build
+  workingDirectory: ${{ parameters.workingDirectory }}
+
+- bash: ls -la $(Build.SourcesDirectory)
+  displayName: 'List Directory Contents'
+- bash: |
+    ls -la azure-functions/screenshots/dist/src/functions
+    cat azure-functions/screenshots/dist/src/functions/TakeScreenshot.js
+    ls -la azure-functions/screenshots/

@@ -1,0 +1,6 @@
+credentials.json
+files/elementScreenshots/screenshot_*
+files/elementScreenshots/failed_scenarios
+playwright-report
+*@manual.to.json
+test-results

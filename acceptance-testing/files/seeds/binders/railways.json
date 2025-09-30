@@ -1,0 +1,1134 @@
+{
+    "bindersVersion": "0.4.2",
+    "storedVersion": "0.4.2",
+    "contentVersion": 1,
+    "accountId": "aid-0fb03b72-d6ed-4204-abbd-f64b8879b4a6",
+    "ancestorIds": [
+        "AV2KUKtPgRcJXleWPkq_"
+    ],
+    "authors": [],
+    "authorIds": [
+        "uid-ef59a3f6-812d-4253-a535-7600bd5a99a9",
+        "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324",
+        "uid-1a6f6e15-b574-44ee-9d2d-9bf1350ceed0",
+        "uid-0c1b8657-2f64-45c4-b551-df08a4240a56",
+        "uid-36cab4fc-ca83-4601-bcda-3b9300974da0",
+        "uid-db413203-8ccb-4a3b-9c45-ae23854bee67",
+        "uid-90b64b6f-299b-4f35-9c79-8c9dcf89f571",
+        "uid-544fff8a-e81b-44de-b0e5-e24b0002298d",
+        "uid-8f94f4f3-683e-4157-87c8-1141bf3105b6",
+        "uid-8f332cec-4c67-4a0a-8c58-30436374f780"
+    ],
+    "languages": [
+        {
+            "iso639_1": "en",
+            "modules": [
+                "t1"
+            ],
+            "storyTitle": "Railways",
+            "storyTitleRaw": "Railways",
+            "priority": 0
+        },
+        {
+            "iso639_1": "ru",
+            "modules": [
+                "t3"
+            ],
+            "storyTitle": "Железные дороги",
+            "storyTitleRaw": "Железные дороги",
+            "priority": 5
+        },
+        {
+            "iso639_1": "zh",
+            "modules": [
+                "t4"
+            ],
+            "storyTitle": "铁路",
+            "storyTitleRaw": "铁路",
+            "priority": 3
+        },
+        {
+            "iso639_1": "nl",
+            "modules": [
+                "t5"
+            ],
+            "storyTitle": "Spoorwegen",
+            "storyTitleRaw": "Spoorwegen",
+            "priority": 2
+        },
+        {
+            "iso639_1": "fr",
+            "modules": [
+                "t6"
+            ],
+            "storyTitle": "C-Clips",
+            "storyTitleRaw": "C-Clips",
+            "priority": 4
+        },
+        {
+            "iso639_1": "pl",
+            "modules": [
+                "t7"
+            ],
+            "storyTitle": "",
+            "storyTitleRaw": "",
+            "priority": 6
+        },
+        {
+            "iso639_1": "ar",
+            "modules": [
+                "t8"
+            ],
+            "storyTitle": "",
+            "storyTitleRaw": "",
+            "priority": 7
+        },
+        {
+            "iso639_1": "el",
+            "modules": [
+                "t9"
+            ],
+            "storyTitle": "Σιδηροδρόμων",
+            "storyTitleRaw": "Σιδηροδρόμων",
+            "priority": 8
+        },
+        {
+            "iso639_1": "es",
+            "modules": [
+                "t10"
+            ],
+            "storyTitle": "",
+            "storyTitleRaw": "",
+            "priority": 9
+        },
+        {
+            "iso639_1": "hi",
+            "modules": [
+                "t11"
+            ],
+            "storyTitle": "रेलवे",
+            "storyTitleRaw": "रेलवे",
+            "priority": 1
+        },
+        {
+            "iso639_1": "th",
+            "modules": [
+                "t12"
+            ],
+            "storyTitle": "รถไฟ",
+            "storyTitleRaw": "รถไฟ",
+            "priority": 10
+        }
+    ],
+    "links": {
+        "index-pairs": [
+            [
+                "t1",
+                "i1"
+            ],
+            [
+                "t3",
+                "i1"
+            ],
+            [
+                "t4",
+                "i1"
+            ],
+            [
+                "t5",
+                "i1"
+            ],
+            [
+                "t6",
+                "i1"
+            ],
+            [
+                "t7",
+                "i1"
+            ],
+            [
+                "t8",
+                "i1"
+            ],
+            [
+                "t9",
+                "i1"
+            ],
+            [
+                "t10",
+                "i1"
+            ],
+            [
+                "t11",
+                "i1"
+            ],
+            [
+                "t12",
+                "i1"
+            ]
+        ]
+    },
+    "thumbnail": {
+        "medium": "https://binder-prod-images-cdn.azureedge.net/images-production//AWer/RFrl/YVmKqY4NOFZB/img-004ee90c-8d62-4363-9c02-7b43f70e64ce/MEDIUM?sv=2022-11-02&st=2024-07-03T06%3A47%3A41Z&se=2024-07-03T11%3A47%3A41Z&sr=b&sp=r&sig=z714xxfgzVUBYWoqdiu6moUtxML3qQypN8nc6sVkKvg%3D",
+        "fitBehaviour": "crop",
+        "bgColor": "888888",
+        "rotation": 0,
+        "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0"
+    },
+    "showInOverview": true,
+    "hasPublications": true,
+    "isInstance": false,
+    "binderLog": {
+        "current": [
+            {
+                "createdAt": 1587590909991,
+                "position": 0,
+                "updatedAt": 1719992867369,
+                "uuid": "246a78d3-4218-4a14-b28d-52822949ded0",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 1,
+                "updatedAt": 1718789265905,
+                "uuid": "49e53b52-1690-4d9a-9789-4a157c2b3789",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 2,
+                "updatedAt": 1718789265905,
+                "uuid": "df619160-b4d8-4b4d-8277-265ec2f67ec2",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 3,
+                "updatedAt": 1718789265905,
+                "uuid": "c63be872-e5e7-44ee-a3ad-22cdd805b5e4",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 4,
+                "updatedAt": 1718789265905,
+                "uuid": "95992b98-131c-46bc-9509-0a250c5b53ae",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 5,
+                "updatedAt": 1718789268620,
+                "uuid": "a4ed54a1-6541-43d6-a098-992ad0396464",
+                "targetId": [
+                    "327395c0-9b31-48eb-befe-7f30a23ad279",
+                    "29d0e6a1-a127-4d80-9adb-4dbb15a21919",
+                    "c41cae70-4c9a-4694-bff2-27122170b4ab",
+                    "5963c1b8-1c68-4ebf-8a99-9dbc9f5af62d"
+                ]
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 6,
+                "updatedAt": 1718789265905,
+                "uuid": "9a00391b-66d0-4236-999a-d66e9e46bb57",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 7,
+                "updatedAt": 1718789265905,
+                "uuid": "4ebe653c-3aa4-4be7-9bbe-d8b50c7ac8ec",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 8,
+                "updatedAt": 1718789265905,
+                "uuid": "218e17b5-978a-442a-a8b1-531df8c4b4c1",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 9,
+                "updatedAt": 1718789265905,
+                "uuid": "a2b37333-ce00-40dc-a344-2ae71621f944",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 10,
+                "updatedAt": 1718789265905,
+                "uuid": "133f92cf-b938-4351-a970-3de57eeebb47",
+                "targetId": []
+            },
+            {
+                "createdAt": 1587590909991,
+                "position": 11,
+                "updatedAt": 1718789265905,
+                "uuid": "3accc282-893d-46c1-895d-79816e65b6f4",
+                "targetId": [
+                    "f3a35980-82e0-4d44-afc6-ceef0b8292e6",
+                    "0f32df3b-6fc1-4de0-9391-3368d18684b1",
+                    "1738023d-41e2-4229-8227-afcdac4697e3",
+                    "7bcd5815-ac57-4fbd-8573-10c5000cd4a3",
+                    "fdf35e7e-0de8-43b2-8484-12e2e10c8328",
+                    "2460123d-3d55-4c8d-8d87-ff83b0377e6b",
+                    "629bc6a7-7761-4a13-aba7-ce0381d9c49e",
+                    "a6f83986-b0d9-4180-8d23-f454610cc451",
+                    "3391ebe3-7ab4-4c5d-b55b-48e2ec581dd6",
+                    "0f6cfe40-f46e-4996-a653-c6146d1a79b9"
+                ]
+            }
+        ]
+    },
+    "lastModified": "2020-03-18T10:20:41.938Z",
+    "lastModifiedBy": "uid-544fff8a-e81b-44de-b0e5-e24b0002298d",
+    "created": "2020-04-22T21:28:29.991Z",
+    "modules": {
+        "meta": [
+            {
+                "key": "t1",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "Original text",
+                "iso639_1": "en",
+                "pdfExportOptions": {
+                    "renderTitlePage": true,
+                    "renderOnlyFirstCarrouselItem": false,
+                    "fontsSize": {
+                        "h1": 32,
+                        "h2": 24,
+                        "h3": 19,
+                        "paragraph": 16,
+                        "dateLabel": 12,
+                        "li": 12
+                    }
+                },
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "i1",
+                "type": "images",
+                "format": "chunked",
+                "markup": "url",
+                "caption": "Original illustrations",
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t3",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "Russian translation",
+                "iso639_1": "ru",
+                "isDeleted": true,
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t4",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "Chinese translation",
+                "iso639_1": "zh",
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t5",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "Dutch translation",
+                "iso639_1": "nl",
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t6",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "French translation",
+                "iso639_1": "fr",
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t7",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "Polish translation",
+                "iso639_1": "pl",
+                "isDeleted": true,
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t8",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "Arabic translation",
+                "iso639_1": "ar",
+                "isDeleted": true,
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t9",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "Greek translation",
+                "iso639_1": "el",
+                "isDeleted": true,
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t10",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "Spanish translation",
+                "iso639_1": "es",
+                "isDeleted": true,
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t11",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "Hindi translation",
+                "iso639_1": "hi",
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            },
+            {
+                "key": "t12",
+                "type": "text",
+                "format": "chunked",
+                "markup": "richtext",
+                "caption": "",
+                "iso639_1": "th",
+                "isDeleted": true,
+                "lastModifiedDate": "2024-07-03T07:47:48.036Z",
+                "lastModifiedBy": "uid-bc69a0fa-cf0d-43a9-992e-96ece892b324"
+            }
+        ],
+        "images": {
+            "chunked": [
+                {
+                    "key": "i1",
+                    "chunks": [
+                        [
+                            {
+                                "id": "img-004ee90c-8d62-4363-9c02-7b43f70e64ce",
+                                "url": "https://binder-prod-images-cdn.azureedge.net/images-production//AWer/RFrl/YVmKqY4NOFZB/img-004ee90c-8d62-4363-9c02-7b43f70e64ce/MEDIUM?sv=2022-11-02&st=2024-07-03T06%3A47%3A41Z&se=2024-07-03T11%3A47%3A41Z&sr=b&sp=r&sig=z714xxfgzVUBYWoqdiu6moUtxML3qQypN8nc6sVkKvg%3D",
+                                "fitBehaviour": "crop",
+                                "bgColor": "888888",
+                                "languageCodes": [],
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQxLjkyMFoiLCJpYXQiOjE3MTk5OTI4NjEsImV4cCI6MTc1MTUyODg2MSwiaXNzIjoiYmluZGVycyJ9.EAaLe2e2gQFpCJjqnuMUPuMSDJVdIhgIcHUsY7iKYmo"
+                            }
+                        ],
+                        [
+                            {
+                                "id": "vid-ecb852d3-e147-4659-b880-219ede8c2727",
+                                "url": "https://api.binders.media/image/v1/binders/AWerRFrlYVmKqY4NOFZB/vid-ecb852d3-e147-4659-b880-219ede8c2727/video_screenshot",
+                                "fitBehaviour": "crop",
+                                "bgColor": "3b3b3b",
+                                "languageCodes": [],
+                                "inUse": true,
+                                "rotation": 0,
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0",
+                                "audioEnabled": false,
+                                "autoPlay": true
+                            }
+                        ],
+                        [
+                            {
+                                "id": "vid-7eb9e1b8-0c49-40f7-87a6-1c8e847d2f8b",
+                                "url": "https://api.binders.media/image/v1/binders/AWerRFrlYVmKqY4NOFZB/vid-7eb9e1b8-0c49-40f7-87a6-1c8e847d2f8b/video_screenshot",
+                                "fitBehaviour": "crop",
+                                "bgColor": "4c4c4c",
+                                "languageCodes": [],
+                                "inUse": true,
+                                "rotation": 0,
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0",
+                                "audioEnabled": false,
+                                "autoPlay": true
+                            }
+                        ],
+                        [
+                            {
+                                "id": "vid-5093c01f-063d-427c-bc9b-368b9f832b98",
+                                "url": "https://api.binders.media/image/v1/binders/AWerRFrlYVmKqY4NOFZB/vid-5093c01f-063d-427c-bc9b-368b9f832b98/video_screenshot",
+                                "fitBehaviour": "crop",
+                                "bgColor": "313131",
+                                "languageCodes": [],
+                                "inUse": true,
+                                "rotation": 0,
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0",
+                                "audioEnabled": false,
+                                "autoPlay": true
+                            }
+                        ],
+                        [
+                            {
+                                "id": "vid-4545f197-a8b9-4e95-9824-908ddeaf983a",
+                                "url": "https://api.binders.media/image/v1/binders/AWerRFrlYVmKqY4NOFZB/vid-4545f197-a8b9-4e95-9824-908ddeaf983a/video_screenshot",
+                                "fitBehaviour": "crop",
+                                "bgColor": "535353",
+                                "languageCodes": [],
+                                "inUse": true,
+                                "rotation": 0,
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0",
+                                "audioEnabled": false,
+                                "autoPlay": true
+                            }
+                        ],
+                        [
+                            {
+                                "id": "vid-afb9531c-0f41-4fd6-a8df-773787b892d1",
+                                "url": "https://api.binders.media/image/v1/binders/AWerRFrlYVmKqY4NOFZB/vid-afb9531c-0f41-4fd6-a8df-773787b892d1/video_screenshot",
+                                "fitBehaviour": "crop",
+                                "bgColor": "#FFFFFF",
+                                "languageCodes": [],
+                                "inUse": true,
+                                "rotation": 0,
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0",
+                                "audioEnabled": false,
+                                "autoPlay": true
+                            }
+                        ],
+                        [
+                            {
+                                "id": "vid-d6495934-b47c-4731-8b4e-ed06fa42e7d6",
+                                "url": "https://api.binders.media/image/v1/binders/AWerRFrlYVmKqY4NOFZB/vid-d6495934-b47c-4731-8b4e-ed06fa42e7d6/video_screenshot",
+                                "fitBehaviour": "crop",
+                                "bgColor": "626262",
+                                "languageCodes": [],
+                                "inUse": true,
+                                "rotation": 0,
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0",
+                                "audioEnabled": false,
+                                "autoPlay": true
+                            }
+                        ],
+                        [
+                            {
+                                "id": "vid-2234ce95-5786-4368-93d4-77f5ff3c8e72",
+                                "url": "https://api.binders.media/image/v1/binders/AWerRFrlYVmKqY4NOFZB/vid-2234ce95-5786-4368-93d4-77f5ff3c8e72/video_screenshot",
+                                "fitBehaviour": "crop",
+                                "bgColor": "6c6c6c",
+                                "languageCodes": [],
+                                "inUse": true,
+                                "rotation": 0,
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0",
+                                "audioEnabled": false,
+                                "autoPlay": true
+                            }
+                        ],
+                        [
+                            {
+                                "id": "vid-dc963d99-b3c5-4368-b451-adc26bb8343b",
+                                "url": "https://api.binders.media/image/v1/binders/AWerRFrlYVmKqY4NOFZB/vid-dc963d99-b3c5-4368-b451-adc26bb8343b/video_screenshot",
+                                "fitBehaviour": "crop",
+                                "bgColor": "4c4c4c",
+                                "languageCodes": [],
+                                "inUse": true,
+                                "rotation": 0,
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0",
+                                "audioEnabled": false,
+                                "autoPlay": true
+                            }
+                        ],
+                        [
+                            {
+                                "id": "vid-b967961b-6709-42ca-b33e-9b61f112fbfe",
+                                "url": "https://api.binders.media/image/v1/binders/AWerRFrlYVmKqY4NOFZB/vid-b967961b-6709-42ca-b33e-9b61f112fbfe/video_screenshot",
+                                "fitBehaviour": "crop",
+                                "bgColor": "505050",
+                                "languageCodes": [],
+                                "inUse": true,
+                                "rotation": 0,
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQyLjYyN1oiLCJpYXQiOjE3MTk5OTI4NjIsImV4cCI6MTc1MTUyODg2MiwiaXNzIjoiYmluZGVycyJ9.N5lgs__lABfScGGHkmGq2s4pTMm2JS5FKZ7Qxzh80Y0",
+                                "audioEnabled": false,
+                                "autoPlay": true
+                            }
+                        ],
+                        [
+                            {
+                                "id": "img-004ee90c-8d62-4363-9c02-7b43f70e64ce",
+                                "url": "https://binder-prod-images-cdn.azureedge.net/images-production//AWer/RFrl/YVmKqY4NOFZB/img-004ee90c-8d62-4363-9c02-7b43f70e64ce/MEDIUM?sv=2022-11-02&st=2024-07-03T06%3A47%3A41Z&se=2024-07-03T11%3A47%3A41Z&sr=b&sp=r&sig=z714xxfgzVUBYWoqdiu6moUtxML3qQypN8nc6sVkKvg%3D",
+                                "fitBehaviour": "crop",
+                                "bgColor": "888888",
+                                "languageCodes": [],
+                                "urlToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoxLCJkYXRhIjp7ImFjbCI6eyJydWxlcyI6W3sicmVzb3VyY2UiOnsidHlwZSI6MSwiaWRzIjpbIkFXZXJSRnJsWVZtS3FZNE5PRlpCIl19LCJwZXJtaXNzaW9ucyI6W3sibmFtZSI6MX1dfV0sInNjb3BlcyI6WzBdfX0sImludmFsaWRhdGVkIjpmYWxzZSwiZXhwaXJhdGlvbkRhdGUiOiIyMDI0LTA3LTA0VDA3OjQ3OjQxLjkyMFoiLCJpYXQiOjE3MTk5OTI4NjEsImV4cCI6MTc1MTUyODg2MSwiaXNzIjoiYmluZGVycyJ9.EAaLe2e2gQFpCJjqnuMUPuMSDJVdIhgIcHUsY7iKYmo"
+                            }
+                        ],
+                        [
+                        ]
+                    ]
+                }
+            ]
+        },
+        "text": {
+            "chunked": [
+                {
+                    "key": "t1",
+                    "chunks": [
+                        [
+                            "<h1><strong>C-Brackets</strong></h1>\n<p><a target=\"_blank\" href=\"https://demo.manual.to/railways\">https://demo.manual.to/railways</a></p>\n<p><span style=\"font-size: 1.2em\">This guide explains how to make </span><span style=\"font-size: 1.2em\"><strong>emergency connections </strong></span><span style=\"font-size: 1.2em\">with the welding plates of the rail.&nbsp;</span></p>\n<p>🛠<strong> Required tools:&nbsp;</strong></p>\n<ul>\n  <li>Torque wrench</li>\n  <li>Safety gloves</li>\n</ul>"
+                        ],
+                        [
+                            "<p>Choose<strong> the right side</strong> for loosening with the<strong> torque wrench</strong>.&nbsp;</p>"
+                        ],
+                        [
+                            "<p>Mount the <strong>torque wrench</strong> to the <strong>lock nut </strong>of the C-bracket.</p>"
+                        ],
+                        [
+                            "<p>Loosen the <strong>lock nut</strong> with the <strong>torque wrench.</strong></p>"
+                        ],
+                        [
+                            "<p>Loosen the <strong>lock nut </strong>further by hand. ✋</p>"
+                        ],
+                        [
+                            "<p>Move the <strong>nut plate</strong> up in order to unscrew the <strong>mounting nut.</strong></p>"
+                        ],
+                        [
+                            "<p>Fixate the <strong>torque wrench</strong> on the <strong>mounting nut.&nbsp;</strong></p>"
+                        ],
+                        [
+                            "<p>Loosen the<strong> mounting nut </strong>with the<strong> torque wrench.</strong></p>"
+                        ],
+                        [
+                            "<p>Further loosen the<strong> mounting nut </strong>by hand. ✋</p>"
+                        ],
+                        [
+                            "<p>Remove the <strong>C-bracket </strong>from the rail.</p>"
+                        ],
+                        [
+                            "<h1><strong>❓</strong></h1>\n<p>Any questions? <strong>Contact</strong> us.</p>"
+                        ],
+                        [
+                            "<p>Share this with your colleagues by having them scan this QR code.&nbsp;</p>\n<p><a target=\"_blank\" href=\"https://demo.manual.to/railways\">https://demo.manual.to/railways</a></p>"
+                        ]
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"ed7p6\",\"text\":\"C-Brackets\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":10,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"4jspf\",\"text\":\"https://demo.manual.to/railways\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[{\"offset\":0,\"length\":31,\"key\":0}],\"data\":{}},{\"key\":\"78ai3\",\"text\":\"This guide explains how to make emergency connections with the welding plates of the rail. \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":91,\"style\":\"FONT_SIZE_120\"},{\"offset\":32,\"length\":22,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"d0rcg\",\"text\":\"🛠 Required tools: \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":1,\"length\":17,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"9krh3\",\"text\":\"Torque wrench\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"600kr\",\"text\":\"Safety gloves\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{\"0\":{\"type\":\"link\",\"mutability\":\"IMMUTABLE\",\"data\":{\"pasted\":true,\"target\":\"_blank\",\"isCallToLink\":false,\"text\":\"https://demo.manual.to/railways\",\"url\":\"https://demo.manual.to/railways\"}}}}",
+                        "{\"blocks\":[{\"key\":\"d07jv\",\"text\":\"Choose the right side for loosening with the torque wrench. \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":6,\"length\":15,\"style\":\"BOLD\"},{\"offset\":44,\"length\":14,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"88uaq\",\"text\":\"Mount the torque wrench to the lock nut of the C-bracket.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":10,\"length\":13,\"style\":\"BOLD\"},{\"offset\":31,\"length\":9,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"4q7tb\",\"text\":\"Loosen the lock nut with the torque wrench.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":8,\"style\":\"BOLD\"},{\"offset\":29,\"length\":14,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"73jud\",\"text\":\"Loosen the lock nut further by hand. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":9,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"2qjpb\",\"text\":\"Move the nut plate up in order to unscrew the mounting nut.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":9,\"style\":\"BOLD\"},{\"offset\":46,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"fof75\",\"text\":\"Fixate the torque wrench on the mounting nut. \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":13,\"style\":\"BOLD\"},{\"offset\":32,\"length\":14,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"f1d9u\",\"text\":\"Loosen the mounting nut with the torque wrench.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":10,\"length\":14,\"style\":\"BOLD\"},{\"offset\":32,\"length\":15,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"ac40c\",\"text\":\"Further loosen the mounting nut by hand. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":18,\"length\":14,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"14v9q\",\"text\":\"Remove the C-bracket from the rail.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":10,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"abtrh\",\"text\":\"❓\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":1,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"f7rai\",\"text\":\"Any questions? Contact us.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":15,\"length\":7,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"ctuh5\",\"text\":\"Share this with your colleagues by having them scan this QR code. \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"2g2mk\",\"text\":\"https://demo.manual.to/railways\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[{\"offset\":0,\"length\":31,\"key\":0}],\"data\":{}}],\"entityMap\":{\"0\":{\"type\":\"link\",\"mutability\":\"IMMUTABLE\",\"data\":{\"pasted\":true,\"target\":\"_blank\",\"isCallToLink\":false,\"text\":\"https://demo.manual.to/railways\",\"url\":\"https://demo.manual.to/railways\"}}}}"
+                    ],
+                    "iso639_1": "en"
+                },
+                {
+                    "key": "t3",
+                    "chunks": [
+                        [
+                            "<h1><strong>C-кронштейны</strong></h1>\n<p><span style=\"font-size: 1.2rem\">В этом руководстве объясняется, как сделать</span> <span style=\"font-size: 1.2rem\"><strong>аварийные соединения</strong></span> <span style=\"font-size: 1.2rem\">с сварочными пластинами рельса.</span></p>\n<p>🛠 <strong>необходимые инструменты:</strong></p>\n<ul>\n  <li>Ключ крутящего момента</li>\n  <li>Защитные перчатки</li>\n</ul>"
+                        ],
+                        [
+                            "<p>Выберите<strong> правую сторону</strong> для ослабления с<strong> ключом крутящего момента</strong>.</p>"
+                        ],
+                        [
+                            "<p>Установите <strong>ключ крутящего момента</strong> на <strong>стопорНую гайку </strong>C-кронштейна.</p>"
+                        ],
+                        [
+                            "<p>Ослабьте <strong>стопорную гайку</strong> с <strong>ключом крутящего момента.</strong></p>"
+                        ],
+                        [
+                            "<p>Ослабьте <strong>стопорную гайку </strong>вручную. ✋</p>"
+                        ],
+                        [
+                            "<p>Переместите <strong>гайку пластины</strong> вверх для того, чтобы отвинтить <strong>крепежную гайку.</strong></p>"
+                        ],
+                        [
+                            "<p>ЗаФиксировать <strong>гаечный ключ крутящего момента</strong> на <strong>крепежной гайке.</strong></p>"
+                        ],
+                        [
+                            "<p>Ослабьте<strong> крепежную гайку </strong>с<strong> ключом крутящего момента.</strong></p>"
+                        ],
+                        [
+                            "<p>Далее ослабьте<strong> крепежную гайку </strong>вручную. ✋</p>"
+                        ],
+                        [
+                            "<p>Снимите <strong>C-кронштейн </strong>с направляющей.</p>"
+                        ],
+                        [
+                            "<h1><strong>❓</strong></h1>\n<p>Любые вопросы? Свяжитесь с нами.</p>"
+                        ],
+                        [
+                            "<p>Поделитесь этим с вашими коллегами, имея их сканировать этот QR-код.</p>"
+                        ]
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"2fc4l\",\"text\":\"C-кронштейны\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":12,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"79uvo\",\"text\":\"В этом руководстве объясняется, как сделать аварийные соединения с сварочными пластинами рельса.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":44,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"d186g\",\"text\":\"🛠 необходимые инструменты:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":2,\"length\":24,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"564re\",\"text\":\"Ключ крутящего момента\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"e4ccu\",\"text\":\"Защитные перчатки\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"90ltj\",\"text\":\"Выберите правую сторону для ослабления с ключом крутящего момента.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":8,\"length\":15,\"style\":\"BOLD\"},{\"offset\":40,\"length\":25,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"3e96c\",\"text\":\"Установите ключ крутящего момента на стопорНую гайку C-кронштейна.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":22,\"style\":\"BOLD\"},{\"offset\":37,\"length\":16,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"c7f1v\",\"text\":\"Ослабьте стопорную гайку с ключом крутящего момента.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":15,\"style\":\"BOLD\"},{\"offset\":27,\"length\":25,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"6728j\",\"text\":\"Ослабьте стопорную гайку вручную. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":16,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8l4va\",\"text\":\"Переместите гайку пластины вверх для того, чтобы отвинтить крепежную гайку.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":12,\"length\":14,\"style\":\"BOLD\"},{\"offset\":59,\"length\":16,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8kjdd\",\"text\":\"ЗаФиксировать гаечный ключ крутящего момента на крепежной гайке.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":14,\"length\":30,\"style\":\"BOLD\"},{\"offset\":48,\"length\":16,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8oav9\",\"text\":\"Ослабьте крепежную гайку с ключом крутящего момента.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":8,\"length\":17,\"style\":\"BOLD\"},{\"offset\":26,\"length\":26,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"1p77u\",\"text\":\"Далее ослабьте крепежную гайку вручную. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":14,\"length\":17,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"1bpp0\",\"text\":\"Снимите C-кронштейн с направляющей.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":8,\"length\":12,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"780om\",\"text\":\"❓\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":1,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"4vb5f\",\"text\":\"Любые вопросы? Свяжитесь с нами.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"d1050\",\"text\":\"Поделитесь этим с вашими коллегами, имея их сканировать этот QR-код.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "ru"
+                },
+                {
+                    "key": "t4",
+                    "chunks": [
+                        [
+                            "<h1><strong>c 型支架</strong></h1>\n<p><span style=\"font-size: 1.4em\">本指南说明了如何使</span><span style=\"font-size: 1.4em\"><strong>紧急连接</strong></span><span style=\"font-size: 1.4em\">与钢轨的焊接板.</span></p>\n<p>🛠 <strong>所需工具:</strong></p>\n<ul>\n  <li>扭矩扳手</li>\n  <li>安全手套</li>\n</ul>"
+                        ],
+                        [
+                            "<p>选择<strong>右侧</strong>, 使用<strong>扭矩扳手</strong>松开。</p>"
+                        ],
+                        [
+                            "<p>将<strong>扭矩扳手</strong>安装到 c 支架的<strong>锁紧螺母</strong>上。</p>"
+                        ],
+                        [
+                            "<p>用<strong>扭矩扳手松开锁紧螺母.</strong> <strong></strong></p>"
+                        ],
+                        [
+                            "<p>用手松开<strong>更</strong>远的锁紧螺母。✋</p>"
+                        ],
+                        [
+                            "<p>向上移动<strong>螺母</strong>板, 以拧开<strong>安装螺母.</strong></p>"
+                        ],
+                        [
+                            "<p>将扭矩扳手固定<strong>在</strong><strong>安装螺母上.</strong></p>"
+                        ],
+                        [
+                            "<p>用<strong>扭矩扳手</strong>松开<strong>安装螺母</strong>。</p>"
+                        ],
+                        [
+                            "<p>用手进一步松开<strong>安装螺母</strong>。✋</p>"
+                        ],
+                        [
+                            "<p>从导轨上取下<strong>c 支架</strong>。</p>"
+                        ],
+                        [
+                            "<h1><strong>❓</strong></h1>\n<p>有问题吗？请联系我们。</p>"
+                        ],
+                        [
+                            "<p>让同事扫描此二维码, 与他们分享此信息。</p>"
+                        ]
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"f30no\",\"text\":\"c 型支架\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":5,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"62otf\",\"text\":\"本指南说明了如何使紧急连接与钢轨的焊接板.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":21,\"style\":\"FONT_SIZE_140\"},{\"offset\":9,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"cdgsk\",\"text\":\"🛠 所需工具:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":2,\"length\":5,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"33hbo\",\"text\":\"扭矩扳手\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"88mtt\",\"text\":\"安全手套\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"62ekk\",\"text\":\"选择右侧, 使用扭矩扳手松开。\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":2,\"length\":2,\"style\":\"BOLD\"},{\"offset\":8,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"3409g\",\"text\":\"将扭矩扳手安装到 c 支架的锁紧螺母上。\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":1,\"length\":4,\"style\":\"BOLD\"},{\"offset\":14,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"ce7ln\",\"text\":\"用扭矩扳手松开锁紧螺母. \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":1,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"9gdq5\",\"text\":\"用手松开更远的锁紧螺母。✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":4,\"length\":1,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"7tg1a\",\"text\":\"向上移动螺母板, 以拧开安装螺母.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":4,\"length\":2,\"style\":\"BOLD\"},{\"offset\":12,\"length\":5,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"7lno0\",\"text\":\"将扭矩扳手固定在安装螺母上.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":7,\"length\":7,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"am82c\",\"text\":\"用扭矩扳手松开安装螺母。\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":1,\"length\":4,\"style\":\"BOLD\"},{\"offset\":7,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"e9v1v\",\"text\":\"用手进一步松开安装螺母。✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":7,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"19mh6\",\"text\":\"从导轨上取下c 支架。\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":6,\"length\":4,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"1aoat\",\"text\":\"❓\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":1,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"1vsqp\",\"text\":\"有问题吗？请联系我们。\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"2s7kk\",\"text\":\"让同事扫描此二维码, 与他们分享此信息。\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "zh"
+                },
+                {
+                    "key": "t5",
+                    "chunks": [
+                        [
+                            "<h1><strong>C-Beugels</strong></h1>\n<p><span style=\"font-size: 1.2rem\">Deze gids legt uit hoe </span><span style=\"font-size: 1.2rem\"><strong>noodverbindingen</strong></span><span style=\"font-size: 1.2rem\"> te maken van de lasplaten met de rail.</span></p>\n<p>🛠 <strong>Gereedschappen:&nbsp;</strong></p>\n<ul>\n  <li>Momentsleutel</li>\n  <li>Veiligheidshandschoenen</li>\n</ul>"
+                        ],
+                        [
+                            "<p>Kies <strong>de juiste kant</strong> &nbsp;voor het losdraaien met de <strong>momentsleutel</strong>.</p>"
+                        ],
+                        [
+                            "<p>Monteer de <strong>momentsleutel</strong> op de <strong>borgmoer</strong> van de C-Beugel.</p>"
+                        ],
+                        [
+                            "<p>Draai de <strong>borgmoer</strong> los met de <strong>momentsleutel.</strong></p>"
+                        ],
+                        [
+                            "<p>Draai de <strong>borgmoer</strong> verder los met de hand. ✋</p>"
+                        ],
+                        [
+                            "<p>Breng het <strong>borgmoerplaatje</strong> omhoog om dan de <strong>montagemoer</strong> te kunnen losdraaien.</p>"
+                        ],
+                        [
+                            "<p>Monteer de <strong>momentsleutel</strong> op de <strong>montagemoer</strong>.</p>"
+                        ],
+                        [
+                            "<p>Draai de <strong>montagemoer</strong> met de <strong>momentsleutel</strong> los.</p>"
+                        ],
+                        [
+                            "<p>Draai de <strong>montagemoer</strong> verder los met de hand. ✋</p>"
+                        ],
+                        [
+                            "<p>Verwijder de <strong>C-beugel</strong> van de rail.</p>"
+                        ],
+                        [
+                            "<h1><strong>❓</strong></h1>\n<p>Vragen? &nbsp;<strong>Contacteer</strong> ons</p>"
+                        ],
+                        [
+                            "<p>Deel dit met uw collega's door ze deze QR-code te laten scannen.</p>"
+                        ]
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"d0dcb\",\"text\":\"C-Beugels\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":9,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"bnda7\",\"text\":\"Deze gids legt uit hoe noodverbindingen te maken van de lasplaten met de rail.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":78,\"style\":\"FONT_SIZE_120\"},{\"offset\":23,\"length\":16,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"8sajb\",\"text\":\"🛠 Gereedschappen: \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":2,\"length\":16,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"6m1t5\",\"text\":\"Momentsleutel\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"d38qd\",\"text\":\"Veiligheidshandschoenen\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"7aar9\",\"text\":\"Kies de juiste kant  voor het losdraaien met de momentsleutel.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":5,\"length\":14,\"style\":\"BOLD\"},{\"offset\":48,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"a8rup\",\"text\":\"Monteer de momentsleutel op de borgmoer van de C-Beugel.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":13,\"style\":\"BOLD\"},{\"offset\":31,\"length\":8,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"f6n14\",\"text\":\"Draai de borgmoer los met de momentsleutel.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":8,\"style\":\"BOLD\"},{\"offset\":29,\"length\":14,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"87g78\",\"text\":\"Draai de borgmoer verder los met de hand. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":8,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8vtcf\",\"text\":\"Breng het borgmoerplaatje omhoog om dan de montagemoer te kunnen losdraaien.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":10,\"length\":15,\"style\":\"BOLD\"},{\"offset\":43,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"elvgj\",\"text\":\"Monteer de momentsleutel op de montagemoer.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":13,\"style\":\"BOLD\"},{\"offset\":31,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"fntf8\",\"text\":\"Draai de montagemoer met de momentsleutel los.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":11,\"style\":\"BOLD\"},{\"offset\":28,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"rhus\",\"text\":\"Draai de montagemoer verder los met de hand. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"63ean\",\"text\":\"Verwijder de C-beugel van de rail.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":13,\"length\":8,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"96f6m\",\"text\":\"❓\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":1,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"e3ba6\",\"text\":\"Vragen?  Contacteer ons\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":10,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8hgvj\",\"text\":\"Deel dit met uw collega's door ze deze QR-code te laten scannen.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "nl"
+                },
+                {
+                    "key": "t6",
+                    "chunks": [
+                        [
+                            "<h1><strong>C-Clips</strong></h1>\n<p><span style=\"font-size: 1.2rem\">Ce guide explique comment faire </span><span style=\"font-size: 1.2rem\"><strong>des liens d'urgence</strong></span><span style=\"font-size: 1.2rem\"> &nbsp;avec les plaques de soudage du rail.&nbsp;</span></p>\n<p>🛠 &nbsp;<strong>Outils requis: &nbsp;&nbsp;&nbsp;</strong></p>\n<ul>\n  <li>Clé dynamométrique &nbsp;</li>\n  <li>Gants de sécurité &nbsp;</li>\n</ul>"
+                        ],
+                        [
+                            "<p>Choisissez <strong>le bon côté</strong> pour desserrer la <strong>clé</strong> <strong>dynamométrique</strong>.</p>"
+                        ],
+                        [
+                            "<p>Monter la <strong>clé dynamométrique</strong> sur<strong> l'écrou de blocage </strong>de la C-Clip.</p>"
+                        ],
+                        [
+                            "<p>Desserrer<strong> l'écrou de blocage</strong> avec la <strong>clé dynamométrique</strong></p>"
+                        ],
+                        [
+                            "<p>Desserrer <strong>l'écrou de blocage</strong> plus espacer à la main. ✋</p>"
+                        ],
+                        [
+                            "<p>Transférer <strong>la plaque d'écrou</strong> et puis dévisser <strong>l'écrou de fixation.</strong></p>"
+                        ],
+                        [
+                            "<p>Monter la <strong>clé dynamométrique</strong> sur<strong> l'écrou de fixation.</strong></p>"
+                        ],
+                        [
+                            "<p>Serrer<strong> l'écrou de fixation</strong> avec la<strong> clé dynamométrique.</strong></p>"
+                        ],
+                        [
+                            "<p>Tourner<strong> l'écrou du raccord </strong>et continuer à le détacher à la main. ✋</p>"
+                        ],
+                        [
+                            "<p>Retirer le<strong> C-Clip</strong> du rail.</p>"
+                        ],
+                        [
+                            "<h1><strong>❓</strong></h1>\n<p>Des questions? <strong>Contactez-nous</strong>.</p>"
+                        ],
+                        [
+                            "<p>Partager cela avec vos collègues en leur demandant de scanner ce code QR.</p>"
+                        ]
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"bfpb3\",\"text\":\"C-Clips\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":7,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"80dm0\",\"text\":\"Ce guide explique comment faire des liens d'urgence  avec les plaques de soudage du rail. \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":90,\"style\":\"FONT_SIZE_120\"},{\"offset\":32,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"ceq9t\",\"text\":\"🛠  Outils requis:    \",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":3,\"length\":18,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"7dm32\",\"text\":\"Clé dynamométrique  \",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3ceo3\",\"text\":\"Gants de sécurité  \",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"5p5iv\",\"text\":\"Choisissez le bon côté pour desserrer la clé dynamométrique.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":11,\"style\":\"BOLD\"},{\"offset\":41,\"length\":3,\"style\":\"BOLD\"},{\"offset\":45,\"length\":14,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"34bg\",\"text\":\"Monter la clé dynamométrique sur l'écrou de blocage de la C-Clip.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":10,\"length\":18,\"style\":\"BOLD\"},{\"offset\":32,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"1ib8r\",\"text\":\"Desserrer l'écrou de blocage avec la clé dynamométrique\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":19,\"style\":\"BOLD\"},{\"offset\":37,\"length\":18,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"4930r\",\"text\":\"Desserrer l'écrou de blocage plus espacer à la main. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":10,\"length\":18,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"83aqq\",\"text\":\"Transférer la plaque d'écrou et puis dévisser l'écrou de fixation.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":17,\"style\":\"BOLD\"},{\"offset\":46,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"74bim\",\"text\":\"Monter la clé dynamométrique sur l'écrou de fixation.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":10,\"length\":18,\"style\":\"BOLD\"},{\"offset\":32,\"length\":21,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"a40ta\",\"text\":\"Serrer l'écrou de fixation avec la clé dynamométrique.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":6,\"length\":20,\"style\":\"BOLD\"},{\"offset\":34,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"20sc9\",\"text\":\"Tourner l'écrou du raccord et continuer à le détacher à la main. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":7,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"e5ati\",\"text\":\"Retirer le C-Clip du rail.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":10,\"length\":7,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"a2a3v\",\"text\":\"❓\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":1,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"2pelg\",\"text\":\"Des questions? Contactez-nous.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":15,\"length\":14,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"9l577\",\"text\":\"Partager cela avec vos collègues en leur demandant de scanner ce code QR.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "fr"
+                },
+                {
+                    "key": "t7",
+                    "chunks": [
+                        [
+                            "<h1><strong>C-wsporniki</strong></h1>\n<p><span style=\"font-size: 1.2rem\">W tym przewodniku wyjaśniono, jak należy</span> <span style=\"font-size: 1.2rem\"><strong>połączenia awaryjne</strong></span> <span style=\"font-size: 1.2rem\">z płytami spawalniczymi szyny.</span></p>\n<p>🛠 <strong>wymagane narzędzia:</strong></p>\n<ul>\n  <li>Dynamometryczny</li>\n  <li>Rękawice ochronne</li>\n</ul>"
+                        ],
+                        [
+                            "<p>Wybierz<strong> prawą stronę</strong> do rozluźnienia za pomocą<strong> klucza</strong>dynamometrycznego.</p>"
+                        ],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        []
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"fthpo\",\"text\":\"C-wsporniki\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"5cj4k\",\"text\":\"W tym przewodniku wyjaśniono, jak należy połączenia awaryjne z płytami spawalniczymi szyny.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":41,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"b5cod\",\"text\":\"🛠 wymagane narzędzia:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":2,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"9bp22\",\"text\":\"Dynamometryczny\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"b3jst\",\"text\":\"Rękawice ochronne\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"1hkup\",\"text\":\"Wybierz prawą stronę do rozluźnienia za pomocą kluczadynamometrycznego.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":7,\"length\":13,\"style\":\"BOLD\"},{\"offset\":46,\"length\":7,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"56u6p\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"33qh\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"65hsg\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"ce9gn\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"7gcho\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"3cf05\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"4n9b7\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"2lflo\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"aqu05\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"5utjd\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "pl"
+                },
+                {
+                    "key": "t8",
+                    "chunks": [
+                        [
+                            "<h1><strong>C-بين قوسين</strong></h1>\n<p><span style=\"font-size: 1.2rem\">يشرح هذا الدليل كيفيه جعل</span> <span style=\"font-size: 1.2rem\"><strong>اتصالات الطوارئ</strong></span> <span style=\"font-size: 1.2rem\">مع لوحات لحام من السكك الحديدية.</span></p>\n<p>🛠 الاداات المطلوبة <strong>:</strong></p>\n<ul>\n  <li>وجع عزم الدوران</li>\n  <li>قفازات السلامة</li>\n</ul>"
+                        ],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        []
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"25mt3\",\"text\":\"C-بين قوسين\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"epulq\",\"text\":\"يشرح هذا الدليل كيفيه جعل اتصالات الطوارئ مع لوحات لحام من السكك الحديدية.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":26,\"length\":15,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"erchp\",\"text\":\"🛠 الاداات المطلوبة :\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":19,\"length\":1,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"8l6p9\",\"text\":\"وجع عزم الدوران\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"2d24m\",\"text\":\"قفازات السلامة\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"5tdbt\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"5ota9\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"5nbju\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"2bgas\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"7dj29\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8sh97\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"fd406\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"6mpah\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"6irdj\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"d29h9\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"ff2fk\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "ar"
+                },
+                {
+                    "key": "t9",
+                    "chunks": [
+                        [
+                            "<h1><strong>Αγκύλες C</strong></h1>\n<p><span style=\"font-size: 1.2rem\">Αυτός ο οδηγός εξηγεί πώς να κάνετε</span> <span style=\"font-size: 1.2rem\"><strong>συνδέσεις έκτακτης ανάγκης</strong></span> <span style=\"font-size: 1.2rem\">με τις πλάκες συγκόλλησης της σιδηροτροχιάς.</span></p>\n<p>🛠 <strong>απαιτούμενα εργαλεία:</strong></p>\n<ul>\n  <li>Κλειδί ροπής</li>\n  <li>Γάντια ασφαλείας</li>\n</ul>"
+                        ],
+                        [
+                            "<p>Επιλέξτε<strong> τη δεξιά πλευρά</strong> για χαλάρωση με το<strong> κλειδί ροπής</strong>.</p>"
+                        ],
+                        [
+                            "<p>Τοποθετήστε το <strong>κλειδί ροπής</strong> στο <strong>παξιμάδι κλειδαριάς </strong>του βραχίονα C.</p>"
+                        ],
+                        [
+                            "<p>Χαλαρώστε το <strong>παξιμάδι κλειδαριάς</strong> με το <strong>κλειδί ροπής.</strong></p>"
+                        ],
+                        [
+                            "<p>Χαλάρωσε το <strong>παξιμάδι </strong>με το χέρι. ✋</p>"
+                        ],
+                        [
+                            "<p>Μετακινήστε την <strong>πλάκα του καρυδιού</strong> για να ξεβιδώσετε το <strong>παξιμάδι τοποθέτησης.</strong></p>"
+                        ],
+                        [
+                            "<p>Στερεώστε το <strong>κλειδί ροπής</strong> στο <strong>παξιμάδι στερέωσης.</strong></p>"
+                        ],
+                        [
+                            "<p>Χαλαρώστε το<strong> παξιμάδι στερέωσης </strong>με το<strong> κλειδί ροπής.</strong></p>"
+                        ],
+                        [
+                            "<p>Επιπλέον, χαλαρώστε το<strong> παξιμάδι στερέωσης </strong>με το χέρι. ✋</p>"
+                        ],
+                        [
+                            "<p>Αφαιρέστε το <strong>στήριγμα C </strong>από τη σιδηροτροχιά.</p>"
+                        ],
+                        [
+                            "<h1><strong>❓</strong></h1>\n<p>Ερωτήσεις; <strong>Επικοινωνήσετε μαζί</strong> μας.</p>"
+                        ],
+                        [
+                            "<p>Μοιραστείτε αυτό με τους συναδέλφους σας με τη σάρωση αυτού του κωδικού QR.</p>"
+                        ]
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"c84i4\",\"text\":\"Αγκύλες C\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":9,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"dscba\",\"text\":\"Αυτός ο οδηγός εξηγεί πώς να κάνετε συνδέσεις έκτακτης ανάγκης με τις πλάκες συγκόλλησης της σιδηροτροχιάς.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":36,\"length\":26,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"7etr5\",\"text\":\"🛠 απαιτούμενα εργαλεία:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":2,\"length\":21,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"5hebb\",\"text\":\"Κλειδί ροπής\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"eitgv\",\"text\":\"Γάντια ασφαλείας\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"3hj31\",\"text\":\"Επιλέξτε τη δεξιά πλευρά για χαλάρωση με το κλειδί ροπής.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":8,\"length\":16,\"style\":\"BOLD\"},{\"offset\":43,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"eomvh\",\"text\":\"Τοποθετήστε το κλειδί ροπής στο παξιμάδι κλειδαριάς του βραχίονα C.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":15,\"length\":12,\"style\":\"BOLD\"},{\"offset\":32,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"b6jl4\",\"text\":\"Χαλαρώστε το παξιμάδι κλειδαριάς με το κλειδί ροπής.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":13,\"length\":19,\"style\":\"BOLD\"},{\"offset\":39,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"932v3\",\"text\":\"Χαλάρωσε το παξιμάδι με το χέρι. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":12,\"length\":9,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"ba96p\",\"text\":\"Μετακινήστε την πλάκα του καρυδιού για να ξεβιδώσετε το παξιμάδι τοποθέτησης.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":16,\"length\":18,\"style\":\"BOLD\"},{\"offset\":56,\"length\":21,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"300fn\",\"text\":\"Στερεώστε το κλειδί ροπής στο παξιμάδι στερέωσης.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":13,\"length\":12,\"style\":\"BOLD\"},{\"offset\":30,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"eqet2\",\"text\":\"Χαλαρώστε το παξιμάδι στερέωσης με το κλειδί ροπής.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":12,\"length\":20,\"style\":\"BOLD\"},{\"offset\":37,\"length\":14,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"2utra\",\"text\":\"Επιπλέον, χαλαρώστε το παξιμάδι στερέωσης με το χέρι. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":22,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"m8d2\",\"text\":\"Αφαιρέστε το στήριγμα C από τη σιδηροτροχιά.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":13,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"4maab\",\"text\":\"❓\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":1,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"2nn3s\",\"text\":\"Ερωτήσεις; Επικοινωνήσετε μαζί μας.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"4qmt4\",\"text\":\"Μοιραστείτε αυτό με τους συναδέλφους σας με τη σάρωση αυτού του κωδικού QR.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "el"
+                },
+                {
+                    "key": "t10",
+                    "chunks": [
+                        [
+                            "<h1><strong>C-brackets</strong></h1>\n<p><span style=\"font-size: 1.2rem\">Esta guía explica cómo hacer</span> <span style=\"font-size: 1.2rem\"><strong>conexiones de emergencia</strong></span> <span style=\"font-size: 1.2rem\">con las placas de soldadura del carril.</span></p>\n<p>🛠 <strong>herramientas requeridas:</strong></p>\n<ul>\n  <li>Llave dinamométrica</li>\n  <li>Guantes de seguridad</li>\n</ul>"
+                        ],
+                        [
+                            "<p>Elija<strong> el lado derecho</strong> para aflojar con la<strong> llave dinamométrica</strong>.</p>"
+                        ],
+                        [
+                            "<p>Monte la <strong>llave dinamométrica</strong> en la <strong>tuerca de fijación </strong>del soporte C.</p>"
+                        ],
+                        [
+                            "<p>Afloje la <strong>tuerca de fijación</strong> con la <strong>llave dinamométrica.</strong></p>"
+                        ],
+                        [
+                            "<p>Afloje la <strong>tuerca de fijación </strong>a mano. ✋</p>"
+                        ],
+                        [],
+                        [
+                            "<p>Fijar la <strong>llave dinamométrica</strong> en la <strong>tuerca de montaje.</strong></p>"
+                        ],
+                        [],
+                        [],
+                        [],
+                        [],
+                        []
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"8b44l\",\"text\":\"C-brackets\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":10,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"5nfi5\",\"text\":\"Esta guía explica cómo hacer conexiones de emergencia con las placas de soldadura del carril.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":29,\"length\":24,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"9e2ru\",\"text\":\"🛠 herramientas requeridas:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":2,\"length\":24,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"5r6bf\",\"text\":\"Llave dinamométrica\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"e2n1i\",\"text\":\"Guantes de seguridad\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8ocge\",\"text\":\"Elija el lado derecho para aflojar con la llave dinamométrica.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":5,\"length\":16,\"style\":\"BOLD\"},{\"offset\":41,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8n3lq\",\"text\":\"Monte la llave dinamométrica en la tuerca de fijación del soporte C.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":19,\"style\":\"BOLD\"},{\"offset\":35,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"1tkv\",\"text\":\"Afloje la tuerca de fijación con la llave dinamométrica.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":10,\"length\":18,\"style\":\"BOLD\"},{\"offset\":36,\"length\":20,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"4cj87\",\"text\":\"Afloje la tuerca de fijación a mano. ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":10,\"length\":19,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"9atot\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"3eo0\",\"text\":\"Fijar la llave dinamométrica en la tuerca de montaje.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":9,\"length\":19,\"style\":\"BOLD\"},{\"offset\":35,\"length\":18,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"3ol9s\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"mmjn\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"dbbe\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"cla1p\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"6d4sp\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "es"
+                },
+                {
+                    "key": "t11",
+                    "chunks": [
+                        [
+                            "<h1><strong>सी कोष्ठक</strong></h1>\n<p><span style=\"font-size: 1.2em\">इस गाइड बताते है कैसे बनाने के लिए </span><span style=\"font-size: 1.2em\"><strong>आपातकालीन कनेक्शन</strong></span><span style=\"font-size: 1.2em\"> रेल की वेल्डिंग प्लेट के साथ ।</span></p>\n<p>🛠 <strong>आवश्यक उपकरण:</strong></p>\n<ul>\n  <li>टोक़ रिंच</li>\n  <li>सुरक्षा दस्ताने</li>\n</ul>"
+                        ],
+                        [
+                            "<p><strong>टोक़ रिंच</strong>के साथ ढीला के लिए<strong> सही पक्ष</strong> चुनें ।</p>"
+                        ],
+                        [
+                            "<p>C-ब्रैकेट के <strong>लॉक अखरोट </strong>के लिए <strong>टोक़ रिंच</strong> माउंट ।</p>"
+                        ],
+                        [
+                            "<p><strong>टोक़ रिंच</strong> के साथ <strong>ताला अखरोट</strong> ढीला ।</p>"
+                        ],
+                        [
+                            "<p>आगे हाथ से <strong>ताला अखरोट </strong>ढीला । ✋</p>"
+                        ],
+                        [
+                            "<p><strong>बढ़ते अखरोट</strong> खोलना करने के क्रम में <strong>अखरोट की थाली</strong> ऊपर ले जाएँ ।</p>"
+                        ],
+                        [
+                            "<p>बढ़ते अखरोट पर <strong>टोक़ रिंच</strong> देते <strong>हैं ।</strong></p>"
+                        ],
+                        [
+                            "<p><strong>टोक़ रिंच</strong> के साथ<strong> बढ़ते अखरोट </strong>ढीला ।</p>"
+                        ],
+                        [
+                            "<p>आगे<strong> बढ़ते अखरोट </strong>को हाथ से ढीला कर दीजिये । ✋</p>"
+                        ],
+                        [
+                            "<p><strong>सी-ब्रैकेट </strong>को रेल से निकाल दें ।</p>"
+                        ],
+                        [
+                            "<h1><strong>❓</strong></h1>\n<p>कोई सवाल? हमसे <strong>संपर्क करें</strong> ।</p>"
+                        ],
+                        [
+                            "<p>इस QR कोड को स्कैन करके अपने सहकर्मियों के साथ साझा करें ।</p>"
+                        ]
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"9ted6\",\"text\":\"सी कोष्ठक\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":9,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"b3l91\",\"text\":\"इस गाइड बताते है कैसे बनाने के लिए आपातकालीन कनेक्शन रेल की वेल्डिंग प्लेट के साथ ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":83,\"style\":\"FONT_SIZE_120\"},{\"offset\":35,\"length\":17,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"f5prq\",\"text\":\"🛠 आवश्यक उपकरण:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":2,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"l9ak\",\"text\":\"टोक़ रिंच\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"barpe\",\"text\":\"सुरक्षा दस्ताने\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"duvab\",\"text\":\"टोक़ रिंचके साथ ढीला के लिए सही पक्ष चुनें ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":9,\"style\":\"BOLD\"},{\"offset\":27,\"length\":9,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"f3s6e\",\"text\":\"C-ब्रैकेट के लॉक अखरोट के लिए टोक़ रिंच माउंट ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":13,\"length\":10,\"style\":\"BOLD\"},{\"offset\":30,\"length\":9,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"678hc\",\"text\":\"टोक़ रिंच के साथ ताला अखरोट ढीला ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":9,\"style\":\"BOLD\"},{\"offset\":17,\"length\":10,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"313q0\",\"text\":\"आगे हाथ से ताला अखरोट ढीला । ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":11,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"1prbp\",\"text\":\"बढ़ते अखरोट खोलना करने के क्रम में अखरोट की थाली ऊपर ले जाएँ ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":11,\"style\":\"BOLD\"},{\"offset\":35,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"6tb3h\",\"text\":\"बढ़ते अखरोट पर टोक़ रिंच देते हैं ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":15,\"length\":9,\"style\":\"BOLD\"},{\"offset\":30,\"length\":5,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"4coim\",\"text\":\"टोक़ रिंच के साथ बढ़ते अखरोट ढीला ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":9,\"style\":\"BOLD\"},{\"offset\":16,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"flnm9\",\"text\":\"आगे बढ़ते अखरोट को हाथ से ढीला कर दीजिये । ✋\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":3,\"length\":13,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8721k\",\"text\":\"सी-ब्रैकेट को रेल से निकाल दें ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"6td8c\",\"text\":\"❓\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":1,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"f6n0g\",\"text\":\"कोई सवाल? हमसे संपर्क करें ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":15,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8kivl\",\"text\":\"इस QR कोड को स्कैन करके अपने सहकर्मियों के साथ साझा करें ।\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "hi"
+                },
+                {
+                    "key": "t12",
+                    "chunks": [
+                        [
+                            "<h1><strong>C-วงเล็บ</strong></h1>\n<p><span style=\"font-size: 1.4em\">คู่มือนี้อธิบายวิธีการทำให้การเชื่อมต่อฉุกเฉินกับแผ่นเชื่อมของรถไฟ</span></p>\n<p>🛠เครื่องมือที่ต้องใช้:</p>\n<ul>\n  <li>ประแจวัดแรงบิด</li>\n  <li>ถุงมือนิรภัย</li>\n</ul>"
+                        ],
+                        [
+                            "<p>เลือก<strong>ด้านขวา</strong>สำหรับคลายกับ<strong>ประแจแรงบิด</strong></p>\n<p><br></p>"
+                        ],
+                        [
+                            "<p>ติด<strong>ประแจแรงบิด</strong>ไปยังหัว<strong>น๊อตล็อค</strong>ของตัวยึด C</p>"
+                        ],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        [],
+                        []
+                    ],
+                    "editorStates": [
+                        "{\"blocks\":[{\"key\":\"9duu9\",\"text\":\"C-วงเล็บ\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":8,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"1am6g\",\"text\":\"คู่มือนี้อธิบายวิธีการทำให้การเชื่อมต่อฉุกเฉินกับแผ่นเชื่อมของรถไฟ\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":66,\"style\":\"FONT_SIZE_140\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"1rcqh\",\"text\":\"🛠เครื่องมือที่ต้องใช้:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"r8i4\",\"text\":\"ประแจวัดแรงบิด\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"nisi\",\"text\":\"ถุงมือนิรภัย\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"eit0q\",\"text\":\"เลือกด้านขวาสำหรับคลายกับประแจแรงบิด\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":5,\"length\":7,\"style\":\"BOLD\"},{\"offset\":25,\"length\":11,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"2uf22\",\"text\":\"\\n\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"agfub\",\"text\":\"ติดประแจแรงบิดไปยังหัวน๊อตล็อคของตัวยึด C\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":3,\"length\":11,\"style\":\"BOLD\"},{\"offset\":22,\"length\":8,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"fat3a\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"23h0i\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"5ahg1\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"fhf3e\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"8eqlu\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"nie9\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"6eurt\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"el7dn\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+                        "{\"blocks\":[{\"key\":\"114q7\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}"
+                    ],
+                    "iso639_1": "th"
+                }
+            ]
+        }
+    }
+}

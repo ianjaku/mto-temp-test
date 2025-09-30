@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-k8s-dashboards
+data:
+  views-global.json: |-
+    {{ .Files.Get "dashboards/k8s/views-global.json" | nindent 4 }}
+  views-pods.json: |-
+    {{ .Files.Get "dashboards/k8s/views-pods.json" | nindent 4 }}
+  views-nodes.json: |-
+    {{ .Files.Get "dashboards/k8s/views-nodes.json" | nindent 4 }}
+  views-namespaces.json: |-
+    {{ .Files.Get "dashboards/k8s/views-namespaces.json" | nindent 4 }}
+  system-api-server.json: |-
+    {{ .Files.Get "dashboards/k8s/system-api-server.json" | nindent 4 }}
+  addons-prometheus.json: |-
+    {{ .Files.Get "dashboards/k8s/addons-prometheus.json" | nindent 4 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-azure-dashboards-stg
+data:
+  appgw.json: |-
+    {{ .Files.Get "dashboards/azure/stg.json" | nindent 4 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-azure-dashboards-prod
+data:
+  appgw.json: |-
+    {{ .Files.Get "dashboards/azure/prod.json" | nindent 4 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-general-dashboards
+data:
+  elastic.json: |-
+    {{ .Files.Get "dashboards/general/elastic.json" | nindent 4 }}
+  mongo.json: |-
+    {{ .Files.Get "dashboards/general/mongo.json" | nindent 4 }}
+  nginx-new.json: |-
+    {{ .Files.Get "dashboards/general/nginx-new.json" | nindent 4 }}
+  redis.json: |-
+    {{ .Files.Get "dashboards/general/redis.json" | nindent 4 }}
+  request-handling-performance.json: |-
+    {{ .Files.Get "dashboards/general/request-handling-performance.json" | nindent 4 }}

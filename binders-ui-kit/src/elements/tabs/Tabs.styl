@@ -1,0 +1,64 @@
+@require("../../vars.styl")
+
+.tabs
+	&-nav
+		border-bottom: 1px solid middleGreyColor
+		height: 88px
+		display: flex
+		&--auto
+			height: auto
+		&--medium
+			height: 60px
+		&-list
+			display: flex
+			list-style: none
+			margin: 0 auto
+			padding-left: 90px
+			width: 65%
+			&--full-width
+				min-width: auto
+				width: 100%
+				padding-left: 0
+	&-item
+		display: flex
+		align-items: flex-end
+		justify-content: flex-start
+		width: 176px
+		cursor: pointer
+		text-align: center
+		&:last-of-type
+			border-right-width: 1px
+		&.active
+			.tabs-title
+				font-weight: 500
+				border-bottom: 4px solid accentColor
+		.tabs-title
+			width: 100%
+
+	&-title
+		display: inline-block
+		font-size: 14px
+		font-family: defaultFontName
+		text-align: center
+		color: baseColor
+		padding: 0 7px 7px 7px
+		border-bottom: 4px solid transparent
+		display: flex
+		align-items: flex-end
+		justify-content: center
+
+	&-content
+		&:not(.tabs-content--no-padding)
+			padding: 1rem 0 0 90px
+		background-color: backgroundColor
+		margin: 0 auto
+		width: 65%
+		&--no-bg
+			background-color: transparent
+		&--full-width
+			width: 100%
+			padding-left: 0
+			min-width: auto
+	&-pane
+		display: block
+		opacity: 1

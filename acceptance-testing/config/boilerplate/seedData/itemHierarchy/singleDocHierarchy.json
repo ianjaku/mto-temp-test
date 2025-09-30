@@ -1,0 +1,8 @@
+{
+    "children": [
+        {
+            "name": "single doc",
+            "type": "document"
+        }
+    ]
+}

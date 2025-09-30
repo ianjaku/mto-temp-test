@@ -1,0 +1,9 @@
+{
+    "babelrcRoots": [
+        "binders-partners-service-v1/client",
+        "binders-dashboard-service-v1/client",
+        "binders-editor-service-v2/client",
+        "binders-manage-service-v1/client",
+        "manualto-service-v/client"
+    ]
+}

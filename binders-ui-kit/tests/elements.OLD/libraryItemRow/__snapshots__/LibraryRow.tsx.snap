@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Library folder row (snapshot) 1`] = `
+<div
+  className="library-row"
+  style={Object {}}
+>
+  <div
+    className="library-row-image"
+    onClick={[Function]}
+  >
+    <div
+      className="thumbnail-outer-wrapper"
+      style={
+        Object {
+          "backgroundColor": "#white",
+          "height": 86,
+          "width": 86,
+        }
+      }
+    >
+      <div
+        className="thumbnail-wrapper fit landscape"
+        onClick={undefined}
+        onDoubleClick={undefined}
+        onMouseDownCapture={undefined}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#white",
+            "height": 86,
+            "width": 86,
+          }
+        }
+      >
+        <img
+          className="thumbnail fit landscape"
+          onLoad={[Function]}
+          src="https://dummyimage.com/100x100"
+          style={
+            Object {
+              "height": "auto",
+              "width": 86,
+            }
+          }
+          title="https://dummyimage.com/100x100"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="library-row-title"
+    onClick={[Function]}
+  >
+    <label
+      className="library-row-title-label"
+    >
+      a document
+    </label>
+    <span
+      className="material-icons library-row-title-icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      folder_open
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Library row (snapshot) 1`] = `
+<div
+  className="library-row"
+  style={Object {}}
+>
+  <div
+    className="library-row-image"
+    onClick={[Function]}
+  >
+    <div
+      className="thumbnail-outer-wrapper"
+      style={
+        Object {
+          "backgroundColor": "#white",
+          "height": 86,
+          "width": 86,
+        }
+      }
+    >
+      <div
+        className="thumbnail-wrapper fit landscape"
+        onClick={undefined}
+        onDoubleClick={undefined}
+        onMouseDownCapture={undefined}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#white",
+            "height": 86,
+            "width": 86,
+          }
+        }
+      >
+        <img
+          className="thumbnail fit landscape"
+          onLoad={[Function]}
+          src="https://dummyimage.com/100x100"
+          style={
+            Object {
+              "height": "auto",
+              "width": 86,
+            }
+          }
+          title="https://dummyimage.com/100x100"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="library-row-title"
+    onClick={[Function]}
+  >
+    <label
+      className="library-row-title-label"
+    >
+      a document
+    </label>
+    
+  </div>
+</div>
+`;
+
+exports[`Library row fixed width (snapshot) 1`] = `
+<div
+  className="library-row"
+  style={
+    Object {
+      "width": "600px",
+    }
+  }
+>
+  <div
+    className="library-row-image"
+    onClick={[Function]}
+  >
+    <div
+      className="thumbnail-outer-wrapper"
+      style={
+        Object {
+          "backgroundColor": "#white",
+          "height": 86,
+          "width": 86,
+        }
+      }
+    >
+      <div
+        className="thumbnail-wrapper fit landscape"
+        onClick={undefined}
+        onDoubleClick={undefined}
+        onMouseDownCapture={undefined}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#white",
+            "height": 86,
+            "width": 86,
+          }
+        }
+      >
+        <img
+          className="thumbnail fit landscape"
+          onLoad={[Function]}
+          src="https://dummyimage.com/100x100"
+          style={
+            Object {
+              "height": "auto",
+              "width": 86,
+            }
+          }
+          title="https://dummyimage.com/100x100"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="library-row-title"
+    onClick={[Function]}
+  >
+    <label
+      className="library-row-title-label"
+    >
+      a document
+    </label>
+    
+  </div>
+</div>
+`;
+
+exports[`Library row with actions (snapshot) 1`] = `
+<div
+  className="library-row"
+  style={Object {}}
+>
+  <div
+    className="library-row-image"
+    onClick={[Function]}
+  >
+    <div
+      className="thumbnail-outer-wrapper"
+      style={
+        Object {
+          "backgroundColor": "#white",
+          "height": 86,
+          "width": 86,
+        }
+      }
+    >
+      <div
+        className="thumbnail-wrapper fit landscape"
+        onClick={undefined}
+        onDoubleClick={undefined}
+        onMouseDownCapture={undefined}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#white",
+            "height": 86,
+            "width": 86,
+          }
+        }
+      >
+        <img
+          className="thumbnail fit landscape"
+          onLoad={[Function]}
+          src="https://dummyimage.com/100x100"
+          style={
+            Object {
+              "height": "auto",
+              "width": 86,
+            }
+          }
+          title="https://dummyimage.com/100x100"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="library-row-title"
+    onClick={[Function]}
+  >
+    <label
+      className="library-row-title-label"
+    >
+      a document
+    </label>
+    
+    <div
+      className="context-menu"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      style={
+        Object {
+          "display": "inline-block",
+          "muiPrepared": true,
+          "position": "relative",
+        }
+      }
+    >
+      <button
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOut={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "background": "none",
+            "border": 10,
+            "boxSizing": "border-box",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": 0,
+            "fontWeight": "inherit",
+            "height": 48,
+            "margin": 0,
+            "muiPrepared": true,
+            "outline": "none",
+            "overflow": "visible",
+            "padding": 12,
+            "position": "relative",
+            "textDecoration": "none",
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "verticalAlign": null,
+            "width": 48,
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+        >
+          <span
+            className="contextMenu-icon material-icons"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fontSize": 24,
+                "muiPrepared": true,
+                "position": "relative",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+              }
+            }
+          >
+            more_vert
+          </span>
+        </div>
+      </button>
+      <div
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,50 @@
+image:
+  tag: v1.9.0
+
+replicaCount: 1
+
+es:
+  uri: https://logevents-new-es-http.monitoring.svc:9200
+  timeout: 30s
+
+extraVolumeMounts:
+  - name: es-certs
+    mountPath: /certs
+    readOnly: true
+
+extraVolumes:
+  - name: es-certs
+    secret:
+      secretName: logevents-new-es-http-certs-public
+      items:                     
+        - key: tls.crt
+          path: tls.crt
+
+env:                             
+  ES_USERNAME: elastic               
+
+extraEnvSecrets:                     
+  ES_PASSWORD:                       
+    secret: logevents-new-es-elastic-user   
+    key: elastic      
+
+extraArgs:                     
+- --es.ca=/certs/tls.crt
+
+podAnnotations:
+  prometheus.io/port: "9108"
+  prometheus.io/scrape: "true"
+
+service:
+  port: 9108          
+  targetPort: 9108
+
+serviceMonitor:
+  enabled: false       
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 180Mi
+  limits:
+    memory: 250Mi

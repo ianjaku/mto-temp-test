@@ -1,0 +1,50 @@
+controller:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: app.kubernetes.io/name
+              operator: In
+              values:
+              - ingress-nginx
+            - key: app.kubernetes.io/instance
+              operator: In
+              values:
+              - ingress-nginx
+            - key: app.kubernetes.io/component
+              operator: In
+              values:
+              - controller
+          topologyKey: kubernetes.io/hostname
+        weight: 100
+  autoscaling:
+    enabled: true
+    maxReplicas: 5
+    minReplicas: 3
+    targetCPUUtilizationPercentage: 50
+    targetMemoryUtilizationPercentage: 75
+  config:
+    http2-max-field-size: 64k
+  extraArgs:
+    default-ssl-certificate: production/tls-production-secret
+  metrics:
+    enabled: true
+  podAnnotations:
+    prometheus.io/port: 10254
+    prometheus.io/scrape: "true"
+  replicaCount: 5
+  resources:
+    requests:
+      memory: 400Mi
+  service:
+    externalTrafficPolicy: Local
+defaultBackend:
+  image:
+    pullPolicy: Always
+    repository: binders.azurecr.io/binders-static-pages-service-v1
+    tag: latest
+  port: 80
+rbac:
+  create: true

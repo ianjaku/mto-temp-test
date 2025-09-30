@@ -1,0 +1,99 @@
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - grafana.binders.media
+  tls:
+    - secretName: tls-production-secret
+      hosts:
+        - grafana.binders.media
+
+dashboardsProvider:
+  enabled: true
+
+dashboardsConfigMaps:
+  default: "grafana-general-dashboards"
+  k8s: "grafana-k8s-dashboards"
+  azure: "grafana-azure-dashboards-prod"
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://prometheus-server.monitoring.svc.cluster.local:80
+      access: proxy
+      isDefault: true
+    - name: Azure Monitor
+      type: grafana-azure-monitor-datasource
+      access: proxy
+      isDefault: false
+      jsonData:
+        azureAuthType: clientsecret
+        cloudName: azuremonitor
+        tenantId: "$AZURE_TENANT_ID"
+        subscriptionId: "$AZURE_SUBSCRIPTION_ID"
+        clientId: "$AZURE_CLIENT_ID"
+      secureJsonData:
+        clientSecret: "$AZURE_CLIENT_SECRET"
+      basicAuth: false
+      editable: true
+
+dashboardProviders:
+  dashboardproviders.yaml:
+    apiVersion: 1
+    providers:
+    - name: 'default'
+      orgId: 1
+      folder: ''
+      type: file
+      disableDeletion: false
+      editable: true
+      options:
+        path: /var/lib/grafana/dashboards/default
+    - name: 'k8s'
+      orgId: 1
+      folder: 'Kubernetes Dashboards'
+      type: file
+      disableDeletion: false
+      editable: true
+      options:
+        path: /var/lib/grafana/dashboards/k8s
+    - name: 'azure'
+      orgId: 1
+      folder: 'Azure'
+      type: file
+      disableDeletion: false
+      editable: true
+      options:
+        path: /var/lib/grafana/dashboards/azure
+envFromSecrets:
+  - name: grafana-azuread-secret
+  - name: grafana-azure-monitor-secret
+
+grafana.ini:
+  server:
+    root_url: "https://grafana.binders.media"
+  auth.azuread:
+    enabled: true
+    allow_sign_up: true
+    scopes: "openid email profile"
+    auth_url: "https://login.microsoftonline.com/276c232d-1bf1-48dc-9acb-675ef2639f43/oauth2/v2.0/authorize"
+    token_url: "https://login.microsoftonline.com/276c232d-1bf1-48dc-9acb-675ef2639f43/oauth2/v2.0/token"
+    logout_url: "https://login.microsoftonline.com/276c232d-1bf1-48dc-9acb-675ef2639f43/oauth2/v2.0/logout"
+    allowed_organizations: 276c232d-1bf1-48dc-9acb-675ef2639f43
+    allowed_groups: c77a4612-3d76-4895-987d-98eb600b19be,e743bea7-c5de-4b25-b2a8-12990a15496b
+    org_mapping: "c77a4612-3d76-4895-987d-98eb600b19be:1:Viewer,e743bea7-c5de-4b25-b2a8-12990a15496b:1:Editor"
+
+persistence:
+  enabled: true
+  storageClassName: managed-premium-zrs-retain
+
+resources:
+  limits:
+    memory: 300Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

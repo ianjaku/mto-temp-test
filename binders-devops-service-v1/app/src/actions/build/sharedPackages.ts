@@ -1,0 +1,10 @@
+import { IMAGE_CLIENT, IMAGE_COMMON, IMAGE_UI_KIT } from "../docker/build";
+
+export const CLIENT_REPO_FOLDER = IMAGE_CLIENT.context;
+export const UIKIT_REPO_FOLDER = IMAGE_UI_KIT.context;
+export const COMMON_REPO_FOLDER = IMAGE_COMMON.context;
+
+export const BUILD_BASE_FOLDER = "/opt/binders";
+export const CLIENT_BUILD_FOLDER = `${BUILD_BASE_FOLDER}/${CLIENT_REPO_FOLDER}`;
+export const UIKIT_BUILD_FOLDER = `${BUILD_BASE_FOLDER}/${UIKIT_REPO_FOLDER}`;
+export const COMMON_BUILD_FOLDER = `${BUILD_BASE_FOLDER}/${COMMON_REPO_FOLDER}`;

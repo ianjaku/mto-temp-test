@@ -1,0 +1,31 @@
+dependencies:
+  - name: prometheus
+    repository: "@prometheus-community"
+    version: "14.12.0"
+  - name: prometheus-elasticsearch-exporter
+    repository: "@prometheus-community"
+    version: "4.13.0"
+    alias: "elasticsearch-exporter-logevents"
+  - name: prometheus-elasticsearch-exporter
+    repository: "@prometheus-community"
+    version: "4.13.0"
+    alias: "elasticsearch-exporter-eck"
+  - name: prometheus-elasticsearch-exporter
+    repository: "@prometheus-community"
+    version: "4.13.0"
+    alias: "elasticsearch-exporter-binders"
+  - name: prometheus-mongodb-exporter
+    repository: "@prometheus-community"
+    version: "2.8.1"
+    alias: prometheus-mongodb-exporter-0
+  - name: prometheus-mongodb-exporter
+    repository: "@prometheus-community"
+    version: "2.8.1"
+    alias: prometheus-mongodb-exporter-1
+  - name: prometheus-mongodb-exporter
+    repository: "@prometheus-community"
+    version: "2.8.1"
+    alias: prometheus-mongodb-exporter-2
+  - name: "apm-server"
+    repository: "@elastic"
+    version: "7.10.2"

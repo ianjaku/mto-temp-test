@@ -1,0 +1,61 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.mt-settings
+    &-general
+        &-row
+            background-color: white
+            display: flex
+            align-items: center
+            padding: 8px
+            margin: 4px
+            font-size: 1.1em
+            cursor: move
+            &-pos
+                display: block
+                margin: 0 6px
+    &-pairs
+        &-pair
+            min-height: 60px
+            margin: 6px 0
+            display: flex
+            background-color: white
+            &--collapsed
+                background-color: transparent
+            &--newMode
+                margin: 16px 0
+            &-form
+                padding: 6px 12px
+                display: flex
+                align-items: center
+                justify-content: space-between
+                width: 100%
+                .requiredDropdown
+                    border: 1px solid colorError
+                &-head, &-tail
+                    display: flex
+                    align-items: center
+                &-head
+                    >div,>label
+                        margin: 0 6px
+            &-iconBtn
+                color: middleBlackColor
+                cursor: pointer
+                &:hover
+                    color: accentColor
+            &-btnWrapper
+                color: middleBlackColor
+                border: 1px solid middleBlackColor
+                cursor: pointer
+                font-size: 1.1em
+                flex-grow: 1
+                display: flex
+                align-items: center
+                justify-content: center
+                label
+                    pointer-events: none
+                &:hover
+                    color: accentColor
+                    border: 1px solid accentColor
+            &-warning
+                color: colorError
+

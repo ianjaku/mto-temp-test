@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip Actionable Tooltip (snapshot) 1`] = `
+<div>
+  <div
+    className="tooltip"
+    style={
+      Object {
+        "left": "0px",
+        "top": "0px",
+        "visibility": "hidden",
+      }
+    }
+  >
+    <span>
+      Hello, I'm a tooltip!
+    </span>
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Show tooltip
+  </button>
+</div>
+`;
+
+exports[`Tooltip Tooltip (snapshot) 1`] = `
+<div
+  className="tooltip"
+  style={
+    Object {
+      "left": "0px",
+      "top": "0px",
+      "visibility": "hidden",
+    }
+  }
+>
+  <span>
+    Hello, I'm a tooltip!
+  </span>
+</div>
+`;

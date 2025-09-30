@@ -1,0 +1,164 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+
+.manual-from-video
+    min-height: 100vh
+    padding: 40px 20px
+    font-family: defaultFontName
+
+    &-container
+        max-width: 870px
+        margin: 0 auto
+        display: flex
+        flex-direction: column
+        gap: 20px
+
+    &-section
+        background: white
+        border-radius: 8px
+        padding: 30px
+        display: flex
+        flex-direction: column
+
+    &-heading
+        font-size: 28px
+        font-weight: 500
+        text-align: center
+        color: grey900
+
+    &-title-primary
+        font-size: 20px
+        font-weight: 600
+        color: grey900
+        margin: 0
+
+    &-title-secondary
+        font-size: 24px
+        font-weight: 500
+        color: grey900
+
+    &-subtitle
+        font-size: 15px
+        color: grey600
+        line-height: 1.5
+        margin: 0
+
+    &-meta-text
+        font-size: 14px
+        color: grey600
+        &--center
+            margin: 0 auto
+
+    .primary-section
+        @extend .manual-from-video-section
+        &--upload
+            padding-bottom: 60px
+            gap: 40px
+        &--uploading, &--generating
+            gap: 16px
+        &--uploaded, &--generated
+            gap: 0
+
+        .section-heading
+            display: flex
+            flex-direction: column
+            gap: 6px
+
+        .upload-area
+            border: 1px dashed grey60
+            border-radius: 15px
+            padding: 40px
+            text-align: center
+            background-color: backgroundColor
+            width: 75%
+            margin: 0 auto
+            transition: all 0.3s ease
+            &--dragging
+                border-color: baseColor
+                background-color: alpha(accentColor, .1)
+                transform: scale(1.02)
+
+        .upload-content
+            max-width: 400px
+            margin: 0 auto
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 12px
+
+        .upload-text-content
+            display: flex
+            flex-direction: column
+            gap: 8px
+            align-items: center
+
+        .select-video-btn
+            padding: 18px 24px
+            background-color: transparent
+            border: 1px solid baseColor
+            color: grey900
+            font-weight: 500
+            font-size: 16px
+
+            &:hover
+                background-color: grey500
+                border-color: grey400
+
+        .upload-progress-section
+            display: flex
+            flex-direction: column
+            gap: 16px
+            align-items: flex-start
+
+        .upload-complete-section
+            display: flex
+            flex-direction: column
+            gap: 16px
+            align-items: flex-start
+
+        .generating-section
+            display: flex
+            flex-direction: column
+            gap: 16px
+            align-items: flex-start
+
+        .generated-section
+            display: flex
+            flex-direction: column
+            gap: 16px
+            align-items: flex-start
+
+    .secondary-section
+        @extend .manual-from-video-section
+        gap: 24px
+
+        .form-group
+            display: flex
+            flex-direction: column
+            gap: 8px
+
+            .form-label
+                font-size: 14px
+                font-weight: 500
+                color: grey900
+
+            .form-input, .form-textarea
+                width: 100%
+                padding: 12px 16px
+                border: 1px solid grey300
+                border-radius: 4px
+                font-size: 15px
+                font-weight: 200
+                font-family: inherit
+
+                &:focus
+                    outline: none
+                    border-color: baseColor
+
+            .form-textarea
+                resize: vertical
+
+        .generate-document-btn, .view-document-btn
+            width: 100%
+            padding: 16px
+            color: grey900
+

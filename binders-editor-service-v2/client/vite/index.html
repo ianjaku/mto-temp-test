@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Manual.to Editor</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, interactive-widget=resizes-content">
+    <meta name="theme-color" content="#FABF3F">
+    <meta name="apple-mobile-web-app-title" content="Manual.to Editor">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180x180.png">
+    <% if (faviconUrl != null) { %>
+      <link rel="icon" type="image/png" href="<%- faviconUrl -%>">
+    <% } else { %>
+      <link rel="icon" type="image/png" href="/assets/favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="/assets/android-chrome-192x192.png" sizes="192x192">
+      <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="/assets/favicon-16x16.png" sizes="16x16">
+    <% } %>
+    <link rel="manifest" href="/assets/manifest.json">
+    <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/mstile-144x144.png">
+    <script type="module" src="/src/index.jsx"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/javascript">
+        window.bindersConfig = <%- config %>;
+        window.impersonation = <%- impersonation %>;
+        window.productionMode = true;
+        window.buildInfo = <%- buildInfo %>;
+    </script>
+
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      function initGtag() {
+        const script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-89RMCHRDRW";
+        document.getElementsByTagName("head")[0].appendChild(script);
+        gtag("consent", "default", {
+          "ad_storage": "denied",
+          "analytics_storage": "granted",
+          "personalization_storage": "denied",
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-89RMCHRDRW');
+      }
+      const cookieApproval = localStorage.getItem("google-tag-consent"); // TODO rename to general "cookie-consent"?
+      if (cookieApproval === "granted") {
+        initGtag();
+      }
+    </script>
+
+</body>
+
+</html>
+

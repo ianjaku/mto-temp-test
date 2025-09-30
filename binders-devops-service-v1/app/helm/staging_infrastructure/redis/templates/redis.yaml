@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-redis-service
+spec:
+  selector:
+    component: {{ .Release.Name }}-redis
+  ports:
+    - protocol: TCP
+      port: 6379
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-redis-deployment
+  labels:
+    component: {{ .Release.Name }}-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: {{ .Release.Name }}-redis
+  template:
+    metadata:
+      labels:
+        component: {{ .Release.Name }}-redis
+    spec:
+      containers:
+        - image: redis:{{ .Values.redis.version }}
+          name: redis
+          ports:
+            - containerPort: 6379
+          resources:
+            requests:
+              memory: {{ .Values.redis.maxMemory }}
+            limits:
+              memory: {{ .Values.redis.maxMemory }}
+---
+{{- if .Values.redis.pdb.enabled }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ .Release.Name }}-redis-pdb
+  labels:
+    component: {{ .Release.Name }}-redis
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      component: {{ .Release.Name }}-redis
+{{- end }}

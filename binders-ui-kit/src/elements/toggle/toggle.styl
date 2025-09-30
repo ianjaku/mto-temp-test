@@ -1,0 +1,35 @@
+@import "../../vars.styl";
+
+caretWidth = 18px
+
+.toggle-button
+  position: relative
+  height: 20px
+  width: 40px
+  background-color: lighten(baseColor, 30%)
+  border-radius: 16px
+  &:hover
+    cursor: pointer
+  .toggle-caret
+    position: absolute
+    height: caretWidth
+    width: caretWidth
+    top: 1px
+    left: 2px
+    background-color: whiteColor
+    border-radius: 50%
+    box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.2)
+    transition:left .1s linear
+  &--is-toggled, &--always-active
+    background-color: accentColor
+  &--is-disabled
+    &.toggle-button--is-toggled
+      background-color: lighten(accentColor, 50%)
+    &:not(.toggle-button--is-toggled)
+      background-color: lighten(baseColor, 50%)
+    &:hover
+      cursor: default
+  &--is-toggled
+    .toggle-caret
+      left: 20px
+      background-color: whiteColor

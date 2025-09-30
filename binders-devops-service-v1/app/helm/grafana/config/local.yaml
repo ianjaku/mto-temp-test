@@ -1,0 +1,47 @@
+dashboardsProvider:
+  enabled: true
+
+dashboardsConfigMaps:
+  default: "grafana-general-dashboards"
+  k8s: "grafana-k8s-dashboards"
+  azure: "grafana-azure-dashboards-stg"
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://prometheus-server.monitoring.svc.cluster.local:80
+      access: proxy
+      isDefault: true
+    - name: Azure Monitor
+      type: grafana-azure-monitor-datasource
+      access: proxy
+      isDefault: false
+      jsonData:
+        azureAuthType: clientsecret
+        cloudName: azuremonitor
+        tenantId: "$AZURE_TENANT_ID"
+        subscriptionId: "$AZURE_SUBSCRIPTION_ID"
+        clientId: "$AZURE_CLIENT_ID"
+      secureJsonData:
+        clientSecret: "$AZURE_CLIENT_SECRET"
+      basicAuth: false
+      editable: true
+
+dashboardProviders:
+  dashboardproviders.yaml:
+    apiVersion: 1
+    providers:
+    - name: 'azure'
+      orgId: 1
+      folder: 'Azure'
+      type: file
+      disableDeletion: false
+      editable: true
+      options:
+        path: /var/lib/grafana/dashboards/azure
+
+envFromSecrets:
+  - name: grafana-azure-monitor-secret

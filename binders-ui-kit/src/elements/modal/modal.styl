@@ -1,0 +1,165 @@
+@require "../../vars.styl";
+@require "../../style/global.styl";
+
+narrowModal = 350px
+medium1Modal = 512px
+wideModal = 800px
+
+.modal
+    font-family: defaultFontName, sans-serif
+    background: whiteColor;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    max-width: 100vw
+    display: flex
+    flex-direction: column
+    &--narrow
+        @media rwd.tabletAndAbove
+            width: narrowModal
+    &--wide
+        @media rwd.tabletAndAbove
+            width: wideModal
+    &--medium1
+        @media rwd.tabletAndAbove
+            width: medium1Modal
+    &--hidden
+        display: none;
+    &-wrapper
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        &--noBg
+            background-color: transparent;
+
+        &-extension
+            display: flex
+            border-radius: 5px
+            background-color: grey800
+            flex-direction: column
+            transform-origin: bottom
+            @media rwd.mobileLandscapeAndAbove
+                flex-direction: row
+                transform-origin: center
+            &--showExtension
+                .modal-extension
+                    display: flex
+                    opacity: 1
+                    max-height: 400px
+                    padding: 20px 0 0 0
+                    @media rwd.mobileLandscapeAndAbove
+                        max-width: 400px
+                        max-height: unset
+                        padding: 0
+            .modal
+                flex-grow: 1
+    &-extension
+        overflow: hidden
+        opacity: 0
+        max-height: 0
+        transition: opacity 0.7s ease-in-out, max-height 0.3s ease-in-out
+        position: relative
+        @media rwd.mobileLandscapeAndAbove
+            max-width: 0
+            transition: max-width 0.3s ease-in-out
+        &-dragHandle
+            position: absolute
+            top: 0px
+            width: 100%
+            display: flex
+            justify-content: center
+            height: 30px
+            z-index: 10
+            visibility: hidden
+            @media rwd.mobilePortrait
+                visibility: visible
+            svg
+                margin-top: 12px
+    &-header
+        background accentColor;
+        color: whiteColor;
+        padding: 14px 18px 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+        &--no-padding
+            padding: 0
+        &-title
+            font-size: 16px;
+            font-weight: 500;
+            color: whiteColor;
+            margin: 0 5px 0 0
+            text-overflow: ellipsis
+            overflow: hidden
+            white-space: nowrap
+
+        .additional-children
+            margin-right: 6px
+            display: flex
+            align-items: center
+            height: 100%
+        .modal-closeBtn
+            color: white
+            position: relative;
+            top: -2px;
+
+    &-closeBtn
+        height: 24px;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        &:focus
+            outline: none;
+
+    &-dragHandle
+        position: absolute
+        top: 0px
+        width: 80% /* ensure space for close btn */
+        left: calc(50% - 40%)
+        display: flex
+        justify-content: center
+        height: 80px
+        z-index: 10
+        svg
+            margin-top: 12px
+    &-body
+        padding: 18px;
+        font-size: 14px;
+        overflow: auto;
+        color: baseColor;
+        position: relative
+        &--withoutPadding
+            padding: 0;
+        &--mediumPadding
+            padding: 25px
+        @media rwd.tabletAndAbove
+            max-height: 83vh
+        .modal-closeBtn
+            position: absolute
+            top: 18px
+            right: 18px
+    &-filler
+        flex-grow: 1
+    &-footer
+        padding: 2px 16px;
+        display: flex;
+        justify-content: flex-end;
+        border-top: solid 1px borderGrayColor;
+
+        ul
+            padding: 0;
+            margin: 0;
+            display: flex;
+            li
+                list-style: none
+                margin-left: 16px

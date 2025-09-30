@@ -1,0 +1,45 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+
+.video-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    overflow: visible
+
+.video-preview
+    border-radius: 12px
+    border: 1px solid grey400
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+    overflow: hidden
+
+.video-play-button-overlay
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 115px
+    height: 115px
+    @media rwd.tabletAndAbove
+        width: 105px
+        height: 105px
+    background-color: rgba(0, 0, 0, 0.5)
+    border-radius: 12px
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    transition: all 0.2s ease
+    &:hover
+        background-color: rgba(0, 0, 0, 0.75)
+        transform: translate(-50%, -50%) scale(1.1)
+
+.video-progress
+    @media rwd.mobilePortrait
+        margin-top: 15px
+        margin-bottom: 5px
+    margin-top: 35px
+    margin-bottom: 20px

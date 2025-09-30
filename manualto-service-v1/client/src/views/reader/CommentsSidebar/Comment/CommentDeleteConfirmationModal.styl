@@ -1,0 +1,37 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@require "../../../../vars.styl"
+
+.comment-delete-confirmation-modal
+    @media rwd.mobile
+        display: flex
+        flex-wrap: wrap
+        align-content: center
+        .modal
+            min-height: unset !important
+            max-height: unset !important
+            transition: unset !important
+            width: 95vw !important
+
+    .modal-header-title
+        font-family: defaultFontName
+        color: baseColor
+    .modal-header
+        background: unset
+        .close
+            color: baseColor
+    .modal-footer
+        border-top: unset
+        .button
+            padding: 10px 30px
+
+    &-message
+        display: flex
+        flex-direction: column
+        row-gap: 4px
+        padding: 0 16px
+        font-size: 14px
+
+    li
+        margin-top: 4px
+        margin-bottom: 4px
+

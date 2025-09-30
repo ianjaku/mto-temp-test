@@ -1,0 +1,66 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.text-editor-tool-bar-area
+
+    position: relative
+
+    .text-editor-tool-bar-main
+        --button-icon-size: 18px
+
+        display: flex
+        background-color: white
+        border: 1px solid grey300
+        border-radius: 100vw
+        padding: 5px 12px 5px 6px
+        gap: 5px
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1)
+
+        .text-editor-tool-bar-separator
+            width: 1px
+            margin-top: -5px
+            margin-bottom: -5px
+            background: grey300
+
+        &-button
+            padding: 0
+            margin: 0
+            min-width: textEditorToolbarButtonSize
+            height: textEditorToolbarButtonSize
+            border-radius: 2px
+            border: none
+            background: none
+            cursor: pointer
+            transition: background-color 150ms ease-in,
+                        color 150ms ease-in
+            display: flex
+            align-items: center
+            justify-content: center
+            color: grey600
+
+            svg
+                width: var(--button-icon-size)
+                height: var(--button-icon-size)
+                path
+                    fill: currentColor
+
+            &:hover
+                background-color: grey200
+
+            &.active
+                color: grey900
+
+    .static-text-editor-tool-bar
+        position: fixed
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 1000
+
+        .text-editor-tool-bar
+            border: none
+            border-radius: 0
+            box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.05);
+
+    .text-editor-tool-bar-link
+        position: absolute
+        top: 74px

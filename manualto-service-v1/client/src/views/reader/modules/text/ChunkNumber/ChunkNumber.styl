@@ -1,0 +1,25 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.chunk-number
+    z-index: 10
+    position: fixed
+    bottom: 2vh
+    right: -2px // Slightly closer to the viewport than the text
+    width: 3vw
+    display: flex
+    justify-content: center
+    text-align: center
+    font-size: 16px
+    font-weight: 400
+    color: grey600
+    opacity: 0
+    transition: opacity 0.5s ease
+    &--visible
+        opacity: 1
+
+    @media rwd.notDesktop
+        font-size: 15px
+
+    @media only screen and (orientation: portrait)
+        width: 4vh
+        bottom: 1vw

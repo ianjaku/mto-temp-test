@@ -1,0 +1,36 @@
+@import "../../vars.styl";
+.file-input    
+    display: flex;
+    align-items: center;
+    font-family: secondaryFontName;
+
+    & > label 
+        overflow: hidden;
+        position: relative
+        border: 1px solid baseColor;
+        border-radius: 5px;
+        background: none;                
+        padding: 8px 12px;
+        color: baseColor;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+
+        & > input[type=file]
+            cursor: inherit;
+            display: inline-flex;        
+            min-height: 100%;
+            min-width: 100%;
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            text-align: right;
+            top: 0;
+
+
+    .files
+        font-size: 12px;
+        font-weight: 500;
+        color: accentColor;
+        margin-left: 12px;
+        font-family: defaultFontName;

@@ -1,0 +1,100 @@
+@require("../../vars.styl")
+
+.export-context-menu
+            //so it is above modal (if it happens that we show it there)
+            z-index: 1401 !important
+
+.table-action-area
+    display: flex
+    justify-content: flex-end
+    margin-bottom: 2em
+    .export-button-wrapper
+        display: flex
+        position: relative
+        .contextMenu
+            position: absolute
+            top: 50px
+            right: 5px
+        .button-round
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            background-color: whiteColor
+            border: 1px solid middleGreyColor
+            box-shadow: initial
+            margin-left: 8px
+            .material-icons
+                color: iconDefaultColor !important
+.table
+    background-color: whiteColor;
+    border-collapse: collapse;
+    width: 100%;
+    &-no-data
+        line-height: 4em
+        width: 100%
+        text-align: center
+        font-size: small
+    thead
+        tr
+            line-height: 16px
+    tr
+        th
+            font-family: secondaryFontName;
+            font-size: 9px;
+            font-weight: bold;
+            border-bottom: 1px solid middleGreyColor;
+            padding: 6px 0;
+            color: baseColor;
+            text-transform: uppercase;
+            text-align: left;
+
+            &:hover
+                cursor: pointer;
+            &:first-child
+                padding-left: 0;
+            &:last-child
+                padding-right: 0;
+
+            .material-icons
+                font-size: 8pt;
+                position: relative;
+                top: 2px;
+                font-size: 10px !important;
+        td
+            padding: 16px 0;
+            border-bottom: 1px solid borderGrayColor;
+            font-size: 12px;
+            font-family: defaultFontName;
+            color: baseColor;
+            &:first-child
+                padding-left: 0;
+            &:last-child
+                padding-right: 0;
+        &.disabled
+            td
+                color: disabledColor
+        &.expandable
+            td
+                cursor: pointer
+    &--lastColAlignRight
+        tr
+            td:last-child
+                display: flex
+                justify-content: flex-end
+                align-items: center
+.table-footer
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+    .entriesPerPageDropdown
+        text-align: right
+        ul
+            justify-content: flex-end
+        .dropdown-elements
+            border-bottom: 1px solid middleGreyColor !important
+.header-slot
+    flex-grow: 1
+    display: flex
+    align-items: center
+    font-size: 0.9em

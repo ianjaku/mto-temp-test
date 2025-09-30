@@ -1,0 +1,61 @@
+schedules:
+  - cron: "0 0 * * *"
+    displayName: Daily Build
+    branches:
+      include:
+      - develop
+    always: true
+trigger: none
+pr: none
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  ACR_NAME: 'binders'
+  TAG: 'node22'
+  PW_TAG: '1.33.0-jammy-multi-browser'
+  DEVOPS_TAG: 'node22-ts5.4'
+
+steps:
+  # Log in to ACR using Docker@2
+  - task: Docker@2
+    displayName: 'Login to Azure Container Registry'
+    inputs:
+      containerRegistry: container-registry
+      command: 'login'
+
+  - task: Docker@2
+    displayName: 'Build and push Alpine DevOps image'
+    inputs:
+      containerRegistry: container-registry
+      repository: 'ubuntu-devops'
+      command: 'buildAndPush'
+      Dockerfile: '$(System.DefaultWorkingDirectory)/custom-images/ubuntu-devops/Dockerfile'
+      tags: '$(DEVOPS_TAG)'
+
+  - task: Docker@2
+    displayName: 'Build and push Bitbucket Alpine image'
+    inputs:
+      containerRegistry: container-registry
+      repository: 'bitbucket-alpine'
+      command: 'buildAndPush'
+      Dockerfile: '$(System.DefaultWorkingDirectory)/custom-images/bitbucket-alpine/Dockerfile'
+      tags: '$(TAG)'
+
+  - task: Docker@2
+    displayName: 'Build and push Bitbucket After Build image'
+    inputs:
+      containerRegistry: container-registry
+      repository: 'bitbucket-after-build'
+      command: 'buildAndPush'
+      Dockerfile: '$(System.DefaultWorkingDirectory)/custom-images/bitbucket-after-build/Dockerfile'
+      tags: '$(TAG)'
+
+  - task: Docker@2
+    displayName: Build and push Playwright AZ image'
+    inputs:
+      containerRegistry: container-registry
+      repository: 'playwright-az'
+      command: 'buildAndPush'
+      Dockerfile: '$(System.DefaultWorkingDirectory)/custom-images/playwright-az/Dockerfile'
+      tags: '$(PW_TAG)'

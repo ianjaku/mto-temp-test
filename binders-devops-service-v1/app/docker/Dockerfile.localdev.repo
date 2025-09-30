@@ -1,0 +1,7 @@
+FROM surnet/alpine-node-wkhtmltopdf:22.17.0-0.12.6-full
+RUN apk -U upgrade
+RUN apk add --no-cache rsync inotify-tools bash unifont
+RUN mkdir -p /opt/binders
+WORKDIR /opt/binders
+RUN npm i -g concurrently
+ENTRYPOINT [ "/opt/binders/binders-devops-service-v1/app/docker/entrypoint.sh" ]

@@ -1,0 +1,33 @@
+parameters:
+  artifact: ''
+  azureSubscription: ''
+  functionApp: ''
+
+
+jobs:
+- deployment: Deploy
+  dependsOn: Terraform
+  displayName: Deploy function code
+  environment: Dev
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - bash: |
+            echo ${{ parameters.artifact }}
+            echo ${{ parameters.azureSubscription }}
+            echo ${{ parameters.functionApp }}
+          displayName: List params
+        - download: current
+          artifact: screenshotfunction
+        - bash: ls -la $(Pipeline.Workspace)/screenshotfunction
+          displayName: 'List Directory Contents'
+        - task: AzureFunctionApp@2
+          name: Dep
+          displayName: "Azure function code deployment"
+          inputs:
+            azureSubscription: ${{ parameters.azureSubscription }}
+            appType: "functionAppLinux"
+            appName: ${{ parameters.functionApp }}
+            package: "$(Pipeline.Workspace)/${{ parameters.artifact }}/$(Build.BuildId).zip"
+            runtimeStack: "NODE|18"

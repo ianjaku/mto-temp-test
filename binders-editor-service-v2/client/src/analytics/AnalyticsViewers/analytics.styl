@@ -1,0 +1,173 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.analytics-viewer
+    .breadcrumbs-viewer
+        width: initial
+        .breadcrumbs-wrapper
+            width: 75%
+            @media rwd.mobile
+                width: 100%
+            @media rwd.tablet
+                margin-left: 100px
+                max-width calc(90% - 180px)
+            @media rwd.laptop
+                margin-left: 100px
+    .container-inner
+        width: 75%
+        @media rwd.mobile
+            width: 93%
+    .account-analytics-table-wrapper
+        background-color: whiteColor
+        padding: 24px 12px;
+        margin-bottom: 16px
+        border: 1px solid borderGrayColor
+        border-radius: 2px
+.account-analytics
+    .analytics-wrapper
+        margin: 40px 0px 20px 0px
+.analytics-wrapper
+    margin: 40px auto
+    display: flex
+    flex-direction: column
+    .analytics-container
+        min-width: 350px
+        background-color: whiteColor
+        padding: 12px;
+        margin-bottom: 16px
+        border: 1px solid borderGrayColor
+        &-header
+            padding: 12px 24px 24px 12px
+        &-inner
+            max-width: 600px
+            margin: auto
+
+.analytics-viewer-empty
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #313131
+    flex-direction: column
+    opacity: 0.8
+    margin-top: 100px
+    
+    &-title
+        margin-bottom: 10px
+
+.account-analytics-errormessage
+    display: inline-block
+    width: 100%
+    text-align: center
+    font-size: 20px
+    height: 2em
+    line-height: 2em
+.account-analytics-infomessage
+    display: inline-block
+    width: 100%
+    text-align: center
+    font-style: italic
+    height: 2em
+    line-height: 2em
+.filterForm
+    .tree-navigator
+        height: 300px
+    &-heading
+        display: flex
+        align-items: baseline
+        &-title
+            font-size: 28px
+            font-weight: 500
+        &-timestamp
+            font-size: 0.8em
+            margin-left: auto
+    .button-round
+        margin-top: 6px
+    &-datepicker
+        display: inline-block
+        padding-right: 10px
+        font-size: 1rem
+    &-dropdown
+        display: inline-block
+        width: 80px
+        margin-right: 10px
+        .dropdown-field
+            background-color: whiteColor !important
+            &.is-disabled
+                background-color: transparent !important
+            &-label
+                height: 37px
+    &-modal
+        .modal-body
+            min-height: 430px
+        &-tip
+            padding-bottom: 20px
+        &-table
+            tr td
+                padding: 10px 0
+        &-info
+            display: flex
+            column-gap: 5px
+            padding-top: 12px
+            font-size: 12px
+    &-chip
+        display: inline-block
+        margin: 4px
+        vertical-align: top
+        .material-icons
+            margin-right: 5px
+            margin-top: 3px
+        &-label
+            display: inline-block
+    &-actionTypes
+        .MuiFormControlLabel-root
+            display: flex
+    .modal-body
+        width: 700px
+    .tabs-nav
+        height: auto
+
+        &-list
+            padding-left: 0px
+            min-width: 664px
+
+    .tabs-item
+        width: 50%
+    .tabs-content
+        background-color: whiteColor
+        padding: 10px
+        min-width: 1px
+        width: 100%
+    &-chosenDocs, &-chosenUsers, &-chosenUserActions
+        width: calc(100% - 100px)
+        min-height: 10px
+        display: inline-block
+    &-content
+        &-subsection
+            display: inline-block
+            vertical-align: top
+            margin-bottom: 10px
+            @media rwd.mobile
+                display: block
+        &-section
+            width: calc(100% - 100px)
+            display: inline-block
+
+        &-label
+            display: inline-block
+            width: 100px
+            font-size: 1rem
+            padding-top: 10px
+            vertical-align: top
+            &.isWide
+                margin-top: 5px
+        &-chip
+            display: inline-block
+        &-row
+            margin-top: 1em
+            margin-bottom: 1em
+        &-recursive
+            width: 200px
+            display: inline-block
+            vertical-align: middle
+            margin-left: 20px

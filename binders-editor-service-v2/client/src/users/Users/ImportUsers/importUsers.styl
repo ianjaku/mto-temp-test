@@ -1,0 +1,29 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+
+.wide-users-block
+    font-family: defaultFontName
+    p
+        max-width: 394px
+        margin: 24px 32px 24px 0px
+        line-height: 20px
+    h3
+        margin: 20px 0px
+        font-size: 14px
+    .file-selector
+        .info
+            font-size: 12px
+            color: accentColor
+            font-weight: 500
+        .button
+            margin-right: 14px
+    .import-users
+        &-label
+            display: block
+            margin: 20px 0px 12px
+        &-preview
+            max-height: calc(100vh - 500px)
+            overflow-y: auto
+        &-csverror
+            color: colorErrorDark
+    .replace-members-checkbox
+        margin: 12px 0px

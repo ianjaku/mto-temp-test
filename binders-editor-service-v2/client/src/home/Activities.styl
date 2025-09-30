@@ -1,0 +1,44 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.activities
+    display: flex
+    flex-direction: column
+    cursor: default
+
+    &-count
+        padding: 3px 10px
+        background-color: middleGreyColor
+        border-radius: 25px
+        font-size: 12px
+
+    &-header
+        display: flex
+        flex-direction: row
+        align-items: center
+        column-gap: 12px
+        font-size: 16px
+        line-height: 1
+        font-weight: 500
+        color: grey900
+        margin-top: 50px
+        margin-bottom: 30px
+        @media rwd.mobile
+            margin-top: 30px
+            margin-bottom: 15px
+            padding-left: 10px
+
+    &-body
+        display: flex
+        flex-direction: column
+        padding: 40px 0
+        background-color: whiteColor
+        font-weight: 400
+        font-size: 14px
+        @media rwd.mobile
+            padding: 10px 0
+
+        &-message
+            display: inherit
+            justify-content: center
+            align-content: center
+

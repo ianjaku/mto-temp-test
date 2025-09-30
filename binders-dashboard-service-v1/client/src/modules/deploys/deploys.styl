@@ -1,0 +1,46 @@
+
+.deploys
+    &-layout
+        height: 100vh
+        padding: 32px
+        background-color: white
+
+        .loader
+            z-index: 1
+
+    &-summary
+        font-size: 2rem
+        padding: 10px 0px 32px
+
+        &-message
+            display: flex
+            align-items: center
+
+        .button
+            margin-left: 16px
+
+    &-service
+        &-inactive
+            color: red
+        &-out-of-date
+            color: orange
+        &-up-to-date
+            color: green
+
+    &-candidates
+        padding-left: 48px
+
+        .button
+            margin-right: 8px
+
+.flags
+    &-item
+        margin-bottom: 10px;
+        border: solid 1px #dcdbd9;
+        padding: 10px;   margin-bottom 10px
+    &-key
+        font-weight bold
+        margin-right 10px
+
+    &-value
+        color: green

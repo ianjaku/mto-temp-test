@@ -1,0 +1,49 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.ag5-configuration
+    --footer-px: 60px
+    --mobile-logo-header-px: 50px
+    --tabs-navbar-px: 150px
+
+    .settings-pane
+        transition: height 0.2s ease
+        height: calc(100dvh - var(--tabs-navbar-px))
+        @media rwd.mobile
+            height: calc(100dvh - var(--tabs-navbar-px) - var(--footer-px))
+        overflow: auto
+        scrollbar-gutter: stable
+        &-section
+            padding-right: 25px
+
+    &--footer-visible
+        .settings-pane
+            height: calc(100dvh - var(--tabs-navbar-px) - var(--footer-px))
+            @media rwd.mobile
+                height: calc(100dvh - var(--tabs-navbar-px) - var(--footer-px) - var(--mobile-logo-header-px))
+
+    &-footer
+        height: 0
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-end
+        column-gap: 7px
+        padding-right: 25px
+        overflow-y: hidden
+        scrollbar-gutter: stable
+
+        border-top-color: var(--clr-neutral-300)
+        border-top-style: none
+        border-top-width: 1px
+
+        transition: height 0.2s ease
+        pointer-events: none
+        @media rwd.mobile
+            justify-content: space-between
+            .save-btn
+                margin-left: auto
+
+        &--visible
+            border-top-style: solid
+            height: var(--footer-px)
+            pointer-events: auto

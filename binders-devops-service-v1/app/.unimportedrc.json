@@ -1,0 +1,30 @@
+{
+    "entry": [
+        "src/main.ts",
+        "src/scripts/**",
+        "src/infrastructure/scripts/**",
+        "src/dc/main.ts",
+        "src/dc/scripts/**"
+    ],
+    "ignoreUnresolved": [
+        "@binders/**",
+        "source-map-support",
+        "pnpapi",
+        "encoding",
+        "cli-color"
+    ],
+    "ignoreUnimported": [
+        "src/actions/mongo/dropall.js",
+        "src/actions/mongo/fixClusterHosts.js",
+        "src/actions/elastic/dropall.ts",
+        "src/actions/cert-manager/index.ts",
+        "src/infrastructure/**",
+        "src/dc/tsup.config.ts",
+        "src/lib/cli.ts"
+    ],
+    "ignoreUnused": [
+        "ws"
+    ],
+    "ignorePatterns": [
+    ]
+}

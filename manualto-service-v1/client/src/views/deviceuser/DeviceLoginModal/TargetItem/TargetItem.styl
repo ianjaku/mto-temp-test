@@ -1,0 +1,32 @@
+@import "../../../../vars.styl"
+
+.targetItem
+    width: 100%
+    display: flex
+    flex-flow: row nowrap
+    gap: 12px
+    background-color: white
+    padding: 12px 18px
+    box-sizing: border-box
+    align-items: center
+    cursor: pointer
+    &:hover
+        background-color: backgroundColor
+    &-details
+        display: flex
+        flex-flow: column nowrap 
+        gap: 1px
+    &-title
+        font-weight: 500
+        font-size: 14px
+        line-height: 1.185
+        color: baseColor
+        max-width: 300px
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+    &-subTitle
+        font-weight: 400
+        font-size: 12px
+        line-height: 1.185
+        color: #828282

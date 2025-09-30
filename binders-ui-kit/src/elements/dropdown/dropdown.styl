@@ -1,0 +1,128 @@
+@require "../../vars.styl";
+
+fieldHeight = 38px
+elementHeight = 20px
+
+.dropdown
+    font-family: defaultFontName
+    font-size: 13px
+    color: baseColor
+    position: relative
+    &-field
+        padding: 0 8px 0 12px
+        cursor: pointer
+        list-style: none
+        margin: 0
+        display: flex
+        &:focus
+            outline: none
+        &.is-disabled
+            cursor: default
+    &-elements
+        color: baseColor
+        list-style: none
+        border: 1px solid lighterGreyColor
+        border-radius: 5px
+        box-shadow: 0 1px 9px -4px rgba(0,0,0,0.2)
+        margin: 0
+        padding: 0
+        position: absolute
+        box-sizing: border-box
+        background-color: whiteColor
+        z-index: 1
+        overflow-y: auto
+        overflow-x: hidden
+        width: 100%
+        &--disconnected
+            width: fit-content
+        &.limited-width
+            width: 96px
+        &.bottoms-up
+            border-top: 1px solid lighterGreyColor
+            bottom: 39px
+        &.drop-up
+            bottom: fieldHeight - 12;
+            border-top: 1px solid lighterGreyColor
+        li
+            padding: 8px 0 8px 16px
+            cursor: pointer
+            line-height: elementHeight
+            display: flex
+            align-items: center
+            &:first-child
+                padding-top: 16px
+            &:last-child
+                padding-bottom: 16px
+            a
+                flex: 1
+                text-decoration: none;
+                color: currentColor;
+            &:hover
+                background-color: backgroundColor
+            &.contains-avatar
+                padding: 4px 0 4px 16px
+                height: fieldHeight
+                &:first-child
+                    margin-top: 8px
+        hr
+            height: 1px;
+            border: 0;
+            border-top: 1px solid lighterGreyColor
+            margin: 8px 0
+        &.floating
+            border-radius: 5px
+            box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.1)
+            bottom: fieldHeight - 8px
+            left: 12px
+            width: 200px
+            &.drop-up
+                bottom: fieldHeight + 8px
+        &.labelless
+            border-top: 1px solid lighterGreyColor
+    &--outlined
+        .dropdown-field
+            border: 1px solid lighterGreyColor
+            background-color: whiteColor
+        .dropdown-elements
+            border: 1px solid lighterGreyColor
+            background-color: whiteColor
+    &--borders
+        .dropdown-field
+            border: 1px solid lighterGreyColor
+        .dropdown-elements
+            &.drop-up
+                border-bottom: 0
+
+    &-field-label
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        &-group
+            display: flex
+            align-items: center
+            .avatar
+                margin-right: 4px
+                width: 32px
+                height: 32px
+                &.fit
+                    &>img
+                        object-fit: contain
+                &.crop
+                    &>img
+                        object-fit: cover
+            .icon
+                margin-right: 4px
+            &-text
+                margin-right: 8px
+                &--hasMaxWidthLabel
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+        &.contains-avatar
+            justify-content: flex-start
+        &.is-grayed-out
+            color: disabledColor
+
+

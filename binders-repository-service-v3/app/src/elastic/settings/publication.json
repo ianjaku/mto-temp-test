@@ -1,0 +1,14 @@
+{
+    "analysis": {
+        "analyzer": {
+            "chunk_content_analyzer": {
+                "type": "custom",
+                "tokenizer": "standard",
+                "filter": ["lowercase"],
+                "char_filter": [
+                    "html_strip"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@import "../../vars.styl";
+
+.tree-navigator
+    border: 1px solid borderGrayColor
+    width: 100%
+    color: baseColor
+    font-family: defaultFontName
+    font-size: 14px
+    user-select: none
+    height: 100%
+    &-loader
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 64px
+    &.is-root
+        .tree-navigator-parent-back
+            display: none
+
+    &-parent,&-row
+        height: 44px
+        display: flex
+        align-items: center
+        padding-left: 19px
+        &.is-selected
+            background-color: accentColor
+            color: whiteColor
+        &.is-disabled
+            color: disabledColor
+    &-parent
+        border-bottom: 2px solid middleGreyColor
+        margin-bottom: 8px
+        &-label
+            font-weight: 500
+        &-back
+            margin-right: 12px
+            width: 24px
+            height: 24px
+            border: 1px solid transparent
+            border-radius: 5px
+            padding-top: 1px
+            cursor: pointer
+            &:hover
+                border-color: baseColor
+            &-icon
+                /**/
+    &-rows
+        display: block
+        height: calc(100% - 52px)
+        overflow-y: auto
+
+        &-empty
+            height: 64px
+            display: flex
+            font-style: italic
+            justify-content: center
+            align-items: center
+            color: middleGreyColor
+
+        &-placeholder
+            height: 64px
+    &-row
+        &-folder-icon
+            margin-right: 12px
+            margin-left: 3px
+        &-label
+            /**/
+        &-enter
+            margin: 0 12px 0 auto
+            width: 24px
+            height: 24px
+            border: 1px solid transparent
+            border-radius: 5px
+            padding: 1px
+            cursor: pointer
+            &:hover
+                border-color: baseColor
+
+.is-selected
+    .tree-navigator-row-enter:hover
+        border-color: whiteColor
+
+    .tree-navigator-parent-back:hover
+        border-color: whiteColor
+

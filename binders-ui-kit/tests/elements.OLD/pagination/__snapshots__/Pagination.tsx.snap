@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination Pagination Display pages (snapshot) 1`] = `
+<ul
+  className="pagination"
+>
+  <span>
+    Page
+  </span>
+  <li
+    className="disabled"
+    onClick={undefined}
+  >
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_left
+    </span>
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_left
+    </span>
+    First
+  </li>
+  <li
+    className="disabled"
+    onClick={undefined}
+  >
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_left
+    </span>
+    Previous
+  </li>
+  <li
+    className="active"
+    onClick={[Function]}
+  >
+    1
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    2
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    3
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    4
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    5
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    6
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    7
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    8
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    9
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    10
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    11
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    12
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    13
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    14
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    15
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    16
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    17
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    18
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    19
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    20
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    21
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    Next 
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_right
+    </span>
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    Last
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_right
+    </span>
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_right
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`Pagination Pagination Long range (snapshot) 1`] = `
+<ul
+  className="pagination"
+>
+  <span>
+    Page
+  </span>
+  <li
+    className="disabled"
+    onClick={undefined}
+  >
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_left
+    </span>
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_left
+    </span>
+    First
+  </li>
+  <li
+    className="disabled"
+    onClick={undefined}
+  >
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_left
+    </span>
+    Previous
+  </li>
+  <li
+    className="active"
+    onClick={[Function]}
+  >
+    1
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    2
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    3
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    4
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    5
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    Next 
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_right
+    </span>
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    Last
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_right
+    </span>
+    <span
+      className="material-icons pagination-icon"
+      color=""
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "color": "rgba(0, 0, 0, 0.87)",
+          "display": "inline-block",
+          "fontSize": 24,
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+        }
+      }
+    >
+      keyboard_arrow_right
+    </span>
+  </li>
+</ul>
+`;

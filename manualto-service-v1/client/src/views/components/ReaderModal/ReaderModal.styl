@@ -1,0 +1,69 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@require "~@binders/ui-kit/lib/style/global.styl";
+
+.readerModal-wrapper
+    position: fixed
+    animation: fadeInBackground 0.3s ease-in-out forwards
+    display: flex
+    justify-content: center
+    align-items: center
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    z-index: 20
+    font-family: "Rubik"
+    width: 100vw
+    height: 100vh
+    @supports (width: 100dvw) and (height: 100dvh)
+        width: 100dvw
+        height: 100dvh
+    .readerModal
+        background: whiteColor
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2)
+        width: 100vw
+        max-height: 90vh
+        position: absolute
+        bottom: 0
+        animation: fadeInAndUp 0.3s ease-in-out forwards
+        overflow-y: auto
+        @media rwd.phoneAndAbove
+            border-radius: .2em
+            width: auto
+            position: static
+        &-close
+            position: absolute
+            top: 1.2em
+            right: 1.2em
+            cursor: pointer
+            color: baseColor
+            display: none
+            @media rwd.phoneAndAbove
+                display: block
+        &-dragHandle
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: .75em 0
+            @media rwd.phoneAndAbove
+                display: none
+        &-content
+            display: flex
+            flex-direction: column
+            @media rwd.phoneAndAbove
+                padding: 1.4em
+
+@keyframes fadeInBackground
+    from
+        background-color: rgba(0, 0, 0, 0)
+    to
+        background-color: rgba(0, 0, 0, 0.8)
+
+@keyframes fadeInAndUp
+    from
+        opacity: 0
+        transform: translateY(10px)
+    to
+        opacity: 1
+        transform: translateY(0)

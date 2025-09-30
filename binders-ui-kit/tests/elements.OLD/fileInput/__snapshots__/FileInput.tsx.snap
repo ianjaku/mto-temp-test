@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`File Input Snapshot default file input 1`] = `
+<div
+  className="file-input"
+>
+  <label
+    htmlFor="finput"
+  >
+    Choose a file
+    <input
+      accept="*"
+      multiple={false}
+      name="finput"
+      onChange={[Function]}
+      type="file"
+    />
+  </label>
+  <span
+    className="files"
+  >
+    No file chosen
+  </span>
+</div>
+`;

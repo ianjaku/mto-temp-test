@@ -1,0 +1,23 @@
+{
+    "children": [
+        {
+            "name": "TEST COLLECTION",
+            "type": "collection",
+            "children": [],
+            "aclsToAssign": [
+                {
+                    "login": "johneditor@manual.to",
+                    "roleId": "rol-65e8e37d-c41a-406c-a7b2-e4740f0f8b83"
+                },
+                {
+                    "login": "maryeditor@manual.to",
+                    "roleId": "rol-65e8e37d-c41a-406c-a7b2-e4740f0f8b83"
+                },
+                {
+                    "login": "janereader@manual.to",
+                    "roleId": "rol-ecd30910-7fd5-477d-a202-773419513210"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+	"name": "sort-imports",
+	"displayName": "Sort imports",
+	"description": "Organizes ts/js imports according to our eslint rules",
+	"version": "0.0.8",
+	"engines": {
+		"vscode": "^1.84.2"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "sort-imports.sort-imports",
+				"title": "Sort imports..."
+			}
+		],
+		"configuration": {
+			"title": "sortImports",
+			"properties": {
+				"sortImports.sortOrder": {
+					"description": "The sort order to use for import statements. See https://eslint.org/docs/rules/sort-imports",
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": ["all", "multiple", "single", "none"]
+					},
+					"default": ["all", "multiple", "single", "none"]
+				},
+				"sortImports.multilineImports.enabled": {
+					"description": "When enabled this will rewrite import statements over multiple lines when exceeding sort-imports.multilineImports.maxCharsPerLine",
+					"type": "boolean",
+					"default": true
+				},
+				"sortImports.multilineImports.quoteSymbol": {
+					"description": "The quote symbol to quote the module name in the import statement",
+					"type": "string",
+					"default": "\""
+				},
+				"sortImports.multilineImports.maxCharsPerLine": {
+					"description": "The maximum number of chars for an import statement before making it multi-line",
+					"type": "number",
+					"default": 100
+				},
+				"sortImports.multilineImports.fixSrcImports": {
+					"description": "When enabled it will attempt to fix @binders src import errors like @binders/client/src",
+					"type": "boolean",
+					"default": true
+				}
+			}
+		}
+	},
+	"publisher": "BindersMedia",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"package": "vsce package",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"dependencies": {
+		"typescript": ""
+	},
+	"devDependencies": {
+		"@types/glob": "^8.1.0",
+		"@types/mocha": "^10.x",
+		"@types/node": "18.x",
+		"@types/vscode": "^1.84.2",
+		"@typescript-eslint/eslint-plugin": "^6.21.0",
+		"@typescript-eslint/parser": "^6.21.0",
+		"@vscode/test-electron": "^2.4.1",
+		"eslint": "^7.32.0",
+		"glob": "^10.x",
+		"mocha": "^10.x",
+		"vsce": "^2.15.0"
+	}
+}

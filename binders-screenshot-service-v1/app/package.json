@@ -1,0 +1,32 @@
+{
+  "name": "@binders/screenshot-v1",
+  "version": "1.0.0",
+  "scripts": {
+    "cleanup": "rm -rf dist",
+    "setup": "yarn install --loglevel warn --ignore-engines",
+    "dev": "nodemon --watch src -L -e ts,json --exec \"npm run compile\"",
+    "dev:esbuild": "nodemon --watch src -L -e ts,json --exec \"npm run compile:esbuild\"",
+    "compile": "tsc --skipLibCheck && node --inspect=0.0.0.0:8513 dist/src/main.js",
+    "compile:esbuild": "node build.cjs && node --inspect=0.0.0.0:8513 dist/src/main.js",
+    "transpile": "eslint --max-warnings=0 src && tsc --skipLibCheck",
+    "transpile:esbuild": "node build.cjs",
+    "lint": "eslint --max-warnings=0 --cache --ext .ts,.js,.jsx,.tsx src",
+    "start": "NODE_ENV=production node dist/src/main.js"
+  },
+  "author": "Tom De Coninck",
+  "license": "UNLICENSED",
+  "description": "K8s worker for taking screenshots, ported from Azure Function",
+  "dependencies": {
+    "@azure/storage-blob": "^12.14.0",
+    "@binders/binders-service-common": "workspace:*",
+    "bullmq": "^5.56.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "esbuild": "~0.25.9",
+    "eslint": "^7.25.0",
+    "nodemon": "^2.0.7",
+    "typescript": "5.4.5"
+  }
+}

@@ -1,0 +1,109 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-mongodb-config
+data:
+  mongod.conf: |
+    net:
+      bindIp: 0.0.0.0
+    security:
+      authorization: enabled
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .Release.Name }}-mongodb-secret
+type: Opaque
+data:
+  mongo-root-username: {{ .Values.mongo.rootUser | b64enc | quote }}
+  mongo-root-password: {{ .Values.mongo.rootPassword | b64enc | quote }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-mongodb-service
+spec:
+  selector:
+    component: {{ .Release.Name }}-mongo
+  ports:
+    - protocol: TCP
+      port: 27017
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: "{{ .Release.Name }}-mongod"
+  labels:
+    component: {{ .Release.Name }}-mongo
+    replicaset: "{{ .Release.Name }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: {{ .Release.Name }}-mongo
+  serviceName: "{{ .Release.Name }}-mongodb-service"
+  template:
+    metadata:
+      labels:
+        component: {{ .Release.Name }}-mongo
+    spec:
+      containers:
+        - name: "{{ .Release.Name }}-mongod-container"
+          image: mongo:{{ .Values.mongo.version }}
+          command:
+            - "/usr/local/bin/docker-entrypoint.sh"
+          args:
+            - "--config"
+            - "/etc/mongo/mongod.conf"
+          env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-mongodb-secret
+                key: mongo-root-username
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-mongodb-secret
+                key: mongo-root-password
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongodb-config-volume
+              mountPath: /etc/mongo
+            - name: "{{ .Release.Name }}-mongodb-persistent-storage-claim"
+              mountPath: /data/db
+          resources:
+            requests:
+              memory: {{ .Values.mongo.maxMemory }}
+            limits:
+              memory: {{ .Values.mongo.maxMemory }}
+      volumes:
+        - name: mongodb-config-volume
+          configMap:
+            name: {{ .Release.Name }}-mongodb-config
+
+  volumeClaimTemplates:
+  - metadata:
+      name: "{{ .Release.Name }}-mongodb-persistent-storage-claim"
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "{{ .Values.cloudprovider.storage.className }}"
+      resources:
+        requests:
+          storage: "{{ .Values.cloudprovider.storage.diskSize }}"
+---
+{{- if .Values.mongo.pdb.enabled }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ .Release.Name }}-mongo-pdb
+  labels:
+    component: {{ .Release.Name }}-mongo
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      component: {{ .Release.Name }}-mongo
+{{- end }}

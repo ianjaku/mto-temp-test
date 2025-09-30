@@ -1,0 +1,26 @@
+{
+    "properties": {
+        "userId": { "type": "keyword" },
+        "accountId": { "type": "keyword" },
+        "eventType": { "type": "integer" },
+        "data": {
+            "properties": {
+                "binderId": { "type": "keyword" },
+                "sessionId": { "type": "keyword" },
+                "userId": { "type": "keyword" },
+                "publicationId": { "type": "keyword" },
+                "itemId": { "type": "keyword" },
+                "itemKind": { "type": "keyword" },
+                "itemTitle": { "type": "keyword" },
+                "readSessionId": { "type": "keyword" },
+                "timeInactive": { "type": "integer" },
+                "incomplete": { "type": "boolean" },
+                "viewsPerCollection": { "enabled": false }
+            }
+        },
+        "start": { "type": "date" },
+        "end": { "type": "date" },
+        "duration": { "type": "integer" },
+        "isIncomplete": { "type": "boolean" }
+    }
+}

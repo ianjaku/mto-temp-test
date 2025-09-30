@@ -1,0 +1,130 @@
+@require "../../vars.styl";
+
+
+.ribbons
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    z-index: 1500
+
+
+.infoBanner
+    position: relative
+    font-family: defaultFontName
+    z-index: 1500
+    bottom: 0
+    left: auto
+    right: auto
+    width: 100%
+    border-top: solid 1px transparent
+    background-color: rgba(72, 71, 68, 0.66)
+    border-bottom: 1px solid white
+    &--top
+        top: 0
+        left: 0
+        bottom: auto !important
+        position: fixed !important
+        border-bottom: solid 1px transparent !important
+        border-top: 1px solid white !important
+        z-index: 1500
+    &-icon
+        font-size: 20px
+        color: accentColor;
+        margin-right: 10px
+
+    &-wrapper
+        margin: 0 auto
+        max-width: 90%
+        text-align: center
+        @media (max-width: 767px)
+            max-width: 100%
+            padding: 0 5%
+        @media (max-width: 479px)
+            padding 0 8% 0 2%
+
+    &-message-stack
+        width: 100%
+        display: flex
+        flex-flow: column nowrap
+
+    &-message-item
+        position: relative;
+        padding: 10px max(5%, 15px)
+        border-top: 1px solid white
+        color: white
+        font-size: 14px
+        font-weight: 500
+        line-height: 1.35
+        text-align: center
+        &:first-child
+            border-top: none
+
+    &-message
+        display: inline-block
+        margin: 10px 0
+        font-size: 14px
+        font-weight: 500
+        line-height: 1.35
+        color: whiteColor
+        @media (max-width: 1199px)
+            text-align: left
+        @media (max-width: 767px)
+            font-size: 15px
+
+    &-confirmButton
+        margin: 0 10px 0 12px
+        padding: 5px 20px
+        display: inline-block
+        cursor: pointer
+        border-radius: 5px
+        border: 1px solid whiteColor
+        background-color: whiteColor
+        font-size: 14px
+        font-weight: bold
+        text-align: center
+        transition: all 0.2s ease-in-out
+        @media (max-width: 767px)
+            margin: 5px 10px 0 12px
+        &:hover
+            border: 1px solid accentColor
+
+    &-learnMore
+        display: inline-block
+        position relative
+        top: -1px
+        font-size: 12px
+        font-weight: 500
+        color: accentColor
+        cursor: pointer
+        text-decoration: none
+        margin-left: 8px
+        @media (max-width: 767px)
+            font-size: 14px
+        &:hover
+            text-decoration: underline
+
+    &-close
+        position: absolute
+        right: 10px
+        top: 50%
+        cursor: pointer
+        color: whiteColor
+        transform-translate(0%, -50%)
+        &:hover
+            .infoBanner-buttonIcon
+                color: accentColor
+        @media (max-width: 767px)
+            right: 0
+            padding: 25px 15px
+        @media (max-width: 479px)
+            right: 0
+            padding: 15px 10px
+
+    &-closeIcon
+        font-size: 20px
+        &-Icon
+            color: whiteColor
+            &:hover
+                color: accentColor
+

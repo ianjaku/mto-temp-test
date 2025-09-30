@@ -1,0 +1,183 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+
+body
+    background-color: #f3f1ef
+.users
+    min-width: 780px
+    margin: auto
+    .tabs
+        margin-top: 20px
+    .tabs-nav
+        height: unset
+.manage-users
+    &-cta
+        display: flex
+        flex-direction: row
+    &-maxusersinfo
+        flex-grow: 1
+        display: flex
+        justify-content: flex-end
+        align-items: flex-end
+        padding: 4px 0
+        &--limit-exceeded
+            color: red
+    .button
+        margin-right: 13px
+        &--secondary // @TODO: Put in ui-kit
+            background-color: transparent
+    &-overview
+        margin-top: 27px
+        padding: 24px
+        background-color: whiteColor
+        border: 1px solid middleGreyColor
+        .table
+            tr
+                th
+                    &:first-child
+                        width: 30%
+                    &:nth-child(2)
+                        width: 30%
+                    &:nth-child(3),&:nth-child(4),&:nth-child(5)
+                        width: 9.5%
+                    &:nth-child(3)
+                        min-width: 75px
+                    &:nth-child(5)
+                        min-width: 55px
+                        text-align: center
+                    &:nth-child(6)
+                        text-align: center
+                td
+                    font-size: 12px
+                    &:first-child
+                        font-weight: 500
+                    &:nth-child(5)
+                        text-align: center
+        .table-footer
+            margin: 40px 0 0 0
+.usergroups
+    width: 65%
+    margin: 0 auto
+    &-cta
+        padding-top: 6px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        input
+            height: 36px
+            border-radius: 5px
+    &-overview
+        margin-top: 27px
+        .no-match
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 30vh
+    .accordion
+        &-header
+            .header
+                width: 100%
+                display: flex
+                justify-content: space-between
+                align-items: center
+                &-cta
+                    float: right
+                    span
+                        margin-right: 4px
+                &--disabled
+                    cursor: default
+        &-body
+            .info
+                margin: 0px 0px 12px 18px
+                display: block
+            .error-msg
+                color: colorError
+.import-users
+    width: 65%
+    margin: 0 auto
+    &-accordion-header
+        width: 100%
+        font-size: 12px
+    &-limit-exceeded-warning
+        color: red
+    &-cta
+        font-size: 14px
+    &-overview
+        margin-top: 27px
+    &-results-accordion
+        .accordion-body
+            padding: 21px
+        &-table
+            table-layout: fixed
+            border-collapse: collapse
+            width: 100%
+            font-size: 12px
+            td,th
+                word-wrap: break-word
+                &:nth-child(1)
+                    width: 20%
+                    max-width: 20%
+                &:nth-child(2)
+                    width: 14%
+                    max-width: 15%
+                &:nth-child(3)
+                    width: 14%
+                    max-width: 15%
+                &:nth-child(4)
+                    width: 27%
+                    max-width: 25%
+                &:nth-child(5)
+                    width: 20%
+                    max-width: 20%
+                &:nth-child(6)
+                    width: 5%
+                    max-width: 5%
+                a
+                    text-decoration: none
+                    color: inherit
+                span.error
+                    color: colorError
+                    font-weight: 500
+                .invitation-link
+                    transition: color 0.2s ease-in-out
+                    &:hover
+                        color: accentColor
+    &-results-accordion-cta
+        font-size: 14px
+        display: flex
+        justify-content: flex-end
+        margin-top: 10px
+        .button
+            &:first-child
+                margin-right: 11px
+.whitelisted-emails
+    width: 65%
+    margin: 0 auto
+    &-overview
+        margin-top: 27px
+        padding: 24px
+        background-color: whiteColor
+        border: 1px solid middleGreyColor
+        .table
+            tr
+                th
+                    &:first-child
+                        width: 25%
+                    &:last-child
+                        width: 5%
+                td
+                    font-size: 12px
+                    &:last-child
+                        text-align: center
+.whitelisted-emails-modal-body
+        display: flex
+        width: 440px
+        justify-content: space-between
+        input
+            flex-grow: 3
+        .dropdown
+            flex-grow: 2
+            margin-left: 12px
+            .dropdown-field
+                height: 100%
+

@@ -1,0 +1,51 @@
+@require "../../../vars.styl";
+
+.libraryItem
+	display: block
+	margin: 10px
+	width: 170px
+	float: left
+	border: solid 1px #dcdbd9
+	box-sizing: content-box
+	cursor: pointer
+	position: relative
+	z-index: 1
+	background: whiteColor
+
+	&.is-active, &:hover
+		border: 1px solid accentColor
+
+	&-content
+		position: relative
+		display: block
+		margin: 0
+		padding: 10px
+
+	&-title
+		display: block
+		color: darkGreyColor
+		font-size: 14px
+		font-family: Rubik
+		text-align: left
+		line-height: 20px
+		max-height: 40px
+		overflow: hidden
+		text-overflow: ellipsis
+		word-wrap: break-word
+
+	&-info
+		position: relative
+		margin: 0
+		padding: 0
+		padding-right: 22px
+		height: 38px
+
+	&-icon
+		position: absolute
+		top: -2px
+		right: 0
+
+	&-menu
+		position: absolute
+		bottom: 0
+		right: 5px

@@ -1,0 +1,98 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+
+.pane-feedback
+    --clr-primary: accentColor
+    --clr-neutral-200: grey600
+    --clr-neutral-300: grey60
+    --clr-neutral-400: grey500
+    --clr-neutral-600: borderGrayColor
+    --clr-neutral-700: grey700
+    --gap-sm: .5rem
+    --gap-md: 1rem
+    --gap-lg: 2rem
+    --fs-sm: 12px;
+    --font-weight-bold: 500
+
+    display: flex
+    flex-direction: column
+    gap: var(--gap-md)
+
+    .feedbacks-list
+        display: flex
+        flex-direction: column
+        gap: var(--gap-lg)
+
+    .feedback-item
+        display: flex
+        flex-direction: column
+        position: relative
+        gap: var(--gap-sm)
+        &:after
+            content: ''
+            position: absolute
+            bottom: calc(-1 * var(--gap-lg) / 2)
+            width: 100%
+            height: 1px
+            background-color: var(--clr-neutral-300)
+        .feedback-row
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+
+    .feedbacks-aggregation
+        display: flex
+        flex-direction: row
+        padding: var(--gap-sm)
+        gap: var(--gap-sm)
+        background-color: var(--clr-neutral-700)
+        border-bottom: 1px solid var(--clr-neutral-300)
+        font-size: var(--fs-sm)
+        .fa
+            padding-top: 2px
+            color: var(--clr-neutral-300)
+        .feedback-agg-info
+            display: flex
+            flex-direction: column
+            .avg-rating
+                font-weight: var(--font-weight-bold)
+            .feedbacks-info
+                display: flex
+                align-items: center
+
+                .download-ratings-button
+                    display: flex
+                    background: none
+                    border: none
+                    padding: 0
+                    margin: 0 var(--gap-sm)
+                    color: var(--clr-primary)
+                    font-size: var(--fs-sm)
+                    font-family: var(--font-body)
+                    cursor: pointer
+                    &:hover
+                        text-decoration: underline
+
+    .feedback-rating
+        display: flex
+        flex-direction: row
+        gap: var(--gap-sm)
+        align-items: flex-end
+        svg
+            color: var(--clr-primary)
+        svg.missing
+            color: var(--clr-neutral-200)
+
+    .feedback-username
+        font-weight: var(--font-weight-bold)
+
+    .feedback-date
+        color: var(--clr-neutral-400)
+
+    .feedbacks-empty
+        background-color: var(--clr-neutral-700)
+        color: var(--clr-neutral-300)
+        padding: var(--gap-md)
+        font-size: 1.25rem
+        display: flex
+        align-items: center
+        justify-content: center

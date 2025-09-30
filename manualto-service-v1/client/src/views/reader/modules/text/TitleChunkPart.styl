@@ -1,0 +1,56 @@
+@require "../../../../vars.styl"
+
+.title-chunk
+    --clr-grey-100: backgroundColor
+    --clr-grey-200: grayBorder
+    --clr-grey-300: grey300
+    --clr-grey-800: baseColor
+    --radius-md: 7px
+    --font-size: 14px
+
+    display: flex
+    flex-direction: column
+    gap: 8px
+
+    .title-chunk-pills
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        gap: 10px
+
+    .title-chunk-pill
+        border: 1px solid var(--clr-grey-200)
+        background: var(--clr-grey-100)
+        border-radius: var(--radius-md)
+        padding: 5px 10px
+        font-size: var(--font-size)
+        cursor: default
+        transition: background 100ms ease-in
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 8px
+        position: relative
+
+        .title-chunk-pill-tooltip
+            position: absolute
+            top: calc(100% + 8px)
+            left: 50%
+            transform: translateX(-50%)
+            transition: opacity 100ms ease-in
+            color: white
+            background: var(--clr-grey-800)
+            opacity: 0
+            padding: 4px 6px
+            border-radius: 4px
+            width: max-content
+            font-size: 11px
+            pointer-events: none
+
+        &.hoverable:hover
+            background: var(--clr-grey-300)
+            .title-chunk-pill-tooltip
+                opacity: 1
+
+        .material-icons
+            font-size: 16px

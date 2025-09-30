@@ -1,0 +1,227 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.deletedItems
+    &-libraryItem
+        &-additionalInfo
+            &-itemCount
+                font-size: 12px
+                line-height: 25px
+                .countNumber
+                    font-size: 17px
+    &-link
+        cursor: pointer
+        user-select: none
+        color: baseColor
+        text-decoration: underline
+        &:visited
+            color: baseColor
+        &:hover
+            color: accentColor
+    &-heading
+        display: flex
+        align-items: baseline
+        &-title
+            font-size: 28px
+            font-weight: 500
+        &-timestamp
+            font-size: 0.8em
+            margin-left: auto
+    &-modal
+        &-input
+            margin-left: 10px
+    &-restoreModal
+        &-tip
+            margin: 20px 0;
+        .tree-navigator
+            height: 200px
+    &-info
+        font-weight:normal
+        margin-left: 10px
+        display: inline-block
+        vertical-align: middle
+        font-size: 14px
+        margin-top: 2px
+        @media rwd.mobile
+            display: block
+            margin-left: 0 
+    &-linkButton
+        vertical-align: middle
+        display: inline-block
+        cursor: pointer
+        user-select: none
+        text-decoration: underline
+        &:visited
+            color: baseColor
+        &:hover
+            color: accentColor
+    &-loading
+        .MuiCircularProgress-root
+            margin: 0 auto
+            display: block
+    &-loadmore
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+
+
+    .breadcrumbs-viewer
+        width: initial
+        .breadcrumbs-wrapper
+            width: 75%
+            @media rwd.mobile
+                width: 100%
+            @media rwd.tablet
+                margin-left: 100px
+                max-width calc(90% - 180px)
+            @media rwd.laptop
+                margin-left: 100px
+    .container-inner
+        width: 75%
+        @media rwd.mobile
+            width: 93%
+.deletedItems-filter-wrapper
+    margin: 40px 0px 20px 0px
+.deletedItems-wrapper
+    margin: 40px auto
+    display: flex
+    flex-direction: column
+    gap: 16px
+    animation: fadeIn 0.3s
+    .library-row
+        .statistics h4
+            display: none
+    .breadcrumbs
+        margin-top: 10px
+    .deletedItems-container
+        min-width: 350px
+        background-color: whiteColor
+        padding: 12px;
+        margin-bottom: 16px
+        border: 1px solid borderGrayColor
+        &-header
+            padding: 12px 24px 24px 12px
+        &-inner
+            max-width: 600px
+            margin: auto
+.deletedItems-infomessage
+    display: inline-block
+    width: 100%
+    text-align: center
+    font-style: italic
+    height: 2em
+    line-height: 2em
+.deletedItems-filter
+    border: 1px solid borderGrayColor
+    background: white
+    padding: 10px;
+    z-index: 2
+    .tree-navigator
+        height: 300px
+    .button-round
+        margin-top: 6px
+    &-datepicker
+        display: inline-block
+        padding-right: 10px
+        font-size: 1rem
+        &-separator
+            display: inline-block
+            vertical-align: baseline
+            margin-left: 5px
+            margin-right: 5px
+        input
+            padding: 11px
+    &-dropdown
+        display: inline-block
+        width: 80px
+        margin-right: 10px
+        &--long
+            width: 160px
+        .dropdown-field
+            background-color: whiteColor !important
+            &.is-disabled
+                background-color: backgroundColor !important
+            &-label
+                height: 37px
+    &-modal
+        .modal-body
+            min-height: 430px
+        &-tip
+            padding-bottom: 20px
+        &-table
+            tr td
+                padding: 10px 0
+    &-chip
+        display: inline-block
+        margin: 4px
+        vertical-align: top
+        .material-icons
+            margin-right: 5px
+            margin-top: 3px
+        &-label
+            display: inline-block
+    &-actionTypes
+        .MuiFormControlLabel-root
+            display: flex
+    .modal-body
+        width: 700px
+    .tabs-nav
+        height: auto
+
+        &-list
+            padding-left: 0px
+            min-width: 664px
+
+    .tabs-item
+        width: 50%
+    .tabs-content
+        background-color: whiteColor
+        padding: 10px
+        min-width: 1px
+        width: 100%
+    &-chosenDocs, &-chosenUsers, &-chosenUserActions
+        min-height: 10px
+        display: inline-block
+    &-content
+        .deletedItems-filter-content-sectionSeparator
+            border: 0
+            height: 1px
+            background-color: borderGrayColor
+        &-subsection
+            display: inline-block
+            vertical-align: top
+            margin-bottom: 10px
+            @media rwd.mobile
+                display: block
+                &.isHiddenOnMobile
+                    display: none
+        &-section
+            display: inline-block
+
+        &-label
+            display: inline-block
+            font-size: 1rem
+            padding-top: 10px
+            vertical-align: top
+            margin-right: 16px
+            font-weight: 400
+            line-height: 1.5;
+        &-filterableDropdown
+            display: inline-block
+        &-chip
+            display: inline-block
+        &-row
+            margin-top: 1em
+            &.isIndented
+                margin-left: 30px
+        &-recursive
+            width: 200px
+            display: inline-block
+            vertical-align: middle
+            margin-left: 20px
+
+
+@keyframes fadeIn
+    from
+        opacity: 0
+    to
+        opacity: 1

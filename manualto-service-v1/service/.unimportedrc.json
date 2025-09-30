@@ -1,0 +1,13 @@
+{
+    "ignoreUnresolved": [],
+    "ignoreUnimported": [
+        "src/test.ts"
+    ],
+    "ignoreUnused": [
+        "@binders/ui-kit"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**"
+    ]
+}

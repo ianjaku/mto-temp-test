@@ -1,0 +1,57 @@
+{
+    "children": [
+        {
+            "name": "recursiveActionsCase",
+            "type": "collection",
+            "children": [
+                {
+                    "name": "col-lvl1",
+                    "type": "collection",
+                    "children": [
+                        {
+                            "name": "doc-lvl2",
+                            "type": "document",
+                            "languages": [
+                                {
+                                    "languageCode": "en",
+                                    "title": "doc-lvl2-en",
+                                    "isPrimary": true,
+                                    "chunks": [
+                                        {
+                                            "text": "This is chunk 1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "languageCode": "fr",
+                                    "title": "doc-lvl2-fr",
+                                    "chunks": [
+                                        {
+                                            "text": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "",
+                    "type": "document",
+                    "languages": [
+                        {
+                            "languageCode": "en",
+                            "title": "",
+                            "isPrimary": true,
+                            "chunks": [
+                                {
+                                    "text": "doc-lvl1-text"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

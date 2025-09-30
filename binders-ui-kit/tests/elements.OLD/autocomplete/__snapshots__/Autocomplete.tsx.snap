@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Base Autocomplete (snapshot) 1`] = `
+<div>
+  <div
+    className="autocomplete"
+  >
+    <textarea
+      className="autocomplete-textarea"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Invite new user or user group"
+      rows={1}
+      value=""
+    />
+  </div>
+</div>
+`;

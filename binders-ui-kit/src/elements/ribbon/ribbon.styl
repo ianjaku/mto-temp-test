@@ -1,0 +1,53 @@
+@require "../../vars.styl";
+
+.ribbon
+    width: 100vw
+    z-index: 1500
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 18px
+    &-top
+        position: fixed
+        top: 0
+        left: 0
+    &-body
+        margin: 0
+        padding: 2px
+        text-align: center
+        width: 95%
+        label
+            margin: 0 12px
+        a
+            cursor: pointer
+        @media rwd.mobile
+            padding: 4px
+            display: flex
+            flex-direction: column
+            align-items: center
+    &-closebtn
+        float: right
+        cursor: pointer
+        padding: 0 5px
+        display: flex
+    &--warning
+        background-color: colorWarning
+        color: #ffffff
+    &--overkill-warning
+        color: #ffffff
+        background: repeating-linear-gradient(
+            45deg,
+            #ffff00,
+            #ffff00 10px,
+            #000000 10px,
+            #000000 20px
+        )
+        .ribbon-body
+            background-color: #ffffff
+            color: red
+    &--info
+        background-color: accentColor
+    &--translucent
+        opacity: 0.85
+    &--forceWhiteContent *
+        color: #ffffff !important

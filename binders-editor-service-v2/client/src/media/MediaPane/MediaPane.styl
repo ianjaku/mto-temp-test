@@ -1,0 +1,158 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.binder-visuals
+    display: flex
+    flex-direction: column
+    overflow-y: auto
+    max-height: 100%
+    margin: 25px 0 20px 0
+    position: relative
+    flex: 1 1 0
+    &-drop-blanket
+        position: absolute
+        background-color: rgba(255,255,255,0.9)
+        width: 100%
+        height: 100%
+        z-index: 1
+        color: black
+        display: flex
+        align-items: center
+        justify-content: center
+    &-gallery
+        display: flex
+        flex-wrap: wrap
+        max-height: 550px
+        &-upload-button
+            width: 80px
+            height: 80px
+            margin: 2px
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: accentColor
+            cursor: pointer
+            &-svg
+                max-width: 100%
+                max-height: 100%
+        &-image
+            display: block
+            height: 85px
+            width: 85px // MT-2418 safari drag drop dissapearing images
+            .thumbnail-outer-outer-wrapper
+                position: relative
+                .thumbnail-outer-wrapper
+                    margin: 2px
+            > div:not(.thumbnail-dragWrap):not(.thumbnail-staticplaceholder)
+                height: 0 !important
+.visual-properties-placeholder
+    &-pane
+        // min-height: 180px
+    &-modal
+        min-height: 72px
+
+.visual-properties
+    position: relative
+    font-size: 12px
+    &-label
+        font-weight: bold
+        display: block
+        margin-bottom: 10px
+    &-property
+        display: flex
+        align-items: center
+        height: 25px
+        &-label
+            width: 80px
+            font-weight: 500
+            margin-right: 16px
+            line-height: 1
+        &-dropdown
+            .dropdown-field
+                padding-left: 0
+                color: accentColor
+                .dropdown-arrow-icon
+                    visibility: inherit !important
+        &-radios
+            display: flex
+            align-items: center
+            *
+                font-size: 12px !important /* override material's style */
+            label.narrow
+                width: 20px
+                margin-left: -3px
+                margin-right: -3px
+    &-actions
+        margin-top: 20px
+        display: flex
+        flex-direction: column
+        row-gap: 8px
+        a
+            text-decoration: none
+            color: currentColor
+        &-action
+            min-height: 24px
+            display: flex
+            span
+                color: currentColor
+            &-download
+                &-container
+                    display: flex
+                &-filler
+                    flex-grow: 1
+            &-label
+                margin-left: 12px
+                &:not(&--noclip)
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+                &--cta
+                    cursor: pointer
+                    color: accentColor
+                &--disabled
+                    color: disabledColor
+        &--inverted-colors
+            .visual-properties-actions-action-label
+                color: baseColor
+    .visual-radio-prop
+        display: flex
+    .rc-color-picker
+        left: 160px !important
+        top: -210px !important
+        &-panel
+            position: fixed
+            z-index: 1400
+    .transcriptInput
+        opacity: 0
+        height: 0
+        width: 10px !important
+        position:absolute
+        z-index: -1
+    &-disclaimer
+        background-color: grey850
+        padding: 10px 15px
+        border-radius: 12px
+.media-pane
+    position: relative
+    input
+        width: 100%
+    &-dropfilesarea
+        position: absolute
+        width: 103%
+        height: 100%
+        left: -8px
+        top: 15px
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 20px
+        background-color: accentTransparentBackgroundColor
+        z-index: 200
+        &-label
+            color: whiteColor
+            text-align: center
+            display: block
+            pointer-events: none
+            padding: 5px
+            border-radius: 5px
+            background-color: baseColor
+

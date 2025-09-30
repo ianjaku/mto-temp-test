@@ -1,0 +1,23 @@
+@require("../../vars.styl")
+
+.rating-stars {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-sm);
+
+    .rating-point {
+        .rating-point-button {
+            color: middleGreyColor;
+            border: none;
+            background: none;
+            aspect-ratio: 1;
+            cursor: pointer;
+            &__highlighted {
+                color: accentColor;
+            }
+            &__disabled {
+                cursor: default;
+            }
+        }
+    }
+}

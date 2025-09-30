@@ -1,0 +1,26 @@
+@require "../../vars.styl";
+ 
+.accordion
+    position: relative
+    outline: solid 1px borderGrayColor
+    background-color: whiteColor
+    .accordion-header
+        cursor: pointer
+        display: flex
+        height: 48px
+        align-items: center
+        font-family: defaultFontName
+        font-size: 14px
+        .accordion-arrow
+            transform: rotate(-90deg)
+            transition: all .2s linear
+    &.is-opened&:not(.accordion--noGaps)
+        margin: 16px 0
+        .accordion-header
+            border-bottom: solid 1px borderGrayColor
+            .accordion-arrow
+                transform: rotate(0deg)
+    .accordion-body
+        padding: 12px
+        font-family: defaultFontName
+        font-size: 12px

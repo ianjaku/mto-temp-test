@@ -1,0 +1,699 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.composer-wrapper
+    .breadcrumbs-viewer
+        .breadcrumbs-wrapper
+            display: flex
+            flex-direction: column
+            .breadcrumbs-set
+                .breadcrumbs
+                    display: inline-block
+                    > div
+                        display: inline-block
+            @media rwd.laptop
+                display: block
+            @media rwd.tablet
+                display: block
+            @media rwd.mobile
+                display: block
+    .container
+        overflow: visible
+        margin: 0 auto;
+        width: 75%
+        @media rwd.laptop
+            width: auto
+            max-width: 85%
+            display: block
+        @media rwd.tablet
+            width: auto
+            max-width: 85%
+            display: block
+        @media rwd.mobile
+            width: 93%
+    &--wide
+        .container
+            width: 90%
+
+.composer
+    margin: 0 auto
+    background-color: backgroundColor
+    overflow: visible
+    width: 100%
+    &--disableChunkPointerEvents
+        .rte-input-wrapper, .textarea-wrapper
+            pointer-events: none !important
+    &--horizontalvisuals
+        .chunk, .chunktext-wrapper
+            flex-direction: column
+        .chunk-images
+            display: flex
+        .textarea-wrapper
+            width: 100%
+        .drag-button
+            display: none
+    .document-image-wrapper
+        min-width: 96px
+        display: flex
+        &-dropfilesarea
+            position: absolute
+            height: 100%
+            background-color: accentTransparentBackgroundColor
+            display: flex
+            justify-content: center
+            align-items: center
+            z-index: 1000
+            padding: 8px
+            &-label
+                color: whiteColor
+                text-align: center
+                display: block
+                pointer-events: none
+                padding: 5px
+                border-radius: 5px
+                background-color: baseColor
+    .thumbnail-wrapper
+        background-color: thumbBackgroundColor
+    .chunks-area-wrapper
+        display: flex
+    .chunks-area
+        max-height: 90%
+        overflow: visible
+        img.emoji
+            height: 1em;
+            width: 1em;
+            margin: 0 .05em 0 .1em;
+            vertical-align: -0.1em;
+        @media rwd.tablet
+            max-width: 95%
+        .pending-publish-buttons-wrapper
+            div
+                animation-duration: 7s
+                animation-fill-mode: forwards
+                animation-iteration-count: infinite
+                animation-name: placeHolderShimmer
+                animation-timing-function: linear
+                background: linear-gradient(to right, thumbBackgroundColor 10%, thumbBackgroundColorDarker 28%, thumbBackgroundColor 43%) !important
+                background-size: 132px 35px
+    .uploadable-thumb
+        cursor: pointer
+        display: flex
+        justify-content: center
+        @media rwd.tablet
+            justify-content: flex-start
+        @media rwd.notmobile
+            opacity: 0
+        &.alwaysVisible
+            @media rwd.notmobile
+                opacity: 1
+        align-items: center
+        .thumbnail-wrapper
+           .thumbnail
+               max-width: 100%
+               max-height: 100%
+    .thumbnail-whitespace
+        width: 0px
+        height: 0px
+    .chunks-list
+        padding-bottom: 40px
+        overflow-x: visible
+    .language-selectors
+        display: flex
+        font-size: 14px
+        &-selector
+            display: flex
+            justify-content: flex-end
+            padding: 0px
+            align-items: center
+            &:first-child
+                width: calc(50% + 48px)
+            &:last-child
+                flex-grow: 1
+            &-label, &-dropdown
+                font-weight: 500
+            &-dropdown
+                min-width: 179px
+                @media rwd.mobile
+                    min-width: 160px
+                z-index: 15
+                &.dropdown
+                    font-size: 13px
+                .dropdown-elements
+                    background-color: baseColor
+                    color: whiteColor
+                    width: unset
+                    top: 32px
+                    right: 0px
+                    padding: 0px 12px
+                    li
+                        &:hover
+                            background-color: baseColor
+                            color: accentColor
+                .dropdown-field-label
+                    justify-content: flex-end
+                &.dropdown--is-open
+                    .dropdown-field
+                        background-color: colorNegativeBorder
+                        color: whiteColor
+                        border-top-left-radius: 5px
+                        border-top-right-radius: 5px
+                        .dropdown-arrow
+                            color: grey800
+                &:not(.dropdown--is-open)
+                    .dropdown-field
+                        background-color: backgroundColor
+                        color: baseColor
+                        .dropdown-arrow
+                            color: baseColor
+            &-close
+                cursor: pointer
+                margin-left: 10px
+            .dropdown
+                padding: 4px 0px
+                &:hover
+                    cursor: pointer
+                    .dropdown-field-label-group-text
+                        border-bottom: 1px solid grey800
+                &--is-open
+                    color: grey800
+                    .dropdown-field
+                        color: grey800
+            .dropdown-field
+                background: unset !important
+                padding: 0
+                .dropdown-field-label-group-text
+                    line-height: 1em
+                    margin: 0
+                    transition: border 150ms ease-in
+    .chunk
+        display: flex
+        position: relative
+        margin-left: auto
+        margin-right: auto
+        width: 99%
+        font-family: secondaryFontName
+        font-size: 15px
+        &:not(.chunk--title-box)
+            line-height: 1.6
+            @media rwd.mobile
+                margin-bottom: var(--gap-lg);
+        @media rwd.tablet
+                flex-direction: column
+        &--hovered
+            .chunk-images
+                @media rwd.mobile
+                    z-index: 99
+        &--selected
+            z-index: 2
+            .rte-container
+                padding: 15px 18px 3px 10px !important
+                @media rwd.mobile
+                    padding:1em 18px 3px 10px !important
+        &--pushforward
+            z-index: 3
+        .textchunk
+            border-top: 1px solid borderGrayColor
+        &--title-box
+            margin-top: 0.5em
+            margin-bottom: 1.5em
+            .selectable.is-active
+                >textarea
+                    -webkit-appearance: none /* fixes render issue of inset border on iphone */
+                    &::placeholder
+                        opacity: 0.7
+                    &:placeholder-shown
+                        color: lighten(darkGrayColor, 25%)
+            textarea
+                font-size: 24px
+                font-weight: bold
+                outline-offset: -1px
+                border: none
+                background: transparent
+                &::placeholder
+                    opacity: 0.7
+                &:placeholder-shown
+                    color: lighten(darkGrayColor, 25%)
+            .public-DraftEditorPlaceholder-root
+                    font-weight: bold
+                    font-size: 24px
+                    color: middleGreyColor
+                    font-family: Roboto
+        .thumbnail-outer-wrapper, .thumbnail-wrapper
+            @media rwd.mobile
+                min-height: 96px
+                min-width: 96px
+        &-images
+            background-color: backgroundColor
+            @media rwd.tablet
+                display: flex
+                min-width: 98px
+                position: relative
+            &-highlight
+                background-color: accentColor
+            &-dropfilesarea
+                position: absolute
+                height: 100%
+                background-color: accentTransparentBackgroundColor
+                display: flex
+                justify-content: center
+                align-items: center
+                z-index: 1000
+                &-label
+                    color: whiteColor
+                    text-align: center
+                    display: block
+                    pointer-events: none
+                    padding: 5px
+                    border-radius: 5px
+                    background-color: baseColor
+        .drag-button
+            position: absolute
+            right: -22px
+            top: 0
+            z-index: 4
+            cursor: move
+            width: 24px
+            text-align: center
+            height: 100%
+            span
+                color: middleGreyColor
+            @media rwd.mobile
+                top: 100px
+            &.--is-inactive, &.--is-dragging
+                visibility: hidden
+            &:hover
+                span
+                    color: accentColor !important
+        .thumbnail-outer-outer-wrapper
+            @media rwd.notmobile
+                box-shadow: -1px -1px borderGrayColor, 1px 1px borderGrayColor
+                &:focus
+                    outline: none
+        .secondary
+            border-left: initial
+            .thumbnail-outer-outer-wrapper
+                border-top: initial
+        &:hover
+            .approval-button-area.--is-inactive
+                opacity: 0.6
+                visibility: visible
+        &-images
+            .thumbnail-outer-wrapper
+                @media rwd.tablet
+                    display: flex
+            @media rwd.mobile
+                display: flex
+        .chunktext-wrapper
+            display: flex
+            flex-grow: 1
+            min-width: calc( 100% - 96px )
+            position: relative
+            &--emptyChunk
+                background-color: lighterGreyColor
+                color: disabledColor
+                min-height:96px
+                cursor: text
+                .empty-chunk
+                    padding: 15px 20px
+                    flex-grow: 1
+                    position: relative
+                    &:nth-child(2)
+                        position: relative
+                        left: -1px
+        .chunk-side-buttons-area
+                position: absolute
+                top: calc(50% - 12px)
+                right: -12px
+                z-index: 1
+                display: flex
+                align-items: center
+                flex-direction: column
+                &--with-approval-button
+                    top: calc(50% - 24px)
+                .button-translate-chunk
+                    &--is-translating
+                        cursor: default
+                        .squiggly
+                            animation: blinker 1s linear infinite
+                    &.side-chunk-button--disabled
+                        cursor: default
+                        background-color: disabledBackgroundColor
+
+        .textchunk
+            background-color: whiteColor
+            &:not(.secondary-text)
+                border-left: 1px solid borderGrayColor
+            border-right: 1px solid borderGrayColor
+            border-bottom: 1px solid borderGrayColor
+            display: flex
+            flex-direction: column
+            min-height: 96px
+            flex-grow: 1
+        .secondary-text
+            .chunk-side-buttons-area
+                right: inherit
+                left: -12px
+        .rte-root
+            box-sizing: border-box
+            height: 100%
+            width: 100%
+            border-top: initial
+            position: relative
+            @media rwd.tablet
+                padding: 0px
+            @media rwd.mobile
+                padding: 0px
+            &.secondary-text
+                position:relative
+                left: -1px;
+            .rte-container
+                padding: 15px 18px 3px 10px
+                @media rwd.mobile
+                    padding:1em 18px 3px 10px
+                div[data-block="true"]:first-child
+                    margin: 0 0 1em 0
+                .rte-button-bar
+                        .rte-toolbar-arrow
+                            display: none
+                        .rte-toolbar-arrow
+                            display: none
+        &.breadcrumbs-chunk
+            @media rwd.notmobile
+                margin: 2em auto 4em auto
+            @media rwd.tablet
+                margin: 2em auto 1em auto
+            @media rwd.mobile
+                margin: 4em auto 1em auto
+            justify-content: space-between;
+            p
+                font-family: Roboto
+                font-size: 12px
+                font-weight: 300
+                text-align: right
+                color: middleGreyColor
+            .breadcrumbs-set
+                width: 80%
+                .breadcrumbs
+                    flex-grow: 1
+                    width: 80%
+                    padding-right: 10px
+                    display: flex
+                    .contextMenu-icon
+                        top: 2px
+        &--secondaryLanguageOpen
+            .chunk-controls
+                width: 50%
+    .editor-header,.editor-footer
+        display: flex
+    .selectable
+        &.is-active
+            box-shadow: inset 0px 0px 0px 3px accentColor
+    .publish-buttons
+        display: flex
+        padding-left: 96px
+        margin-top: 11px
+        margin-bottom: 60px
+        @media rwd.mobile
+            padding-left: initial
+        &-button-wrapper
+            flex-grow: 1
+            display: flex
+            justify-content: flex-end
+            .button--CTA
+                margin-left: 10px;
+    .publish-chunk
+        height: 120px
+        .button
+           position: absolute
+           right: 0
+
+        .modal-footer
+            .button
+                position:inherit
+
+    .textarea-wrapper
+        height: 100%
+        position: relative
+        @media rwd.mobile
+            width: 100%
+        @media rwd.tablet
+            width: 100%
+        .chunk-button
+            &.button-merge-chunks
+                top: -12px
+            &.button-add-chunk
+                bottom: -12px
+        &.secondary-text
+            position:relative
+            left: -1px
+        textarea
+            display: block
+            width: 100%
+            border: none
+            outline-offset: -1px
+            resize:none
+            padding: 34px 22px
+            overflow:hidden
+            font:inherit
+            min-height: 100%
+            font-family: secondaryFontName
+            font-size: 2em
+            font-weight: bold
+            line-height: 1.1em
+            &:focus
+                outline: none
+        textarea.title-field
+            height: 81px
+            font-family: secondaryFontName
+            font-size: 1.3rem
+    .tooltip
+        z-index: 1001
+    &~.tooltip
+        padding-top: 5px
+        padding-bottom: 5px
+        span
+            line-height: 1
+    .rightPane
+        @media rwd.mobile
+            visibility: hidden
+    &-warning
+        @media rwd.notmobile
+            margin-top: -4em
+            margin-bottom: 4em
+        @media rwd.tablet
+            margin-top: -2em
+            margin-bottom: 2em
+            height: 60px
+        @media rwd.mobile
+            margin-top: 1em
+            height: 80px
+        height: 24px
+        width: 100%
+        opacity: 1
+        transition: margin 500ms 0ms, height 500ms 0ms, opacity 500ms 500ms;
+        display: flex
+        align-items: center
+        &.is-hidden
+            height: 0
+            opacity: 0
+        &-text
+            display: inline-block
+            vertical-align: bottom
+            padding-bottom: 1px
+            padding-top: 3px
+            color: colorError
+            width: calc(100% - 30px)
+            b
+                font-weight: bold
+
+        &-icon
+            color: colorError
+            width: 30px
+
+    // .MuiIcon-root
+    //     height: 25px
+    //     padding-top: 0
+@keyframes blinker
+    50%
+        opacity: 0
+
+.composer-wrapper
+    --gap-md: 19px
+    --gap-lg: 35px
+    @media rwd.mobile
+        --gap-lg: 18px
+        .binder-languages
+            .binderLanguageControls
+                margin-top: 0px
+
+.composer-top-bar,
+.composer-title-chunks
+    background: white
+
+.composer-top-bar
+    display: grid
+    place-items: center
+    font-size: fontSizeBase
+    width: 100%
+
+    @media rwd.mobile
+        border-bottom: none
+
+    &--tail
+        display: flex
+        align-items: baseline
+        gap: 24px
+    &--tail, &--stats
+        color: grey600
+        font-size: fontSizeSm
+    &--head
+        .breadcrumbs-item
+            color: grey600
+            font-size: 13px
+        .breadcrumbs-item--last
+            color: grey800
+        .breadcrumbs-arrow
+            color: grey500
+            padding: 0 2px
+            line-height: 16px
+            .material-icons
+                font-size: 16px
+                line-height: 14px
+
+.composer-top-bar--pending
+    .breadcrumbs-pending
+        .composer-skeleton
+            min-height: 28px
+            width: 40ch
+    .composer-top-bar--tail, .composer-top-bar--stats
+        padding: 4px 0
+        min-height: 21px
+        .composer-skeleton
+            width: 15ch
+
+.composer-skeleton
+    background-color: thumbBackgroundColor
+    border-radius: 4px
+    width: 20ch
+    min-height: 1em
+
+.composer-title-chunks--pending
+    .composer-title-chunk-actions--pending
+        height: 29px
+    .language-selector
+        padding: 19px
+        display: flex
+        justify-content: end
+        .composer-skeleton
+            width: 15ch
+            height: 20px
+    .composer--pending
+        .chunk
+            margin: 0 !important
+
+.composer-top-bar-inner
+    display: grid
+    grid-template-columns: 1fr max-content
+    justify-content: space-between
+    align-items: center
+    padding-top: 14px
+    padding-bottom: 14px
+    &.container-inner
+        padding-left: 0px
+        padding-right: 0px
+    @media rwd.tablet
+        grid-template-columns: 1fr
+    @media rwd.mobile
+        grid-template-columns: 1fr
+        row-gap: 8px
+        padding-top: 7px
+        padding-bottom: 0px
+    .breadcrumbs-viewer
+        background: unset
+        margin: 0
+
+.binder-languages
+    padding-top: var(--gap-lg)
+
+.composer-title-chunks
+    display: grid
+    place-items: center
+    padding-top: var(--gap-md)
+    padding-bottom: var(--gap-lg)
+    @media rwd.mobile
+        padding-bottom: calc(var(--gap-lg) - 6px)
+    &--grid
+        display: grid
+        position: relative
+        row-gap: var(--gap-md)
+    .binderlanguage-title
+        width: 100%
+        height: 100%
+        margin-top: 0
+        justify-content: end
+        border: 1px solid borderGrayColor
+        @media rwd.mobile
+            border-top: none
+            border-right: none
+            margin-bottom: 0
+        .chunk-images
+            background: unset
+
+.composer-wrapper--wide
+    .language-selectors-selector
+        &-label
+            display: flex
+        &-close
+            display: flex
+            .material-icons
+                line-height: 0.9em
+
+.composer--horizontalvisuals
+    .binderlanguage-title
+        border: none
+        .chunk-images-thumbnail
+            border: 1px solid borderGrayColor
+            border-bottom: none
+        .chunkNEW-text
+            border: 1px solid borderGrayColor
+
+
+.grid-col-1
+    grid-column: 1
+.grid-col-2
+    grid-column: 2
+.grid-row-1
+    grid-row: 1
+.grid-row-2
+    grid-row: 2
+
+.composer-width-75-pct
+    width: 75%
+.composer-width-90-pct
+    width: 90% !important
+
+.composer-auto-width
+    margin: 0 auto
+    width: 75%
+    &--wide
+        width: 100%
+        padding-left: 25px
+        padding-right: 65px
+    @media rwd.laptop
+        max-width: 85%
+        width: 100%
+    @media rwd.tablet
+        max-width: 85%
+        width: 100%
+        &>*
+            max-width: 95%
+    @media rwd.mobile
+        width: 93%
+
+.skeleton-animation
+    animation-duration: 1s
+    animation-fill-mode: forwards
+    animation-iteration-count: infinite
+    animation-name: placeHolderShimmer
+    animation-timing-function: linear
+    background: linear-gradient(to right, lighterGreyColor 10%, white 28%, lighterGreyColor 43%)
+    background-size: 800px 104px

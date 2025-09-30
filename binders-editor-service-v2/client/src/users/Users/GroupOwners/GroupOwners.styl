@@ -1,0 +1,49 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+
+.groupOwners
+    width 65%
+    margin 0 auto
+    &-header
+        margin 25px 0
+        display flex
+        justify-content flex-end
+        .input
+            min-width: 240px
+ .groupOwnerTile
+    width 100%
+    display flex
+    align-items center
+    justify-content space-between
+    position: relative
+    padding 16px
+    background-color white
+    outline solid 1px #dcdbd9
+    height 48px
+    &-add
+        &-btn
+            cursor pointer
+            line-height 6px
+    .addGroupOwnerModal
+        position absolute
+        background-color white
+        box-shadow 0 0 10px 0 rgba(0, 0, 0, 0.2)
+        border-radius 5px
+        right 8px
+        top 29px
+        z-index 5
+        padding 16px
+        white-space break-spaces
+        width: 370px
+        &-title
+            margin: 8px 0
+            font-weight: 500
+        &-info
+            margin: 8px 0
+    &-ownersLabel
+        cursor pointer
+        label
+            cursor pointer
+        &-owner
+            color: grey60
+            pointer-events none
+

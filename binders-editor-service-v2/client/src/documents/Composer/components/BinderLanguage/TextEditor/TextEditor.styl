@@ -1,0 +1,79 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.tiptap
+    --paragraph-font-size: 14px
+    min-height: 96px
+    height: 100%
+    padding: 16px 20px
+    color: grey900
+
+    // See https://github.com/ueberdosis/tiptap/pull/5661
+    &-editor-provider-container
+        height: inherit
+        box-sizing: border-box
+
+    &:focus
+        outline: none
+
+    p
+        font-size: var(--paragraph-font-size)
+        line-height: 24px
+        margin-bottom: 8px
+        &.is-editor-empty:first-child::before
+            color: disabledColor
+            content: attr(data-placeholder)
+            float: left
+            height: 0
+            pointer-events: none
+    h1
+        font-weight: 700
+        font-size: 24px
+        line-height: 32px
+        margin-top: .5px
+        margin-bottom: .8rem
+    h2
+        font-weight: 600
+        font-size: 20px
+        line-height: 28px
+        margin-top: .3rem
+        margin-bottom: .8rem
+    h3
+        font-weight: 400
+        font-size: 18px
+        line-height: 24px
+        margin-top: .3rem
+        margin-bottom: .8rem
+        color: baseColor
+
+    ul, ol
+        margin: 0 1rem 1.25rem 1.8rem
+        li p
+            margin-top: 0.25em
+            margin-bottom: 0.25em
+
+    ul > li { list-style: disc }
+    ul > li > ul > li { list-style: circle }
+    ul > li > ul > li > ul > li { list-style: square }
+
+    ol
+        counter-reset: item
+    ol > li
+        display: list-item
+        counter-increment: item
+    ol > li::marker
+        content: counters(item, ".") ". "
+
+    a
+        cursor: pointer
+
+    em
+        font-style: italic
+
+    ::selection
+        background-color: accentColor
+
+    .twemoji
+        height: 1em
+        width: 1em
+        margin: 0 .05em 0 .1em
+        vertical-align: -0.1em

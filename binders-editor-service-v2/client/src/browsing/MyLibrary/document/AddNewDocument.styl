@@ -1,0 +1,34 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+
+.newDocument
+    &-cover
+        &.is-invalid
+            .button:not(.button--secondary)
+                opacity: 0.2
+                cursor: default
+                &:hover
+                    opacity: 0.2
+                    cursor: default
+                    background-color: baseColor
+                    border-color: baseColor
+    &-modal
+        .modal-body
+            @media rwd.notmobile
+                width: 480px
+        &-tip
+            margin: 20px 0;
+            &--optional
+                color: middleGreyColor
+                margin-top: -10px
+            &--warning
+                color: colorErrorLight
+        &-separator
+            height: 1px
+            background-color: borderGrayColor
+            margin: 10px 0 20px 0
+
+        .tree-navigator-rows
+            max-height: 300px
+            @media rwd.mobile
+                max-height: 30vh

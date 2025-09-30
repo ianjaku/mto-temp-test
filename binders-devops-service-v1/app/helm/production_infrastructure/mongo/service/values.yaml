@@ -1,0 +1,9 @@
+cloudprovider:
+  storage:
+    className: managed-premium-zrs-retain
+    diskSize: 128Gi
+
+image:
+  name: "mongo"
+  tag: "8.0.12"
+

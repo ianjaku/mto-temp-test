@@ -1,0 +1,116 @@
+@require "../../vars.styl";
+
+.autocomplete-wrapper
+    width: 100%
+    background-color white
+    .autocomplete
+        position: relative
+        border: 1px solid middleGreyColor
+        overflow-y: hidden
+        color: baseColor
+        display: flex
+        &-pane
+            width: 100%
+            &-chips
+                display: flex
+                flex-wrap: wrap
+        &--is-dirty
+            overflow-y: auto
+            &:before
+                content: none
+            .autocomplete-textarea
+                margin-top: 8px
+                &::placeholder
+                    font-size: 12px
+                    color: baseColor
+        &:not(.autocomplete--is-dirty)
+            .autocomplete-textarea
+                flex-grow: 1
+        &:not(.autocomplete--hideIcon)
+            &:before
+                content: '\e7fe'
+                font-family: 'Material Icons'
+                color: baseColor
+                font-size: 20px
+                width: 20px
+                position: absolute
+                top: 7px
+                left 7px
+        &-prompt
+            display: inline-block
+            border: 1px solid middleGreyColor
+            margin-top: 4px
+            padding: 2px 12px
+            max-height: 5 * 26px
+            overflow-y: auto
+            color: baseColor
+            position: absolute
+            background: whiteColor
+            &-item
+                padding: 5px 2px
+                font-size: 13px
+                line-height: 28px
+                vertical-align: top
+                &.is-active
+                    background-color: accentHoverColor
+                &--more-results
+                    text-align: center
+                    font-style: italic
+                    font-size: smaller
+                    padding: 8px
+            &:not(&--infoMsg)
+                .autocomplete-prompt-item:hover
+                    background-color: accentHoverColor
+                    cursor: default
+        &-textarea
+            font-family: defaultFontName
+            color: baseColor
+            resize: none
+            border: none
+            vertical-align: middle
+            font-size: 14px
+            overflow: auto
+            padding-top: 6px
+            width: 100%
+            &:focus
+                outline: none
+            &::placeholder
+                font-family: defaultFontName
+                color: placeholderGreyColor
+                font-size: 13px
+        &-chipWrapper
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            &:not(&--singleChip)
+                margin: 4px 0 4px 4px
+            &:not(:last-of-type)
+                margin-right: 4px
+        &-chip
+            position: relative
+            background-color: backgroundColor
+            border: 1px solid borderLightGrayColor
+            border-radius: 4px
+            display: flex
+            align-items: center
+            max-width: 100%
+            &:hover
+                .autocomplete-chip-tooltip
+                    visibility: visible
+            &-tooltip
+                visibility: hidden
+                position: absolute
+                z-index: 1
+                background: whiteColor
+                text-align: center
+                top: 25px
+                left: 0
+                padding: 2px
+                color: baseColor
+                border: 1px solid baseColor
+        &-alignEnd
+            position: absolute
+            right: 6px
+            top: 6px
+
+

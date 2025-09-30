@@ -1,0 +1,4 @@
+*.yaml
+!binders.yaml
+!logevents.yaml
+!mongo*.yaml

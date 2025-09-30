@@ -1,0 +1,39 @@
+@require "../vars.styl";
+
+// Used in both the reader and the editor
+// Note: publication PDF export uses its own styling definition for attention boxes
+// When updating the styling in this file, make sure to verify the PDF ones need to be updated as well (export service)
+
+attentionBlock()
+    padding: calc(var(--paragraph-font-size) / 2) calc(var(--paragraph-font-size) * 1) calc(var(--paragraph-font-size) / 2) calc(var(--paragraph-font-size) * 2)
+    @media rwd.tabletAndAbove
+        padding-right: calc(var(--paragraph-font-size) * 2)
+    margin-bottom: calc(var(--paragraph-font-size) / 1)
+    display: flex
+    flex-direction: column
+    width: fit-content
+    position: relative
+    &::before
+        font-family: "Material Icons"
+        font-size: calc(var(--paragraph-font-size) / .9)
+        position: absolute
+        top: calc(var(--paragraph-font-size) / 1.7)
+        left: calc(var(--paragraph-font-size) / 2)
+    p
+        margin: 0 !important
+
+div[data-attentionblocktype="info"]
+    attentionBlock()
+    background-color: infoBackground
+    border-left: 4px solid infoAccent
+    &::before
+        content: "\e0f0"
+        color: infoAccent
+
+div[data-attentionblocktype="warning"]
+    attentionBlock()
+    background-color: warningBackground
+    border-left: 4px solid warningAccent
+    &::before
+        content: "\e002"
+        color: warningAccent

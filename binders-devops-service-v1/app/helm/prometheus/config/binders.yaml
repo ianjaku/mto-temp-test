@@ -1,0 +1,21 @@
+es:
+  uri: http://binders-es-http.production:9200
+
+env:                             
+  ES_USERNAME: elastic               
+
+extraEnvSecrets:                     
+  ES_PASSWORD:                       
+    secret: binders-es-elastic-user   
+    key: elastic      
+
+podAnnotations:
+  prometheus.io/port: "9108"
+  prometheus.io/scrape: "true"
+
+resources:
+  limits:
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 50Mi

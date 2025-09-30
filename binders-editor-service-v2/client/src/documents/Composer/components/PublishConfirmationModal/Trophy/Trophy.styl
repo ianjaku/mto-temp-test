@@ -1,0 +1,48 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.trophy-outer-container
+    --trophyWidth: 120px
+    --trophyHeight: 120px
+    @media rwd.tabletAndAbove
+        --trophyWidth: 100px
+        --trophyHeight: 100px
+    filter: url('#flt-trophy-outer')
+    display: flex
+    justify-content: center
+    align-items: center
+    .trophy-outer
+        width: var(--trophyWidth)
+        height: var(--trophyHeight)
+        background-color: #FCD480
+        .trophy-inner-container
+            filter: url('#flt-trophy-inner')
+            display: flex
+            justify-content: center
+            align-items: center
+            .trophy-inner
+                width: calc(var(--trophyWidth) * 0.85)
+                height: calc(var(--trophyHeight) * 0.85)
+                background-color: #F5B114
+                display: flex
+                justify-content: center
+                align-items: center
+                padding-top: 8px
+    .trophy-outer, .trophy-inner
+        clip-path: polygon(
+            50% 0%, 
+            100% 38%, 
+            82% 100%, 
+            18% 100%, 
+            0% 38%
+        )
+        border-radius: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        svg
+            fill: white
+.flt-svg
+    visibility: hidden
+    position: absolute
+    width: 0px
+    height: 0px

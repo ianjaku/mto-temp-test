@@ -1,0 +1,104 @@
+@require "../../vars.styl";
+@require "../../style/global.styl";
+
+makeButtonDisabled()
+    opacity: 0.2
+    cursor: default
+
+.button
+    font-family: defaultFontName, sans-serif
+    color: whiteColor
+    background-color: baseColor
+    padding: 10px 34px
+    border-radius: 5px
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    transition: all 0.2s ease-in-out
+    font-size: 13px
+    font-weight: 500
+    margin: 5px 0 5px 0
+    position: relative
+    text-decoration: none
+    line-height: 1em
+    border: 1px solid baseColor
+    @media rwd.tabletAndAbove
+        padding: 10px 40px
+    &:not(.button--disabled)&:not(.button--unhoverable)
+        cursor: pointer
+        &:hover
+            background-color: accentColor
+            border-color: accentColor
+    &:focus
+        outline: none
+    &--disabled
+        makeButtonDisabled()
+    &--secondary
+        background-color: transparent
+        border-color: baseColor
+        color: baseColor
+        &.branded
+            border-color: var(--mainColor)
+            color: var(--mainColor)
+        &:not(.button--disabled)&:not(.button--unhoverable)
+            &:hover
+                border-color: baseColor
+                background-color: baseColor
+                color: white
+                &.branded
+                    border-color: var(--mainColor-hover)
+                    background-color: var(--mainColor-hover)
+        &^[0]--disabled
+            makeButtonDisabled()
+    &--CTA
+        background-color: accentColor
+        border-color: accentColor
+        &.branded
+            background-color: var(--mainColor)
+            border-color: var(--mainColor)
+        &:not(.button--disabled)&:not(.button--unhoverable)
+            &:hover
+                box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.35)
+                &.branded
+                    background-color: var(--mainColor)
+                    border-color: var(--mainColor)
+        &^[0]--disabled
+            makeButtonDisabled()
+    &--borderless
+        border: none
+    &-round
+        width: 24px;
+        height: 24px;
+        border-radius: 15px;
+        background-color: accentColor;
+        color: whiteColor;
+        border: none;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        img
+            box-shadow: none
+        &:focus
+            outline: none;
+
+        .material-icons
+            font-size: 20px !important;
+            color: whiteColor !important;
+    &-loader
+        right: 10px
+        top: 8px
+        color: whiteColor !important
+        &--secondary
+            color: baseColor !important
+
+    &-link
+        position: absolute
+        display: block
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+

@@ -1,0 +1,24 @@
+parameters:
+  workingDirectory: ''
+  
+steps:
+- bash: ls -la $(Build.SourcesDirectory)
+  displayName: 'List Directory Contents'
+- bash: ls -la $(workingDirectory)
+  displayName: 'List Working Directory Contents'
+
+- bash: terraform -version
+  displayName: version
+  workingDirectory: ${{ parameters.workingDirectory }}
+
+- bash: terraform init -backend=false
+  displayName: init
+  workingDirectory: ${{ parameters.workingDirectory }}
+
+- bash: terraform validate
+  displayName: validate
+  workingDirectory: ${{ parameters.workingDirectory }}
+
+- bash: terraform fmt -check
+  displayName: check format / lint
+  workingDirectory: ${{ parameters.workingDirectory }}

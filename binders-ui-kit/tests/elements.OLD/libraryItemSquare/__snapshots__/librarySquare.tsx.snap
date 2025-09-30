@@ -1,0 +1,357 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`My Square Library Base Library with single Collection (snapshot) 1`] = `
+<div
+  className="libraryItem collection"
+  onClick={[Function]}
+>
+  <div
+    className="thumbnail-outer-wrapper"
+    style={
+      Object {
+        "backgroundColor": "##ffffff",
+        "height": 170,
+        "width": 170,
+      }
+    }
+  >
+    <div
+      className="thumbnail-wrapper crop landscape"
+      onClick={undefined}
+      onDoubleClick={undefined}
+      onMouseDownCapture={undefined}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "backgroundColor": "##ffffff",
+          "height": 170,
+          "width": 170,
+        }
+      }
+    >
+      <img
+        className="thumbnail crop landscape"
+        onLoad={[Function]}
+        src="https://dummyimage.com/400x400/cdccca"
+        style={
+          Object {
+            "height": 170,
+            "left": "50%",
+            "position": "absolute",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+            "width": "auto",
+          }
+        }
+        title="Universitet Gent"
+      />
+    </div>
+  </div>
+  <div
+    className="libraryItem-content"
+  >
+    <div
+      className="libraryItem-info"
+    >
+      <span
+        className="libraryItem-title"
+      >
+        Universitet Gent
+      </span>
+      <span
+        className="libraryItem-icon"
+      >
+        <span
+          className="material-icons"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "#cdccca",
+              "display": "inline-block",
+              "fontSize": "20px",
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          folder_open
+        </span>
+      </span>
+    </div>
+    <div
+      className="libraryItem-menu"
+    >
+      <div
+        className=""
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "display": "inline-block",
+            "muiPrepared": true,
+            "position": "relative",
+          }
+        }
+      >
+        <button
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOut={[Function]}
+          onTouchStart={[Function]}
+          style={
+            Object {
+              "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+              "background": "none",
+              "border": 10,
+              "boxSizing": "border-box",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": 0,
+              "fontWeight": "inherit",
+              "height": "auto",
+              "margin": 0,
+              "muiPrepared": true,
+              "outline": "none",
+              "overflow": "visible",
+              "padding": "2px 5px",
+              "position": "relative",
+              "textDecoration": "none",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "verticalAlign": null,
+              "width": "auto",
+            }
+          }
+          tabIndex={0}
+          type="button"
+        >
+          <div
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+          >
+            <span
+              className="contextMenu-icon material-icons"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "display": "inline-block",
+                  "fontSize": "20px",
+                  "muiPrepared": true,
+                  "position": "relative",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "userSelect": "none",
+                }
+              }
+            >
+              more_vert
+            </span>
+          </div>
+        </button>
+        <div
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`My Square Library Base Library with single Document (snapshot) 1`] = `
+<div
+  className="libraryItem document"
+  onClick={[Function]}
+>
+  <div
+    className="thumbnail-outer-wrapper"
+    style={
+      Object {
+        "backgroundColor": "##ffffff",
+        "height": 170,
+        "width": 170,
+      }
+    }
+  >
+    <div
+      className="thumbnail-wrapper crop landscape"
+      onClick={undefined}
+      onDoubleClick={undefined}
+      onMouseDownCapture={undefined}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "backgroundColor": "##ffffff",
+          "height": 170,
+          "width": 170,
+        }
+      }
+    >
+      <img
+        className="thumbnail crop landscape"
+        onLoad={[Function]}
+        src="https://dummyimage.com/400x400/cdccca"
+        style={
+          Object {
+            "height": 170,
+            "left": "50%",
+            "position": "absolute",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+            "width": "auto",
+          }
+        }
+        title="Universitet Gent"
+      />
+    </div>
+  </div>
+  <div
+    className="libraryItem-content"
+  >
+    <div
+      className="libraryItem-info"
+    >
+      <span
+        className="libraryItem-title"
+      >
+        Universitet Gent
+      </span>
+      <span
+        className="libraryItem-icon"
+      >
+        <span
+          className="material-icons"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "#cdccca",
+              "display": "inline-block",
+              "fontSize": "20px",
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          
+        </span>
+      </span>
+    </div>
+    <div
+      className="libraryItem-menu"
+    >
+      <div
+        className=""
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "display": "inline-block",
+            "muiPrepared": true,
+            "position": "relative",
+          }
+        }
+      >
+        <button
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOut={[Function]}
+          onTouchStart={[Function]}
+          style={
+            Object {
+              "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+              "background": "none",
+              "border": 10,
+              "boxSizing": "border-box",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": 0,
+              "fontWeight": "inherit",
+              "height": "auto",
+              "margin": 0,
+              "muiPrepared": true,
+              "outline": "none",
+              "overflow": "visible",
+              "padding": "2px 5px",
+              "position": "relative",
+              "textDecoration": "none",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "verticalAlign": null,
+              "width": "auto",
+            }
+          }
+          tabIndex={0}
+          type="button"
+        >
+          <div
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+          >
+            <span
+              className="contextMenu-icon material-icons"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "display": "inline-block",
+                  "fontSize": "20px",
+                  "muiPrepared": true,
+                  "position": "relative",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "userSelect": "none",
+                }
+              }
+            >
+              more_vert
+            </span>
+          </div>
+        </button>
+        <div
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

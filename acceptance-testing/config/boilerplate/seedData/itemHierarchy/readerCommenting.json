@@ -1,0 +1,21 @@
+{
+    "children": [
+        {
+            "name": "Reader commenting document",
+            "type": "document",
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "isPublished": true,
+                    "isPrimary": true,
+                    "chunks": [
+                        { "text": "First chunk" },
+                        { "text": "Second chunk" },
+                        { "text": "Third chunk" },
+                        { "text": "Fourth chunk" }
+                    ]
+                }
+            ]
+        }
+    ]
+}

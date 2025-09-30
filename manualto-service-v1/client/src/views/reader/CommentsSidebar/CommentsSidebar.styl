@@ -1,0 +1,175 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+@import "../../../vars.styl";
+
+.commentsSidebar
+    position: fixed
+    top: 0
+    right: -10%
+    opacity: 0
+    animation: CommentsSidebarSlideIn 0.1s ease-out forwards
+    width: min(292px, 22vw)
+    height: 100%
+    background-color: white
+    border-left: 1px solid grayBorder
+    box-shadow: -5px 4px 24px 0px #00000012
+    z-index: 15
+    display flex
+    flex-direction column
+
+    @media rwd.tablet
+        width: min(292px, 30vw)
+
+    &-closeButton
+        position: absolute
+        height: "%spx" % toolbarHeight
+        width: "%spx" % toolbarHeight
+        padding: 0
+        border-radius: toolbarRadius
+        background-color: backgroundColor
+        left: -60px
+        top: toolbarMargin
+        cursor: pointer
+        border: none
+        .material-icons
+            font-size: 20px
+        &:hover
+            background-color: borderGrayColor
+    &-dragHandle
+        align-self: center
+        display: none
+        padding: 8px 0
+        @media rwd.mobile
+            display: block
+        span
+            width: 64px
+            display: block
+            height: 4px
+            background-color: grey600
+            border-radius: 100vh
+
+    @media rwd.mobile
+        background: transparent
+        animation: CommentsSidebarSlideUp 0.1s ease-out forwards
+        bottom: -10%
+        opacity: 0
+        left: 0
+        top: auto
+        right: 0
+        width: 100%
+        padding-top: 0
+        border-left: unset
+        display: flex
+        justify-content: flex-end
+
+.commentsSidebar-outside
+    @media rwd.mobile
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        opacity: 0.6
+        background: black
+        z-index: 14
+
+.commentsSidebar-content
+    display: flex
+    flex-direction: column
+    background-color: white
+    overflow: unset
+    height: 100%
+
+    @media rwd.mobile
+        border-top-left-radius: 6px
+        border-top-right-radius: 6px
+        min-height fit-content
+        height: unset
+        max-height: 60vh
+        overflow: auto
+
+.loadingComments
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: auto 0
+    font-size: 18px
+
+    @media rwd.mobile
+        padding-top: 12px
+        padding-bottom: 24px
+
+.noFeedbackYet
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 100%
+    margin: auto
+    @media rwd.mobile
+        display: none
+    .material-icons
+        font-size 52px
+        color grey60
+        margin-bottom 28px
+    &-title
+        font-size 18px
+        margin-bottom 13px
+    &-info
+        color grey60
+        font-size 14px
+        max-width: 200px
+        margin: 0 auto
+        text-align: center
+
+.attachmentsList
+    display: flex
+    flex-wrap: wrap
+    padding: 16px 4px 8px 12px
+    gap: 12px
+    &-thumb
+        .thumbnail-wrapper
+            border: 1px solid grayBorder
+            border-radius: 8px
+        &-icon
+            display none
+            color accentColor
+            svg
+                width 50%
+                height 50%
+        &--noPreview
+            .thumbnail-wrapper
+                border: 1px solid accentColor
+            .attachmentsList-thumb-icon
+                display flex
+        .thumbnail-outer-wrapper-delete-action
+            height: 16px
+            width: 16px
+            right: -6px
+            top: -6px
+            border-radius: 50%
+            background-color: white
+
+            .material-icons
+                color: grey600 !important
+
+@keyframes CommentsSidebarSlideIn {
+    from {
+        opacity: 0
+        right: -10%
+    }
+    to {
+        right: 0
+        opacity: 1
+    }
+}
+
+@keyframes CommentsSidebarSlideUp {
+    from {
+        opacity: 0
+        bottom: -10%
+    }
+    to {
+        opacity: 1
+        bottom: 0
+    }
+}

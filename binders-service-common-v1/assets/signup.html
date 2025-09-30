@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%- messages.signupPageTitle -%></title>
+    <% if (fontLinks) { %>
+        <% for(var i=0; i < fontLinks.length; i++) { %>
+            <link href="<%- fontLinks[i] %>" rel="stylesheet" type="text/css">
+    <% } } %>
+    <% if (brandingColor) {%>
+        <meta name="theme-color" content="<%= brandingColor %>" />
+    <% } else { %>
+        <meta name="theme-color" content="#fcc150">
+    <% } %>
+<% if  (typeof externalCss !== "undefined") { %>
+    <link rel="stylesheet" href="<%- externalCss -%>" type="text/css">
+<% } else { %>
+    <style type="text/css">
+        body {
+            margin: 0;
+            height: 100%;
+            background-color: #fac04e;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+        }
+
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .form input {
+            font-family: "Rubik", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form button {
+            font-family: "Rubik", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #fac04e;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+        }
+
+        .form button:hover,
+        .form button:active,
+        .form button:focus {
+            background: #43A047;
+        }
+
+        .form .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+
+        .form .message a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .form .register-form {
+            display: none;
+        }
+
+        .success p {
+            width: 70%;
+            color: #b3b3b3;
+            margin: auto;
+        }
+
+        .success p.footnote {
+            font-size: 0.7em;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+
+            margin: 0 auto;
+        }
+
+        .container:before,
+        .container:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container .info {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .container .info h1 {
+            margin: 0 0 15px;
+            padding: 0;
+            font-size: 36px;
+            font-weight: 300;
+            color: #1a1a1a;
+        }
+
+        .container .info span {
+            color: #4d4d4d;
+            font-size: 12px;
+        }
+
+        .container .info span a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .signup-instruction {
+            font-size: 0.8rem
+        }
+
+        .signup-instruction-inputlabel {
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        .signup-tologin {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.8rem;
+        }
+
+        .signup-tologin a {
+            text-decoration: none;
+            color: #fac04e;
+        }
+
+        .signup-form {
+            padding-top: 20px
+        }
+
+        .errors {
+            background: rgba(250, 78, 78, 0.5);
+            color: white;
+            margin: 10px 0;
+        }
+
+        .container .info span .fa {
+            color: #EF3B3A;
+        }
+
+        body {
+            background: #f7ecdb;
+            /* fallback for old browsers */
+            font-family: "Rubik", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .subdomain {
+            color: #fac04e;
+        }
+
+        .form-title {
+            padding-bottom: 10px;
+        }
+    </style>
+<% } %>
+</head>
+
+<body>
+    <div class="login-page">
+
+        <div class="form">
+            <div class="form-title">
+                <strong>
+                <span class="subdomain"><%= subdomain %></span>.manual.to
+            </strong>
+            </div>
+            <div class="errors">
+                <% failures.forEach( function(failure) { %>
+                    <div class="error">
+                        <%= failure %>
+                    </div>
+                    <% } ); %>
+            </div>
+            <% if(status === "200") { %>
+                <div class="success">
+                    <span class="title"><%- messages.thanks -%></span>
+                    <p>
+                        <%- messages.checkEmailToContinue -%>
+                    </p>
+                    <p class="footnote">
+                        <%- messages.checkSpam -%>
+                    </p>
+                </div>
+            <% } else if(status === "403" || status === "409") { %>
+                <div class="error">
+                    <p>
+                        <%- messages.problemWithSignup -%>
+                    </p>
+                </div>
+            <% } else { %>
+                <div class="signup-instruction"><%- messages.fillOutForm -%></div>
+                <div class="signup-instruction"><%- messages.toReceiveInvitation -%></div>
+                <form class="signup-form" action="/signup?domain=<%= subdomain %>.manual.to" method="post">
+                    <input type="hidden" name="domain" value="<%= subdomain %>.manual.to" />
+                    <% if(messages.featuresInterfaceI18N) { %>
+                        <div class="signup-instruction signup-instruction-inputlabel"><%- messages.email -%>:</div>
+                    <% } %>
+                    <input type="text" placeholder="<%- messages.emailAddress -%>" name="username" />
+                    <% if(messages.featuresInterfaceI18N) { %>
+                        <div class="signup-instruction signup-instruction-inputlabel"><%- messages.preferredLanguage -%>:</div>
+                        <select name="interfaceLanguage" autocomplete="off">
+                            <option key="en" value="en" <%- messages.browserLanguage == "en" ? "selected=\"selected\"" : "" -%>>English</option>
+                            <option key="nl" value="nl" <%- messages.browserLanguage == "nl" ? "selected=\"selected\"" : "" -%>>Nederlands</option>
+                            <option key="fr" value="fr" <%- messages.browserLanguage == "fr" ? "selected=\"selected\"" : "" -%>>Français</option>
+                        </select>
+                    <% } %>
+                    <button><%- messages.submit -%></button>
+                </form>
+                <div class="signup-tologin"><%- messages.existingAccount -%> <a href="/login"><%- messages.here -%></a></div>
+            <% } %>
+        </div>
+    </div>
+
+</body>
+
+</html>

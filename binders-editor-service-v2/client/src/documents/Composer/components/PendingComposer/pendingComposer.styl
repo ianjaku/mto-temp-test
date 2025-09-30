@@ -1,0 +1,62 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.composer--pending
+    .chunk
+        opacity: 0.7
+        display: flex
+        @media rwd.mobile
+            flex-direction: column
+        &-pendingimg
+            width: 96px
+            height: 96px
+            background-color: thumbBackgroundColor
+            border-top: 1px solid borderGrayColor
+            border-left: 1px solid borderGrayColor
+            @media rwd.mobile
+                border-right: 1px solid borderGrayColor
+            @media rwd.notmobile
+                border-bottom: 1px solid borderGrayColor
+        &-pendingtext
+            height: 96px
+            animation-duration: 1s
+            animation-fill-mode: forwards
+            animation-iteration-count: infinite
+            animation-name: placeHolderShimmer
+            animation-timing-function: linear
+            background: linear-gradient(to right, whiteColor 10%, lighterGreyColor 28%, whiteColor 43%)
+            background-size: 800px 104px
+            flex-grow: 1
+            border: 1px solid borderGrayColor
+        &:first-of-type
+            margin-top: 0.5em
+            margin-bottom: 1.5em
+        &:last-of-type
+            margin-bottom: 40px
+
+    .rightpane-pending
+        width: 40px
+        height: 100vh
+        position: fixed
+        right: 0
+        top: 0
+        padding-top: 28px
+        background-color: thumbBackgroundColor
+        z-index: 4000
+        .material-icons
+            height: 40px
+            width: 40px
+            justify-content: center
+            align-items: center
+
+.pending-publish-buttons-wrapper
+    display: flex
+    justify-content: flex-end
+    margin-top: 11px
+    div
+        width: 132px
+        height: 35px
+        margin: 5px 0 5px 10px
+        border-radius: 5px
+        background: thumbBackgroundColor
+        &:last-of-type
+            animation-delay: 1s

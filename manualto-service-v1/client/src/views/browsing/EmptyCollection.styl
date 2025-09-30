@@ -1,0 +1,27 @@
+@import "../../vars.styl";
+
+.empty-collection
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    width: 100vw
+
+    &__icon
+        width: 146px
+        height: 146px
+        border-radius: 100vw
+        background: white;
+        color: grey300
+        padding: 16px
+
+        path, rect
+            fill: currentColor
+
+    &__message
+        font-size: 20px
+
+    &__buttons
+        display: flex
+        flex-direction: row
+        gap: 16px

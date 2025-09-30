@@ -1,0 +1,45 @@
+{
+    "name": "@binders/manualto-v1",
+    "version": "1.0.2",
+    "author": "Tom De Coninck",
+    "license": "UNLICENSED",
+    "scripts": {
+        "cleanup": "rm -rf dist public",
+        "setup": "yarn install --loglevel warn --ignore-engines",
+        "dev": "npm run dev:webpack",
+        "transpile": "npm run transpile:webpack",
+        "compile": "npm run compile:webpack",
+        "start": "npm run start:webpack",
+        "lint": "eslint --max-warnings=0 --cache --ext .ts,.js,.jsx,.tsx src",
+        "compile:webpack": "tsc --skipLibCheck && node --inspect=0.0.0.0:8514 dist/src/main.js",
+        "dev:webpack": "nodemon --watch src -L -e ts,json --exec \"npm run compile\"",
+        "start:webpack": "NODE_ENV=production node dist/src/main.js manualto-v1",
+        "transpile:webpack": "eslint --max-warnings=0 src  && tsc --skipLibCheck"
+    },
+    "dependencies": {
+        "@binders/binders-service-common": "workspace:*",
+        "@binders/client": "workspace:*",
+        "ejs": "^3.1.10",
+        "express": "^4.21.0",
+        "ramda": "~0.28.0"
+    },
+    "devDependencies": {
+        "@types/ejs": "^3.1.5",
+        "@types/express": "^4.17.21",
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.15.3",
+        "@types/redis": "^2.8.6",
+        "@types/validator": "^6.2.0",
+        "concurrently": "^6.5.1",
+        "eslint": "^7.25.0",
+        "fs-extra": "^6.0.1",
+        "jest": "^30.0.4",
+        "jest-environment-jsdom": "^30.0.4",
+        "jest-junit": "^16.0.0",
+        "jest-util": "^30.0.2",
+        "nodemon": "^2.0.7",
+        "ts-jest": "^29.4.0",
+        "tsx": "^4.20.3",
+        "typescript": "5.4.5"
+    }
+}

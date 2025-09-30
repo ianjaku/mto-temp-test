@@ -1,0 +1,19 @@
+{
+    "ignoreUnresolved": [
+        "history",
+        "ramda"
+    ],
+    "ignoreUnimported": [
+        "src/login.tsx",
+        "src/modules/login/index.tsx"
+    ],
+    "ignoreUnused": [
+        "@binders/binders-service-common",
+        "regenerator-runtime",
+        "url"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**"
+    ]
+}

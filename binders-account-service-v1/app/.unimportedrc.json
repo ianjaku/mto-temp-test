@@ -1,0 +1,17 @@
+{
+  "ignoreUnresolved": [],
+  "ignoreUnimported": [],
+  "ignoreUnused": [
+    "@binders/ui-kit",
+    "commander",
+    "csv-parse",
+    "date-fns",
+    "ramda",
+    "validator"
+  ],
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/src/scripts/**",
+    "**/accountMigrationLog.ts"
+  ]
+}

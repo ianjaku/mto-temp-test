@@ -1,0 +1,1 @@
+export const ES_MAX_RESULTS = 10000

@@ -1,0 +1,222 @@
+@require "../../vars.styl";
+
+.public-DraftEditorPlaceholder-inner
+    line-height: 1.8
+div[class^=draftJsEmojiPlugin__emojiSuggestions__]
+    z-index: 4
+
+.rte-root
+    font-size: 15px
+    max-width: 95vw
+    height: 100%
+    font-family: secondaryFontName
+    font-weight: 400
+    color: darkBackgroundColor
+    position: relative
+    span
+        line-height: textLineHeight
+        &::selection
+            background-color: accentColor
+
+        &.dropdown-arrow
+            line-height: 24px
+
+// fix for lists in rtl languages
+// draft even when textAlignment set to right
+// tries to be smart about direction
+.right-to-left
+    .rte-container
+        ol, ul
+            li.public-DraftStyleDefault-listLTR
+                direction: rtl
+                margin-right: 1.5em;
+                &:before
+                    position: absolute;
+                    right: -36px;
+                    text-align: left;
+                    width: 30px;
+                .public-DraftStyleDefault-ltr
+                    direction: rtl
+
+.rte-container
+    height: 100%
+    padding: 0 10px
+    div[data-block="true"]
+        margin: 1em 0
+    .public-DraftEditorPlaceholder-root
+        margin: 1em 0
+    .DraftEditor-editorContainer
+        border: 1px solid transparent
+    ol, ul
+        margin: 0px 0px 0px 24px
+        padding: 4px 0px
+        li
+            &:before
+                bottom: 0
+                top: 0
+                line-height: textLineHeight
+
+
+        // draft js simulates ordered list only, that's why we need a hack to show 1.2.3 bullet style
+        .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-listLTR:before
+            width: 35px
+            left: -38px
+        .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth1:before
+            content: counter(ol0) "." counter(ol1) " "
+            counter-increment: ol1
+        .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth2:before
+            content: counter(ol0) "." counter(ol1) "." counter(ol2) " "
+            counter-increment: ol2
+        .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth3:before
+            content: counter(ol0) "." counter(ol1) "." counter(ol2) "." counter(ol3) " "
+            counter-increment: ol3
+            width: 60px
+            left: -63px
+        .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth4:before
+            content: counter(ol0) "." counter(ol1) "." counter(ol2) "." counter(ol3) "." counter(ol4) " "
+            counter-increment: ol4
+            width: 75px
+            left: -78px
+
+    for n in 1..6
+        h{n}
+            span
+                font-family: secondaryFontName, serif
+
+.rte-button-bar.collapsed
+    display: none
+    height: 0
+
+.rte-button-bar
+    width: 880px
+    font-size: 0.8rem
+    position: absolute
+    background-color: darkBackgroundColor
+    border-radius: 5px
+    z-index: 4
+    span
+        padding: 0px
+        overflow: inherit
+    .header-dropdown-field
+        position: absolute
+        right: 2px
+        top: 3px
+        width: 90px
+    .dropdown
+        height: 28px
+        width: 90px
+        color: whiteColor
+        display: inline-block
+        padding-left: 8px
+        .dropdown-field
+            margin-left: -4px
+            background-color: darkBackgroundColor
+            border: 1px solid disabledColor
+            height: 28px
+            width: 86px
+        .dropdown-elements
+            background-color: darkBackgroundColor
+            width: 86px
+            margin-left: -4px
+            li
+                overflow: hidden
+                &:hover
+                    color: darkBackgroundColor
+        .dropdown-field-label
+            color: whiteColor
+
+            &-group-text
+                margin-left: 5px
+
+    .rte-toolbar-arrow
+        height: 0px
+        width: 0px
+        position: absolute
+        left: 218px
+        border-left: 8px solid transparent
+        border-right: 8px solid transparent
+        border-top: 8px solid darkBackgroundColor
+        &.arrow-top
+            top: -8px
+            border-left: 8px solid transparent
+            border-right: 8px solid transparent
+            border-top: 0px solid transparent
+            border-bottom: 8px solid darkBackgroundColor
+        &.arrow-none
+            display: none
+
+.rte-button-group
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 4px
+    .rte-button
+        cursor: pointer
+        border: none
+        margin: 0;
+        background-color: darkBackgroundColor
+        color: whiteColor
+        font-size: 12px
+        padding: 0px 4px
+        .MuiIcon-root
+            width: auto
+            height: auto
+            flex-shrink: 1
+        &:disabled
+            cursor: initial
+        &.font-size
+            max-width: 10px
+            padding: 0px
+            &.expand-less
+                margin-left: -6px
+        &::-moz-focus-inner
+            padding: 0;
+            border: 0
+        &:not(.rte-button--textButton)
+            max-width: 29px
+        &--textButton
+            padding: 10px
+            font-size: 1.2em
+    .rte-button:first-child
+        border-radius: 5px 0 0 5px;
+    .rte-button:last-child
+        border-radius: 0 5px 5px 0;
+    img
+        width: 18px
+        height: 21px
+
+.block-group
+    display: inline-block
+    padding-left: 8px
+    padding-right: 8px
+    &:before
+        display: inline-block
+        content: ""
+        width: 1px
+        height: 24px
+        opacity: 0.5
+        background-color: disabledColor
+    &:after
+        display: inline-block
+        content: ""
+        width: 1px
+        height: 24px
+        opacity: 0.5
+        background-color: disabledColor
+.rte-button.active
+    color: accentColor
+
+.rte-input-wrapper
+    padding: 0 20px 0 12px
+
+.rte-input-wrapper.focused
+    height: calc(100% - 30px)
+
+.rte-input-wrapper.collapsed
+    height: 100%
+
+.rte-link-button-wrapper
+    z-index: 5;
+
+.public-DraftStyleDefault-listLTR:before
+    top: 6px

@@ -1,0 +1,14 @@
+{
+    "extends": "../tsconfig.base.json",
+    "compilerOptions": {
+        "composite": true,
+        "esModuleInterop": true,
+        "lib": ["es2022", "dom"],
+        "outDir": "lib",
+        "rootDir": "./src",
+        "skipLibCheck": true,
+        "sourceMap": true,
+    },
+    "exclude": ["node_modules", "lib", "tests"],
+    "include": ["src/**/*"],
+}

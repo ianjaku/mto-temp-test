@@ -1,0 +1,27 @@
+{
+    "ignoreUnresolved": [],
+    "ignoreUnimported": [
+        "src/api/main.ts",
+        "src/helper/batchProcess.ts",
+        "src/visualhandlers/lambda.ts",
+        "src/worker/reprocess.ts",
+        "src/helper/storageLocation.ts",
+        "src/processing/reprocess.ts",
+        "src/api/videoIndexer.ts"
+    ],
+    "ignoreUnused": [
+        "@binders/ui-kit",
+        "commander",
+        "moment",
+        "superagent",
+        "express"
+    ],
+    "entry": [
+        "src/api/main.ts"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**",
+        "**/src/migrations/**"
+    ]
+}

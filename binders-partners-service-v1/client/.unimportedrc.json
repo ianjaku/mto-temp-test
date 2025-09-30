@@ -1,0 +1,15 @@
+{
+    "ignoreUnresolved": [],
+    "ignoreUnimported": [
+        "src/api/msGraphAPI.ts"
+    ],
+    "ignoreUnused": [
+        "regenerator-runtime",
+        "stream-browserify",
+        "superagent"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**"
+    ]
+}

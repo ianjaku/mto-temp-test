@@ -1,0 +1,31 @@
+{
+    "ignoreUnresolved": [],
+    "ignoreUnimported": [
+        "src/application/Login/index.tsx",
+        "src/login.js",
+        "src/resetPassword.jsx",
+        "src/users/resetPassword.js",
+        "src/classnames.d.ts",
+        "src/window.d.ts",
+        "src/documents/Composer/components/BinderLanguage/tiptap.d.ts",
+        "src/application/Login/lazy.tsx",
+        "src/application/RequestResetPassword/lazy.tsx",
+        "src/lazy/Error.tsx",
+        "src/lazy/index.tsx",
+        "src/lazy/Lazy.tsx",
+        "src/lazy/Loader.tsx",
+        "src/lazy/Loading.tsx",
+        "src/routes/app.lazy.tsx"
+    ],
+    "ignoreUnused": [
+        "babel-polyfill",
+        "stream-browserify",
+        "regenerator-runtime",
+        "@tiptap/core",
+        "@tiptap/pm"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**"
+    ]
+}

@@ -1,0 +1,3 @@
+name: "bindersProductionMongoService"
+version: "0.0.1"
+description: "The mongo service used by binders (production)"

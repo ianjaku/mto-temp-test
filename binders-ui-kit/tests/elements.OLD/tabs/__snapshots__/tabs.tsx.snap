@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs Base tabs (snapshot) 1`] = `
+<section
+  className="tabs"
+>
+  <section
+    className="tabs-nav"
+  >
+    <ul
+      className="tabs-nav-list"
+    >
+      <li
+        className="tabs-item"
+        onClick={[Function]}
+      >
+        <span
+          className="tabs-title"
+        >
+          Title #1
+        </span>
+      </li>
+      <li
+        className="tabs-item active"
+        onClick={[Function]}
+      >
+        <span
+          className="tabs-title"
+        >
+          Title #2
+        </span>
+      </li>
+      <li
+        className="tabs-item"
+        onClick={[Function]}
+      >
+        <span
+          className="tabs-title"
+        >
+          Title #3
+        </span>
+      </li>
+      <li
+        className="tabs-item"
+        onClick={[Function]}
+      >
+        <span
+          className="tabs-title"
+        />
+      </li>
+    </ul>
+  </section>
+  <div
+    className="tabs-content"
+  >
+    <div
+      className="tabs-pane fade"
+    />
+    <div
+      className="tabs-pane fade active"
+    />
+    <div
+      className="tabs-pane fade"
+    />
+    <div
+      className="tabs-pane fade"
+    />
+  </div>
+</section>
+`;

@@ -1,0 +1,19 @@
+{
+    "extends": "../../tsconfig.client.json",
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "noImplicitReturns": false,
+        "strictNullChecks": false
+    },
+    "exclude": ["dist", ".yarn"],
+    "include": ["src/**/*"],
+    "references": [
+        {
+            "path": "../../binders-client-v1/tsconfig.json"
+        },
+        {
+            "path": "../../binders-ui-kit/tsconfig.json"
+        }
+    ]
+}

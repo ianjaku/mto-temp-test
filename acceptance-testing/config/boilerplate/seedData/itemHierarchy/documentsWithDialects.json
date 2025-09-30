@@ -1,0 +1,57 @@
+{
+    "children": [
+        {
+            "name": "English with variants",
+            "type": "document",
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "isPublished": true,
+                    "isPrimary": true,
+                    "chunks": [
+                        {
+                            "text": "This is chunk 1 in EnglishNondialect"
+                        },
+                        {
+                            "text": "This is chunk 2"
+                        }
+                    ],
+                    "title": "In plain english"
+                },
+                {
+                    "languageCode": "en-GB",
+                    "isPublished": true,
+                    "chunks": [
+                        {
+                            "text": "This is chunk 1 in EnglishGBdialect"
+                        },
+                        {
+                            "text": "This is chunk 2"
+                        }
+                    ],
+                    "title": "In UK english"
+                }
+            ]
+        },
+        {
+            "name": "English without variants",
+            "type": "document",
+            "languages": [
+                {
+                    "languageCode": "en",
+                    "isPublished": true,
+                    "isPrimary": true,
+                    "chunks": [
+                        {
+                            "text": "This is chunk 1 in EnglishNondialect"
+                        },
+                        {
+                            "text": "This is chunk 2"
+                        }
+                    ],
+                    "title": "In plain english"
+                }
+            ]
+        }
+    ]
+}

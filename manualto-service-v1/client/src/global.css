@@ -1,0 +1,7 @@
+.bg-hover-darken-20:hover {
+    background: color-mix(in srgb, var(--clr-bg), black 20%);
+}
+
+.bg-hover-lighten-20:hover {
+    background: color-mix(in srgb, var(--clr-bg), white 20%);
+}

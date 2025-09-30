@@ -1,0 +1,47 @@
+{
+    "children": [
+        {
+            "name": "TEST COLLECTION",
+            "type": "collection",
+            "children": [
+                {
+                    "name": "TEST DOCUMENT",
+                    "type": "document"
+                },
+                {
+                    "name": "TEST DOCUMENT2",
+                    "type": "document"
+                },
+                {
+                    "name": "TEST DOCUMENT3",
+                    "type": "document"
+                },
+                {
+                    "name": "TEST COLLECTION INNER",
+                    "type": "collection",
+                    "children": [
+                        {
+                            "name": "TEST DOCUMENT INNER",
+                            "type": "document"
+                        },
+                        {
+                            "name": "PUBLISHED DOC",
+                            "type": "document",
+                            "languages": [
+                                {
+                                    "languageCode": "en",
+                                    "isPublished": true,
+                                    "isPrimary": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "TEST DOCUMENT",
+            "type": "document"
+        }
+    ]
+}

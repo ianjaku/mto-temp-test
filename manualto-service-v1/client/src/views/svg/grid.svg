@@ -1,0 +1,17 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="41px" height="57px" viewBox="0 0 41 57" enable-background="new 0 0 41 57" xml:space="preserve" fill="">
+<g>
+	<rect width="9" height="9"/>
+	<rect x="16" width="9" height="9"/>
+	<rect x="32" width="9" height="9"/>
+	<rect y="16" width="9" height="9"/>
+	<rect x="16" y="16" width="9" height="9"/>
+	<rect x="32" y="16" width="9" height="9"/>
+	<rect y="32" width="9" height="9"/>
+	<rect x="16" y="32" width="9" height="9"/>
+	<rect x="32" y="32" width="9" height="9"/>
+	<rect y="48" width="9" height="9"/>
+	<rect x="16" y="48" width="9" height="9"/>
+	<rect x="32" y="48" width="9" height="9"/>
+</g>
+</svg>

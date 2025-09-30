@@ -1,0 +1,17 @@
+parameters:
+  workingDirectory: ''
+  key: ''
+  
+steps:
+- bash: echo ${{ parameters.key }}
+- bash: echo $${{ parameters.key }}
+
+- bash: |
+    terraform -version
+    terraform init -upgrade \
+      -backend-config="storage_account_name=$(kv-tf-state-blob-account)" \
+      -backend-config="access_key=$(kv-tf-state-access-key)" \
+      -backend-config="container_name=$(kv-tf-state-blob-container)" \
+      -backend-config="key=${{ parameters.key }}"
+  displayName: Terraform Init
+  workingDirectory: ${{ parameters.workingDirectory }}

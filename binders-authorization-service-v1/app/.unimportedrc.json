@@ -1,0 +1,7 @@
+{
+    "entry": [
+        "src/main.ts",
+        "src/scripts/**"
+    ],
+    "ignoreUnresolved": []
+}

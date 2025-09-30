@@ -1,0 +1,10 @@
+{
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**"
+    ],
+    "ignoreUnused": [
+        "@binders/ui-kit",
+        "@binders/binders-service-common"
+    ]
+}

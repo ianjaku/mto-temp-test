@@ -1,0 +1,1 @@
+export const mtBrandingMain = "#ffcc00";

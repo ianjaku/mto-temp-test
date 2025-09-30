@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar (snapshot) 1`] = `
+<section>
+  <div
+    className="navbar navbar-left"
+  >
+    <div
+      className="navbar-logo"
+    >
+      <a
+        href="/"
+      >
+        <div
+          className="thumbnail-outer-wrapper"
+          style={
+            Object {
+              "backgroundColor": "##ffffff",
+              "height": undefined,
+              "width": undefined,
+            }
+          }
+        >
+          <div
+            className="thumbnail-wrapper crop landscape"
+            onClick={undefined}
+            onDoubleClick={undefined}
+            onMouseDownCapture={undefined}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "backgroundColor": "##ffffff",
+                "height": undefined,
+                "width": undefined,
+              }
+            }
+          >
+            <img
+              className="thumbnail crop landscape navbar-logo-image"
+              onLoad={[Function]}
+              src="https://dummyimage.com/400/400/fff"
+              style={
+                Object {
+                  "height": undefined,
+                  "left": "50%",
+                  "position": "absolute",
+                  "top": "50%",
+                  "transform": "translate(-50%, -50%)",
+                  "width": "auto",
+                }
+              }
+              title="https://dummyimage.com/400/400/fff"
+            />
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="navbar-main"
+    >
+      <div
+        className="navbar-main-navigation"
+      >
+        <ul
+          className="navbar-main-navigation-list"
+        >
+          <li
+            className="navbar-main-navigation-list-item"
+            onClick={[Function]}
+          >
+            <a
+              aria-current={null}
+              className="navbar-main-navigation-list-item-link"
+              href="/"
+              onClick={[Function]}
+              style={undefined}
+            >
+              <svg
+                className="navbar-main-navigation-list-item-icon"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "display": "inline-block",
+                    "fill": "currentColor",
+                    "height": 24,
+                    "muiPrepared": true,
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
+                    "width": 24,
+                  }
+                }
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
+                />
+              </svg>
+              <label
+                className="navbar-main-navigation-list-item-label"
+              >
+                menu item 1
+              </label>
+            </a>
+          </li>
+          <li
+            className="navbar-main-navigation-list-item active"
+            onClick={[Function]}
+          >
+            <a
+              aria-current={null}
+              className="navbar-main-navigation-list-item-link"
+              href="/users"
+              onClick={[Function]}
+              style={undefined}
+            >
+              <svg
+                className="navbar-main-navigation-list-item-icon"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "display": "inline-block",
+                    "fill": "currentColor",
+                    "height": 24,
+                    "muiPrepared": true,
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
+                    "width": 24,
+                  }
+                }
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"
+                />
+              </svg>
+              <label
+                className="navbar-main-navigation-list-item-label"
+              >
+                menu item 2
+              </label>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="navbar-main-bottomsection"
+      />
+    </div>
+  </div>
+</section>
+`;

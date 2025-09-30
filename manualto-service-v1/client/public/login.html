@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%- messages.loginTitlePage -%> </title>
+    <!-- fonts -->
+    <% if (fontLinks) { %>
+        <% for(var i=0; i < fontLinks.length; i++) { %>
+            <link href="<%- fontLinks[i] %>" rel="stylesheet" type="text/css">
+    <% } } %>
+
+    <% if (brandingColor) {%>
+        <meta name="theme-color" content="<%= brandingColor %>" />
+    <% } else { %>
+        <meta name="theme-color" content="#fcc150">
+    <% } %>
+</head>
+
+<body>
+    <div class="login-page">
+
+        <div class="form">
+            <div class="form-title">
+                <strong>
+                    <span class="subdomain"><%= subdomain -%></span>.manual.to
+                </strong>
+            </div>
+            <% if (failures.length > 0) { %>
+            <div class="errors">
+                <% failures.forEach( function(failure) { %>
+                    <div class="error">
+                        <%= failure %>
+                    </div>
+                    <% } ); %>
+            </div>
+            <% } %>
+
+            <% if (showSAMLConnectButton) { %>
+                <div class="identity-provider">
+                    <a href="<%- SAMLSSOLink -%>">
+                        <% if (typeof ssoProvider !== "undefined" && ssoProvider === "OKTA") { %>
+                            <img class="identity-provider-logo" src="<%- pathPrefix -%>/assets/okta-logo.svg" />
+                        <% } else { %>
+                            <img class="identity-provider-logo" src="<%- pathPrefix -%>/assets/entra-logo.svg" />
+                        <% } %>
+                        <span><%- ssoButtonText -%></span>
+                    </a>
+                </div>
+                <% } %>
+            <% if (showSAMLConnectButton) { %>
+                <div class="login-box-separator-wrapper">
+                    <span><%- messages.or -%></span>
+                </div>
+            <% } %>
+
+            <form class="login-form" action="<%- loginFormAction -%>" method="post">
+                <input type="text" placeholder="<%- messages.email -%>" name="username" autofocus />
+                <input type="password" placeholder="<%- messages.password-%>" name="password" />
+                <button><%- messages.login -%></button>
+                <% if (showPasswordReset) { %>
+                    <div class="login-form-resetPassword">
+                        <a class="login-form-resetPassword-link" href="<%- pathPrefix -%>/reset-password"><%- messages.forgotPassword -%></a>
+                    </div>
+                <% } %>
+                <% if (typeof showSignupLink !== "undefined" && showSignupLink) { %>
+                    <div class="login-form-resetPassword"><a class="login-form-resetPassword-link" href="/signup"><%- messages.signupMessage -%></a></div>
+                <% } %>
+            </form>
+
+            <% if (typeof extra !== "undefined") { %>
+                <%- extra %>
+                    <% } %>
+        </div>
+        <% if (isIE) { %>
+            <div class="ribbons">
+                <div class="infoBanner">
+                    <div class="infoBanner-wrapper">
+                        <p class="infoBanner-message">
+                            <span><%- messages.ieWarning -%></span>
+                            <a href="https://www.google.com/chrome" class="infoBanner-learnMore">Chrome</a>
+                            <a href="https://www.mozilla.org" class="infoBanner-learnMore">Firefox</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+
+</html>

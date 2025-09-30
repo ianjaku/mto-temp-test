@@ -1,0 +1,55 @@
+@require "../../vars.styl";
+@require "../../style/global.styl";
+
+
+// had to make everything important to override inline styles attached by material-ui
+.contextMenu
+    display: inline-block !important
+    &-icon
+        &--active
+            color: accentColor !important
+    &-item
+        font-size: 13px !important
+        click-events: none
+        &-icon
+            color: baseColor !important
+            &.customIcon
+                width: 20px
+                height: 20px
+                fill: baseColor
+                margin: 5px
+        &-option
+            display: flex
+            align-items: center
+        &.is-disabled
+            .contextMenu-item-icon
+                color: disabledColor !important
+        &:not(.is-disabled)&:not(.noHoverAction)
+            & ^[-1]-icon
+                color: baseColor !important
+            &:hover, &:focus, &:active
+                background: accentColor !important
+                color: white !important
+                .contextMenu-item-icon
+                    color: white !important
+                    &.customIcon
+                        fill: white !important
+.context-menu-popover
+    &--abovePopup
+        z-index: 1500 !important
+.context-menu-list
+    outline-color: transparent
+    padding-top: 0px !important
+    padding-bottom: 0px !important
+.context-menu-popover-paper
+    position: fixed !important
+.separator
+    width: 100%
+    height: 1px
+    margin-top: .5em
+    margin-bottom: .5em
+    border-bottom: 1px solid grey200
+    &--dotted
+        border-bottom: 2px dotted grey200
+.context-menu-wrapper
+        display: inherit

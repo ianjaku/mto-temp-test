@@ -1,0 +1,56 @@
+@import '../../../../queries.styl';
+@import '../../../../vars.styl';
+
+.chunk{
+    transition: opacity 300ms ease-out;
+}
+.chunk:first-child .chunk-content {
+    padding-top: 0;
+}
+.chunk:first-child h1:first-child,
+.chunk:first-child h2:first-child,
+.chunk:first-child h3:first-child,
+.chunk:first-child h4:first-child,
+.chunk:first-child h5:first-child {
+    margin-top: 0;
+}
+.chunk:first-child .play-button-wrapper {
+    margin-bottom: 15px;
+}
+.chunk:not(:first-child) .play-button-wrapper {
+    margin-bottom: -15px;
+}
+.chunk:last-child .chunk-content {
+    padding-bottom: 0;
+}
+.chunk:last-child h1:last-child,
+.chunk:last-child h2:last-child,
+.chunk:last-child h3:last-child,
+.chunk:last-child h4:last-child,
+.chunk:last-child h5:last-child {
+    margin-bottom: 0;
+}
+
+.chunk-content
+    box-sizing: border-box
+
+.chunk.active{
+    opacity: 1
+}
+
+.chunk.inactive{
+    opacity: 0.15
+    pointer-events: none
+}
+
+@media only screen and (orientation: landscape) {
+    .chunk:last-child {
+        padding-bottom: 38vh // reduced 12vh of the chunk-content padding-top
+    }
+}
+
+@media only screen and (min-aspect-ratio: 98/100) and (max-aspect-ratio: 105/100) {
+    .chunk-content {
+        padding: 15vh 0
+    }
+}

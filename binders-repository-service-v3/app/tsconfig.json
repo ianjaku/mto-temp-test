@@ -1,0 +1,19 @@
+{
+    "extends": "../../tsconfig.service.json",
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "rootDir": ".",
+        "allowJs": true
+    },
+    "exclude": ["node_modules", "dist"],
+    "include": ["src/**/*", "tests/**/*"],
+    "references": [
+        {
+            "path": "../../binders-client-v1/tsconfig.json"
+        },
+        {
+            "path": "../../binders-service-common-v1/tsconfig.json"
+        }
+    ]
+}

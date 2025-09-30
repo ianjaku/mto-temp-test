@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Manual.to</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        @font-face {
+            font-family: "Roboto";
+            src: url("assets/Roboto.eot");
+            /* IE9 Compat Modes */
+            src: url("assets/Roboto.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */
+                url("assets/Roboto.woff2") format("woff2"),
+                /* Super Modern Browsers */
+                url("assets/Roboto.woff") format("woff"),
+                /* Pretty Modern Browsers */
+                url("assets/Roboto.ttf") format("truetype"),
+                /* Safari, Android, iOS */
+                url("assets/Roboto.svg#svgFontName") format("svg");
+            /* Legacy iOS */
+        }
+
+        @font-face {
+            font-family: "Montserrat-Bold";
+            src: url("assets/Montserrat-Bold.eot");
+            /* IE9 Compat Modes */
+            src: url("assets/Montserrat-Bold.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */
+                url("assets/Montserrat-Bold.woff2") format("woff2"),
+                /* Super Modern Browsers */
+                url("assets/Montserrat-Bold.woff") format("woff"),
+                /* Pretty Modern Browsers */
+                url("assets/Montserrat-Bold.ttf") format("truetype"),
+                /* Safari, Android, iOS */
+                url("assets/Montserrat-Bold.svg#svgFontName") format("svg");
+            /* Legacy iOS */
+        }
+
+        body {
+            font-family: Roboto;
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f1ef;
+
+        }
+
+        @keyframes slide-up {
+            0% {
+                transform: translateY(-1000px) scalex(1);
+                animation-timing-function: cubic-bezier(.66, .0, 1, .72);
+            }
+
+            50% {
+                transform: scale(1.05, .95) translateY(0);
+            }
+
+            57% {
+                transform: scale(1, 1) translateY(-7px);
+            }
+
+            64% {
+                transform: scale(1, 1) translateY(0);
+            }
+
+            100% {
+                transform: scale(1, 1) translateY(0);
+            }
+        }
+
+        .maintenance {
+            position: absolute;
+            top: 40%;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f3f1ef;
+            transform: translate(0%, -50%)
+        }
+
+        .maintenance-image {
+            display: block;
+            margin: 0 auto;
+            animation: slide-up 1.5s ease-in both;
+            animation-delay: 1s;
+        }
+
+        .maintenance-title {
+            margin-top: 30px;
+            padding: 10px 0;
+            font-family: Roboto;
+            font-size: 80px;
+            color: #fac242;
+            text-shadow: 1px 1px black;
+            letter-spacing: normal;
+            text-align: center;
+        }
+
+        .maintenance-info {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .maintenance-actions div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 8px;
+            background-color: #fac242;
+            width: 120px;
+        }
+
+        .maintenance-actions a:link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .maintenance-actions a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16">
+</head>
+
+<body>
+    <div class="maintenance">
+        <img class="maintenance-image" src="assets/error-robot.svg" alt="Maintenance">
+        <p class="maintenance-title">We'll be back soon!</p>
+        <p class="maintenance-info">We're very sorry for the inconvenience but we're performing maintenance. Please
+            check back later...</p>
+        <p class="maintenance-info">Manual.to Team</p>
+        <div class="maintenance-actions">
+            <div><a href="mailto:support@manual.to">Email us</a></div>
+        </div>
+    </div>
+    <!-- <div class="content-body">
+      <div class="content-body-actions">
+        <div><a href="mailto:support@manual.to">Email us</a></div>
+      </div>
+    </div> -->
+</body>
+
+</html>

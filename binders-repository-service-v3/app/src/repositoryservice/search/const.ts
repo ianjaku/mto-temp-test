@@ -1,0 +1,3 @@
+export const NUMBER_OF_ITEMS_IN_BATCH = 500
+export const DESIRED_NUMBER_OF_RESULTS = 100
+export const MAX_NUMBER_OF_ITERATIONS = 20

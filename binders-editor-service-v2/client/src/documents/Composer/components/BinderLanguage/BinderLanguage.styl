@@ -1,0 +1,134 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.composer .binder-languages // to have higher priority than old composer styles
+    display: grid
+    display: -ms-grid
+    width: 100%
+    &.isMobile > *
+        max-width: 100%
+        min-width: 0
+        min-height: 0
+    .binderlanguage-title
+        margin-bottom: 1.5em
+        .chunk-images
+            height: 96px
+    .chunk-dragwrapper
+        position: relative
+        .drag-button
+            position: absolute
+            right: -22px
+            top: 0
+            z-index: 4
+            cursor: move
+            width: 24px
+            text-align: center
+            height: 100%
+            span
+                color: middleGreyColor
+            @media rwd.mobile
+                top: 100px
+            &.--is-inactive, &.--is-dragging
+                visibility: hidden
+            &:hover
+                span
+                    color: accentColor !important
+    .language-selectors
+        display: flex
+        font-size: 14px
+        &-selector
+            display: flex
+            height: 40px
+            justify-content: flex-end
+            align-items: center
+            overflow: visible
+            &:first-child
+                width: auto
+            &:last-child
+                flex-grow: 1
+            &-label, &-dropdown
+                font-weight: 500
+                font-size: 14px
+            &-dropdown
+                min-width: 179px
+                z-index: 15
+                .dropdown-elements
+                    background-color: baseColor
+                    color: whiteColor
+                    li
+                        &:hover
+                            background-color: baseColor
+                            color: accentColor
+                .dropdown-field-label
+                    justify-content: flex-end
+                &.dropdown--is-open
+                    .dropdown-field
+                        background-color: colorNegativeBorder
+                        color: whiteColor
+                        border-top-left-radius: 5px
+                        border-top-right-radius: 5px
+                        .dropdown-arrow
+                            color: whiteColor !important
+                &:not(.dropdown--is-open)
+                    .dropdown-field
+                        background-color: backgroundColor
+                        color: baseColor
+                        .dropdown-arrow
+                            color: baseColor
+            &-close
+                cursor: pointer
+                margin-left: 10px
+                height: 20px
+    .binderLanguageControls
+        display: flex
+        flex-direction: column;
+        justify-content: flex-end
+        align-items: end;
+        margin: 0;
+        margin-top: 40px;
+        margin-bottom: 80px;
+        &-status
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            line-height: 16px;
+        &-default
+            color: middleBlackColor;
+        &-danger
+            color: colorErrorDark;
+        &-info
+            color: disabledColor;
+        &-row
+            display: flex;
+            flex-direction: row;
+        .button
+            margin-left: 10px
+            display: flex;
+            align-items: center;
+            @media rwd.mobile
+                padding: 10px 20px;
+    .binderDiffControls
+        display: flex
+        flex-direction: row
+        grid-column-start: 1
+        grid-column-end: 3
+        align-items: center
+        justify-content: end
+        gap: 2rem
+        margin-top: 1rem
+        margin-bottom: 40px
+        span
+            font-weight: bold
+            color: grey600
+        &-buttons
+            display: flex
+            flex-direction: row
+            gap: 0.5rem
+            .button
+                display: flex
+                flex-direction: row
+                gap: 1rem
+                padding: 0.5rem 1rem
+                align-items: center
+                .material-icons
+                    color: currentColor

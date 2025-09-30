@@ -1,0 +1,42 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.topBar
+    position: sticky
+    z-index: 20
+    top: 0
+    display: flex
+    flex-direction: row
+    padding: 8px 25px
+    padding-right: 25px
+    align-items: center
+    justify-content: space-between
+    background: backgroundColor
+    border-bottom: 1px solid middleGreyColor
+    @media rwd.mobile
+        position: relative
+    .searchBar
+        .input-icon
+            color: middleGreyColor
+        @media rwd.mobile
+            width: 100%
+            .input-wrapper
+                width: 100%
+    .searchBar input
+        --borderColor: middleGreyColor
+    .searchBar-input
+        background-color: whiteColor
+    .searchBar-input::placeholder
+        color: middleGreyColor
+    &-helpIcon
+        display: flex
+        align-items: center
+        background: none
+        border: none
+        cursor: pointer
+    .dropdown-field
+        padding: 0
+        transform: translateX(4px)
+.topBar-inComposer
+    padding-right: 65px
+    @media rwd.mobile
+        padding-right: 25px

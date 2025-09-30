@@ -1,0 +1,73 @@
+@require "~@binders/ui-kit/lib/vars.styl"
+
+.visual-edit-modal
+    .modal-header
+        &-title
+            color: grey800
+            font-weight: 500
+            size: 18px
+            line-height: 28px
+    .modal-closeBtn
+        top: 0
+        color: grey800 !important
+
+    .modal-body
+        display: flex
+        flex-direction: column
+        row-gap: 8px
+        align-items: center
+        @media rwd.tabletAndAbove
+            row-gap: 25px
+            padding: 20px
+    &-header
+        display: flex
+        flex-direction: row-reverse
+
+.preview-wrapper
+    display: flex
+    justify-content: center
+    align-self: center
+
+.settings-toggle
+    align-items: center
+    color: grey900
+    font-weight: 500
+    font-size: 14px
+    line-height: 22px
+    text-align: center
+    padding: 8px 16px
+    min-width: 96px
+
+.desktop-settings-toggle
+    @extend .settings-toggle
+    column-gap: 8px
+    border: 1px solid grey400
+    border-radius: 4px
+    background-color: transparent
+    cursor: pointer
+    display: none
+    @media rwd.mobileLandscapeAndAbove
+        display: flex
+    &-open
+        @extend .desktop-settings-toggle
+        background-color: grey400
+    .MuiIcon-root
+        font-size: 20px
+
+.mobile-settings-toggle
+    @extend .settings-toggle
+    display: flex
+    flex-direction: column
+    gap: 12px
+    @media rwd.mobileLandscapeAndAbove
+        display: none
+    .MuiIcon-root
+        font-size: 18px
+    .button-round
+        background-color: grey300
+        width: 42px
+        height: 42px
+        border-radius: 50%
+        .MuiIcon-root
+            color: grey900 !important
+

@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2020",
+        "sourceMap": true,
+        "jsx": "react",
+        "lib": ["es2022", "dom"],
+        "experimentalDecorators": true,
+        "preserveConstEnums": true,
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "noImplicitReturns": true,
+        "moduleResolution": "node",
+        "outDir": "dist",
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true
+    },
+    "exclude": ["node_modules", "dist", ".yarn"]
+}

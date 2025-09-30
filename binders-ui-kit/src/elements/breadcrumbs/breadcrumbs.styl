@@ -1,0 +1,78 @@
+@require "../../vars.styl";
+@require "../../style/global.styl";
+
+.breadcrumbs
+    font-size: 14px
+    font-family: $$systemFont
+    color: baseColor
+    align-items: center
+    width: 100%
+    display: block
+    white-space: nowrap
+    > div
+        display: inline-block
+    &-item
+        display: inline-block // otherwise the overflow ellipsis won't work
+        color: baseColor
+        text-decoration: none
+        font-size: 14px
+        vertical-align: middle
+        align-items: center
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+        line-height: 28px
+        &--last
+            cursor: auto
+            font-size: 14px
+            display: inline-flex !important
+            > div
+                display: inline-block
+            span
+                line-height: 24px
+                height: 24px
+                display: inline-block
+                max-width: 100%
+                overflow: hidden
+                white-space: nowrap
+                text-overflow: ellipsis
+            > span
+                display: inline
+                overflow: hidden
+            button
+                font-size: 24px
+                padding-bottom: 2px !important // don't ask...
+        &--active
+            font-weight: bold
+            display: inline-block
+        &-link
+            font-size: 14px
+            clearLinkStyles()
+            display: inline-block
+            padding-left: 10px
+            padding-right: 10px
+            width: 100%
+            word-wrap: break-word
+        &--readonly
+            pointer-events: none
+            color: disabledColor
+        &--strikeThrough
+            text-decoration: line-through
+    &-arrow
+        line-height: 28px
+        display: inline-block
+        clearLinkStyles()
+        .material-icons
+            font-size: 22px
+            display: inline-block
+            line-height: 28px
+            vertical-align: top
+    @media rwd.mobile
+        &-item
+            padding-right: 0
+            padding-left: 0
+            &--active
+                word-wrap: break-word
+            &-link
+                padding-left: 0
+                padding-right: 0

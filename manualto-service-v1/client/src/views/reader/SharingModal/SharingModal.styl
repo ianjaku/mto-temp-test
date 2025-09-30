@@ -1,0 +1,65 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.readerModal
+    border-radius: 20px !important
+
+    .sharingModal
+        box-sizing: border-box
+        color: baseColor
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 1.4em
+        // Using parantheses to avoid stylus's worse min() function
+        min-width: "min(300px, 100vw)"
+        padding: 24px 32px
+        paddinng-top: 6px
+        @media rwd.phoneAndAbove
+            padding: 0px 80px
+
+        &-header
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: .8em
+            &-shareLbl
+                font-size: 16px
+                font-weight: 500
+            &-docTitle
+                font-size: 15px
+                text-align: center
+
+        &-mtDisclaimer
+            display: flex
+            padding: 12px 20px
+            max-width: 40ch
+            gap: 6px
+            font-size: 13px
+            border-radius: 8px
+            background: backgroundColor
+            color: grey600
+            .material-icons
+                font-size: 16px
+
+        &-restrictedAccessMsg
+            height: 16px // avoids layout shift when async message comes in
+            font-size: 13px
+            display: flex
+            align-items: center
+            color: grey60
+            gap: 0.5em
+            &-lbl
+                animation: fadeIn 0.2s
+            .material-icons
+                font-size: 16px
+
+        &-buttons
+            display: flex
+            justify-content: center
+            gap: 1em
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1

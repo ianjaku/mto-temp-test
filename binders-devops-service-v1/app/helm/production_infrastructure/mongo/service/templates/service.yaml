@@ -1,0 +1,93 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "{{ .Release.Name }}-mongodb-service"
+  labels:
+    role: "{{ .Release.Name }}-mongo"
+spec:
+  ports:
+  - port: 27017
+    targetPort: 27017
+  clusterIP: None
+  selector:
+    role: "{{ .Release.Name }}-mongo"
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: "{{ .Release.Name }}-mongod"
+spec:
+  selector:
+    matchLabels:
+      role: "{{ .Release.Name }}-mongo"
+  serviceName: "{{ .Release.Name }}-mongodb-service"
+  replicas: 3
+  updateStrategy:
+    type: OnDelete #since 1.16 now default is RollingUpdate
+  template:
+    metadata:
+      labels:
+        role: "{{ .Release.Name }}-mongo"
+        environment: "{{ .Release.Name }}"
+        replicaset: "{{ .Release.Name }}"
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: replicaset
+                  operator: In
+                  values:
+                  - "{{ .Release.Name }}"
+              topologyKey: kubernetes.io/hostname
+      terminationGracePeriodSeconds: 10
+      volumes:
+        - name: secrets-volume
+          secret:
+            secretName: "bootstrap-mongo-main-service"
+            defaultMode: 256
+      containers:
+        - name: "{{ .Release.Name }}-mongod-container"
+          image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          command:
+            - "numactl"
+            - "--interleave=all"
+            - "mongod"
+            - "--bind_ip"
+            - "0.0.0.0"
+            - "--replSet"
+            - "mongo-main-service"
+            - "--auth"
+            - "--clusterAuthMode"
+            - "keyFile"
+            - "--keyFile"
+            - "/etc/secrets-volume/internal-auth-mongodb-keyfile"
+            - "--setParameter"
+            - "authenticationMechanisms=SCRAM-SHA-1,SCRAM-SHA-256"
+          resources:
+            requests:
+              cpu: 0.3
+              memory: 12Gi
+            limits:
+              memory: 12Gi
+
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: secrets-volume
+              readOnly: true
+              mountPath: /etc/secrets-volume
+            - name: "{{ .Release.Name }}-mongodb-persistent-storage-claim"
+              mountPath: /data/db
+  volumeClaimTemplates:
+  - metadata:
+      name: "{{ .Release.Name }}-mongodb-persistent-storage-claim"
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "{{ .Values.cloudprovider.storage.className }}"
+      resources:
+        requests:
+          storage: "{{ .Values.cloudprovider.storage.diskSize }}"

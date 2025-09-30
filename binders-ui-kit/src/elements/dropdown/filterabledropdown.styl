@@ -1,0 +1,17 @@
+@require "../../vars.styl";
+.filterable-dropdown
+    position: relative
+    &-arrow
+        position: absolute
+        line-height: 55px
+        top: 0
+        right: 8px
+        cursor: pointer
+    &-input
+        width: 100%
+        background-color: backgroundColor
+        padding-right: 28px
+        text-overflow: ellipsis
+        cursor: pointer
+    &--isDisabled
+        pointer-events: none

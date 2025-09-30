@@ -1,0 +1,186 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+tableDropdownWidth = 150px
+@media rwd.mobile
+    tableDropdownWidth = 100px
+
+autocompletePrompt = 450px
+chipMaxheight = 104px
+
+gapXs = 2px
+gapSm2 = 6px
+gapMedium = 8px
+gapMedium2 = 12px
+gapLarge = 16px
+gapLarge2 = 24px
+tableMaxHeight = 205px
+closeBtnOffset = 18px
+fontSizeSmall = 11px
+fontSizeMedium = 14px
+roleElementsWidth = 100px
+
+.accessBox
+    color: baseColor
+    &Section-existingAcls
+        transition: height .2s ease-in
+        overflow: hidden
+        &--coloredBg
+            .accessBox
+                &-searchBar, &-table, &-table .table
+                    background-color: backgroundColor
+    &-searchBar
+        font-size: fontSizeMedium
+        font-weight: fontWeightMedium
+        padding: gapMedium2 gapLarge2
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border-top: 1px solid
+        border-bottom: 1px solid
+        border-color: middleGreyColor
+        @media rwd.mobile
+            padding: gapMedium2
+            flex-direction: column
+            align-items: flex-start
+        &-header
+            margin-right: gapLarge2
+            display: flex
+            justify-content: space-between
+            &-arrowBtn
+                display: flex
+                align-items: center
+            @media rwd.mobile
+                width: 100%
+            &-title
+                @media rwd.mobile
+                    padding: gapMedium 0
+        &-body
+            flex-grow: 1
+            @media rwd.mobile
+                width: 100%
+            &-input
+                width: 100%
+        .input-wrapper
+            flex-grow: 1
+            @media rwd.mobile
+                width: 100%
+                margin-top: gapMedium
+    &-table
+        overflow: auto
+        border-bottom: 1px solid middleGreyColor
+        padding: gapMedium2 gapLarge2
+        max-height: tableMaxHeight
+        @media rwd.mobile
+            padding: gapMedium2
+        .table
+            background-color: backgroundColor
+            width: "calc(100% - %s)" % closeBtnOffset
+            tr
+                position: relative
+                td
+                    padding: 6px 0
+                    vertical-align: top
+                    @media rwd.tabletAndAbove
+                        vertical-align: middle
+                    border: none
+                    &:nth-child(2)
+                        width: 99%
+                    &:nth-child(3)
+                        div
+                            display: flex
+                            flex-direction: column
+                            @media rwd.tabletAndAbove
+                                flex-direction: row
+                    &:nth-child(4)
+                        height: 100%
+                        position: absolute
+                        button
+                            padding: 0
+        .dropdown--is-open
+            position: static
+        .table-footer
+            margin: 0
+            .dropdown--is-open
+                position: relative
+        .dropdown.borders .dropdown-field
+            font-weight: fontWeightMedium
+            font-size: fontSizeSmall
+            border: none
+            overflow: visible
+            &-label
+                width: auto
+        .dropdown-elements
+            border-top: 1px solid middleGreyColor
+        .languages-dropdown
+            width: tableDropdownWidth
+    .accessBoxSection-newAcls
+        transition: height .2s ease-in
+        padding: gapMedium2 gapLarge2
+        overflow: hidden
+        &--coloredBg
+            background-color: backgroundColor
+        @media rwd.mobile
+            padding: gapMedium2
+        &-header
+            display: flex
+            justify-content: space-between
+            &-title
+                font-weight: fontWeightMedium
+                padding: gapLarge 0
+        &-body
+            display: flex
+            justify-content: space-between
+            align-items: center
+            @media rwd.mobile
+                flex-direction: column
+                align-items: flex-end
+        .userInput
+            flex-grow: 1
+            margin-right: 4px
+            display: flex
+            @media rwd.mobile
+                width: 100%
+                margin-right: 0
+                margin-bottom: gapMedium2
+                flex-direction: column
+            .autocomplete
+                padding: gapMedium 0px gapMedium gapMedium
+                overflow: visible
+                @media rwd.mobile
+                    padding-right: gapMedium
+                    background-color: whiteColor
+                &-pane
+                    flex-grow: 1
+                    overflow: hidden
+                    &-chips
+                        max-height: chipMaxheight
+                        overflow-y: auto
+                        width: 100%
+                        @media rwd.mobile
+                            max-width: 95%
+                &-chip
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                &-prompt
+                    max-width: autocompletePrompt // to wrap long names
+        &-roleInput
+            @media rwd.mobile
+                width: 100%
+            .roleInput-selection
+                padding: 0 gapXs 0 gapMedium
+                margin-top: gapMedium2
+                @media rwd.mobile
+                    padding: 0
+                    width: 100%
+                    .dropdown-field
+                        padding-top: gapMedium2
+                        padding-bottom: gapMedium2
+                &:not(:first-child)
+                    margin-top: gapMedium
+    &-addBtn
+        font-weight: fontWeightMedium
+.roleInput-selection-elements
+    width: roleElementsWidth
+    border-top: 1px solid middleGreyColor
+

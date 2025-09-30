@@ -1,0 +1,84 @@
+import * as React from "react";
+import { ReaderPreferences as LanguagePreferences } from "../../../src/views/usersettings/readerpreferences";
+import { shallow } from "enzyme";
+
+test("Render language props correctly", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.state("readerLanguages")).toEqual(languageProps);
+});
+
+test("Move first language down", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.find("#move-down-en").length).toEqual(1);
+    component.find("#move-down-en").simulate("click");
+    const expected = ["nl", "en", "fr", "es"];
+    expect(component.state("readerLanguages")).toEqual(expected);
+});
+
+test("Move second language down", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.find("#move-down-nl").length).toEqual(1);
+    component.find("#move-down-nl").simulate("click");
+    const expected = ["en", "fr", "nl", "es"];
+    expect(component.state("readerLanguages")).toEqual(expected);
+});
+
+test("Make sure last language cant be moved down", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.find("#move-down-es").length).toEqual(0);
+});
+
+test("Move last language up", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.find("#move-up-es").length).toEqual(1);
+    component.find("#move-up-es").simulate("click");
+    const expected = ["en", "nl", "es", "fr"];
+    expect(component.state("readerLanguages")).toEqual(expected);
+});
+
+test("Move second language up", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.find("#move-up-nl").length).toEqual(1);
+    component.find("#move-up-nl").simulate("click");
+    const expected = ["nl", "en", "fr", "es"];
+    expect(component.state("readerLanguages")).toEqual(expected);
+});
+
+test("Make sure first language cant be moved up", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.find("#move-up-en").length).toEqual(0);
+});
+
+test("Remove first language", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.find("#delete-en").length).toEqual(1);
+    component.find("#delete-en").simulate("click");
+    const expected = ["nl", "fr", "es"];
+    expect(component.state("readerLanguages")).toEqual(expected);
+});
+
+test("Remove second language", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.find("#delete-nl").length).toEqual(1);
+    component.find("#delete-nl").simulate("click");
+    const expected = ["en", "fr", "es"];
+    expect(component.state("readerLanguages")).toEqual(expected);
+});
+
+test("Remove last language", () => {
+    const languageProps = ["en", "nl", "fr", "es"];
+    const component = shallow(<LanguagePreferences readerLanguages={languageProps} />);
+    expect(component.find("#delete-es").length).toEqual(1);
+    component.find("#delete-es").simulate("click");
+    const expected = ["en", "nl", "fr"];
+    expect(component.state("readerLanguages")).toEqual(expected);
+});

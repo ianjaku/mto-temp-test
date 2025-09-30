@@ -1,0 +1,811 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer drawer (snapshot) 1`] = `
+<div
+  className="rightPane"
+>
+  <div>
+    <button
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOut={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "background": "none",
+          "border": 10,
+          "boxSizing": "border-box",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": 0,
+          "fontWeight": "inherit",
+          "height": "40px",
+          "margin": 0,
+          "muiPrepared": true,
+          "outline": "none",
+          "overflow": "visible",
+          "padding": "5px",
+          "position": "relative",
+          "textDecoration": "none",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "verticalAlign": null,
+          "width": "40px",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+      >
+        <span
+          className="pane-item-icon material-icons"
+          color="white"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "white",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          add
+        </span>
+      </div>
+    </button>
+    <div
+      className="drawer"
+      style={undefined}
+    >
+      <div
+        className="drawer-container"
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "backgroundColor": "#484744",
+            "borderRadius": "0px",
+            "boxShadow": "0 3px 10px rgba(0, 0, 0, 0.16),
+                   0 3px 10px rgba(0, 0, 0, 0.23)",
+            "boxSizing": "border-box",
+            "color": "white",
+            "fontFamily": "Roboto, sans-serif",
+            "height": "100%",
+            "left": "auto",
+            "muiPrepared": true,
+            "overflow": "auto",
+            "padding": "32px 16px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "transform": "translate(410px, 0)",
+            "transition": "transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "width": 400,
+            "zIndex": 1300,
+          }
+        }
+      >
+        <header
+          className="drawer-container-header"
+        >
+          <span
+            className="drawer-container-header-title"
+          >
+            Media1
+          </span>
+          <button
+            className="drawer-container-header-icon"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOut={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "background": "none",
+                "border": 10,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 0,
+                "fontWeight": "inherit",
+                "height": 48,
+                "margin": 0,
+                "marginRight": "-10px",
+                "marginTop": "-10px",
+                "muiPrepared": true,
+                "outline": "none",
+                "overflow": "visible",
+                "padding": 12,
+                "position": "relative",
+                "textDecoration": "none",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "verticalAlign": null,
+                "width": 48,
+              }
+            }
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+            >
+              <span
+                className="material-icons "
+                color="white"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "white",
+                    "display": "inline-block",
+                    "fontSize": 24,
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
+                  }
+                }
+              >
+                close
+              </span>
+            </div>
+          </button>
+        </header>
+        <div
+          className="drawer-container-body"
+        >
+          <div
+            className="button button--secondary"
+            onBlur={undefined}
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            Horses
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOut={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "background": "none",
+          "border": 10,
+          "boxSizing": "border-box",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": 0,
+          "fontWeight": "inherit",
+          "height": "40px",
+          "margin": 0,
+          "muiPrepared": true,
+          "outline": "none",
+          "overflow": "visible",
+          "padding": "5px",
+          "position": "relative",
+          "textDecoration": "none",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "verticalAlign": null,
+          "width": "40px",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+      >
+        <span
+          className="pane-item-icon material-icons"
+          color="white"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "white",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          image
+        </span>
+      </div>
+    </button>
+    <div
+      className="drawer"
+      style={undefined}
+    >
+      <div
+        className="drawer-container"
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "backgroundColor": "#484744",
+            "borderRadius": "0px",
+            "boxShadow": "0 3px 10px rgba(0, 0, 0, 0.16),
+                   0 3px 10px rgba(0, 0, 0, 0.23)",
+            "boxSizing": "border-box",
+            "color": "white",
+            "fontFamily": "Roboto, sans-serif",
+            "height": "100%",
+            "left": "auto",
+            "muiPrepared": true,
+            "overflow": "auto",
+            "padding": "32px 16px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "transform": "translate(410px, 0)",
+            "transition": "transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "width": 400,
+            "zIndex": 1300,
+          }
+        }
+      >
+        <header
+          className="drawer-container-header"
+        >
+          <span
+            className="drawer-container-header-title"
+          >
+            Media2
+          </span>
+          <button
+            className="drawer-container-header-icon"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOut={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "background": "none",
+                "border": 10,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 0,
+                "fontWeight": "inherit",
+                "height": 48,
+                "margin": 0,
+                "marginRight": "-10px",
+                "marginTop": "-10px",
+                "muiPrepared": true,
+                "outline": "none",
+                "overflow": "visible",
+                "padding": 12,
+                "position": "relative",
+                "textDecoration": "none",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "verticalAlign": null,
+                "width": 48,
+              }
+            }
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+            >
+              <span
+                className="material-icons "
+                color="white"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "white",
+                    "display": "inline-block",
+                    "fontSize": 24,
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
+                  }
+                }
+              >
+                close
+              </span>
+            </div>
+          </button>
+        </header>
+        <div
+          className="drawer-container-body"
+        >
+          <div
+            className="button button--secondary"
+            onBlur={undefined}
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            Are
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOut={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "background": "none",
+          "border": 10,
+          "boxSizing": "border-box",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": 0,
+          "fontWeight": "inherit",
+          "height": "40px",
+          "margin": 0,
+          "muiPrepared": true,
+          "outline": "none",
+          "overflow": "visible",
+          "padding": "5px",
+          "position": "relative",
+          "textDecoration": "none",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "verticalAlign": null,
+          "width": "40px",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+      >
+        <span
+          className="pane-item-icon material-icons"
+          color="white"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "white",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          settings
+        </span>
+      </div>
+    </button>
+    <div
+      className="drawer"
+      style={undefined}
+    >
+      <div
+        className="drawer-container"
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "backgroundColor": "#484744",
+            "borderRadius": "0px",
+            "boxShadow": "0 3px 10px rgba(0, 0, 0, 0.16),
+                   0 3px 10px rgba(0, 0, 0, 0.23)",
+            "boxSizing": "border-box",
+            "color": "white",
+            "fontFamily": "Roboto, sans-serif",
+            "height": "100%",
+            "left": "auto",
+            "muiPrepared": true,
+            "overflow": "auto",
+            "padding": "32px 16px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "transform": "translate(410px, 0)",
+            "transition": "transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "width": 400,
+            "zIndex": 1300,
+          }
+        }
+      >
+        <header
+          className="drawer-container-header"
+        >
+          <span
+            className="drawer-container-header-title"
+          >
+            Media3
+          </span>
+          <button
+            className="drawer-container-header-icon"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOut={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "background": "none",
+                "border": 10,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 0,
+                "fontWeight": "inherit",
+                "height": 48,
+                "margin": 0,
+                "marginRight": "-10px",
+                "marginTop": "-10px",
+                "muiPrepared": true,
+                "outline": "none",
+                "overflow": "visible",
+                "padding": 12,
+                "position": "relative",
+                "textDecoration": "none",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "verticalAlign": null,
+                "width": 48,
+              }
+            }
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+            >
+              <span
+                className="material-icons "
+                color="white"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "white",
+                    "display": "inline-block",
+                    "fontSize": 24,
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
+                  }
+                }
+              >
+                close
+              </span>
+            </div>
+          </button>
+        </header>
+        <div
+          className="drawer-container-body"
+        >
+          <div
+            className="button button--secondary"
+            onBlur={undefined}
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            Awesome
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOut={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "background": "none",
+          "border": 10,
+          "boxSizing": "border-box",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": 0,
+          "fontWeight": "inherit",
+          "height": "40px",
+          "margin": 0,
+          "muiPrepared": true,
+          "outline": "none",
+          "overflow": "visible",
+          "padding": "5px",
+          "position": "relative",
+          "textDecoration": "none",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "verticalAlign": null,
+          "width": "40px",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+      >
+        <span
+          className="pane-item-icon material-icons"
+          color="white"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "white",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          share
+        </span>
+      </div>
+    </button>
+    <div
+      className="drawer"
+      style={undefined}
+    >
+      <div
+        className="drawer-container"
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "backgroundColor": "#484744",
+            "borderRadius": "0px",
+            "boxShadow": "0 3px 10px rgba(0, 0, 0, 0.16),
+                   0 3px 10px rgba(0, 0, 0, 0.23)",
+            "boxSizing": "border-box",
+            "color": "white",
+            "fontFamily": "Roboto, sans-serif",
+            "height": "100%",
+            "left": "auto",
+            "muiPrepared": true,
+            "overflow": "auto",
+            "padding": "32px 16px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+            "transform": "translate(410px, 0)",
+            "transition": "transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "width": 400,
+            "zIndex": 1300,
+          }
+        }
+      >
+        <header
+          className="drawer-container-header"
+        >
+          <span
+            className="drawer-container-header-title"
+          >
+            Media4
+          </span>
+          <button
+            className="drawer-container-header-icon"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOut={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "background": "none",
+                "border": 10,
+                "boxSizing": "border-box",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 0,
+                "fontWeight": "inherit",
+                "height": 48,
+                "margin": 0,
+                "marginRight": "-10px",
+                "marginTop": "-10px",
+                "muiPrepared": true,
+                "outline": "none",
+                "overflow": "visible",
+                "padding": 12,
+                "position": "relative",
+                "textDecoration": "none",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "verticalAlign": null,
+                "width": 48,
+              }
+            }
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+            >
+              <span
+                className="material-icons "
+                color="white"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "white",
+                    "display": "inline-block",
+                    "fontSize": 24,
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
+                  }
+                }
+              >
+                close
+              </span>
+            </div>
+          </button>
+        </header>
+        <div
+          className="drawer-container-body"
+        >
+          <div
+            className="input-wrapper input-wrapper-search input-wrapper--inverted"
+          >
+            <span
+              className="input-icon"
+            >
+              <span
+                className="material-icons "
+                color=""
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "display": "inline-block",
+                    "fontSize": 24,
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
+                  }
+                }
+              >
+                search
+              </span>
+            </span>
+            <input
+              className="input input--inverted"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": "undefinedpx",
+                }
+              }
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,166 @@
+name: $(BuildID)
+
+trigger:
+  branches:
+    include:
+    - develop
+    - rel-*
+    - noissue/update-af-image
+  paths:
+    include:
+    - azure-functions/screenshots/*
+
+pr: none
+
+pool:  
+  vmImage: 'ubuntu-22.04'
+
+variables:
+- template: ../pipelines/_vars.yaml
+
+
+stages:
+- stage: Build
+  displayName: Build
+  variables:
+  - name: function-dir
+    value: azure-functions/screenshots
+  jobs:
+  - job: jobBuild
+    displayName: Build and package
+    steps:
+    - template: ../pipelines/steps/function-ci.yaml
+      parameters:
+        workingDirectory: $(function-dir)
+        fetchFfmpeg: true
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(function-dir)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        ArtifactName: 'screenshotfunction'
+        publishLocation: 'Container'
+
+- stage: devStage
+  displayName: Dev
+  variables:
+  - name: working-dir
+    value: azure-functions/screenshots/environments/dev
+  - name: function-name
+    value: binder-dev-take-screenshot-v2
+  - group: kv-dev
+  jobs:
+  - job: Terraform
+    displayName: Terraform - Plan and Apply
+    #environment: Dev
+    variables:
+      terraformStateFile: az-fn-screenshots-dev.tfstate
+    steps:
+    - template: ../pipelines/steps/terraform-ci.yaml
+      parameters:
+        workingDirectory: $(working-dir)
+    - template: ../pipelines/steps/terraform-init.yaml
+      parameters:
+        workingDirectory: $(working-dir)
+        key: $(terraformStateFile)
+    - template: ../pipelines/steps/terraform-plan.yaml
+      parameters:
+        env: dev
+        key: $(terraformStateFile)
+        workingDirectory: $(working-dir)
+    - template: ../pipelines/steps/terraform-apply.yaml
+      parameters:
+        env: dev
+        workingDirectory: $(working-dir)
+  - template: ../pipelines/steps/deploy-function-code.yaml
+    parameters:
+      artifact: screenshotfunction
+      azureSubscription: manual-to-non-prod
+      functionApp: $(function-name)
+
+- stage: stgStage
+  displayName: Staging
+  variables:
+  - name: working-dir
+    value: azure-functions/screenshots/environments/stg
+  - name: function-name
+    value: binder-stg-take-screenshot-v2
+  - group: kv-stg
+  jobs:
+  - job: Terraform
+    displayName: Terraform - Plan and Apply
+    variables:
+      terraformStateFile: az-fn-screenshots-stg.tfstate
+    steps:
+    - template: ../pipelines/steps/terraform-ci.yaml
+      parameters:
+        workingDirectory: $(working-dir)
+    - template: ../pipelines/steps/terraform-init.yaml
+      parameters:
+        workingDirectory: $(working-dir)
+        key: $(terraformStateFile)
+    - template: ../pipelines/steps/terraform-plan.yaml
+      parameters:
+        env: stg
+        key: $(terraformStateFile)
+        workingDirectory: $(working-dir)
+    - template: ../pipelines/steps/terraform-apply.yaml
+      parameters:
+        env: stg
+        workingDirectory: $(working-dir)
+  - template: ../pipelines/steps/deploy-function-code.yaml
+    parameters:
+      artifact: screenshotfunction
+      azureSubscription: manual-to-non-prod
+      functionApp: $(function-name)
+
+- stage: prodStage
+  displayName: Production
+  variables:
+  - name: working-dir
+    value: azure-functions/screenshots/environments/prod
+  - name: function-name
+    value: binder-prod-take-screenshot-v2
+  - group: kv-prod
+  jobs:
+  - deployment: Approval
+    displayName: Approval Check
+    environment: Production
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Approval obtained. Proceeding with Terraform and deployment."
+            displayName: Approval Obtained
+  - job: Terraform
+    displayName: Terraform - Plan and Apply
+    variables:
+      terraformStateFile: az-fn-screenshots-prod.tfstate
+    steps:
+    - template: ../pipelines/steps/terraform-ci.yaml
+      parameters:
+        workingDirectory: $(working-dir)
+    - template: ../pipelines/steps/terraform-init.yaml
+      parameters:
+        workingDirectory: $(working-dir)
+        key: $(terraformStateFile)
+    - template: ../pipelines/steps/terraform-plan.yaml
+      parameters:
+        env: prod
+        key: $(terraformStateFile)
+        workingDirectory: $(working-dir)
+    - template: ../pipelines/steps/terraform-apply.yaml
+      parameters:
+        env: prod
+        workingDirectory: $(working-dir)
+  - template: ../pipelines/steps/deploy-function-code.yaml
+    parameters:
+      artifact: screenshotfunction
+      azureSubscription: manual-to-prod
+      functionApp: $(function-name)
+
+

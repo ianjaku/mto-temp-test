@@ -1,0 +1,132 @@
+@import "../../vars.styl";
+
+.navigation-bar
+    width: calc(20vw - 25px)
+    float: left
+    font-size: 1.3rem
+    @media mobile
+        width: calc(100% - 25px)
+
+.content-page
+    padding: 25px 0 25px 25px
+
+    @media only screen and (min-height: headerCutoff)
+        margin-top: 100px
+
+    @media mobile
+        margin-top: 120px
+
+.content-pane
+    color: $$fgDark
+    width: calc(80vw - 40px)
+    float: left
+    padding-left: 30px
+    @media mobile
+        margin-top: 30px
+        width: calc(100% - 25px)
+        padding-left: 0
+
+
+.content-pane-title-first
+    clear: both
+    font-size: 1.3rem
+    padding-bottom: 20px
+
+.content-pane-title
+    clear: both
+    font-size: 1.3rem
+    padding-bottom: 20px
+    padding-top: 40px
+
+
+.lastsaveInfo
+	font-size: 0.7em
+	margin-top: 20px
+	color: $$fgTooltip
+	margin-bottom: 20px
+
+.userDetails
+    &-title
+        margin: 0 0 20px 0
+        color: $$bgDark
+        font-size: 24px
+    &-layout
+        padding: 0 40px 40px 40px
+        @media mobile
+            padding: 0 0 10px 0
+        @media desktop
+            margin-right: 20%
+        transition: height 0.2s ease-in-out
+        &:after
+            content: ""
+            clear: both
+            display: block
+
+    &-row
+        display: block
+        margin: 10px 0px
+    &-label
+        display: inline-block
+        min-width: 90px
+        width: 15%
+        font-size: 16px
+        @media tablet-less
+            width: 100%
+            font-size: 16px
+        @media laptop
+            font-size: 16px
+    &-input
+        display: inline-block
+        width: 85%
+        font-size: 20px
+        min-width: 200px
+        padding: 12px 10px
+        background: lightBackground
+        border: none
+        font-weight: normal
+        @media tablet-less
+            width: 100%
+        &--disabled
+            color: mediumGrayColor
+            background: transparent
+            display: inline-block
+
+    &-button
+        color: lightBackground
+        background-color: $$bgDark
+        padding: 10px 25px
+        text-align: center
+        min-width: 150px
+        font-size: 14px
+        cursor: pointer
+        font-weight: bold
+        margin: 20px 0
+        float: right
+        &--disabled
+            opacity: 0.5
+            cursor: default
+
+
+.validation
+    &-errors
+        list-style: none
+        padding-left: 0
+        &-item
+            padding: 10px 0 10px 20px
+            color: colorNok
+            position: relative
+            animation: fadeIn 0.2s
+            &:before
+                content: "×"
+                font-size: 20px
+                position: absolute
+                left: 0
+                bottom: 8px
+
+@keyframes fadeIn
+    from
+        opacity: 0
+    to
+        opacity: 1
+
+

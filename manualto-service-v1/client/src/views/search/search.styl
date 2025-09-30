@@ -1,0 +1,97 @@
+
+@import "../../vars.styl";
+.search-result-layout
+    color: grayColor
+
+    *
+        box-sizing: border-box
+
+    .story-item
+        color: black
+    .story-info-wrapper
+        .progress-bar
+            position: relative
+        .story-info
+            align-items start
+
+.search-results-header
+    color: black
+    padding: 8px 5px 8px 12px
+    transition: 200ms all ease-in-out
+
+
+.search-hit
+    background-color: btnPrimary
+    padding: 2px 5px
+
+.search-button
+    cursor: pointer
+
+.search-result
+    &-parentCollectionModule
+        width: 100%
+        padding-right: 4px
+        &-title
+            margin:20px 0 10px 4px;
+            color: darkGrayColor
+            font-size: 16px
+    &-item
+        display:flex
+        cursor:pointer
+        border-bottom:1px solid #f7ecda
+        width:100%
+        background: white
+        box-shadow: 0 1px 10px 0 rgba(0,0,0,0.15)
+        margin: 4px
+        max-height: 310px
+        .image-wrapper
+            max-width: 310px
+        .search-result-info
+            max-height: 310px
+
+        & + .search-result-item
+            margin-top: 5px
+    &-text-hits
+        overflow: hidden
+
+.search-result-item > .search-result-info
+    box-sizing:border-box
+    display:flex
+    flex-direction: column
+    justify-content: center
+
+
+.search-result-thumbnail
+    float:left
+    line-height:0
+    padding:0
+    width:16%
+    height:16vw
+    border-right:1px solid #f7ecda
+    background:transparent no-repeat center center
+    background-size:cover
+
+
+.search-result-info
+    float: left
+    padding-top: 20px
+    padding-left: 10px
+    width:84%
+    overflow:auto
+    height:16vw
+    color: black
+    &-icon
+        color: #cdccca
+        font-size: 20px
+    &-title
+        margin:0;
+        font-size:175%;
+        color:#000000;
+        white-space:nowrap;
+        width:100%;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display: inline
+    &-mentions
+        color: mediumGrayColor
+        font-size: 0.8em

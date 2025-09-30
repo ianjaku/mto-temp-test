@@ -1,0 +1,167 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+
+.link-editor-backdrop
+
+    --link-editor-width: 483px
+
+    position: fixed
+    z-index: 1400
+    &--alignCenter
+        @media rwd.notmobile
+            top: calc(50vh - 100px)
+            left: calc(50vw - (var(--link-editor-width) / 2))
+    @media rwd.mobile
+        background-color: white
+        width: 100%
+        height: "calc(100% - %s)" % mobileNavbarHeight
+        max-height: "calc(100% - %s)" % mobileNavbarHeight
+        top: mobileNavbarHeight
+        left: 0
+    .link-editor
+        background-color: white
+        border: 1px solid grey300
+        border-radius: 8px
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1)
+        padding: 16px 15px
+        display: flex
+        flex-direction: column
+        width: var(--link-editor-width)
+        &-mobileHeader
+            display: none
+            padding: 12px
+            text-align: center
+            position: relative
+            color: grey800
+            font-size: 13px
+            font-weight: 500
+            &-cancelBtn
+                position: absolute
+                right: 0
+                cursor: pointer
+            @media rwd.mobile
+                display: flex
+                justify-content: center
+                align-items: center
+        @media rwd.mobile
+            position: relative
+            top: 0
+            left: 0
+            height: 50%
+            justify-content: space-between
+            width: 100%
+            border-radius: 0
+            box-shadow: none
+            border: none
+        .link-editor-content
+            display: flex
+            flex-direction: column
+            row-gap: 16px
+            &-group
+                display: flex
+                flex-direction: column
+                row-gap: 8px
+                &-label
+                    color: grey800
+                    font-family: defaultFontName
+                    font-size: 13px
+                    line-height: 18px
+                    font-weight: 500
+                    user-select: none
+                &-input
+                    color: grey800
+                    font-family: defaultFontName
+                    font-size: 13px
+                    line-height: 18px
+                    padding: 11px 8px
+                    height: 40px
+                    border: 1px solid middleGreyColor
+                    &:focus
+                        outline: none
+                    &--withPrefix
+                        padding-left: 40px
+                    &--withError
+                        border-color: darkOrangeColor
+                    &-prefix
+                        position: absolute
+                        left: 17px
+                        top: 17px
+                &-input-with-autocomplete
+                    display: flex
+                    flex-direction: column
+                    row-gap: 14px
+                    padding: 7px
+                    border-radius: 4px
+                    margin: -6px
+                    position: relative
+                    &-visible
+                        box-shadow: 0 0 4px rgba(0, 0, 0, 0.15)
+                &-autocomplete
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    border-radius: 4px
+                    padding: 4px
+                    .MuiIcon-root
+                        font-size: 20px !important
+                    &--linkIsValid
+                        cursor: pointer
+                        &:hover
+                            background-color: grey300
+                    &-link
+                        display: flex
+                        flex-direction: column
+                        width: 100%
+                    &-value
+                        display: flex
+                        column-gap: 10px
+                        overflow-wrap: anywhere
+                    &-text
+                        display: flex
+                        align-items: center
+                        font-weight: 400
+                        font-size: 12px
+                        line-height: 14px
+                    &-message
+                        padding-left: 30px
+                        font-weight: 400
+                        font-size: 10px
+                        line-height: 12px
+                        color: grey60
+                    &-error
+                        font-weight: 400
+                        font-size: 10px
+                        color: darkOrangeColor
+                        margin-top: -10px
+                    &-enter
+                        border: 1px solid grey60
+                        border-radius: 4px
+                        text-transform: uppercase
+                        padding: 2px 11px
+                        margin-right: 4px
+                        height: fit-content
+                        font-weight: 600
+                        font-size: 10px
+                        color: grey60
+                        display: flex
+                        align-items: center
+                        column-gap: 4px
+                        .MuiIcon-root
+                            font-size: 14px !important
+            &-footer
+                display: flex
+                justify-content: space-between
+                padding-left: 8px
+            &-buttons
+                display: flex
+                flex-direction: row
+                column-gap: 4px
+                justify-content: flex-end
+                @media rwd.mobile
+                    justify-content: space-between
+            .button
+                padding: 8px 21px
+                margin: 0
+                user-select: none
+                height: 38px
+                line-height: 22px

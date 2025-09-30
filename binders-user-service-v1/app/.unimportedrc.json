@@ -1,0 +1,11 @@
+{
+    "entry": ["src/main.ts", "src/scripts/**/*.{ts,js}"],
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/src/scripts/**"
+    ],
+    "ignoreUnused": [
+        "@binders/ui-kit",
+        "date-fns"
+    ]
+}

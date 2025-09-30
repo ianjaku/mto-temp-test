@@ -1,0 +1,141 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.user-removal-confirmation
+    strong
+        font-weight: bold
+
+.addUserModal
+    padding-top: 12px
+    &-permissions
+        padding: 20px 18px
+        background-color lightGreyColor2
+        border-top 1px solid borderGrayColor
+        border-bottom 1px solid borderGrayColor
+        &-title
+            margin-top: 25px
+            margin-bottom: 10px
+            font-size: 14px
+            font-family: defaultFontName
+            font-weight: 500
+            color: baseColor
+        &-radioGroup
+            max-width: 500px
+            .MuiRadio-root
+                padding: 5px
+    &-invite
+        padding: 0 18px 12px 18px
+        input
+            padding-top 8px
+            width: 100%
+            &-field
+                overflow: hidden
+    &-add
+        padding: 0 18px 20px 18px
+        &-inputlbl
+            padding 16px 0 6px 0
+            &:first-of-type
+                padding 0 0 6px 0
+            font-weight 500
+        &-inputinfo
+            color middleGreyColor3
+            font-size .9em
+            padding-top 2px
+        display flex
+        flex-direction column
+    &-modeRadio
+        padding: 0 18px 6px 18px
+    &-errors
+        padding 20px 18px
+        &-error
+            color: colorErrorDark
+            font-size: 13px
+            margin-top: 4px
+            display block
+.userTable
+    &-row
+        &-displayName
+            cursor: default
+            user-select: none
+        &-error
+            color: colorErrorDark
+
+.users
+    .editModal
+        &-loader
+            margin: 20px auto
+            &.MuiCircularProgress-root
+                display: block
+        &-body
+            height: 480px
+            min-width: 420px
+            &-row
+                margin-top: 20px
+                margin-bottom: 10px
+                display: flex
+                align-items: center
+                width: 450px
+                &:first-child
+                    margin-top: 30px
+                input
+                    flex-grow: 1
+                    width: 100%
+                button
+                    margin-left: 8px
+
+                &--vertical
+                    flex-direction: column
+                    align-items: flex-start
+
+            &-label
+                display: inline-block
+                min-width: 100px
+            .tabs-content
+                @media rwd.tablet
+                    padding-left: 0
+            .tabs-nav
+                height: auto
+                &-list
+                    min-width: 1px
+                    padding-left: 0
+                    width: 80%
+                    @media rwd.tablet, rwd.mobile
+                        padding-left: 0
+            .tabs-content
+                background-color: whiteColor
+                padding: 10px
+                min-width: 1px
+                width: 100%
+        .modal
+            min-height: 630px
+            width: 800px
+
+    .tabs-content
+        width: 80%
+        padding-left: 0
+.invitation-link, .reset-link
+    cursor: pointer
+    text-align: center
+
+.user-access
+    td
+        padding: 12px 0
+.user-access-link
+    display: flex
+    align-items: center
+    width: 19px
+    height: 19px
+    span
+        cursor: pointer
+.user-access-title-wrapper
+    position: relative
+    min-width 200px
+.user-access-title
+    display: flex
+    align-items: center
+    a
+        padding-top: 6px
+        color: baseColor
+    span
+        padding-left: 8px
+        color: darken(middleGreyColor, 25%) !important
+        overflow: inherit

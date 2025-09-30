@@ -1,0 +1,21 @@
+{
+    "entry": [
+        "playwright/tests/**",
+        "scripts/**"
+    ],
+    "ignoreUnresolved": [
+    ],
+    "ignoreUnimported": [
+        "playwright.config.ts",
+        "playwright/helpers/elastic.ts"
+    ],
+    "ignoreUnused": [
+        "@types/node",
+        "ts-node",
+        "tsx",
+        "typescript"
+    ],
+    "ignorePatterns": [
+        "dist/**"
+    ]
+}

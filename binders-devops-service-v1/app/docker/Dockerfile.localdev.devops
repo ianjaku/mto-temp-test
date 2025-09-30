@@ -1,0 +1,6 @@
+FROM binders.azurecr.io/ubuntu-devops:node22-ts5.4
+RUN apt-get update && apt-get upgrade -y
+RUN mkdir -p /opt/binders
+WORKDIR /opt/binders
+RUN npm i -g concurrently
+ENTRYPOINT [ "/opt/binders/binders-devops-service-v1/app/docker/entrypoint.sh" ]

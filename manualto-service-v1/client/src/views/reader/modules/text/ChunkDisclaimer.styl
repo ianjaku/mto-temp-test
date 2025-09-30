@@ -1,0 +1,81 @@
+@import '../../../../vars.styl';
+
+.chunk-disclaimer
+    // bindersMediaYellow @ 25%
+    --clr-yellow-200: rgb(248, 235, 194)
+    --gap-v: 12px
+    --gap-h: 16px
+    --size-icon: 24px
+    --radius: 8px
+
+    position: relative
+    gap: var(--gap-h)
+    font-size: 13px
+    margin-bottom: 26px
+    justify-self: flex-start
+
+    .icon-btn
+        font-size: var(--size-icon)
+        cursor: pointer
+        border: none
+        padding: 0
+        background: transparent
+        .material-icons
+            font-size: var(--size-icon)
+
+    .disclaimer-content
+        display: grid
+        grid-template-columns: 1fr min-content
+        background: var(--clr-yellow-200)
+        border-radius: var(--radius)
+        padding: var(--gap-v) 0px
+        padding-left: calc(2 * var(--gap-h) + var(--size-icon))
+        transform-origin: left top
+
+    .disclaimer-message
+        display: flex
+        flex-direction: column
+
+    .open-btn
+        position: absolute
+        top: 0
+        left: 0
+        display: flex
+        padding: var(--gap-v) var(--gap-h)
+        border-radius: var(--radius)
+        background: var(--clr-yellow-200)
+        .material-icons
+            color: bindersMediaYellow
+
+    .close-btn
+        width: 1em
+        height: 1em
+        border-radius: 100vw
+        margin: 0 var(--gap-h)
+        &:hover
+            background: white
+        .material-icons
+            color: black
+
+    &.state__collapsed
+        .disclaimer-content
+            transition: opacity 300ms ease-out 100ms
+            opacity: 0
+        .disclaimer-message
+            transition: opacity 100ms ease-in
+            opacity: 0
+        .close-btn
+            transition: opacity 100ms ease-in
+            opacity: 0
+
+    &.state__expanded
+        .disclaimer-content
+            transition: opacity 150ms ease-in
+            opacity: 1
+        .disclaimer-message
+            transition: opacity 150ms ease-out 100ms
+            opacity: 1
+        .close-btn
+            transition: opacity 150ms ease-out 100ms
+            opacity: 1
+

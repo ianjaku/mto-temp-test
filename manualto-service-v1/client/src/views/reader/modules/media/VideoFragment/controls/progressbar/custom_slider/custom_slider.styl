@@ -1,0 +1,74 @@
+@import "../../../../../../../../vars.styl"
+
+.slider
+    &-wrapper
+        display: flex
+        align-items: center
+        height: 40px
+        width: 100%
+        position: relative
+
+    &-bar
+        position: relative
+        z-index: 1
+        width: 100%
+        background-color: 100%
+        height: 10px
+        background-color: rgba(grayColor, 0.4)
+        opacity: 0.5
+        border-radius: 4px
+        overflow: hidden
+        transition: opacity 0.1s ease-in-out,
+            padding 0.1s ease-in-out,
+            border-radius 0.1s ease-in-out
+        cursor: pointer
+        &--dragging
+            opacity: 1
+            padding-bottom: 2px
+            padding-top: 2px
+            border-radius: 10px
+
+        &-current
+            position: absolute
+            left: 0
+            top: 0
+            height: 100%
+            background-color: bindersMediaYellow
+    &-indicator
+        position: absolute
+        top: -25px
+        right: 0
+        padding: 5px
+        height: 25px
+        letter-spacing: 0.02em
+        width: 50px
+        box-sizing: border-box
+        color: rgba(white, 0.9)
+        border-radius: 2px
+        align-items: center
+        justify-content: center
+        background-color: rgba(20, 20, 20, 0.3)
+        z-index: 2
+        transform: translateX(-50%)
+        display: none
+        &--dragging
+            display: flex
+
+    &-bg
+        position: fixed
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+
+// Not supported on some mobile devices
+// Which is fine, because we don't want it to work on mobile devices anyway ¯\_(ツ)_/¯
+@media (hover: hover)
+    .slider-wrapper:hover .slider-bar
+        opacity: 1
+        padding-bottom: 2px
+        padding-top: 2px
+        border-radius: 10px
+
+    .slider-wrapper:hover .slider-indicator
+        display: flex

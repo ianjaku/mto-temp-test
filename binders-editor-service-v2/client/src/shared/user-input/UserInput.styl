@@ -1,0 +1,46 @@
+.userInput
+    display flex
+    .autocomplete
+        min-height 36px
+        padding 8px 0px 8px 8px
+        &-prompt
+            z-index: 5
+    .autocomplete-wrapper
+        .autocomplete--is-dirty .autocomplete-textarea
+            padding-left 12px
+            width unset
+            flex-grow 1
+        .autocomplete-chipWrapper
+            max-width 48%
+    &-textarea
+        max-width: 95%
+    &:not(.userInput--showTypeSelector)
+        .autocomplete-pane
+            margin-left: 23px
+    &--showTypeSelector
+        .autocomplete-prompt
+            margin-left 146px
+.userInputTypeSwitcher, .userInputTypeSwitcher-selection-elements
+    .dropdown-field
+        padding-left 0
+        height fit-content
+        &-label-group-icon
+            width 36px
+            display flex
+            align-items center
+            justify-content center
+    &-selection
+        &-elements
+            width auto
+.userInputTypeSwitcher
+    display flex
+    margin-top auto
+    margin-bottom auto
+    .dropdown-field-label-group-text
+        font-weight: 500
+        margin-right 2px
+.userInputTypeSwitcher-selection-elements
+    .dropdown-field-label
+        padding-left 8px
+.dropdown-field-label-group .icon
+    font-size 16px

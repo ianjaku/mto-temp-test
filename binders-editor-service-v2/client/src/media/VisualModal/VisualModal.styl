@@ -1,0 +1,20 @@
+@require "~@binders/ui-kit/lib/vars.styl";
+
+.visual-modal
+    .modal-body
+        display: flex
+        flex-direction: column
+        justify-content: center
+        height: calc(100% - 20px)
+    .video-wrapper
+        position: relative
+        overflow: hidden
+        display: flex
+        align-items: center
+        justify-content: center
+        &:focus
+            outline: none
+    .preview-wrapper
+        display: flex
+        justify-content: center
+        align-self: center
