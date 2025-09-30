@@ -10,6 +10,7 @@ import { BlockInfoExtension } from "./custom-tiptap-extensions/blockinfo/BlockIn
 import {
     BlockWarningExtension
 } from "./custom-tiptap-extensions/blockwarning/BlockWarningExtension";
+import { IOSCompositionFix } from "./custom-tiptap-extensions/IOSCompositionFix";
 import Bold from "@tiptap/extension-bold";
 import BulletList from "@tiptap/extension-bullet-list";
 import Document from "@tiptap/extension-document";
@@ -78,6 +79,9 @@ export const TipTapExtensions = [
     BlockInfoExtension,
     BlockWarningExtension,
     InitializationTracker,
+    IOSCompositionFix.configure({
+        disableAutocorrect: false, // Keep autocorrect enabled but handle composition events properly
+    }),
 ]
 
 export const TextEditor: React.FC<{
