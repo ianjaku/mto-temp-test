@@ -587,9 +587,10 @@ export class PassportConfiguration<T> {
             }
 
             // TODO MT-4121 this will probably always be true
-            const showPasswordReset = isProduction() ?
-                subdomain !== "editor." :
-                true;
+            const isManageApp = appConfig?.appName === "manage";
+            const showPasswordReset = isManageApp ?
+                false :
+                (isProduction() ? subdomain !== "editor." : true);
 
             const externalCss = this.getLoginCssPathWithBranding(req);
             const data = {
