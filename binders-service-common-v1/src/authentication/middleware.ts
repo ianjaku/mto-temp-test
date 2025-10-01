@@ -586,10 +586,11 @@ export class PassportConfiguration<T> {
                 req.session.redirectRoute = redirectRoute;
             }
 
-            // TODO MT-4121 this will probably always be true
-            const showPasswordReset = isProduction() ?
-                subdomain !== "editor." :
-                true;
+            // Hide password reset on Manage app
+            const isManageApp = getApplicationFromAppname(appConfig.appName) === Application.MANAGE;
+            const showPasswordReset = !isManageApp && (
+                isProduction() ? (subdomain !== "editor.") : true
+            );
 
             const externalCss = this.getLoginCssPathWithBranding(req);
             const data = {
